@@ -1,0 +1,25 @@
+{
+  "engine": "A-Momentum",
+  "engine_version": "0.1.0",
+  "status": "CURRENT",
+  "cutover_state": "BOOTSTRAP_CANARY",
+  "canonical_repository": "maichicong835/A-Momentum",
+  "canonical_branch": "main",
+  "effective_from": "2026-09-20T14:12:06+07:00",
+  "roles": {
+    "temporal_truth": true,
+    "commercial_fallback_pool": true,
+    "daily7_final_selection": false,
+    "trademark_clearance": false,
+    "source_acquisition": false,
+    "drive_mutation": false
+  },
+  "runtime_paths": {
+    "machine_contract": "spec/engine.json",
+    "observation_schema": "spec/observation.schema.json",
+    "receipt_schema": "spec/receipt.schema.json",
+    "builder": "scripts/build_receipt.py",
+    "quality_pool": "data/commercial-quality-pool.json",
+    "bootstrap_observations": "data/bootstrap-observations.json"
+  }
+}
