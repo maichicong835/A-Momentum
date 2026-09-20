@@ -1,0 +1,228 @@
+{
+  "schema": "A_MOMENTUM_OBSERVATION_SET",
+  "engine_version": "0.1.0",
+  "as_of": "2026-09-20T05:14:50+07:00",
+  "source": "Amazon-Daily7Source:runs/2026-09-20-0514-fresh/research-evidence.json",
+  "observations": [
+    {
+      "observation_id": "bootstrap-20260920-01",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "accountant_spreadsheet_frustration",
+      "candidate_key": "i-yell-at-spreadsheets",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-02",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "engineering_stress_wordplay",
+      "candidate_key": "engi-nearing-my-limit",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-03",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "dog_parent_dramatic_personality",
+      "candidate_key": "proud-parent-dramatic-dog",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-04",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "pickleball_dink_insider_pun",
+      "candidate_key": "dont-over-dink-it",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-05",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "bookish_emotional_damage_five_star",
+      "candidate_key": "this-book-ruined-my-life-five-stars",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-06",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "physical_therapy_anatomy_pun",
+      "candidate_key": "psoas-i-was-saying",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-07",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "engineer_coffee_problem_solving",
+      "candidate_key": "coffee-problems-solutions",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-08",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "lawyer_billable_hour_humor",
+      "candidate_key": "billing-you-conversation",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-09",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "librarian_expertise_identity",
+      "candidate_key": "librarians-original-search-engine",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    },
+    {
+      "observation_id": "bootstrap-20260920-10",
+      "observed_at": "2026-09-20T05:14:50+07:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "spreadsheet_reflex_professional_identity",
+      "candidate_key": "oh-this-calls-for-a-spreadsheet",
+      "surface": "DAILY7_IMMUTABLE_RUNS",
+      "proxy": "ETSY_CURRENT_LISTING_SIGNAL",
+      "points": [
+        {
+          "t": "2026-09-20T05:14:50+07:00",
+          "value": 1
+        }
+      ],
+      "native_series": false,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "maichicong835/Amazon-Daily7Source@cbf5cd1d203b17f32c1e661f675b62ee65c96749:runs/2026-09-20-0514-fresh/research-evidence.json",
+        "machine_observed": true,
+        "note": "Single fresh-run commercial observation; establishes T0 only and must remain MOMENTUM_UNPROVEN."
+      }
+    }
+  ]
+}
