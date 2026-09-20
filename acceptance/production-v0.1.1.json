@@ -1,0 +1,29 @@
+{
+  "schema": "A_MOMENTUM_ACCEPTANCE",
+  "engine_version": "0.1.1",
+  "accepted_at": "2026-09-20T14:12:06+07:00",
+  "repository_guard_run_id": 35496755195,
+  "repository_guard_job_id": 106041024050,
+  "repository_guard_conclusion": "success",
+  "build_run_id": 35496755220,
+  "build_artifact_id": 10601680376,
+  "build_artifact_digest": "sha256:6e1cb9291e5cb3b6e5a3c9982ce1f82b17e50b1f1ae6a5d330affe54fc53c65c",
+  "canonical_main_sha": "24c4bfd1792e038953f90ac2c5ac5f40cdc24c83",
+  "observation_pipeline": {
+    "append_only": true,
+    "adaptive_watchlist_count": 15,
+    "hot_cadence_hours": 4,
+    "warm_cadence_hours": 12,
+    "same_proxy_only": true,
+    "minimum_timepoints_velocity": 2,
+    "minimum_timepoints_acceleration": 3,
+    "strong_commerce_or_two_surface_confirmation_required": true
+  },
+  "fallback_pool": {
+    "count": 15,
+    "minimum_target": 14,
+    "replenishment_target": 18,
+    "launch_authorization": false
+  },
+  "result": "PASS_PRODUCTION_READY"
+}
