@@ -1,8 +1,8 @@
 {
   "engine": "A-Momentum",
-  "engine_version": "0.1.0",
+  "engine_version": "0.1.1",
   "status": "CURRENT",
-  "cutover_state": "PRODUCTION_READY",
+  "cutover_state": "OBSERVATION_PIPELINE_UPGRADE_PENDING_ACCEPTANCE",
   "canonical_repository": "maichicong835/A-Momentum",
   "canonical_branch": "main",
   "effective_from": "2026-09-20T14:12:06+07:00",
@@ -20,8 +20,10 @@
     "receipt_schema": "spec/receipt.schema.json",
     "builder": "scripts/build_receipt.py",
     "quality_pool": "data/commercial-quality-pool.json",
-    "bootstrap_observations": "data/bootstrap-observations.json"
+    "bootstrap_observations": "data/bootstrap-observations.json",
+    "watchlist": "data/watchlist.json",
+    "observation_append_root": "data/observations"
   },
-  "production_ready_from": "2026-09-20T14:12:06+07:00",
+  "production_ready_from": null,
   "production_acceptance": "acceptance/production-v0.1.0.json"
 }
