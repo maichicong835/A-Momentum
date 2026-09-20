@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A-Momentum Receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "engine_version",
+    "as_of",
+    "entities",
+    "fallback_pool_status",
+    "result"
+  ],
+  "properties": {
+    "schema": {
+      "const": "A_MOMENTUM_RECEIPT"
+    },
+    "engine_version": {
+      "type": "string"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entities": {
+      "type": "array"
+    },
+    "fallback_pool_status": {
+      "type": "object"
+    },
+    "result": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

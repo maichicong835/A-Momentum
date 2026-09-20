@@ -1,0 +1,52 @@
+name: Repository Guard
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate machine contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          current=json.loads(Path('CURRENT.json').read_text())
+          engine=json.loads(Path('spec/engine.json').read_text())
+          obs=json.loads(Path('data/bootstrap-observations.json').read_text())
+          pool=json.loads(Path('data/commercial-quality-pool.json').read_text())
+          assert current['engine_version']==engine['engine_version']=='0.1.0'
+          assert engine['invariants']['price_unit_economics_out_of_scope'] is True
+          assert engine['invariants']['same_proxy_only_for_velocity_and_acceleration'] is True
+          assert engine['invariants']['minimum_comparable_timepoints_velocity']==2
+          assert engine['invariants']['minimum_comparable_timepoints_acceleration']==3
+          assert engine['invariants']['native_historical_series_counts_as_multiple_timepoints'] is True
+          assert engine['anti_drift']['fallback_may_not_bypass_base_commercial_floor'] is True
+          assert engine['anti_drift']['no_duplicate_source_pipeline'] is True
+          assert len(engine['fallback_ladder'])==6
+          assert pool['count']==len(pool['entries'])
+          assert pool['count']>=pool['minimum_pool_target']>=14
+          assert all(x['launch_authorization'] is False for x in pool['entries'])
+          assert all(len(x['points'])==1 for x in obs['observations'])
+          print('A_MOMENTUM_CONTRACT_PASS')
+          PY
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Build bootstrap receipt
+        run: python scripts/build_receipt.py --out /tmp/momentum-receipt.json
+      - name: Verify bootstrap states
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/momentum-receipt.json'))
+          assert x['fallback_pool_status']['status']=='PASS'
+          assert all(e['state']=='MOMENTUM_UNPROVEN' for e in x['entities'])
+          assert all(e['timepoints']==1 for e in x['entities'])
+          print('A_MOMENTUM_BOOTSTRAP_TRUTH_PASS')
+          PY

@@ -1,0 +1,126 @@
+{
+  "schema": "AMZ_A_MOMENTUM_ENGINE",
+  "engine_version": "0.1.0",
+  "purpose": "PROVIDE_PRE_DAILY7_TEMPORAL_BENCHMARK_AND_QUALITY_COMMERCIAL_FALLBACK_WITHOUT_BECOMING_SELECTION_OR_SAFETY_AUTHORITY",
+  "entities": [
+    "QUERY_FAMILY",
+    "MECHANISM",
+    "MARKET_OBJECT"
+  ],
+  "markets": [
+    "US"
+  ],
+  "invariants": {
+    "price_unit_economics_out_of_scope": true,
+    "same_proxy_only_for_velocity_and_acceleration": true,
+    "minimum_comparable_timepoints_velocity": 2,
+    "minimum_comparable_timepoints_acceleration": 3,
+    "native_historical_series_counts_as_multiple_timepoints": true,
+    "one_snapshot_never_claims_growth": true,
+    "social_only_never_confirms_commercial_acceleration": true,
+    "no_compensating_single_score": true,
+    "raw_evidence_provenance_required": true,
+    "daily7_quality_floor_never_lowered": true,
+    "trademark_and_safety_remain_external": true
+  },
+  "temporal_sources": {
+    "GOOGLE_TRENDS": {
+      "role": "QUERY_LEVEL_LEADING_SIGNAL",
+      "native_history_preferred": true
+    },
+    "PINTEREST_TRENDS": {
+      "role": "QUERY_AESTHETIC_LEADING_SIGNAL",
+      "native_history_preferred": true
+    },
+    "TIKTOK_TRENDS": {
+      "role": "CULTURAL_LEADING_SIGNAL_SUPPORTING_ONLY",
+      "native_history_preferred": true
+    },
+    "AMAZON": {
+      "role": "COMMERCE_QUERY_OR_NICHE_SIGNAL",
+      "native_history_when_accessible": true
+    },
+    "ETSY": {
+      "role": "COMMERCE_OBJECT_AND_SUPPLY_SIGNAL",
+      "native_history_limited": true,
+      "own_snapshots_required_for_competitor_history": true
+    },
+    "DAILY7_IMMUTABLE_RUNS": {
+      "role": "OWN_OBSERVATION_HISTORY",
+      "native_history": false
+    }
+  },
+  "temporal_states": [
+    "ACCELERATING_CONFIRMED",
+    "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+    "MATURE_STABLE_DEMAND",
+    "BREAKOUT_PROXY_HIGH",
+    "MOMENTUM_UNPROVEN",
+    "DECELERATING",
+    "INSUFFICIENT_OR_INCOMPARABLE_EVIDENCE"
+  ],
+  "confirmation": {
+    "accelerating_confirmed_requires": [
+      "AT_LEAST_THREE_COMPARABLE_TIMEPOINTS_ON_ONE_STRONG_PROXY_OR_EQUIVALENT_NATIVE_SERIES",
+      "POSITIVE_RECENT_VELOCITY",
+      "POSITIVE_ACCELERATION",
+      "AND_EITHER_SECOND_INDEPENDENT_SURFACE_CONFIRMATION_OR_STRONG_COMMERCE_PROXY"
+    ],
+    "breakout_proxy_is_not_acceleration": true
+  },
+  "fallback_ladder": [
+    {
+      "level": "F0",
+      "name": "CONFIRMED_ACCELERATION",
+      "condition": "ACCELERATING_CONFIRMED_AND_BASE_COMMERCIAL_FLOOR_PASS",
+      "role": "HIGHEST_PRIORITY_INPUT"
+    },
+    {
+      "level": "F1",
+      "name": "POSITIVE_VELOCITY",
+      "condition": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN_AND_BASE_COMMERCIAL_FLOOR_PASS",
+      "role": "HIGH_PRIORITY_INPUT"
+    },
+    {
+      "level": "F2",
+      "name": "MATURE_STABLE",
+      "condition": "MATURE_STABLE_DEMAND_AND_BASE_COMMERCIAL_FLOOR_PASS",
+      "role": "RELIABLE_EVERGREEN_INPUT"
+    },
+    {
+      "level": "F3",
+      "name": "BREAKOUT_PROXY",
+      "condition": "BREAKOUT_PROXY_HIGH_AND_BASE_COMMERCIAL_FLOOR_PASS",
+      "role": "COLD_START_EARLY_OPPORTUNITY_INPUT_NO_ACCELERATION_CLAIM"
+    },
+    {
+      "level": "F4",
+      "name": "QUALITY_POOL",
+      "condition": "PREVIOUSLY_OBSERVED_COMMERCIAL_MECHANISM_STILL_PASSES_CURRENT_DAILY7_MARKET_FRESHNESS_AND_NOVELTY",
+      "role": "PERSISTENT_COMMERCIAL_SOURCE_FALLBACK"
+    },
+    {
+      "level": "F5",
+      "name": "DIRECT_DAILY7_DISCOVERY",
+      "condition": "A_MOMENTUM_UNAVAILABLE_OR_POOL_INSUFFICIENT",
+      "role": "DAILY7_RUNS_EXISTING_BASE_COMMERCIAL_FILTER_WITH_MOMENTUM_UNPROVEN_ALLOWED"
+    }
+  ],
+  "anti_drift": {
+    "provider_failure_may_not_equal_zero_demand": true,
+    "missing_momentum_may_not_kill_commercially_strong_candidate": true,
+    "fallback_may_not_bypass_base_commercial_floor": true,
+    "fallback_may_not_bypass_novelty_or_safety": true,
+    "no_research_breadth_expansion_only_to_obtain_momentum_label": true,
+    "no_duplicate_source_pipeline": true,
+    "daily7_must_bind_used_momentum_receipt_to_exact_commit_or_receipt_digest": true
+  },
+  "quality_pool": {
+    "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
+    "stores_mechanisms_not_launch_authorization": true,
+    "minimum_pool_target": 14,
+    "current_refresh_required_at_daily7_use": true,
+    "novelty_recheck_required_at_daily7_use": true,
+    "safety_recheck_required_downstream": true
+  }
+}
