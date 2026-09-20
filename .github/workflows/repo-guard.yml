@@ -54,6 +54,8 @@ jobs:
           x=json.load(open('/tmp/momentum-receipt.json'))
           assert x['fallback_pool_status']['status']=='PASS'
           assert all(e['state']=='MOMENTUM_UNPROVEN' for e in x['entities'])
-          assert all(e['timepoints']==1 for e in x['entities'])
+          assert all(all(series['timepoints']==1 for series in e['series']) for e in x['entities'])
+          assert x['observation_set_count']==1
+          assert x['observation_count']==10
           print('A_MOMENTUM_BOOTSTRAP_TRUTH_PASS')
           PY
