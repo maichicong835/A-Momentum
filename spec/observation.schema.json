@@ -117,6 +117,9 @@
         }
       },
       "additionalProperties": false
+    },
+    "candidate_key": {
+      "type": "string"
     }
   },
   "additionalProperties": false
