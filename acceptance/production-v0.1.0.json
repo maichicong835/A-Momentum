@@ -1,0 +1,28 @@
+{
+  "schema": "A_MOMENTUM_ACCEPTANCE",
+  "engine_version": "0.1.0",
+  "accepted_at": "2026-09-20T14:12:06+07:00",
+  "repository_guard_run_id": 35496342172,
+  "repository_guard_job_id": 106039887058,
+  "repository_guard_conclusion": "success",
+  "build_run_id": 35496342145,
+  "build_artifact_id": 10600558923,
+  "build_artifact_digest": "sha256:589bb6b4304dcfbeb624e27a90e444b7378a5fd076ad8805c90cfd3845fab9ec",
+  "canonical_main_sha": "43aacbb5f0dc40cecda16d4f872b836b01908140",
+  "bootstrap_truth": {
+    "observations": 10,
+    "all_temporal_states": "MOMENTUM_UNPROVEN",
+    "fabricated_velocity_claims": 0,
+    "fabricated_acceleration_claims": 0,
+    "commercial_quality_pool_count": 15,
+    "minimum_pool_target": 14,
+    "fallback_pool_status": "PASS"
+  },
+  "boundaries": {
+    "daily7_selection_authority": false,
+    "trademark_authority": false,
+    "source_pipeline_authority": false,
+    "drive_authority": false
+  },
+  "result": "PASS_PRODUCTION_READY"
+}
