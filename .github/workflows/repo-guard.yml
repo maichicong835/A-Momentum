@@ -21,7 +21,8 @@ jobs:
           engine=json.loads(Path('spec/engine.json').read_text())
           obs=json.loads(Path('data/bootstrap-observations.json').read_text())
           pool=json.loads(Path('data/commercial-quality-pool.json').read_text())
-          assert current['engine_version']==engine['engine_version']=='0.1.0'
+          watch=json.loads(Path('data/watchlist.json').read_text())
+          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.1'
           assert engine['invariants']['price_unit_economics_out_of_scope'] is True
           assert engine['invariants']['same_proxy_only_for_velocity_and_acceleration'] is True
           assert engine['invariants']['minimum_comparable_timepoints_velocity']==2
@@ -33,6 +34,12 @@ jobs:
           assert pool['count']==len(pool['entries'])
           assert pool['count']>=pool['minimum_pool_target']>=14
           assert all(x['launch_authorization'] is False for x in pool['entries'])
+          assert watch['count']==len(watch['entries'])==pool['count']
+          assert all(x['cadence_hours'] in [4,12] for x in watch['entries'])
+          assert engine['observation_pipeline']['append_only'] is True
+          assert engine['observation_pipeline']['due_polling_is_adaptive'] is True
+          assert engine['quality_pool']['proactive_replenishment_below']==14
+          assert engine['quality_pool']['replenishment_target']==18
           assert all(len(x['points'])==1 for x in obs['observations'])
           print('A_MOMENTUM_CONTRACT_PASS')
           PY
@@ -47,6 +54,8 @@ jobs:
           x=json.load(open('/tmp/momentum-receipt.json'))
           assert x['fallback_pool_status']['status']=='PASS'
           assert all(e['state']=='MOMENTUM_UNPROVEN' for e in x['entities'])
-          assert all(e['timepoints']==1 for e in x['entities'])
+          assert all(all(series['timepoints']==1 for series in e['series']) for e in x['entities'])
+          assert x['observation_set_count']==1
+          assert x['observation_count']==10
           print('A_MOMENTUM_BOOTSTRAP_TRUTH_PASS')
           PY

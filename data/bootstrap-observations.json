@@ -1,6 +1,6 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
-  "engine_version": "0.1.0",
+  "engine_version": "0.1.1",
   "as_of": "2026-09-20T05:14:50+07:00",
   "source": "Amazon-Daily7Source:runs/2026-09-20-0514-fresh/research-evidence.json",
   "observations": [

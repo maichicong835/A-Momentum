@@ -1,6 +1,6 @@
 {
   "schema": "AMZ_A_MOMENTUM_ENGINE",
-  "engine_version": "0.1.0",
+  "engine_version": "0.1.1",
   "purpose": "PROVIDE_PRE_DAILY7_TEMPORAL_BENCHMARK_AND_QUALITY_COMMERCIAL_FALLBACK_WITHOUT_BECOMING_SELECTION_OR_SAFETY_AUTHORITY",
   "entities": [
     "QUERY_FAMILY",
@@ -66,7 +66,12 @@
       "POSITIVE_ACCELERATION",
       "AND_EITHER_SECOND_INDEPENDENT_SURFACE_CONFIRMATION_OR_STRONG_COMMERCE_PROXY"
     ],
-    "breakout_proxy_is_not_acceleration": true
+    "breakout_proxy_is_not_acceleration": true,
+    "accelerating_single_surface_noncommerce_state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+    "strong_commerce_surfaces": [
+      "AMAZON",
+      "ETSY"
+    ]
   },
   "fallback_ladder": [
     {
@@ -121,6 +126,26 @@
     "minimum_pool_target": 14,
     "current_refresh_required_at_daily7_use": true,
     "novelty_recheck_required_at_daily7_use": true,
-    "safety_recheck_required_downstream": true
+    "safety_recheck_required_downstream": true,
+    "proactive_replenishment_below": 14,
+    "replenishment_target": 18
+  },
+  "observation_pipeline": {
+    "append_only": true,
+    "bootstrap_path": "data/bootstrap-observations.json",
+    "append_root": "data/observations",
+    "watchlist_path": "data/watchlist.json",
+    "grouping_key": [
+      "entity_type",
+      "entity_key",
+      "surface",
+      "proxy"
+    ],
+    "deduplicate_timepoints_by_timestamp": true,
+    "original_observation_files_immutable": true,
+    "latest_receipt_is_derived_not_authority": true,
+    "due_polling_is_adaptive": true,
+    "due_polling_may_skip_not_due_entries": true,
+    "sensor_gap_is_not_zero_demand": true
   }
 }
