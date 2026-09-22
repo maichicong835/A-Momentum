@@ -19,7 +19,7 @@ jobs:
             echo "Production/runtime data path is forbidden in public repo"
             exit 1
           fi
-          if git grep -n -E 'Amazon-Daily7Source|drive.google.com|etsy.com/listing/[0-9]+|i\.etsystatic\.com' -- ':!SECURITY.md' ':!README.md'; then
+          if git grep -n -E 'Amazon-Daily7Source|drive.google.com|etsy.com/listing/[0-9]+|i\.etsystatic\.com' -- ':!SECURITY.md' ':!README.md' ':!.github/workflows/repo-guard.yml'; then
             echo "Private strategy/source reference detected in public repo"
             exit 1
           fi
