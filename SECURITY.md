@@ -1,15 +1,11 @@
-# Security and data-boundary policy
+# Security and credential-isolation policy
 
-A-Momentum is a public code repository. It must contain only generic engine code, schemas, tests, documentation, and synthetic fixtures.
+A-Momentum is public and may run production schedules and publish sanitized business data. The hard private boundary is credentials and secret-bearing session material.
 
-Do not commit:
-- production watchlists or query families;
-- proprietary candidate/mechanism keys;
-- commercial quality pools;
-- market observations or source references;
-- marketplace object identifiers tied to a private strategy;
-- credentials, tokens, cookies, session data, API keys, or account identifiers.
+Never commit, log, cache or upload as an artifact: passwords; API keys; personal access tokens; OAuth access/refresh tokens or client secrets; cookies/session IDs/authorization headers; private/signing keys; secret-bearing signed URLs; Google Drive/email credentials.
 
-Production runtime data must be supplied by a private consumer repository at execution time. Public examples are synthetic and are not market evidence.
+The current Google Trends runtime requires no credential.
 
-Historical commits created before the code-only boundary may contain earlier runtime examples/data. Deleting files from current main does not erase Git history; a history rewrite is required if complete historical removal is desired.
+Future authenticated sensors must use GitHub Actions/Environment secrets with least privilege, must not execute secret-bearing logic from untrusted pull-request content, and must never emit secret values to JSON, logs, artifacts, caches, URLs or commits. If exposure is suspected, revoke/rotate first; repository cleanup alone is not sufficient.
+
+`scripts/security_scan.py` is defense in depth, not a guarantee against every possible secret format. A-Momentum has no Google Drive authority.

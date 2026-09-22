@@ -1,5 +1,9 @@
-data/
-private/
 secrets/
 .env
+.env.*
 *.secret.json
+*.pem
+*.p12
+*.key
+__pycache__/
+*.pyc

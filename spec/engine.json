@@ -1,6 +1,6 @@
 {
   "schema": "AMZ_A_MOMENTUM_ENGINE",
-  "engine_version": "0.1.3",
+  "engine_version": "0.2.0",
   "purpose": "PROVIDE_PRE_DAILY7_TEMPORAL_BENCHMARK_AND_QUALITY_COMMERCIAL_FALLBACK_WITHOUT_BECOMING_SELECTION_OR_SAFETY_AUTHORITY",
   "entities": [
     "QUERY_FAMILY",
@@ -122,7 +122,11 @@
     "fallback_may_not_bypass_novelty_or_safety": true,
     "no_research_breadth_expansion_only_to_obtain_momentum_label": true,
     "no_duplicate_source_pipeline": true,
-    "daily7_must_bind_used_momentum_receipt_to_exact_commit_or_receipt_digest": true
+    "daily7_must_bind_used_momentum_receipt_to_exact_commit_or_receipt_digest": true,
+    "daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run": true,
+    "mutable_latest_is_discovery_pointer_not_run_authority": true,
+    "active_sensor_may_not_be_claimed_without_machine_run_evidence": true,
+    "public_runtime_does_not_transfer_selection_or_safety_authority": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -133,13 +137,13 @@
     "safety_recheck_required_downstream": true,
     "proactive_replenishment_below": 14,
     "replenishment_target": 18,
-    "stored_in_public_repo": false
+    "stored_in_public_repo": true
   },
   "observation_pipeline": {
     "append_only": true,
-    "bootstrap_path": "EXTERNAL_RUNTIME_ARG",
-    "append_root": "EXTERNAL_RUNTIME_ARG",
-    "watchlist_path": "EXTERNAL_PRIVATE_CONSUMER_DATA",
+    "bootstrap_path": "runtime/bootstrap-observations.json",
+    "append_root": "runtime/latest/google-trends-observations.json",
+    "watchlist_path": "runtime/watchlist.json",
     "grouping_key": [
       "entity_type",
       "entity_key",
@@ -151,26 +155,62 @@
     "latest_receipt_is_derived_not_authority": true,
     "due_polling_is_adaptive": true,
     "due_polling_may_skip_not_due_entries": true,
-    "sensor_gap_is_not_zero_demand": true
+    "sensor_gap_is_not_zero_demand": true,
+    "latest_receipt_path": "runtime/latest/receipt.json",
+    "runtime_owner": "maichicong835/A-Momentum",
+    "public_runtime_data_allowed": true,
+    "credentials_may_not_be_runtime_data": true
   },
   "runtime_data_boundary": {
-    "public_repository_mode": "CODE_ONLY",
-    "production_runtime_data_location": "EXTERNAL_PRIVATE_CONSUMER_REPOSITORY",
+    "public_repository_mode": "PUBLIC_RUNTIME_WITH_SECRET_ISOLATION",
+    "production_runtime_data_location": "A_MOMENTUM_PUBLIC_REPOSITORY",
     "public_repo_allowed": [
       "GENERIC_CODE",
       "SCHEMAS",
       "TESTS",
       "DOCUMENTATION",
-      "SYNTHETIC_FIXTURES"
-    ],
-    "public_repo_forbidden": [
+      "SYNTHETIC_FIXTURES",
       "PRODUCTION_WATCHLISTS",
-      "PROPRIETARY_QUERY_FAMILIES",
+      "QUERY_FAMILIES",
       "COMMERCIAL_QUALITY_POOLS",
       "MARKET_OBSERVATIONS",
       "SOURCE_REFERENCES",
-      "CREDENTIALS_OR_SESSION_DATA"
+      "SANITIZED_RUNTIME_RECEIPTS"
     ],
-    "engine_accepts_runtime_paths_via_cli": true
+    "public_repo_forbidden": [
+      "CREDENTIALS",
+      "TOKENS",
+      "COOKIES",
+      "SESSION_DATA",
+      "API_KEYS",
+      "PASSWORDS",
+      "PRIVATE_KEYS",
+      "OAUTH_ACCESS_TOKENS",
+      "OAUTH_REFRESH_TOKENS",
+      "SIGNED_SECRET_URLS"
+    ],
+    "credentials_storage": "GITHUB_ACTIONS_OR_ENVIRONMENT_SECRETS_ONLY_WHEN_A_SENSOR_REQUIRES_THEM",
+    "current_google_trends_sensor_requires_credentials": false,
+    "secret_values_may_not_be_logged_artifacted_cached_or_committed": true
+  },
+  "runtime_execution": {
+    "owner_repository": "maichicong835/A-Momentum",
+    "schedule_hot_hours": 4,
+    "schedule_warm_hours": 12,
+    "scheduler_workflow": ".github/workflows/runtime.yml",
+    "google_trends": {
+      "active": true,
+      "credential_required": false,
+      "native_history": true,
+      "timeframe": "now 7-d",
+      "geo": "US",
+      "partial_rows_removed": true,
+      "aggregation": "NON_OVERLAPPING_COMPLETED_24H_MEAN",
+      "minimum_blocks": 3,
+      "cross_pull_normalization_arithmetic_forbidden": true,
+      "failure_semantics": "SENSOR_GAP_NOT_ZERO_DEMAND"
+    },
+    "other_declared_surfaces_are_not_active_collectors_until_machine_proven": true,
+    "runtime_failure_may_not_block_daily7": true
   }
 }

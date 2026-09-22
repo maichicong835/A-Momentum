@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import argparse, glob, json
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
-ENGINE_VERSION="0.1.3"
+ENGINE_VERSION="0.2.0"
 STRONG_COMMERCE={"AMAZON","ETSY"}
 
 def dt(s):
@@ -139,6 +139,8 @@ def main():
     ap.add_argument("--observations-glob",default="examples/observations/*.json")
     ap.add_argument("--pool",default="examples/demo-quality-pool.json")
     ap.add_argument("--out",default="-")
+    ap.add_argument("--engine-commit-sha",default="UNBOUND")
+    ap.add_argument("--generated-at")
     a=ap.parse_args()
     sets=load_sets(a.observations,a.observations_glob)
     observations=[o for s in sets for o in s.get("observations",[])]
@@ -151,6 +153,8 @@ def main():
     receipt={
       "schema":"A_MOMENTUM_RECEIPT",
       "engine_version":ENGINE_VERSION,
+      "engine_commit_sha":a.engine_commit_sha,
+      "generated_at":a.generated_at or datetime.now(timezone.utc).isoformat(),
       "as_of":latest,
       "observation_set_count":len(sets),
       "observation_count":len(observations),

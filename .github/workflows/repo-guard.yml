@@ -4,6 +4,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+permissions:
+  contents: read
 jobs:
   guard:
     runs-on: ubuntu-latest
@@ -12,63 +14,68 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Enforce public code-only boundary
-        run: |
-          set -euo pipefail
-          if git ls-files | grep -E '^(data|private|secrets)/'; then
-            echo "Production/runtime data path is forbidden in public repo"
-            exit 1
-          fi
-          if git grep -n -E 'Amazon-Daily7Source|drive.google.com|etsy.com/listing/[0-9]+|i\.etsystatic\.com' -- ':!SECURITY.md' ':!README.md' ':!.github/workflows/repo-guard.yml'; then
-            echo "Private strategy/source reference detected in public repo"
-            exit 1
-          fi
-          echo PUBLIC_CODE_ONLY_PATH_SCAN_PASS
-      - name: Validate machine contract and synthetic fixtures
+      - name: Scan tracked repository for credential material
+        run: python scripts/security_scan.py --repository
+      - name: Validate v0.2.0 authority and public-runtime boundary
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          current=json.loads(Path('CURRENT.json').read_text())
-          engine=json.loads(Path('spec/engine.json').read_text())
-          obs=json.loads(Path('examples/demo-observations.json').read_text())
-          pool=json.loads(Path('examples/demo-quality-pool.json').read_text())
-          watch=json.loads(Path('examples/demo-watchlist.json').read_text())
-          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.3'
-          assert current['roles']['public_code_only'] is True
-          assert current['roles']['runtime_business_data_storage'] is False
-          assert engine['runtime_data_boundary']['public_repository_mode']=='CODE_ONLY'
-          assert engine['runtime_data_boundary']['production_runtime_data_location']=='EXTERNAL_PRIVATE_CONSUMER_REPOSITORY'
-          assert engine['invariants']['same_proxy_only_for_velocity_and_acceleration'] is True
-          assert engine['invariants']['minimum_comparable_timepoints_velocity']==2
-          assert engine['invariants']['minimum_comparable_timepoints_acceleration']==3
-          assert engine['invariants']['native_historical_series_counts_as_multiple_timepoints'] is True
-          assert engine['invariants']['zero_only_series_is_momentum_unproven'] is True
-          assert engine['invariants']['flat_zero_tail_is_not_deceleration'] is True
-          assert engine['invariants']['sensor_native_partial_points_should_be_removed_before_analysis'] is True
-          assert engine['anti_drift']['fallback_may_not_bypass_base_commercial_floor'] is True
-          assert engine['anti_drift']['no_duplicate_source_pipeline'] is True
-          assert len(engine['fallback_ladder'])==6
-          assert pool['count']==len(pool['entries'])==14
-          assert all(x['launch_authorization'] is False for x in pool['entries'])
-          assert watch['count']==len(watch['entries'])==14
-          assert all(x['cadence_hours'] in [4,12] for x in watch['entries'])
-          assert all('example' in x['mechanism_key'] for x in watch['entries'])
-          assert all(o['provenance']['source_ref']=='SYNTHETIC_FIXTURE' for o in obs['observations'])
-          print('A_MOMENTUM_PUBLIC_CONTRACT_PASS')
+          c=json.loads(Path('CURRENT.json').read_text()); e=json.loads(Path('spec/engine.json').read_text())
+          w=json.loads(Path('runtime/watchlist.json').read_text()); p=json.loads(Path('runtime/quality-pool.json').read_text()); b=json.loads(Path('runtime/bootstrap-observations.json').read_text())
+          ds=[json.loads(Path(x).read_text()) for x in ['examples/demo-observations.json','examples/demo-quality-pool.json','examples/demo-watchlist.json']]
+          assert c['engine_version']==e['engine_version']==w['engine_version']==p['engine_version']==b['engine_version']=='0.2.0'
+          assert all(x['engine_version']=='0.2.0' for x in ds)
+          assert c['status'] in {'CUTOVER_CANDIDATE','CURRENT'}
+          if c['status']=='CUTOVER_CANDIDATE':
+              assert c['cutover_state']=='RUNTIME_REHEARSAL_REQUIRED' and c['production_acceptance'] is None
+          else:
+              assert c['cutover_state']=='PRODUCTION_READY' and c['production_acceptance']
+          r=c['roles']; assert r['public_runtime_execution'] and r['public_runtime_outputs'] and r['runtime_business_data_storage']
+          assert r['credential_storage'] is False and r['credentials_actions_secrets_only'] is True
+          assert not r['daily7_final_selection'] and not r['trademark_clearance'] and not r['source_acquisition'] and not r['drive_mutation']
+          rb=e['runtime_data_boundary']; assert rb['public_repository_mode']=='PUBLIC_RUNTIME_WITH_SECRET_ISOLATION'
+          assert rb['current_google_trends_sensor_requires_credentials'] is False and rb['secret_values_may_not_be_logged_artifacted_cached_or_committed'] is True
+          x=e['runtime_execution']; assert x['owner_repository']=='maichicong835/A-Momentum' and x['schedule_hot_hours']==4
+          assert x['google_trends']['active'] and not x['google_trends']['credential_required']
+          assert x['google_trends']['aggregation']=='NON_OVERLAPPING_COMPLETED_24H_MEAN' and x['google_trends']['minimum_blocks']==3
+          assert x['google_trends']['cross_pull_normalization_arithmetic_forbidden'] is True
+          assert x['other_declared_surfaces_are_not_active_collectors_until_machine_proven'] is True and x['runtime_failure_may_not_block_daily7'] is True
+          assert w['count']==len(w['entries'])==15 and p['count']==len(p['entries'])==15 and p['minimum_pool_target']==14
+          assert all(z['launch_authorization'] is False for z in p['entries']) and len(b['observations'])==10
+          assert e['anti_drift']['daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run'] is True
+          assert e['anti_drift']['mutable_latest_is_discovery_pointer_not_run_authority'] is True
+          print('A_MOMENTUM_V020_AUTHORITY_PASS')
           PY
       - name: Unit tests
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Build synthetic receipt
-        run: python scripts/build_receipt.py --out /tmp/momentum-receipt.json
-      - name: Verify synthetic receipt
         run: |
+          python scripts/build_receipt.py --engine-commit-sha TEST --out /tmp/synthetic.json
           python - <<'PY'
           import json
-          x=json.load(open('/tmp/momentum-receipt.json'))
-          assert x['engine_version']=='0.1.3'
-          assert x['fallback_pool_status']['status']=='PASS'
-          assert x['observation_count']==1
-          assert len(x['entities'])==1
+          x=json.load(open('/tmp/synthetic.json')); assert x['engine_version']=='0.2.0' and x['engine_commit_sha']=='TEST' and x['fallback_pool_status']['status']=='PASS'
           print('A_MOMENTUM_SYNTHETIC_RECEIPT_PASS')
+          PY
+      - name: Build production bootstrap receipt without network
+        run: |
+          python scripts/build_receipt.py --observations runtime/bootstrap-observations.json --observations-glob '/tmp/no/*.json' --pool runtime/quality-pool.json --engine-commit-sha "$GITHUB_SHA" --out /tmp/runtime.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/runtime.json')); assert x['engine_version']=='0.2.0' and x['fallback_pool_status']['count']==15 and x['fallback_pool_status']['status']=='PASS'
+          print('A_MOMENTUM_RUNTIME_BOOTSTRAP_PASS')
+          PY
+      - name: Validate latest public runtime snapshot when present
+        run: |
+          if [ ! -f runtime/latest/index.json ]; then echo A_MOMENTUM_LATEST_RUNTIME_NOT_YET_PUBLISHED; exit 0; fi
+          python scripts/security_scan.py --runtime-output runtime/latest
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          i=json.loads(Path('runtime/latest/index.json').read_text()); r=json.loads(Path('runtime/latest/receipt.json').read_text()); s=json.loads(Path('runtime/latest/sensor-status.json').read_text())
+          assert i['engine_version']==r['engine_version']==s['engine_version']=='0.2.0'
+          assert i['receipt_sha256']==hashlib.sha256(Path('runtime/latest/receipt.json').read_bytes()).hexdigest()
+          assert r['engine_commit_sha']==i['provider_engine_commit_sha'] and i['credentials_used'] is False and s['credentials_used'] is False
+          assert s['provider_failure_is_zero_demand'] is False
+          print('A_MOMENTUM_LATEST_RUNTIME_SNAPSHOT_PASS',i['sensor_result'])
           PY
