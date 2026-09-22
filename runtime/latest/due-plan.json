@@ -1,10 +1,10 @@
 {
   "schema": "A_MOMENTUM_DUE_PLAN",
   "engine_version": "0.2.0",
-  "as_of": "2026-09-22T09:13:26.453533+00:00",
+  "as_of": "2026-09-22T09:22:41.162360+00:00",
   "watch_count": 15,
-  "due_count": 14,
-  "not_due_count": 1,
+  "due_count": 7,
+  "not_due_count": 8,
   "due": [
     {
       "watch_id": "watch-01",
@@ -12,7 +12,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
+      "elapsed_hours": 59.13087843333333,
       "query_family": [
         "accountant sticker",
         "spreadsheet sticker",
@@ -32,29 +32,10 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
+      "elapsed_hours": 59.13087843333333,
       "query_family": [
         "engineer sticker",
         "engineering humor sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-03",
-      "mechanism_key": "dog_parent_dramatic_personality",
-      "cadence_class": "HOT",
-      "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
-      "query_family": [
-        "dog parent sticker",
-        "funny dog sticker"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -70,7 +51,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
+      "elapsed_hours": 59.13087843333333,
       "query_family": [
         "pickleball sticker",
         "dink sticker"
@@ -89,31 +70,11 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
+      "elapsed_hours": 59.13087843333333,
       "query_family": [
         "bookish sticker",
         "book lover sticker",
         "reader sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-06",
-      "mechanism_key": "physical_therapy_anatomy_pun",
-      "cadence_class": "HOT",
-      "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-22T05:00:00+00:00",
-      "elapsed_hours": 4.224014870277777,
-      "query_family": [
-        "physical therapist sticker",
-        "anatomy sticker",
-        "psoas sticker"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -129,7 +90,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
+      "elapsed_hours": 59.13087843333333,
       "query_family": [
         "engineer sticker",
         "coffee engineer sticker"
@@ -143,111 +104,16 @@
       ]
     },
     {
-      "watch_id": "watch-08",
-      "mechanism_key": "lawyer_billable_hour_humor",
-      "cadence_class": "HOT",
-      "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
-      "query_family": [
-        "lawyer sticker",
-        "legal humor sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-09",
-      "mechanism_key": "librarian_expertise_identity",
-      "cadence_class": "HOT",
-      "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
-      "query_family": [
-        "librarian sticker",
-        "library sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-10",
-      "mechanism_key": "spreadsheet_reflex_professional_identity",
-      "cadence_class": "HOT",
-      "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-20T05:14:50+07:00",
-      "elapsed_hours": 58.97679264805555,
-      "query_family": [
-        "spreadsheet sticker",
-        "finance sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-11",
-      "mechanism_key": "teacher_voice_authority_identity",
+      "watch_id": "watch-14",
+      "mechanism_key": "emotional_support_yarn_identity",
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
       "last_observed_at": null,
       "elapsed_hours": null,
       "query_family": [
-        "teacher sticker",
-        "teacher voice sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-12",
-      "mechanism_key": "programmer_interruption_boundary",
-      "cadence_class": "WARM",
-      "cadence_hours": 12.0,
-      "last_observed_at": null,
-      "elapsed_hours": null,
-      "query_family": [
-        "programmer sticker",
-        "developer sticker",
-        "coding sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-13",
-      "mechanism_key": "crochet_interruption_insider_humor",
-      "cadence_class": "WARM",
-      "cadence_hours": 12.0,
-      "last_observed_at": null,
-      "elapsed_hours": null,
-      "query_family": [
+        "yarn sticker",
         "crochet sticker",
-        "crochet humor sticker"
+        "knitting sticker"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -280,16 +146,150 @@
   ],
   "not_due": [
     {
-      "watch_id": "watch-14",
-      "mechanism_key": "emotional_support_yarn_identity",
+      "watch_id": "watch-03",
+      "mechanism_key": "dog_parent_dramatic_personality",
+      "cadence_class": "HOT",
+      "cadence_hours": 4.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "dog parent sticker",
+        "funny dog sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-06",
+      "mechanism_key": "physical_therapy_anatomy_pun",
+      "cadence_class": "HOT",
+      "cadence_hours": 4.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "physical therapist sticker",
+        "anatomy sticker",
+        "psoas sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-08",
+      "mechanism_key": "lawyer_billable_hour_humor",
+      "cadence_class": "HOT",
+      "cadence_hours": 4.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "lawyer sticker",
+        "legal humor sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-09",
+      "mechanism_key": "librarian_expertise_identity",
+      "cadence_class": "HOT",
+      "cadence_hours": 4.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "librarian sticker",
+        "library sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-10",
+      "mechanism_key": "spreadsheet_reflex_professional_identity",
+      "cadence_class": "HOT",
+      "cadence_hours": 4.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "spreadsheet sticker",
+        "finance sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-11",
+      "mechanism_key": "teacher_voice_authority_identity",
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
-      "last_observed_at": "2026-09-22T05:00:00+00:00",
-      "elapsed_hours": 4.224014870277777,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
       "query_family": [
-        "yarn sticker",
+        "teacher sticker",
+        "teacher voice sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-12",
+      "mechanism_key": "programmer_interruption_boundary",
+      "cadence_class": "WARM",
+      "cadence_hours": 12.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
+        "programmer sticker",
+        "developer sticker",
+        "coding sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    },
+    {
+      "watch_id": "watch-13",
+      "mechanism_key": "crochet_interruption_insider_humor",
+      "cadence_class": "WARM",
+      "cadence_hours": 12.0,
+      "last_observed_at": "2026-09-22T08:00:00+00:00",
+      "elapsed_hours": 1.3781006555555557,
+      "query_family": [
         "crochet sticker",
-        "knitting sticker"
+        "crochet humor sticker"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
