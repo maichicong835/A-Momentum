@@ -2,7 +2,8 @@ name: A-Momentum Public Runtime
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */4 * * *'
+    # TEMPORARY bounded canary: remove after first machine-proven schedule event.
+    - cron: '*/5 * * * *'
   push:
     branches: [main]
     paths:
