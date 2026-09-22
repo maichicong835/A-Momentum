@@ -2,7 +2,7 @@
   "engine": "A-Momentum",
   "engine_version": "0.1.2",
   "status": "CURRENT",
-  "cutover_state": "SECURE_CODE_ONLY_UPGRADE_PENDING_ACCEPTANCE",
+  "cutover_state": "PRODUCTION_READY",
   "canonical_repository": "maichicong835/A-Momentum",
   "canonical_branch": "main",
   "effective_from": "2026-09-22T07:06:00+07:00",
@@ -25,6 +25,6 @@
     "demo_observations": "examples/demo-observations.json",
     "demo_watchlist": "examples/demo-watchlist.json"
   },
-  "production_ready_from": null,
-  "production_acceptance": null
+  "production_ready_from": "2026-09-22T07:06:00+07:00",
+  "production_acceptance": "acceptance/production-v0.1.2.json"
 }
