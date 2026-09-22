@@ -1,0 +1,48 @@
+{
+  "schema": "A_MOMENTUM_TRIGGER_ROLE_PUBLICATION_ACCEPTANCE",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "observed_at": "2026-09-23",
+  "purpose": "PRESERVE_CONSUMER_VALUE_BY_SEPARATING_PUSH_VALIDATION_FROM_PRODUCTION_PUBLICATION",
+  "baseline_main_sha": "d5a1042cb4134ad69ba3aa30d2de4083b6e20254",
+  "previous_runtime_latest": {
+    "workflow_run_id": 35797208522,
+    "trigger": "push",
+    "sensor_result": "SENSOR_GAP_FALLBACK_REQUIRED",
+    "sensor_success_count": 0,
+    "sensor_gap_count": 4,
+    "receipt_sha256": "7c8c6871faffbdb318d31bc6d34bef3bad3b70a0e5a8aad9d54002f81560b62c"
+  },
+  "restored_last_good_scheduled_snapshot": {
+    "source_output_commit_sha": "f2d6da4e95cb163014e0639b72d2711728e7efd1",
+    "workflow_run_id": 35795077205,
+    "trigger": "schedule",
+    "sensor_result": "PASS_WITH_DATA",
+    "sensor_success_count": 11,
+    "sensor_gap_count": 4,
+    "receipt_sha256": "cfadceb579a67d1168146450146402cef240621851eef56315cf0a25ad540c79",
+    "credentials_used": false
+  },
+  "trigger_roles": {
+    "schedule": "PRODUCTION_PUBLISHER",
+    "workflow_dispatch": "OPERATOR_PRODUCTION_OR_RECOVERY_PUBLISHER",
+    "push": "VALIDATION_ONLY_NO_RUNTIME_LATEST_PUBLISH"
+  },
+  "invariants": {
+    "cron_unchanged": "17 */4 * * *",
+    "push_sensor_validation_preserved": true,
+    "push_artifact_upload_preserved": true,
+    "push_runtime_latest_mutation_forbidden": true,
+    "schedule_runtime_latest_publication_preserved": true,
+    "workflow_dispatch_publication_preserved": true,
+    "daily7_authority_unchanged": true,
+    "aver_authority_unchanged": true,
+    "credentials_boundary_unchanged": true
+  },
+  "next_machine_proof_required": [
+    "PR_REPOSITORY_GUARD_PASS",
+    "MERGE_EXACT_PROVEN_HEAD",
+    "POST_MERGE_PUSH_RUNTIME_SUCCESS",
+    "POST_MERGE_PUSH_DOES_NOT_CHANGE_RUNTIME_LATEST_SCHEDULED_WORKFLOW_RUN_ID_OR_RECEIPT_SHA"
+  ]
+}
