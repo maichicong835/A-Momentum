@@ -1,12 +1,13 @@
-name: Build Momentum Receipt
+name: Build Synthetic Momentum Receipt
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths:
-      - 'data/**'
+      - 'examples/**'
       - 'spec/**'
       - 'scripts/**'
+      - 'tests/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,11 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build receipt
+      - name: Build synthetic receipt
         run: python scripts/build_receipt.py --out momentum-receipt.json
-      - name: Upload receipt
+      - name: Upload synthetic receipt
         uses: actions/upload-artifact@v4
         with:
-          name: a-momentum-receipt
+          name: a-momentum-synthetic-receipt
           path: momentum-receipt.json
           if-no-files-found: error
