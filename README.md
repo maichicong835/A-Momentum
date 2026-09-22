@@ -1,19 +1,19 @@
 # A-Momentum
 
-Temporal benchmark and commercial-source intelligence layer for AMZ Ideas.
+Temporal benchmark engine for market/query/mechanism movement. This public repository is intentionally **code-only**.
 
-A-Momentum is intentionally separate from Daily7 and A-Ver:
-- **A-Momentum** measures market/query/mechanism movement and maintains quality commercial fallback pools.
-- **Daily7** selects and qualifies the daily seven W/H source ideas.
-- **A-Ver** resolves trademark evidence.
+A-Momentum accepts runtime observations, watchlists and fallback-pool data supplied by a private consumer repository. The public repository stores only generic engine code, schemas, tests, documentation and synthetic fixtures.
 
-A-Momentum never performs trademark clearance, never selects the final Daily7 Primary 7, never acquires/focuses source images, and never mutates Google Drive, Used Ideas, or Reserve.
+A-Momentum never performs trademark clearance, never selects a final portfolio, never acquires source images, and never mutates downstream delivery systems.
 
+## Observation pipeline
 
-## Observation pipeline v0.1.1
+Observations are append-only and aggregate only when they share the same entity, surface and proxy. Native platform history may contribute multiple timepoints immediately; snapshot-only production data is accumulated outside this repository and passed to the builder through CLI paths.
 
-A-Momentum keeps observations append-only and aggregates only comparable points sharing the same entity, surface, and proxy. Native platform history may contribute multiple timepoints immediately. Snapshot-only sources accumulate through `data/observations/*.json`.
+A single observation never proves growth. Two comparable timepoints may establish velocity; three are required before acceleration can be measured. A single non-commerce accelerating series is not enough for `ACCELERATING_CONFIRMED`; confirmation requires either a strong commerce acceleration series or acceleration on at least two independent surfaces.
 
-The watchlist uses adaptive cadence: HOT mechanisms default to 4 hours and WARM mechanisms to 12 hours. Not-due entries are skipped. The fallback pool is maintained separately from temporal state and is never launch authorization.
+## Public/private boundary
 
-A single non-commerce accelerating series is not enough for `ACCELERATING_CONFIRMED`. Confirmation requires either a strong commerce acceleration series or acceleration on at least two independent surfaces.
+Production watchlists, proprietary query families, commercial quality pools, market observations, source references, marketplace object identifiers tied to a private strategy, credentials and session data must not be committed here. See `SECURITY.md`.
+
+The files under `examples/` are synthetic fixtures only and are not market evidence.
