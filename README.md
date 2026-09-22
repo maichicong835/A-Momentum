@@ -1,19 +1,19 @@
 # A-Momentum
 
-Temporal benchmark engine for market/query/mechanism movement. This public repository is intentionally **code-only**.
+A-Momentum is the independent temporal/commercial-intelligence provider for AMZ Ideas Daily7.
 
-A-Momentum accepts runtime observations, watchlists and fallback-pool data supplied by a private consumer repository. The public repository stores only generic engine code, schemas, tests, documentation and synthetic fixtures.
+A-Momentum owns temporal sensing, comparable-series analysis and a commercial quality fallback pool. It does **not** select Daily7 Primary/Reserve portfolios, perform trademark clearance, acquire source images, run IDEA_FOCUS, mutate Google Drive, or mutate Daily7 Used/Reserve ledgers. Daily7 is a consumer; A-Ver remains the trademark evidence authority.
 
-A-Momentum never performs trademark clearance, never selects a final portfolio, never acquires source images, and never mutates downstream delivery systems.
+## Public runtime
 
-## Observation pipeline
+Starting with v0.2.0, production runtime executes here. Business watchlists, query families, sanitized observations, quality-pool data and Momentum receipts may be public. The hot scheduler runs every four hours in `.github/workflows/runtime.yml`.
 
-Observations are append-only and aggregate only when they share the same entity, surface and proxy. Native platform history may contribute multiple timepoints immediately; snapshot-only production data is accumulated outside this repository and passed to the builder through CLI paths.
+The first active external sensor is Google Trends native history. It removes partial rows, requires a contiguous hourly tail, aggregates non-overlapping completed 24-hour means, and requires at least three completed blocks for acceleration-capable analysis. Provider/shape failure is `SENSOR_GAP`, never zero demand. Other declared surfaces are not active collectors until machine-proven.
 
-A single observation never proves growth. Two comparable timepoints may establish velocity; three are required before acceleration can be measured. A single non-commerce accelerating series is not enough for `ACCELERATING_CONFIRMED`; confirmation requires either a strong commerce acceleration series or acceleration on at least two independent surfaces.
+## Credential boundary
 
-## Public/private boundary
+Public runtime does not mean public credentials. Credentials, tokens, cookies, session data, API keys, passwords, OAuth tokens, private keys and secret-bearing signed URLs must never be committed, logged, cached or uploaded as artifacts. Future authenticated sensors may receive secrets only through GitHub Actions/Environment secrets with least privilege. The current Google Trends sensor uses no credential. Google Drive credentials remain exclusively with Daily7.
 
-Production watchlists, proprietary query families, commercial quality pools, market observations, source references, marketplace object identifiers tied to a private strategy, credentials and session data must not be committed here. See `SECURITY.md`.
+## Receipt consumption
 
-The files under `examples/` are synthetic fixtures only and are not market evidence.
+`runtime/latest/receipt.json` is a discovery pointer, not immutable Daily7 authority. Each Daily7 run must freeze the exact provider-output commit and SHA-256 of the receipt it consumes. Provider failure falls back to F5 direct Daily7 discovery.

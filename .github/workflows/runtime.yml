@@ -1,0 +1,90 @@
+name: A-Momentum Public Runtime
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */4 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'CURRENT.json'
+      - 'spec/**'
+      - 'scripts/build_receipt.py'
+      - 'scripts/due.py'
+      - 'scripts/google_trends.py'
+      - 'scripts/security_scan.py'
+      - 'runtime/watchlist.json'
+      - 'runtime/quality-pool.json'
+      - 'runtime/bootstrap-observations.json'
+      - '.github/workflows/runtime.yml'
+permissions:
+  contents: write
+concurrency:
+  group: a-momentum-public-runtime
+  cancel-in-progress: false
+jobs:
+  runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Credential scan before execution
+        run: python scripts/security_scan.py --repository
+      - name: Install sensor dependencies
+        run: python -m pip install --disable-pip-version-check 'pytrends==4.9.2' 'pandas>=2.2,<3'
+      - name: Prove completed-24h aggregation locally
+        run: python scripts/google_trends.py --self-test
+      - name: Plan due observations
+        run: |
+          mkdir -p runtime/latest
+          python scripts/due.py --watchlist runtime/watchlist.json --bootstrap runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --out runtime/latest/due-plan.json
+      - name: Collect Google Trends native history
+        run: |
+          python scripts/google_trends.py --due-plan runtime/latest/due-plan.json --out runtime/latest/google-trends-observations.json --status-out runtime/latest/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 15
+      - name: Build sanitized Momentum receipt
+        run: |
+          python scripts/build_receipt.py --observations runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --pool runtime/quality-pool.json --engine-commit-sha "$GITHUB_SHA" --out runtime/latest/receipt.json
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          receipt=Path('runtime/latest/receipt.json'); sensor=json.loads(Path('runtime/latest/sensor-status.json').read_text())
+          index={'schema':'A_MOMENTUM_PUBLIC_RUNTIME_INDEX','engine_version':'0.2.0','provider_engine_commit_sha':os.environ['GITHUB_SHA'],'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'receipt_path':'runtime/latest/receipt.json','receipt_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest(),'sensor_result':sensor['result'],'sensor_success_count':sensor['success_count'],'sensor_gap_count':sensor['gap_count'],'credentials_used':False}
+          Path('runtime/latest/index.json').write_text(json.dumps(index,indent=2)+'\n')
+          print('A_MOMENTUM_RECEIPT_SHA256',index['receipt_sha256']); print('A_MOMENTUM_SENSOR_RESULT',index['sensor_result'])
+          PY
+      - name: Secret scan public outputs
+        run: python scripts/security_scan.py --runtime-output runtime/latest
+      - name: Validate output contract
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('runtime/latest/receipt.json')); i=json.load(open('runtime/latest/index.json')); s=json.load(open('runtime/latest/sensor-status.json'))
+          assert r['engine_version']==i['engine_version']==s['engine_version']=='0.2.0'
+          assert r['engine_commit_sha']==i['provider_engine_commit_sha']
+          assert i['credentials_used'] is False and s['credentials_used'] is False
+          assert r['fallback_pool_status']['status']=='PASS'
+          assert s['provider_failure_is_zero_demand'] is False
+          assert s['result'] in {'PASS_WITH_DATA','SENSOR_GAP_FALLBACK_REQUIRED'}
+          print('A_MOMENTUM_PUBLIC_RUNTIME_CONTRACT_PASS',s['result'])
+          PY
+      - name: Publish latest sanitized runtime snapshot
+        run: |
+          git config user.name 'a-momentum-runtime[bot]'
+          git config user.email 'a-momentum-runtime[bot]@users.noreply.github.com'
+          git add runtime/latest/due-plan.json runtime/latest/google-trends-observations.json runtime/latest/sensor-status.json runtime/latest/receipt.json runtime/latest/index.json
+          if git diff --cached --quiet; then echo A_MOMENTUM_RUNTIME_NO_OUTPUT_CHANGE; exit 0; fi
+          git commit -m "Publish A-Momentum runtime receipt $GITHUB_RUN_ID"
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a-momentum-public-runtime
+          path: |
+            runtime/latest/index.json
+            runtime/latest/sensor-status.json
+            runtime/latest/receipt.json
+          if-no-files-found: error
+          retention-days: 30
