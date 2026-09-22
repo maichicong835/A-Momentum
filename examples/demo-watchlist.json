@@ -1,0 +1,254 @@
+{
+  "schema": "A_MOMENTUM_WATCHLIST",
+  "engine_version": "0.1.2",
+  "as_of": "2026-01-01T00:00:00+00:00",
+  "policy": {
+    "hot_cadence_hours": 4,
+    "warm_cadence_hours": 12,
+    "adaptive_skip_if_not_due": true,
+    "price_unit_economics_forbidden": true,
+    "social_only_supporting": true,
+    "same_proxy_only": true
+  },
+  "entries": [
+    {
+      "watch_id": "example-watch-01",
+      "mechanism_key": "example-mechanism-01",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 1"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-02",
+      "mechanism_key": "example-mechanism-02",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 2"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-03",
+      "mechanism_key": "example-mechanism-03",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 3"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-04",
+      "mechanism_key": "example-mechanism-04",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 4"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-05",
+      "mechanism_key": "example-mechanism-05",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 5"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-06",
+      "mechanism_key": "example-mechanism-06",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 6"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-07",
+      "mechanism_key": "example-mechanism-07",
+      "cadence_class": "HOT",
+      "cadence_hours": 4,
+      "query_family": [
+        "example query 7"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-08",
+      "mechanism_key": "example-mechanism-08",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 8"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-09",
+      "mechanism_key": "example-mechanism-09",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 9"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-10",
+      "mechanism_key": "example-mechanism-10",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 10"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-11",
+      "mechanism_key": "example-mechanism-11",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 11"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-12",
+      "mechanism_key": "example-mechanism-12",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 12"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-13",
+      "mechanism_key": "example-mechanism-13",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 13"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-14",
+      "mechanism_key": "example-mechanism-14",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 14"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    }
+  ],
+  "count": 14
+}
