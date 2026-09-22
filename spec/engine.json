@@ -1,6 +1,6 @@
 {
   "schema": "AMZ_A_MOMENTUM_ENGINE",
-  "engine_version": "0.1.1",
+  "engine_version": "0.1.2",
   "purpose": "PROVIDE_PRE_DAILY7_TEMPORAL_BENCHMARK_AND_QUALITY_COMMERCIAL_FALLBACK_WITHOUT_BECOMING_SELECTION_OR_SAFETY_AUTHORITY",
   "entities": [
     "QUERY_FAMILY",
@@ -128,13 +128,14 @@
     "novelty_recheck_required_at_daily7_use": true,
     "safety_recheck_required_downstream": true,
     "proactive_replenishment_below": 14,
-    "replenishment_target": 18
+    "replenishment_target": 18,
+    "stored_in_public_repo": false
   },
   "observation_pipeline": {
     "append_only": true,
-    "bootstrap_path": "data/bootstrap-observations.json",
-    "append_root": "data/observations",
-    "watchlist_path": "data/watchlist.json",
+    "bootstrap_path": "EXTERNAL_RUNTIME_ARG",
+    "append_root": "EXTERNAL_RUNTIME_ARG",
+    "watchlist_path": "EXTERNAL_PRIVATE_CONSUMER_DATA",
     "grouping_key": [
       "entity_type",
       "entity_key",
@@ -147,5 +148,25 @@
     "due_polling_is_adaptive": true,
     "due_polling_may_skip_not_due_entries": true,
     "sensor_gap_is_not_zero_demand": true
+  },
+  "runtime_data_boundary": {
+    "public_repository_mode": "CODE_ONLY",
+    "production_runtime_data_location": "EXTERNAL_PRIVATE_CONSUMER_REPOSITORY",
+    "public_repo_allowed": [
+      "GENERIC_CODE",
+      "SCHEMAS",
+      "TESTS",
+      "DOCUMENTATION",
+      "SYNTHETIC_FIXTURES"
+    ],
+    "public_repo_forbidden": [
+      "PRODUCTION_WATCHLISTS",
+      "PROPRIETARY_QUERY_FAMILIES",
+      "COMMERCIAL_QUALITY_POOLS",
+      "MARKET_OBSERVATIONS",
+      "SOURCE_REFERENCES",
+      "CREDENTIALS_OR_SESSION_DATA"
+    ],
+    "engine_accepts_runtime_paths_via_cli": true
   }
 }
