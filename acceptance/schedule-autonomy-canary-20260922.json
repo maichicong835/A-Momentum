@@ -1,0 +1,67 @@
+{
+  "schema": "A_MOMENTUM_SCHEDULE_AUTONOMY_DIAGNOSTIC",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "observed_at": "2026-09-22T16:31:39+07:00",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "repository": "maichicong835/A-Momentum",
+  "workflow": ".github/workflows/runtime.yml",
+  "workflow_id": 363988333,
+  "baseline": {
+    "production_cron": "17 */4 * * *",
+    "production_push_run_id": 35696384849,
+    "production_push_result": "SUCCESS",
+    "original_expected_schedule_window_utc": "2026-09-22T08:17:00Z",
+    "schedule_event_observed": false
+  },
+  "bounded_canary": [
+    {
+      "pr": 11,
+      "merge_commit": "4c10d3060ae503aa8cccf04264f531a72d58413a",
+      "cron": "*/5 * * * *",
+      "push_runtime_run_id": 35709130025,
+      "push_runtime_result": "SUCCESS",
+      "observed_expected_boundaries_utc": [
+        "2026-09-22T09:15:00Z",
+        "2026-09-22T09:20:00Z"
+      ],
+      "schedule_event_observed": false
+    },
+    {
+      "pr": 12,
+      "merge_commit": "a73eb409a9f384630a7e02190bc9b3aab9a77daf",
+      "cron": "3-58/5 * * * *",
+      "push_runtime_run_id": 35709999872,
+      "push_runtime_result": "SUCCESS",
+      "observed_expected_boundaries_utc": [
+        "2026-09-22T09:23:00Z",
+        "2026-09-22T09:28:00Z"
+      ],
+      "observation_cutoff_utc": "2026-09-22T09:30:37Z",
+      "schedule_event_observed": false
+    }
+  ],
+  "controls": {
+    "workflow_exists_on_default_branch": true,
+    "default_branch": "main",
+    "repository_public": true,
+    "repository_disabled": false,
+    "repository_recent_activity": true,
+    "repository_guard_passed_for_canary_changes": true,
+    "push_trigger_runtime_machine_proven": true,
+    "credential_exposure_detected": false,
+    "schedule_canary_left_active": false
+  },
+  "classification": "HOLD_GITHUB_SCHEDULE_DISPATCH_UNPROVEN",
+  "interpretation": "No schedule-triggered workflow run was observed during the bounded diagnostic. Push-triggered runtime remained healthy. Do not infer sensor or engine failure from schedule dispatch absence.",
+  "production_restore": {
+    "cron": "17 */4 * * *",
+    "runtime_owner": "A-Momentum",
+    "parallel_scheduler_in_daily7_forbidden": true
+  },
+  "daily7_effect": {
+    "blocks_daily7": false,
+    "fallback": "F5_DIRECT_DAILY7_DISCOVERY",
+    "stale_or_unavailable_receipt_is_not_zero_demand": true
+  }
+}
