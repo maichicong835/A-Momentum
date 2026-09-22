@@ -1,0 +1,24 @@
+{
+  "schema": "A_MOMENTUM_ACCEPTANCE",
+  "engine_version": "0.1.2",
+  "accepted_at": "2026-09-22T07:06:00+07:00",
+  "acceptance_type": "PUBLIC_CODE_ONLY_SECURITY_CUTOVER",
+  "canonical_pre_acceptance_sha": "4b804c827d3fda7dd0c3c67faff1b698fba8542c",
+  "repository_guard_run_id": 35671021036,
+  "repository_guard_job_id": 106567260882,
+  "repository_guard_conclusion": "success",
+  "synthetic_build_run_id": 35671021071,
+  "synthetic_build_job_id": 106567260001,
+  "security_boundary": {
+    "public_code_only": true,
+    "runtime_business_data_storage": false,
+    "production_runtime_data_external_private": true,
+    "production_watchlists_removed_from_current_main": true,
+    "production_quality_pool_removed_from_current_main": true,
+    "production_observations_removed_from_current_main": true,
+    "credentials_public_forbidden": true,
+    "historical_git_history_purged": false,
+    "note": "Current main is sanitized. Earlier public commits are still reachable unless repository history is rewritten."
+  },
+  "result": "PASS_PRODUCTION_READY_CODE_ONLY"
+}
