@@ -2,13 +2,13 @@
   "schema": "A_MOMENTUM_SENSOR_STATUS",
   "surface": "GOOGLE_TRENDS",
   "engine_version": "0.2.0",
-  "as_of": "2026-09-22T16:59:04.910275+00:00",
-  "due_count": 12,
-  "success_count": 0,
-  "gap_count": 12,
+  "as_of": "2026-09-22T22:58:06.952795+00:00",
+  "due_count": 15,
+  "success_count": 11,
+  "gap_count": 4,
   "aggregation": "NON_OVERLAPPING_COMPLETED_24H_MEAN",
   "minimum_blocks": 3,
   "provider_failure_is_zero_demand": false,
   "credentials_used": false,
-  "result": "SENSOR_GAP_FALLBACK_REQUIRED"
+  "result": "PASS_WITH_DATA"
 }
