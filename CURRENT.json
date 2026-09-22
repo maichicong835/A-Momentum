@@ -1,29 +1,30 @@
 {
   "engine": "A-Momentum",
-  "engine_version": "0.1.1",
+  "engine_version": "0.1.2",
   "status": "CURRENT",
-  "cutover_state": "OBSERVATION_PIPELINE_UPGRADE_PENDING_ACCEPTANCE",
+  "cutover_state": "SECURE_CODE_ONLY_UPGRADE_PENDING_ACCEPTANCE",
   "canonical_repository": "maichicong835/A-Momentum",
   "canonical_branch": "main",
-  "effective_from": "2026-09-20T14:12:06+07:00",
+  "effective_from": "2026-09-22T07:06:00+07:00",
   "roles": {
     "temporal_truth": true,
     "commercial_fallback_pool": true,
     "daily7_final_selection": false,
     "trademark_clearance": false,
     "source_acquisition": false,
-    "drive_mutation": false
+    "drive_mutation": false,
+    "runtime_business_data_storage": false,
+    "public_code_only": true
   },
   "runtime_paths": {
     "machine_contract": "spec/engine.json",
     "observation_schema": "spec/observation.schema.json",
     "receipt_schema": "spec/receipt.schema.json",
     "builder": "scripts/build_receipt.py",
-    "quality_pool": "data/commercial-quality-pool.json",
-    "bootstrap_observations": "data/bootstrap-observations.json",
-    "watchlist": "data/watchlist.json",
-    "observation_append_root": "data/observations"
+    "demo_quality_pool": "examples/demo-quality-pool.json",
+    "demo_observations": "examples/demo-observations.json",
+    "demo_watchlist": "examples/demo-watchlist.json"
   },
   "production_ready_from": null,
-  "production_acceptance": "acceptance/production-v0.1.0.json"
+  "production_acceptance": null
 }

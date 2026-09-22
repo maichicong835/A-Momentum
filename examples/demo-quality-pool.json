@@ -1,0 +1,207 @@
+{
+  "schema": "A_MOMENTUM_COMMERCIAL_QUALITY_POOL",
+  "engine_version": "0.1.2",
+  "as_of": "2026-01-01T00:00:00+00:00",
+  "authority": "SYNTHETIC_FIXTURE_ONLY",
+  "entries": [
+    {
+      "pool_id": "example-pool-01",
+      "mechanism_key": "example-mechanism-01",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 1"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-02",
+      "mechanism_key": "example-mechanism-02",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 2"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-03",
+      "mechanism_key": "example-mechanism-03",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 3"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-04",
+      "mechanism_key": "example-mechanism-04",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 4"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-05",
+      "mechanism_key": "example-mechanism-05",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 5"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-06",
+      "mechanism_key": "example-mechanism-06",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 6"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-07",
+      "mechanism_key": "example-mechanism-07",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 7"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-08",
+      "mechanism_key": "example-mechanism-08",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 8"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-09",
+      "mechanism_key": "example-mechanism-09",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 9"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-10",
+      "mechanism_key": "example-mechanism-10",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 10"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-11",
+      "mechanism_key": "example-mechanism-11",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 11"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-12",
+      "mechanism_key": "example-mechanism-12",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 12"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-13",
+      "mechanism_key": "example-mechanism-13",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 13"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    },
+    {
+      "pool_id": "example-pool-14",
+      "mechanism_key": "example-mechanism-14",
+      "buyer_segment": "synthetic-example-segment",
+      "query_family": [
+        "example query 14"
+      ],
+      "evidence_origin": "SYNTHETIC_FIXTURE",
+      "temporal_state": "MOMENTUM_UNPROVEN",
+      "daily7_use_requires": [
+        "EXAMPLE_ONLY"
+      ],
+      "launch_authorization": false
+    }
+  ],
+  "count": 14,
+  "minimum_pool_target": 14,
+  "pool_status": "SYNTHETIC_FIXTURE"
+}

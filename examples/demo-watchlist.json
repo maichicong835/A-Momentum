@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_WATCHLIST",
-  "engine_version": "0.1.1",
-  "as_of": "2026-09-20T14:12:06+07:00",
+  "engine_version": "0.1.2",
+  "as_of": "2026-01-01T00:00:00+00:00",
   "policy": {
     "hot_cadence_hours": 4,
     "warm_cadence_hours": 12,
@@ -12,14 +12,12 @@
   },
   "entries": [
     {
-      "watch_id": "watch-01",
-      "mechanism_key": "accountant_spreadsheet_frustration",
+      "watch_id": "example-watch-01",
+      "mechanism_key": "example-mechanism-01",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "accountant sticker",
-        "spreadsheet sticker",
-        "bookkeeper sticker"
+        "example query 1"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -31,13 +29,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-02",
-      "mechanism_key": "engineering_stress_wordplay",
+      "watch_id": "example-watch-02",
+      "mechanism_key": "example-mechanism-02",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "engineer sticker",
-        "engineering humor sticker"
+        "example query 2"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -49,13 +46,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-03",
-      "mechanism_key": "dog_parent_dramatic_personality",
+      "watch_id": "example-watch-03",
+      "mechanism_key": "example-mechanism-03",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "dog parent sticker",
-        "funny dog sticker"
+        "example query 3"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -67,13 +63,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-04",
-      "mechanism_key": "pickleball_dink_insider_pun",
+      "watch_id": "example-watch-04",
+      "mechanism_key": "example-mechanism-04",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "pickleball sticker",
-        "dink sticker"
+        "example query 4"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -85,14 +80,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-05",
-      "mechanism_key": "bookish_emotional_damage_five_star",
+      "watch_id": "example-watch-05",
+      "mechanism_key": "example-mechanism-05",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "bookish sticker",
-        "book lover sticker",
-        "reader sticker"
+        "example query 5"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -104,14 +97,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-06",
-      "mechanism_key": "physical_therapy_anatomy_pun",
+      "watch_id": "example-watch-06",
+      "mechanism_key": "example-mechanism-06",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "physical therapist sticker",
-        "anatomy sticker",
-        "psoas sticker"
+        "example query 6"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -123,13 +114,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-07",
-      "mechanism_key": "engineer_coffee_problem_solving",
+      "watch_id": "example-watch-07",
+      "mechanism_key": "example-mechanism-07",
       "cadence_class": "HOT",
       "cadence_hours": 4,
       "query_family": [
-        "engineer sticker",
-        "coffee engineer sticker"
+        "example query 7"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -141,67 +131,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-08",
-      "mechanism_key": "lawyer_billable_hour_humor",
-      "cadence_class": "HOT",
-      "cadence_hours": 4,
-      "query_family": [
-        "lawyer sticker",
-        "legal humor sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ],
-      "state": "ACTIVE"
-    },
-    {
-      "watch_id": "watch-09",
-      "mechanism_key": "librarian_expertise_identity",
-      "cadence_class": "HOT",
-      "cadence_hours": 4,
-      "query_family": [
-        "librarian sticker",
-        "library sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ],
-      "state": "ACTIVE"
-    },
-    {
-      "watch_id": "watch-10",
-      "mechanism_key": "spreadsheet_reflex_professional_identity",
-      "cadence_class": "HOT",
-      "cadence_hours": 4,
-      "query_family": [
-        "spreadsheet sticker",
-        "finance sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ],
-      "state": "ACTIVE"
-    },
-    {
-      "watch_id": "watch-11",
-      "mechanism_key": "teacher_voice_authority_identity",
+      "watch_id": "example-watch-08",
+      "mechanism_key": "example-mechanism-08",
       "cadence_class": "WARM",
       "cadence_hours": 12,
       "query_family": [
-        "teacher sticker",
-        "teacher voice sticker"
+        "example query 8"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -213,14 +148,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-12",
-      "mechanism_key": "programmer_interruption_boundary",
+      "watch_id": "example-watch-09",
+      "mechanism_key": "example-mechanism-09",
       "cadence_class": "WARM",
       "cadence_hours": 12,
       "query_family": [
-        "programmer sticker",
-        "developer sticker",
-        "coding sticker"
+        "example query 9"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -232,13 +165,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-13",
-      "mechanism_key": "crochet_interruption_insider_humor",
+      "watch_id": "example-watch-10",
+      "mechanism_key": "example-mechanism-10",
       "cadence_class": "WARM",
       "cadence_hours": 12,
       "query_family": [
-        "crochet sticker",
-        "crochet humor sticker"
+        "example query 10"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -250,14 +182,12 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-14",
-      "mechanism_key": "emotional_support_yarn_identity",
+      "watch_id": "example-watch-11",
+      "mechanism_key": "example-mechanism-11",
       "cadence_class": "WARM",
       "cadence_hours": 12,
       "query_family": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
+        "example query 11"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -269,14 +199,46 @@
       "state": "ACTIVE"
     },
     {
-      "watch_id": "watch-15",
-      "mechanism_key": "accounting_caffeine_work_identity",
+      "watch_id": "example-watch-12",
+      "mechanism_key": "example-mechanism-12",
       "cadence_class": "WARM",
       "cadence_hours": 12,
       "query_family": [
-        "accountant sticker",
-        "CPA sticker",
-        "bookkeeper sticker"
+        "example query 12"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-13",
+      "mechanism_key": "example-mechanism-13",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 13"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "watch_id": "example-watch-14",
+      "mechanism_key": "example-mechanism-14",
+      "cadence_class": "WARM",
+      "cadence_hours": 12,
+      "query_family": [
+        "example query 14"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -288,5 +250,5 @@
       "state": "ACTIVE"
     }
   ],
-  "count": 15
+  "count": 14
 }
