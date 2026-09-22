@@ -1,0 +1,12 @@
+{
+  "schema": "A_MOMENTUM_PUBLIC_RUNTIME_INDEX",
+  "engine_version": "0.2.0",
+  "provider_engine_commit_sha": "f167b6cf981028675f0d7085e02b6ed2547edefe",
+  "workflow_run_id": 35696164985,
+  "receipt_path": "runtime/latest/receipt.json",
+  "receipt_sha256": "80ea05c2c4db6241062df8b83fc980e8cd9f2592d9b3e9f4cbdbb643eb4583d0",
+  "sensor_result": "PASS_WITH_DATA",
+  "sensor_success_count": 6,
+  "sensor_gap_count": 9,
+  "credentials_used": false
+}
