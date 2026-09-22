@@ -1,0 +1,55 @@
+{
+  "schema": "A_MOMENTUM_ACCEPTANCE",
+  "engine_version": "0.2.0",
+  "accepted_at": "2026-09-22T13:44:53+07:00",
+  "acceptance_type": "PUBLIC_RUNTIME_AND_CREDENTIAL_ISOLATION_CUTOVER",
+  "candidate": {
+    "pull_request": 9,
+    "branch_head_sha": "bb98d21dc105c92fe154fefed34de0fb5bd832be",
+    "merged_engine_sha": "f167b6cf981028675f0d7085e02b6ed2547edefe",
+    "published_output_commit_sha": "c633b36b96871c75ff18e52bcf5358bd848768c2"
+  },
+  "machine_evidence": {
+    "pull_request_guard_run_id": 35696136901,
+    "pull_request_guard_conclusion": "success",
+    "main_repository_guard_run_id": 35696165004,
+    "main_repository_guard_conclusion": "success",
+    "synthetic_build_run_id": 35696165007,
+    "synthetic_build_conclusion": "success",
+    "public_runtime_run_id": 35696164985,
+    "public_runtime_conclusion": "success",
+    "runtime_artifact_id": 10679934101,
+    "runtime_artifact_digest": "sha256:8372644f1f0eba0e1a934dcd8245fd79c44ce60f4545e2b72690cdfb63d2a523",
+    "receipt_sha256": "80ea05c2c4db6241062df8b83fc980e8cd9f2592d9b3e9f4cbdbb643eb4583d0"
+  },
+  "sensor_proof": {
+    "surface": "GOOGLE_TRENDS",
+    "result": "PASS_WITH_DATA",
+    "due_count": 15,
+    "success_count": 6,
+    "gap_count": 9,
+    "aggregation": "NON_OVERLAPPING_COMPLETED_24H_MEAN",
+    "minimum_blocks": 3,
+    "provider_failure_is_zero_demand": false,
+    "credentials_used": false
+  },
+  "credential_boundary": {
+    "public_runtime_allowed": true,
+    "public_business_data_allowed": true,
+    "credential_repository_storage": false,
+    "github_actions_or_environment_secrets_only_when_needed": true,
+    "current_google_trends_requires_credentials": false,
+    "repository_credential_scan_passed": true,
+    "runtime_output_secret_scan_passed": true,
+    "google_drive_credentials_available_to_amomentum": false
+  },
+  "authority_boundary": {
+    "daily7_final_selection": false,
+    "trademark_clearance": false,
+    "source_acquisition": false,
+    "idea_focus": false,
+    "drive_mutation": false,
+    "daily7_used_reserve_mutation": false
+  },
+  "result": "PASS_PRODUCTION_READY"
+}

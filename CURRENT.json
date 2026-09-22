@@ -1,11 +1,11 @@
 {
   "engine": "A-Momentum",
   "engine_version": "0.2.0",
-  "status": "CUTOVER_CANDIDATE",
-  "cutover_state": "RUNTIME_REHEARSAL_REQUIRED",
+  "status": "CURRENT",
+  "cutover_state": "PRODUCTION_READY",
   "canonical_repository": "maichicong835/A-Momentum",
   "canonical_branch": "main",
-  "effective_from": "2026-09-22T13:40:00+07:00",
+  "effective_from": "2026-09-22T13:44:53+07:00",
   "roles": {
     "temporal_truth": true,
     "commercial_fallback_pool": true,
@@ -34,8 +34,8 @@
     "latest_index": "runtime/latest/index.json",
     "runtime_workflow": ".github/workflows/runtime.yml"
   },
-  "production_ready_from": null,
-  "production_acceptance": null,
+  "production_ready_from": "2026-09-22T13:44:53+07:00",
+  "production_acceptance": "acceptance/production-v0.2.0.json",
   "cutover_gate": {
     "required": [
       "REPOSITORY_GUARD_PASS",
