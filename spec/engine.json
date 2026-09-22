@@ -211,6 +211,19 @@
       "failure_semantics": "SENSOR_GAP_NOT_ZERO_DEMAND"
     },
     "other_declared_surfaces_are_not_active_collectors_until_machine_proven": true,
-    "runtime_failure_may_not_block_daily7": true
+    "runtime_failure_may_not_block_daily7": true,
+    "trigger_roles": {
+      "schedule": "PRODUCTION_PUBLISHER",
+      "workflow_dispatch": "OPERATOR_PRODUCTION_OR_RECOVERY_PUBLISHER",
+      "push": "VALIDATION_ONLY_NO_RUNTIME_LATEST_PUBLISH"
+    },
+    "publication_policy": {
+      "runtime_latest_is_consumer_discovery_pointer": true,
+      "push_may_execute_sensor_and_contract_validation": true,
+      "push_may_upload_workflow_artifact": true,
+      "push_may_publish_runtime_latest": false,
+      "schedule_may_publish_runtime_latest": true,
+      "workflow_dispatch_may_publish_runtime_latest": true
+    }
   }
 }
