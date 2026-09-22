@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # TEMPORARY bounded canary: remove after first machine-proven schedule event.
-    - cron: '*/5 * * * *'
+    - cron: '3-58/5 * * * *'
   push:
     branches: [main]
     paths:
