@@ -46,5 +46,15 @@
       "NO_CREDENTIAL_EXPOSURE_DETECTED"
     ],
     "daily7_cutover_before_gate_pass_forbidden": true
+  },
+  "schedule_autonomy": {
+    "production_cron": "17 */4 * * *",
+    "schedule_event_machine_proven": false,
+    "state": "HOLD_GITHUB_SCHEDULE_DISPATCH_UNPROVEN",
+    "diagnostic_receipt": "acceptance/schedule-autonomy-canary-20260922.json",
+    "push_runtime_machine_proven": true,
+    "public_runtime_receipt_machine_proven": true,
+    "provider_failure_blocks_daily7": false,
+    "daily7_fallback_when_receipt_stale_or_unavailable": "F5_DIRECT_DAILY7_DISCOVERY"
   }
 }
