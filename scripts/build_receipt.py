@@ -4,7 +4,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-ENGINE_VERSION="0.1.2"
+ENGINE_VERSION="0.1.3"
 STRONG_COMMERCE={"AMAZON","ETSY"}
 
 def dt(s):
@@ -20,19 +20,40 @@ def interval_velocity(p0,p1):
 def analyze_series(points):
     pts=sorted(points,key=lambda x:dt(x["t"]))
     out={"timepoints":len(pts),"velocity":None,"normalized_velocity":None,"acceleration":None,"series_state":"MOMENTUM_UNPROVEN"}
-    if len(pts)<2:return out
+    if len(pts)<2:
+        return out
+    values=[float(p["value"]) for p in pts]
+    # A zero-only normalized trend series means the provider has insufficient
+    # measurable interest for this proxy. It is not evidence of decline.
+    if all(abs(v)<1e-12 for v in values):
+        return out
     v,n=interval_velocity(pts[-2],pts[-1]); out["velocity"]=v; out["normalized_velocity"]=n
     if len(pts)==2:
-        out["series_state"]="POSITIVE_VELOCITY" if v>0 else ("STABLE" if abs(v)<1e-12 else "DECELERATING")
+        if v>0:
+            out["series_state"]="POSITIVE_VELOCITY"
+        elif v<0:
+            out["series_state"]="DECELERATING"
+        else:
+            out["series_state"]="STABLE" if values[-1]>0 else "MOMENTUM_UNPROVEN"
         return out
     _,n0=interval_velocity(pts[-3],pts[-2]); v1,n1=interval_velocity(pts[-2],pts[-1])
     if n0 is not None and n1 is not None:
         out["acceleration"]=n1-n0
-        if v1>0 and out["acceleration"]>0: out["series_state"]="POSITIVE_ACCELERATION"
-        elif abs(v1)<1e-12: out["series_state"]="STABLE"
-        else: out["series_state"]="DECELERATING"
+        if v1>0 and out["acceleration"]>0:
+            out["series_state"]="POSITIVE_ACCELERATION"
+        elif v1>0:
+            out["series_state"]="POSITIVE_VELOCITY"
+        elif v1<0:
+            out["series_state"]="DECELERATING"
+        else:
+            out["series_state"]="STABLE" if values[-1]>0 else "MOMENTUM_UNPROVEN"
     else:
-        out["series_state"]="POSITIVE_VELOCITY" if v1>0 else "DECELERATING"
+        if v1>0:
+            out["series_state"]="POSITIVE_VELOCITY"
+        elif v1<0:
+            out["series_state"]="DECELERATING"
+        else:
+            out["series_state"]="STABLE" if values[-1]>0 else "MOMENTUM_UNPROVEN"
     return out
 
 def load(path):
