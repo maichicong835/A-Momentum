@@ -1,0 +1,72 @@
+{
+  "schema": "A_MOMENTUM_SCHEDULE_AUTONOMY_CLOSURE",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "observed_at": "2026-09-23T06:20:26+07:00",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "repository": "maichicong835/A-Momentum",
+  "workflow": ".github/workflows/runtime.yml",
+  "production_cron": "17 */4 * * *",
+  "historical_diagnostic_receipt": "acceptance/schedule-autonomy-canary-20260922.json",
+  "historical_diagnostic_preserved": true,
+  "schedule_event_machine_proven": true,
+  "classification": "MACHINE_PROVEN_WITH_PROVIDER_DELAY",
+  "schedule_runs": [
+    {
+      "run_id": 35757662984,
+      "event": "schedule",
+      "conclusion": "success",
+      "created_at": "2026-09-22T16:58:51Z",
+      "run_started_at": "2026-09-22T16:58:51Z",
+      "updated_at": "2026-09-22T16:59:47Z",
+      "engine_input_head_sha": "f8b9b1d7dfce02acae2c01dd1e4f55e04dd4aaa9",
+      "published_output_commit_sha": "397af2ec5340e8deb23fad42a2c7ee0eb2e37905"
+    },
+    {
+      "run_id": 35795077205,
+      "event": "schedule",
+      "conclusion": "success",
+      "created_at": "2026-09-22T22:57:51Z",
+      "run_started_at": "2026-09-22T22:57:51Z",
+      "updated_at": "2026-09-22T22:58:52Z",
+      "engine_input_head_sha": "397af2ec5340e8deb23fad42a2c7ee0eb2e37905",
+      "published_output_commit_sha": "f2d6da4e95cb163014e0639b72d2711728e7efd1"
+    }
+  ],
+  "latest_scheduled_snapshot": {
+    "provider_output_commit_sha": "f2d6da4e95cb163014e0639b72d2711728e7efd1",
+    "provider_engine_commit_sha": "397af2ec5340e8deb23fad42a2c7ee0eb2e37905",
+    "workflow_run_id": 35795077205,
+    "receipt_sha256": "cfadceb579a67d1168146450146402cef240621851eef56315cf0a25ad540c79",
+    "sensor_result": "PASS_WITH_DATA",
+    "sensor_success_count": 11,
+    "sensor_gap_count": 4,
+    "credentials_used": false,
+    "fallback_pool_count": 15,
+    "fallback_pool_minimum": 14,
+    "fallback_pool_status": "PASS"
+  },
+  "timing_interpretation": {
+    "schedule_dispatch_exists": true,
+    "exact_nominal_cron_slot_binding_available": false,
+    "dispatch_punctuality": "NON_DETERMINISTIC_OBSERVED_DELAY",
+    "exact_delay_minutes_not_asserted": true,
+    "note": "GitHub machine history proves schedule-triggered execution. The API evidence used here does not bind each run to an exact nominal cron slot, so this receipt does not assert exact dispatch delay."
+  },
+  "authority_boundary": {
+    "runtime_owner": "A-Momentum",
+    "daily7_final_selection": false,
+    "trademark_clearance": false,
+    "source_acquisition": false,
+    "drive_mutation": false,
+    "parallel_scheduler_in_daily7_forbidden": true
+  },
+  "daily7_effect": {
+    "schedule_punctuality_is_not_receipt_validity": true,
+    "receipt_integrity_and_freshness_control_consumability": true,
+    "provider_failure_blocks_daily7": false,
+    "stale_or_unavailable_fallback": "F5_DIRECT_DAILY7_DISCOVERY",
+    "stale_or_unavailable_receipt_is_not_zero_demand": true
+  },
+  "result": "SCHEDULE_AUTONOMY_MACHINE_PROVEN"
+}
