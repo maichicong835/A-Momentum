@@ -34,7 +34,7 @@ jobs:
           obs=json.loads(Path('examples/demo-observations.json').read_text())
           pool=json.loads(Path('examples/demo-quality-pool.json').read_text())
           watch=json.loads(Path('examples/demo-watchlist.json').read_text())
-          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.2'
+          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.3'
           assert current['roles']['public_code_only'] is True
           assert current['roles']['runtime_business_data_storage'] is False
           assert engine['runtime_data_boundary']['public_repository_mode']=='CODE_ONLY'
@@ -43,6 +43,9 @@ jobs:
           assert engine['invariants']['minimum_comparable_timepoints_velocity']==2
           assert engine['invariants']['minimum_comparable_timepoints_acceleration']==3
           assert engine['invariants']['native_historical_series_counts_as_multiple_timepoints'] is True
+          assert engine['invariants']['zero_only_series_is_momentum_unproven'] is True
+          assert engine['invariants']['flat_zero_tail_is_not_deceleration'] is True
+          assert engine['invariants']['sensor_native_partial_points_should_be_removed_before_analysis'] is True
           assert engine['anti_drift']['fallback_may_not_bypass_base_commercial_floor'] is True
           assert engine['anti_drift']['no_duplicate_source_pipeline'] is True
           assert len(engine['fallback_ladder'])==6
@@ -63,7 +66,7 @@ jobs:
           python - <<'PY'
           import json
           x=json.load(open('/tmp/momentum-receipt.json'))
-          assert x['engine_version']=='0.1.2'
+          assert x['engine_version']=='0.1.3'
           assert x['fallback_pool_status']['status']=='PASS'
           assert x['observation_count']==1
           assert len(x['entities'])==1
