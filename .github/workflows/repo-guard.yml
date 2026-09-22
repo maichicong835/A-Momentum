@@ -12,18 +12,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate machine contract
+      - name: Enforce public code-only boundary
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '^(data|private|secrets)/'; then
+            echo "Production/runtime data path is forbidden in public repo"
+            exit 1
+          fi
+          if git grep -n -E 'Amazon-Daily7Source|drive.google.com|etsy.com/listing/[0-9]+|i\.etsystatic\.com' -- ':!SECURITY.md' ':!README.md'; then
+            echo "Private strategy/source reference detected in public repo"
+            exit 1
+          fi
+          echo PUBLIC_CODE_ONLY_PATH_SCAN_PASS
+      - name: Validate machine contract and synthetic fixtures
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           current=json.loads(Path('CURRENT.json').read_text())
           engine=json.loads(Path('spec/engine.json').read_text())
-          obs=json.loads(Path('data/bootstrap-observations.json').read_text())
-          pool=json.loads(Path('data/commercial-quality-pool.json').read_text())
-          watch=json.loads(Path('data/watchlist.json').read_text())
-          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.1'
-          assert engine['invariants']['price_unit_economics_out_of_scope'] is True
+          obs=json.loads(Path('examples/demo-observations.json').read_text())
+          pool=json.loads(Path('examples/demo-quality-pool.json').read_text())
+          watch=json.loads(Path('examples/demo-watchlist.json').read_text())
+          assert current['engine_version']==engine['engine_version']==obs['engine_version']==pool['engine_version']==watch['engine_version']=='0.1.2'
+          assert current['roles']['public_code_only'] is True
+          assert current['roles']['runtime_business_data_storage'] is False
+          assert engine['runtime_data_boundary']['public_repository_mode']=='CODE_ONLY'
+          assert engine['runtime_data_boundary']['production_runtime_data_location']=='EXTERNAL_PRIVATE_CONSUMER_REPOSITORY'
           assert engine['invariants']['same_proxy_only_for_velocity_and_acceleration'] is True
           assert engine['invariants']['minimum_comparable_timepoints_velocity']==2
           assert engine['invariants']['minimum_comparable_timepoints_acceleration']==3
@@ -31,31 +46,26 @@ jobs:
           assert engine['anti_drift']['fallback_may_not_bypass_base_commercial_floor'] is True
           assert engine['anti_drift']['no_duplicate_source_pipeline'] is True
           assert len(engine['fallback_ladder'])==6
-          assert pool['count']==len(pool['entries'])
-          assert pool['count']>=pool['minimum_pool_target']>=14
+          assert pool['count']==len(pool['entries'])==14
           assert all(x['launch_authorization'] is False for x in pool['entries'])
-          assert watch['count']==len(watch['entries'])==pool['count']
+          assert watch['count']==len(watch['entries'])==14
           assert all(x['cadence_hours'] in [4,12] for x in watch['entries'])
-          assert engine['observation_pipeline']['append_only'] is True
-          assert engine['observation_pipeline']['due_polling_is_adaptive'] is True
-          assert engine['quality_pool']['proactive_replenishment_below']==14
-          assert engine['quality_pool']['replenishment_target']==18
-          assert all(len(x['points'])==1 for x in obs['observations'])
-          print('A_MOMENTUM_CONTRACT_PASS')
+          assert all('example' in x['mechanism_key'] for x in watch['entries'])
+          assert all(o['provenance']['source_ref']=='SYNTHETIC_FIXTURE' for o in obs['observations'])
+          print('A_MOMENTUM_PUBLIC_CONTRACT_PASS')
           PY
       - name: Unit tests
         run: python -m unittest discover -s tests -p 'test_*.py'
-      - name: Build bootstrap receipt
+      - name: Build synthetic receipt
         run: python scripts/build_receipt.py --out /tmp/momentum-receipt.json
-      - name: Verify bootstrap states
+      - name: Verify synthetic receipt
         run: |
           python - <<'PY'
           import json
           x=json.load(open('/tmp/momentum-receipt.json'))
+          assert x['engine_version']=='0.1.2'
           assert x['fallback_pool_status']['status']=='PASS'
-          assert all(e['state']=='MOMENTUM_UNPROVEN' for e in x['entities'])
-          assert all(all(series['timepoints']==1 for series in e['series']) for e in x['entities'])
-          assert x['observation_set_count']==1
-          assert x['observation_count']==10
-          print('A_MOMENTUM_BOOTSTRAP_TRUTH_PASS')
+          assert x['observation_count']==1
+          assert len(x['entities'])==1
+          print('A_MOMENTUM_SYNTHETIC_RECEIPT_PASS')
           PY
