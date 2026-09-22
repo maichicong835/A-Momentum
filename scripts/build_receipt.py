@@ -4,7 +4,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-ENGINE_VERSION="0.1.1"
+ENGINE_VERSION="0.1.2"
 STRONG_COMMERCE={"AMAZON","ETSY"}
 
 def dt(s):
@@ -114,9 +114,9 @@ def aggregate_entities(series,breakout,candidate_keys):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("--observations",default="data/bootstrap-observations.json")
-    ap.add_argument("--observations-glob",default="data/observations/*.json")
-    ap.add_argument("--pool",default="data/commercial-quality-pool.json")
+    ap.add_argument("--observations",default="examples/demo-observations.json")
+    ap.add_argument("--observations-glob",default="examples/observations/*.json")
+    ap.add_argument("--pool",default="examples/demo-quality-pool.json")
     ap.add_argument("--out",default="-")
     a=ap.parse_args()
     sets=load_sets(a.observations,a.observations_glob)
