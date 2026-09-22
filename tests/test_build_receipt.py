@@ -12,6 +12,24 @@ class T(unittest.TestCase):
     def test_three_points_accel(self):
         x=b.analyze_series([{"t":"2026-09-20T00:00:00+00:00","value":10},{"t":"2026-09-20T01:00:00+00:00","value":11},{"t":"2026-09-20T02:00:00+00:00","value":14}])
         self.assertEqual(x["series_state"],"POSITIVE_ACCELERATION")
+    def test_zero_only_series_unproven(self):
+        x=b.analyze_series([
+          {"t":"2026-09-20T00:00:00+00:00","value":0},
+          {"t":"2026-09-20T01:00:00+00:00","value":0},
+          {"t":"2026-09-20T02:00:00+00:00","value":0}])
+        self.assertEqual(x["series_state"],"MOMENTUM_UNPROVEN")
+    def test_flat_positive_series_stable(self):
+        x=b.analyze_series([
+          {"t":"2026-09-20T00:00:00+00:00","value":10},
+          {"t":"2026-09-20T01:00:00+00:00","value":10},
+          {"t":"2026-09-20T02:00:00+00:00","value":10}])
+        self.assertEqual(x["series_state"],"STABLE")
+    def test_positive_but_decelerating_growth_stays_positive_velocity(self):
+        x=b.analyze_series([
+          {"t":"2026-09-20T00:00:00+00:00","value":10},
+          {"t":"2026-09-20T01:00:00+00:00","value":20},
+          {"t":"2026-09-20T02:00:00+00:00","value":25}])
+        self.assertEqual(x["series_state"],"POSITIVE_VELOCITY")
     def test_cross_surface_confirmation(self):
         ss=[
           {"entity_key":"x","surface":"GOOGLE_TRENDS","series_state":"POSITIVE_ACCELERATION"},
