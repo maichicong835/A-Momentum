@@ -1,6 +1,6 @@
 {
   "schema": "AMZ_A_MOMENTUM_ENGINE",
-  "engine_version": "0.1.2",
+  "engine_version": "0.1.3",
   "purpose": "PROVIDE_PRE_DAILY7_TEMPORAL_BENCHMARK_AND_QUALITY_COMMERCIAL_FALLBACK_WITHOUT_BECOMING_SELECTION_OR_SAFETY_AUTHORITY",
   "entities": [
     "QUERY_FAMILY",
@@ -21,7 +21,11 @@
     "no_compensating_single_score": true,
     "raw_evidence_provenance_required": true,
     "daily7_quality_floor_never_lowered": true,
-    "trademark_and_safety_remain_external": true
+    "trademark_and_safety_remain_external": true,
+    "zero_only_series_is_momentum_unproven": true,
+    "flat_zero_tail_is_not_deceleration": true,
+    "flat_positive_tail_may_be_stable": true,
+    "sensor_native_partial_points_should_be_removed_before_analysis": true
   },
   "temporal_sources": {
     "GOOGLE_TRENDS": {
