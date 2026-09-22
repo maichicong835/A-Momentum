@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-22T08:00:00+00:00",
-  "engine_commit_sha": "4d4adccc77903cb8f6bc70757a67e65fe2a254a4",
+  "as_of": "2026-09-20T05:14:50+07:00",
+  "engine_commit_sha": "f8b9b1d7dfce02acae2c01dd1e4f55e04dd4aaa9",
   "engine_version": "0.2.0",
   "entities": [
     {
@@ -63,57 +63,6 @@
     },
     {
       "breakout_proxy_high": false,
-      "candidate_keys": [],
-      "entity_key": "crochet_interruption_insider_humor",
-      "independent_accelerating_surfaces": [],
-      "series": [
-        {
-          "acceleration": null,
-          "entity_key": "crochet_interruption_insider_humor",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
-        }
-      ],
-      "state": "MOMENTUM_UNPROVEN",
-      "strong_commerce_acceleration": false
-    },
-    {
-      "breakout_proxy_high": false,
       "candidate_keys": [
         "proud-parent-dramatic-dog"
       ],
@@ -136,50 +85,9 @@
           "surface": "DAILY7_IMMUTABLE_RUNS",
           "timepoints": 1,
           "velocity": null
-        },
-        {
-          "acceleration": null,
-          "entity_key": "dog_parent_dramatic_personality",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 4.166667
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "POSITIVE_VELOCITY",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.173611125
         }
       ],
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false
     },
     {
@@ -264,47 +172,6 @@
           "surface": "DAILY7_IMMUTABLE_RUNS",
           "timepoints": 1,
           "velocity": null
-        },
-        {
-          "acceleration": null,
-          "entity_key": "lawyer_billable_hour_humor",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
         }
       ],
       "state": "MOMENTUM_UNPROVEN",
@@ -334,47 +201,6 @@
           "surface": "DAILY7_IMMUTABLE_RUNS",
           "timepoints": 1,
           "velocity": null
-        },
-        {
-          "acceleration": null,
-          "entity_key": "librarian_expertise_identity",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
         }
       ],
       "state": "MOMENTUM_UNPROVEN",
@@ -404,50 +230,9 @@
           "surface": "DAILY7_IMMUTABLE_RUNS",
           "timepoints": 1,
           "velocity": null
-        },
-        {
-          "acceleration": -0.05081300723775539,
-          "entity_key": "physical_therapy_anatomy_pun",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": -0.041666666666666664,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 3.416667
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "DECELERATING",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": -0.173611125
         }
       ],
-      "state": "DECELERATING",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false
     },
     {
@@ -481,57 +266,6 @@
     },
     {
       "breakout_proxy_high": false,
-      "candidate_keys": [],
-      "entity_key": "programmer_interruption_boundary",
-      "independent_accelerating_surfaces": [],
-      "series": [
-        {
-          "acceleration": null,
-          "entity_key": "programmer_interruption_boundary",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
-        }
-      ],
-      "state": "MOMENTUM_UNPROVEN",
-      "strong_commerce_acceleration": false
-    },
-    {
-      "breakout_proxy_high": false,
       "candidate_keys": [
         "oh-this-calls-for-a-spreadsheet"
       ],
@@ -554,98 +288,6 @@
           "surface": "DAILY7_IMMUTABLE_RUNS",
           "timepoints": 1,
           "velocity": null
-        },
-        {
-          "acceleration": null,
-          "entity_key": "spreadsheet_reflex_professional_identity",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
-        }
-      ],
-      "state": "MOMENTUM_UNPROVEN",
-      "strong_commerce_acceleration": false
-    },
-    {
-      "breakout_proxy_high": false,
-      "candidate_keys": [],
-      "entity_key": "teacher_voice_authority_identity",
-      "independent_accelerating_surfaces": [],
-      "series": [
-        {
-          "acceleration": null,
-          "entity_key": "teacher_voice_authority_identity",
-          "entity_type": "MECHANISM",
-          "normalized_velocity": null,
-          "points": [
-            {
-              "t": "2026-09-16T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-17T08:00:00+00:00",
-              "value": 4.166667
-            },
-            {
-              "t": "2026-09-18T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-19T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-20T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-21T08:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-09-22T08:00:00+00:00",
-              "value": 0.0
-            }
-          ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-15T09:00:00+00:00__2026-09-22T08:00:00+00:00",
-          "series_state": "MOMENTUM_UNPROVEN",
-          "surface": "GOOGLE_TRENDS",
-          "timepoints": 7,
-          "velocity": 0.0
         }
       ],
       "state": "MOMENTUM_UNPROVEN",
@@ -657,8 +299,8 @@
     "minimum_pool_target": 14,
     "status": "PASS"
   },
-  "generated_at": "2026-09-22T09:33:48.661371+00:00",
-  "observation_count": 18,
+  "generated_at": "2026-09-22T16:59:43.307722+00:00",
+  "observation_count": 10,
   "observation_set_count": 2,
   "result": "PASS_BENCHMARK",
   "schema": "A_MOMENTUM_RECEIPT"
