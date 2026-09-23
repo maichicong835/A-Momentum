@@ -1,0 +1,56 @@
+{
+  "schema": "A_MOMENTUM_TRIGGER_ROLE_PUBLICATION_CLOSURE",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "closed_at": "2026-09-23",
+  "pr_number": 15,
+  "merge_commit_sha": "d65b7327bb30c9108b523b8861fed6806df2cf9e",
+  "pr_repository_guard": {
+    "run_id": 35799974342,
+    "conclusion": "success"
+  },
+  "post_merge_repository_guard": {
+    "run_id": 35800007030,
+    "conclusion": "success"
+  },
+  "post_merge_synthetic_receipt": {
+    "run_id": 35800007267,
+    "conclusion": "success"
+  },
+  "post_merge_push_runtime": {
+    "run_id": 35800007067,
+    "trigger": "push",
+    "conclusion": "success",
+    "publish_step": "Publish production runtime snapshot (schedule/manual only)",
+    "publish_step_conclusion": "skipped",
+    "artifact_upload_conclusion": "success"
+  },
+  "runtime_latest_after_push": {
+    "workflow_run_id": 35795077205,
+    "trigger": "schedule",
+    "sensor_result": "PASS_WITH_DATA",
+    "sensor_success_count": 11,
+    "sensor_gap_count": 4,
+    "receipt_sha256": "cfadceb579a67d1168146450146402cef240621851eef56315cf0a25ad540c79",
+    "blob_sha256_git": {
+      "index_blob": "62278404f10965c0f1a282447afb1c9bb5528284",
+      "due_plan_blob": "6cc95e2f5e8f5f706e2cff6e3cee6bf1c36cc65b",
+      "observations_blob": "a8061f090432c7da284746b36f422fcf5e52a34f",
+      "sensor_status_blob": "a1954d292a9b65a78a7d51e92b7c426852f37016",
+      "receipt_blob": "47ee95492a7e79a85ce6caa170bdf30b5233cb65"
+    }
+  },
+  "invariants": {
+    "push_validation_executes": true,
+    "push_artifact_preserved": true,
+    "push_runtime_latest_mutation": false,
+    "schedule_publication_authority": true,
+    "workflow_dispatch_publication_authority": true,
+    "cron": "17 */4 * * *",
+    "daily7_authority_unchanged": true,
+    "aver_authority_unchanged": true,
+    "credential_boundary_unchanged": true
+  },
+  "result": "TRIGGER_ROLE_PUBLICATION_MACHINE_PROVEN",
+  "next_gate": "SCHEDULED_OBSERVATION_CONTINUITY"
+}
