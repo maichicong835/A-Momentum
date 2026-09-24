@@ -1,10 +1,10 @@
 {
   "schema": "A_MOMENTUM_DUE_PLAN",
   "engine_version": "0.2.0",
-  "as_of": "2026-09-24T20:00:10.180984+00:00",
+  "as_of": "2026-09-24T23:13:54.861043+00:00",
   "watch_count": 15,
-  "due_count": 15,
-  "not_due_count": 0,
+  "due_count": 14,
+  "not_due_count": 1,
   "due": [
     {
       "watch_id": "watch-01",
@@ -12,7 +12,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "elapsed_hours": 20.231905845277776,
       "query_family": [
         "accountant sticker",
         "spreadsheet sticker",
@@ -32,7 +32,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-23T03:00:00+00:00",
-      "elapsed_hours": 41.002828051111116,
+      "elapsed_hours": 44.23190584527778,
       "query_family": [
         "engineer sticker",
         "engineering humor sticker"
@@ -50,8 +50,8 @@
       "mechanism_key": "dog_parent_dramatic_personality",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "last_observed_at": "2026-09-24T18:00:00+00:00",
+      "elapsed_hours": 5.231905845277778,
       "query_family": [
         "dog parent sticker",
         "funny dog sticker"
@@ -70,7 +70,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-23T21:00:00+00:00",
-      "elapsed_hours": 23.002828051111113,
+      "elapsed_hours": 26.231905845277776,
       "query_family": [
         "pickleball sticker",
         "dink sticker"
@@ -89,7 +89,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-23T12:00:00+00:00",
-      "elapsed_hours": 32.002828051111116,
+      "elapsed_hours": 35.23190584527778,
       "query_family": [
         "bookish sticker",
         "book lover sticker",
@@ -109,7 +109,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-24T12:00:00+00:00",
-      "elapsed_hours": 8.002828051111111,
+      "elapsed_hours": 11.231905845277778,
       "query_family": [
         "physical therapist sticker",
         "anatomy sticker",
@@ -129,7 +129,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-23T21:00:00+00:00",
-      "elapsed_hours": 23.002828051111113,
+      "elapsed_hours": 26.231905845277776,
       "query_family": [
         "engineer sticker",
         "coffee engineer sticker"
@@ -148,7 +148,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "elapsed_hours": 20.231905845277776,
       "query_family": [
         "lawyer sticker",
         "legal humor sticker"
@@ -166,8 +166,8 @@
       "mechanism_key": "librarian_expertise_identity",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "last_observed_at": "2026-09-24T18:00:00+00:00",
+      "elapsed_hours": 5.231905845277778,
       "query_family": [
         "librarian sticker",
         "library sticker"
@@ -186,7 +186,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-09-23T12:00:00+00:00",
-      "elapsed_hours": 32.002828051111116,
+      "elapsed_hours": 35.23190584527778,
       "query_family": [
         "spreadsheet sticker",
         "finance sticker"
@@ -205,7 +205,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
       "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "elapsed_hours": 20.231905845277776,
       "query_family": [
         "teacher sticker",
         "teacher voice sticker"
@@ -224,7 +224,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
       "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "elapsed_hours": 20.231905845277776,
       "query_family": [
         "programmer sticker",
         "developer sticker",
@@ -244,30 +244,10 @@
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
       "last_observed_at": "2026-09-24T03:00:00+00:00",
-      "elapsed_hours": 17.00282805111111,
+      "elapsed_hours": 20.231905845277776,
       "query_family": [
         "crochet sticker",
         "crochet humor sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ]
-    },
-    {
-      "watch_id": "watch-14",
-      "mechanism_key": "emotional_support_yarn_identity",
-      "cadence_class": "WARM",
-      "cadence_hours": 12.0,
-      "last_observed_at": "2026-09-23T21:00:00+00:00",
-      "elapsed_hours": 23.002828051111113,
-      "query_family": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
       ],
       "preferred_surfaces": [
         "GOOGLE_TRENDS",
@@ -283,7 +263,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 12.0,
       "last_observed_at": "2026-09-23T21:00:00+00:00",
-      "elapsed_hours": 23.002828051111113,
+      "elapsed_hours": 26.231905845277776,
       "query_family": [
         "accountant sticker",
         "CPA sticker",
@@ -298,7 +278,28 @@
       ]
     }
   ],
-  "not_due": [],
+  "not_due": [
+    {
+      "watch_id": "watch-14",
+      "mechanism_key": "emotional_support_yarn_identity",
+      "cadence_class": "WARM",
+      "cadence_hours": 12.0,
+      "last_observed_at": "2026-09-24T18:00:00+00:00",
+      "elapsed_hours": 5.231905845277778,
+      "query_family": [
+        "yarn sticker",
+        "crochet sticker",
+        "knitting sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ]
+    }
+  ],
   "continuity_seed_used": true,
   "log_policy": "PUBLIC_RUNTIME_NO_CREDENTIAL_VALUES"
 }

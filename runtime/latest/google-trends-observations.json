@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
   "engine_version": "0.2.0",
-  "as_of": "2026-09-24T20:00:10.180984+00:00",
+  "as_of": "2026-09-24T23:13:54.861043+00:00",
   "source": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME_24H_MEAN",
   "observations": [
     {
@@ -149,38 +149,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-13-13",
-      "observed_at": "2026-09-24T03:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "crochet_interruption_insider_humor",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T04:00:00+00:00__2026-09-24T03:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-18T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-19T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-20T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-21T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-22T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-23T03:00:00+00:00",
+          "t": "2026-09-18T22:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-24T03:00:00+00:00",
+          "t": "2026-09-19T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-20T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-22T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T22:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -276,39 +276,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-07-07",
-      "observed_at": "2026-09-23T21:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "engineer_coffee_problem_solving",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-17T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-18T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-18T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-19T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-19T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-20T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-20T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-21T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-22T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-22T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-23T21:00:00+00:00",
-          "value": 4.166667
+          "t": "2026-09-24T22:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -317,10 +317,6 @@
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
         "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=engineer sticker"
-      },
-      "continuity_seed_provenance": {
-        "source_workflow_run_id": 35931138940,
-        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
       }
     },
     {
@@ -419,34 +415,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-09-09",
-      "observed_at": "2026-09-24T18:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "librarian_expertise_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-18T19:00:00+00:00__2026-09-24T18:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-19T18:00:00+00:00",
+          "t": "2026-09-18T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-20T18:00:00+00:00",
+          "t": "2026-09-19T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-21T18:00:00+00:00",
+          "t": "2026-09-20T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-22T22:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-22T18:00:00+00:00",
+          "t": "2026-09-23T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-23T18:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-24T18:00:00+00:00",
+          "t": "2026-09-24T22:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -505,39 +505,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-04-04",
-      "observed_at": "2026-09-23T21:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "pickleball_dink_insider_pun",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-17T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-18T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-18T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-19T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-19T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-20T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-20T21:00:00+00:00",
-          "value": 0
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-21T21:00:00+00:00",
-          "value": 0
-        },
-        {
-          "t": "2026-09-22T21:00:00+00:00",
-          "value": 0
-        },
-        {
-          "t": "2026-09-23T21:00:00+00:00",
+          "t": "2026-09-22T22:00:00+00:00",
           "value": 4.166667
+        },
+        {
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T22:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -546,46 +546,42 @@
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
         "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=pickleball sticker"
-      },
-      "continuity_seed_provenance": {
-        "source_workflow_run_id": 35931138940,
-        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
       }
     },
     {
       "observation_id": "google-trends-24h-watch-12-12",
-      "observed_at": "2026-09-24T03:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "programmer_interruption_boundary",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T04:00:00+00:00__2026-09-24T03:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-18T03:00:00+00:00",
+          "t": "2026-09-18T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-19T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-20T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-21T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-22T03:00:00+00:00",
+          "t": "2026-09-19T22:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-23T03:00:00+00:00",
+          "t": "2026-09-20T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-24T03:00:00+00:00",
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-22T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T22:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -599,39 +595,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-10-10",
-      "observed_at": "2026-09-23T12:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "spreadsheet_reflex_professional_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-17T12:00:00+00:00",
-          "value": 0
+          "t": "2026-09-18T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-18T12:00:00+00:00",
-          "value": 0
+          "t": "2026-09-19T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-19T12:00:00+00:00",
-          "value": 0
+          "t": "2026-09-20T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-20T12:00:00+00:00",
-          "value": 0
+          "t": "2026-09-21T22:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-21T12:00:00+00:00",
-          "value": 1.583333
-        },
-        {
-          "t": "2026-09-22T12:00:00+00:00",
+          "t": "2026-09-22T22:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-23T12:00:00+00:00",
-          "value": 0
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T22:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -640,46 +636,42 @@
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
         "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=spreadsheet sticker"
-      },
-      "continuity_seed_provenance": {
-        "source_workflow_run_id": 35868622332,
-        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
       }
     },
     {
       "observation_id": "google-trends-24h-watch-11-11",
-      "observed_at": "2026-09-24T03:00:00+00:00",
+      "observed_at": "2026-09-24T22:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "teacher_voice_authority_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T04:00:00+00:00__2026-09-24T03:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T23:00:00+00:00__2026-09-24T22:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-18T03:00:00+00:00",
+          "t": "2026-09-18T22:00:00+00:00",
+          "value": 5.708333
+        },
+        {
+          "t": "2026-09-19T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-19T03:00:00+00:00",
+          "t": "2026-09-20T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-20T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-21T03:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-22T03:00:00+00:00",
+          "t": "2026-09-21T22:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-23T03:00:00+00:00",
+          "t": "2026-09-22T22:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-24T03:00:00+00:00",
+          "t": "2026-09-23T22:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T22:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -696,110 +688,109 @@
     {
       "watch_id": "watch-01",
       "entity_key": "accountant_spreadsheet_frustration",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-02",
       "entity_key": "engineering_stress_wordplay",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-03",
       "entity_key": "dog_parent_dramatic_personality",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T18:00:00+00:00"
-    },
-    {
-      "watch_id": "watch-04",
-      "entity_key": "pickleball_dink_insider_pun",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
+      "watch_id": "watch-04",
+      "entity_key": "pickleball_dink_insider_pun",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T22:00:00+00:00"
+    },
+    {
       "watch_id": "watch-05",
       "entity_key": "bookish_emotional_damage_five_star",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-06",
       "entity_key": "physical_therapy_anatomy_pun",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-07",
       "entity_key": "engineer_coffee_problem_solving",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-08",
       "entity_key": "lawyer_billable_hour_humor",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError"
+      "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-09",
       "entity_key": "librarian_expertise_identity",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-09-24T18:00:00+00:00"
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-10",
       "entity_key": "spreadsheet_reflex_professional_identity",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-11",
       "entity_key": "teacher_voice_authority_identity",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-12",
       "entity_key": "programmer_interruption_boundary",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-13",
       "entity_key": "crochet_interruption_insider_humor",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
-    },
-    {
-      "watch_id": "watch-14",
-      "entity_key": "emotional_support_yarn_identity",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-09-24T18:00:00+00:00"
+      "observed_at": "2026-09-24T22:00:00+00:00"
     },
     {
       "watch_id": "watch-15",
       "entity_key": "accounting_caffeine_work_identity",
-      "attempted_at": "2026-09-24T20:00:10.180984+00:00",
+      "attempted_at": "2026-09-24T23:13:54.861043+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     }
   ],
-  "not_due": [],
+  "not_due": [
+    {
+      "watch_id": "watch-14",
+      "entity_key": "emotional_support_yarn_identity",
+      "last_observed_at": "2026-09-24T18:00:00+00:00"
+    }
+  ],
   "sensor_gaps": [
     {
       "watch_id": "watch-01",
@@ -816,8 +807,8 @@
       "error_class": "RuntimeError"
     },
     {
-      "watch_id": "watch-04",
-      "mechanism_key": "pickleball_dink_insider_pun",
+      "watch_id": "watch-03",
+      "mechanism_key": "dog_parent_dramatic_personality",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError"
@@ -837,43 +828,8 @@
       "error_class": "RuntimeError"
     },
     {
-      "watch_id": "watch-07",
-      "mechanism_key": "engineer_coffee_problem_solving",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError"
-    },
-    {
       "watch_id": "watch-08",
       "mechanism_key": "lawyer_billable_hour_humor",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError"
-    },
-    {
-      "watch_id": "watch-10",
-      "mechanism_key": "spreadsheet_reflex_professional_identity",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError"
-    },
-    {
-      "watch_id": "watch-11",
-      "mechanism_key": "teacher_voice_authority_identity",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError"
-    },
-    {
-      "watch_id": "watch-12",
-      "mechanism_key": "programmer_interruption_boundary",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError"
-    },
-    {
-      "watch_id": "watch-13",
-      "mechanism_key": "crochet_interruption_insider_humor",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError"
@@ -889,10 +845,10 @@
   "continuity": {
     "policy": "LAST_GOOD_PER_MECHANISM_WITH_ATTEMPT_TRUTH",
     "history_success_count_before": 15,
-    "current_success_count": 3,
-    "current_gap_count": 12,
-    "preserved_not_due_count": 0,
-    "preserved_gap_count": 12,
+    "current_success_count": 7,
+    "current_gap_count": 7,
+    "preserved_not_due_count": 1,
+    "preserved_gap_count": 7,
     "merged_last_good_count": 15,
     "sensor_gap_advances_freshness": false,
     "not_due_advances_freshness": false
