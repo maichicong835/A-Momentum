@@ -126,7 +126,9 @@
     "daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run": true,
     "mutable_latest_is_discovery_pointer_not_run_authority": true,
     "active_sensor_may_not_be_claimed_without_machine_run_evidence": true,
-    "public_runtime_does_not_transfer_selection_or_safety_authority": true
+    "public_runtime_does_not_transfer_selection_or_safety_authority": true,
+    "temporal_route_requires_fresh_entity_evidence_not_fresh_packaging_only": true,
+    "sensor_gap_may_not_erase_last_good_signal": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -159,7 +161,15 @@
     "latest_receipt_path": "runtime/latest/receipt.json",
     "runtime_owner": "maichicong835/A-Momentum",
     "public_runtime_data_allowed": true,
-    "credentials_may_not_be_runtime_data": true
+    "credentials_may_not_be_runtime_data": true,
+    "continuity_bootstrap_path": "runtime/continuity-bootstrap-google-trends.json",
+    "last_good_observation_survives_not_due": true,
+    "sensor_gap_preserves_last_good_without_advancing_freshness": true,
+    "success_replaces_only_same_mechanism_last_good": true,
+    "receipt_generated_at_is_not_evidence_freshness": true,
+    "per_entity_last_successful_observed_at_required": true,
+    "per_entity_latest_attempt_state_required": true,
+    "evidence_freshness_threshold_hours": 8
   },
   "runtime_data_boundary": {
     "public_repository_mode": "PUBLIC_RUNTIME_WITH_SECRET_ISOLATION",
