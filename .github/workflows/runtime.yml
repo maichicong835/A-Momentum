@@ -41,13 +41,13 @@ jobs:
       - name: Plan due observations
         run: |
           mkdir -p runtime/latest
-          python scripts/due.py --watchlist runtime/watchlist.json --bootstrap runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --out runtime/latest/due-plan.json
+          python scripts/due.py --watchlist runtime/watchlist.json --bootstrap runtime/bootstrap-observations.json --continuity-seed runtime/continuity-bootstrap-google-trends.json --observations-glob 'runtime/latest/google-trends-observations.json' --out runtime/latest/due-plan.json
       - name: Collect Google Trends native history
         run: |
-          python scripts/google_trends.py --due-plan runtime/latest/due-plan.json --out runtime/latest/google-trends-observations.json --status-out runtime/latest/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 15
+          python scripts/google_trends.py --due-plan runtime/latest/due-plan.json --previous runtime/latest/google-trends-observations.json --continuity-seed runtime/continuity-bootstrap-google-trends.json --out runtime/latest/google-trends-observations.json --status-out runtime/latest/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 15
       - name: Build sanitized Momentum receipt
         run: |
-          python scripts/build_receipt.py --observations runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --pool runtime/quality-pool.json --engine-commit-sha "$GITHUB_SHA" --out runtime/latest/receipt.json
+          python scripts/build_receipt.py --observations runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --pool runtime/quality-pool.json --engine-commit-sha "$GITHUB_SHA" --evidence-fresh-hours 8 --out runtime/latest/receipt.json
           python - <<'PY'
           import hashlib,json,os
           from pathlib import Path
@@ -67,6 +67,10 @@ jobs:
           assert r['engine_commit_sha']==i['provider_engine_commit_sha']
           assert i['credentials_used'] is False and s['credentials_used'] is False
           assert r['fallback_pool_status']['status']=='PASS'
+          assert r['temporal_evidence_summary']['freshness_basis']=='LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT'
+          assert r['temporal_evidence_summary']['sensor_gap_advances_freshness'] is False
+          assert r['temporal_evidence_summary']['not_due_advances_freshness'] is False
+          assert all('last_successful_observed_at' in e and 'latest_attempt_state' in e for e in r['entities'])
           assert s['provider_failure_is_zero_demand'] is False
           assert s['result'] in {'PASS_WITH_DATA','SENSOR_GAP_FALLBACK_REQUIRED'}
           print('A_MOMENTUM_PUBLIC_RUNTIME_CONTRACT_PASS',s['result'])

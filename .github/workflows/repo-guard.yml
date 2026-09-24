@@ -51,10 +51,30 @@ jobs:
           assert pp['push_may_publish_runtime_latest'] is False
           assert pp['schedule_may_publish_runtime_latest'] is True
           assert pp['workflow_dispatch_may_publish_runtime_latest'] is True
+          op=e['observation_pipeline']
+          assert op['continuity_bootstrap_path']=='runtime/continuity-bootstrap-google-trends.json'
+          assert op['last_good_observation_survives_not_due'] is True
+          assert op['sensor_gap_preserves_last_good_without_advancing_freshness'] is True
+          assert op['success_replaces_only_same_mechanism_last_good'] is True
+          assert op['receipt_generated_at_is_not_evidence_freshness'] is True
+          assert op['per_entity_last_successful_observed_at_required'] is True
+          assert op['per_entity_latest_attempt_state_required'] is True
+          assert op['evidence_freshness_threshold_hours']==8
+          seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
+          assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
+          assert seed['engine_version']=='0.2.0'
+          assert seed['observation_count']==len(seed['observations'])==14
+          assert seed['no_inference'] is True
+          assert seed['sensor_gap_is_not_zero_demand'] is True
+          assert e['anti_drift']['temporal_route_requires_fresh_entity_evidence_not_fresh_packaging_only'] is True
+          assert e['anti_drift']['sensor_gap_may_not_erase_last_good_signal'] is True
           runtime_workflow_text=Path('.github/workflows/runtime.yml').read_text()
           assert "name: Publish production runtime snapshot (schedule/manual only)" in runtime_workflow_text
           assert "if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'" in runtime_workflow_text
           assert "Publish latest sanitized runtime snapshot" not in runtime_workflow_text
+          assert "--continuity-seed runtime/continuity-bootstrap-google-trends.json" in runtime_workflow_text
+          assert "--previous runtime/latest/google-trends-observations.json" in runtime_workflow_text
+          assert "--evidence-fresh-hours 8" in runtime_workflow_text
           assert w['count']==len(w['entries'])==15 and p['count']==len(p['entries'])==15 and p['minimum_pool_target']==14
           assert all(z['launch_authorization'] is False for z in p['entries']) and len(b['observations'])==10
           assert e['anti_drift']['daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run'] is True

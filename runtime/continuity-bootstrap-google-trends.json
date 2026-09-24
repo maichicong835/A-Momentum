@@ -1,0 +1,716 @@
+{
+  "schema": "A_MOMENTUM_CONTINUITY_BOOTSTRAP",
+  "engine_version": "0.2.0",
+  "created_at": "2026-09-24T08:01:00+07:00",
+  "purpose": "ONE_TIME_LAST_GOOD_GOOGLE_TRENDS_CONTINUITY_SEED_FROM_MACHINE_PROVEN_SCHEDULED_SNAPSHOTS",
+  "source_policy": "LATEST_SUCCESSFUL_OBSERVATION_PER_MECHANISM",
+  "source_scheduled_runs": [
+    {
+      "workflow_run_id": 35795077205,
+      "output_commit_sha": "f2d6da4e95cb163014e0639b72d2711728e7efd1"
+    },
+    {
+      "workflow_run_id": 35819737898,
+      "output_commit_sha": "7e97e70a1a5d449be6784d456b4485dcbf4dd1a3"
+    },
+    {
+      "workflow_run_id": 35868622332,
+      "output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+    },
+    {
+      "workflow_run_id": 35931138940,
+      "output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+    }
+  ],
+  "observation_count": 14,
+  "observations": [
+    {
+      "observation_id": "google-trends-24h-watch-01-01",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "accountant_spreadsheet_frustration",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=accountant sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-15-15",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "accounting_caffeine_work_identity",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=accountant sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-05-05",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "bookish_emotional_damage_five_star",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=bookish sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-13-12",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "crochet_interruption_insider_humor",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 4.166667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=crochet sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-14-14",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "emotional_support_yarn_identity",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 4.166667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=yarn sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-07-07",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "engineer_coffee_problem_solving",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 4.166667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=engineer sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-02-02",
+      "observed_at": "2026-09-23T03:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "engineering_stress_wordplay",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T04:00:00+00:00__2026-09-23T03:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T03:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-22T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T03:00:00+00:00",
+          "value": 2.416667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=engineer sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35819737898,
+        "source_output_commit_sha": "7e97e70a1a5d449be6784d456b4485dcbf4dd1a3"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-08-08",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "lawyer_billable_hour_humor",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 2.541667
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=lawyer sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-09-09",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "librarian_expertise_identity",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=librarian sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-06-06",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "physical_therapy_anatomy_pun",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 4.166667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=physical therapist sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-04-04",
+      "observed_at": "2026-09-23T21:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "pickleball_dink_insider_pun",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T22:00:00+00:00__2026-09-23T21:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T21:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T21:00:00+00:00",
+          "value": 4.166667
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=pickleball sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35931138940,
+        "source_output_commit_sha": "500986ead3e3a7fbafaede5d5e2ed1a337992d22"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-12-11",
+      "observed_at": "2026-09-23T03:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "programmer_interruption_boundary",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T04:00:00+00:00__2026-09-23T03:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T03:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-20T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T03:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T03:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=programmer sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35819737898,
+        "source_output_commit_sha": "7e97e70a1a5d449be6784d456b4485dcbf4dd1a3"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-10-10",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "spreadsheet_reflex_professional_identity",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 1.583333
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=spreadsheet sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-11-11",
+      "observed_at": "2026-09-23T12:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "teacher_voice_authority_identity",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-17T12:00:00+00:00",
+          "value": 3.708333
+        },
+        {
+          "t": "2026-09-18T12:00:00+00:00",
+          "value": 2.666667
+        },
+        {
+          "t": "2026-09-19T12:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-20T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-21T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-22T12:00:00+00:00",
+          "value": 0
+        },
+        {
+          "t": "2026-09-23T12:00:00+00:00",
+          "value": 0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=teacher sticker"
+      },
+      "continuity_seed_provenance": {
+        "source_workflow_run_id": 35868622332,
+        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
+      }
+    }
+  ],
+  "no_inference": true,
+  "sensor_gap_is_not_zero_demand": true
+}
