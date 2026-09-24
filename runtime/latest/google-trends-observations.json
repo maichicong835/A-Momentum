@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
   "engine_version": "0.2.0",
-  "as_of": "2026-09-24T04:54:19.578649+00:00",
+  "as_of": "2026-09-24T13:34:24.654290+00:00",
   "source": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME_24H_MEAN",
   "observations": [
     {
@@ -476,39 +476,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-06-06",
-      "observed_at": "2026-09-23T12:00:00+00:00",
+      "observed_at": "2026-09-24T12:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "physical_therapy_anatomy_pun",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T13:00:00+00:00__2026-09-24T12:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-17T12:00:00+00:00",
-          "value": 0
-        },
-        {
           "t": "2026-09-18T12:00:00+00:00",
-          "value": 0
+          "value": 0.0
         },
         {
           "t": "2026-09-19T12:00:00+00:00",
-          "value": 0
+          "value": 0.0
         },
         {
           "t": "2026-09-20T12:00:00+00:00",
-          "value": 0
+          "value": 0.0
         },
         {
           "t": "2026-09-21T12:00:00+00:00",
-          "value": 0
+          "value": 0.0
         },
         {
           "t": "2026-09-22T12:00:00+00:00",
-          "value": 0
+          "value": 4.166667
         },
         {
           "t": "2026-09-23T12:00:00+00:00",
-          "value": 4.166667
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-24T12:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -517,10 +517,6 @@
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
         "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=physical therapist sticker"
-      },
-      "continuity_seed_provenance": {
-        "source_workflow_run_id": 35868622332,
-        "source_output_commit_sha": "e952f546efd99fe067329c07fb3bc62753528900"
       }
     },
     {
@@ -716,111 +712,123 @@
     {
       "watch_id": "watch-01",
       "entity_key": "accountant_spreadsheet_frustration",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-02",
       "entity_key": "engineering_stress_wordplay",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-03",
       "entity_key": "dog_parent_dramatic_personality",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-04",
       "entity_key": "pickleball_dink_insider_pun",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-05",
       "entity_key": "bookish_emotional_damage_five_star",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-06",
       "entity_key": "physical_therapy_anatomy_pun",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-09-24T12:00:00+00:00"
     },
     {
       "watch_id": "watch-07",
       "entity_key": "engineer_coffee_problem_solving",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
       "watch_id": "watch-08",
       "entity_key": "lawyer_billable_hour_humor",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError"
     },
     {
       "watch_id": "watch-09",
       "entity_key": "librarian_expertise_identity",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
-    },
-    {
-      "watch_id": "watch-10",
-      "entity_key": "spreadsheet_reflex_professional_identity",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError"
     },
     {
-      "watch_id": "watch-11",
-      "entity_key": "teacher_voice_authority_identity",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
+      "watch_id": "watch-10",
+      "entity_key": "spreadsheet_reflex_professional_identity",
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError"
     },
-    {
-      "watch_id": "watch-12",
-      "entity_key": "programmer_interruption_boundary",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
-    },
-    {
-      "watch_id": "watch-13",
-      "entity_key": "crochet_interruption_insider_humor",
-      "attempted_at": "2026-09-24T04:54:19.578649+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-09-24T03:00:00+00:00"
-    }
-  ],
-  "not_due": [
     {
       "watch_id": "watch-14",
       "entity_key": "emotional_support_yarn_identity",
-      "last_observed_at": "2026-09-23T21:00:00+00:00"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError"
     },
     {
       "watch_id": "watch-15",
       "entity_key": "accounting_caffeine_work_identity",
-      "last_observed_at": "2026-09-23T21:00:00+00:00"
+      "attempted_at": "2026-09-24T13:34:24.654290+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError"
+    }
+  ],
+  "not_due": [
+    {
+      "watch_id": "watch-11",
+      "entity_key": "teacher_voice_authority_identity",
+      "last_observed_at": "2026-09-24T03:00:00+00:00"
+    },
+    {
+      "watch_id": "watch-12",
+      "entity_key": "programmer_interruption_boundary",
+      "last_observed_at": "2026-09-24T03:00:00+00:00"
+    },
+    {
+      "watch_id": "watch-13",
+      "entity_key": "crochet_interruption_insider_humor",
+      "last_observed_at": "2026-09-24T03:00:00+00:00"
     }
   ],
   "sensor_gaps": [
     {
+      "watch_id": "watch-01",
+      "mechanism_key": "accountant_spreadsheet_frustration",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "RuntimeError"
+    },
+    {
       "watch_id": "watch-02",
       "mechanism_key": "engineering_stress_wordplay",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "RuntimeError"
+    },
+    {
+      "watch_id": "watch-03",
+      "mechanism_key": "dog_parent_dramatic_personality",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError"
@@ -840,15 +848,22 @@
       "error_class": "RuntimeError"
     },
     {
-      "watch_id": "watch-06",
-      "mechanism_key": "physical_therapy_anatomy_pun",
+      "watch_id": "watch-07",
+      "mechanism_key": "engineer_coffee_problem_solving",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError"
     },
     {
-      "watch_id": "watch-07",
-      "mechanism_key": "engineer_coffee_problem_solving",
+      "watch_id": "watch-08",
+      "mechanism_key": "lawyer_billable_hour_humor",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "TooManyRequestsError"
+    },
+    {
+      "watch_id": "watch-09",
+      "mechanism_key": "librarian_expertise_identity",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError"
@@ -858,16 +873,30 @@
       "mechanism_key": "spreadsheet_reflex_professional_identity",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError"
+      "error_class": "TooManyRequestsError"
+    },
+    {
+      "watch_id": "watch-14",
+      "mechanism_key": "emotional_support_yarn_identity",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "TooManyRequestsError"
+    },
+    {
+      "watch_id": "watch-15",
+      "mechanism_key": "accounting_caffeine_work_identity",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "TooManyRequestsError"
     }
   ],
   "continuity": {
     "policy": "LAST_GOOD_PER_MECHANISM_WITH_ATTEMPT_TRUTH",
-    "history_success_count_before": 14,
-    "current_success_count": 7,
-    "current_gap_count": 6,
-    "preserved_not_due_count": 2,
-    "preserved_gap_count": 6,
+    "history_success_count_before": 15,
+    "current_success_count": 1,
+    "current_gap_count": 11,
+    "preserved_not_due_count": 3,
+    "preserved_gap_count": 11,
     "merged_last_good_count": 15,
     "sensor_gap_advances_freshness": false,
     "not_due_advances_freshness": false

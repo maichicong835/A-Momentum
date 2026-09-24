@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-24T03:00:00+00:00",
-  "engine_commit_sha": "f76886d3610620b69f4f7753ab4f5bbbbad9a0ab",
+  "as_of": "2026-09-24T12:00:00+00:00",
+  "engine_commit_sha": "1578ce113d2f73d73fef31c972eeb2473ae01717",
   "engine_version": "0.2.0",
   "entities": [
     {
@@ -11,9 +11,9 @@
       "entity_key": "accountant_spreadsheet_frustration",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -77,8 +77,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -86,9 +86,9 @@
       "entity_key": "accounting_caffeine_work_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T21:00:00+00:00",
-      "latest_attempt_at": null,
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "NOT_DUE",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -135,8 +135,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.914000166666667,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 16.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -146,7 +146,7 @@
       "entity_key": "bookish_emotional_damage_five_star",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T12:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
       "latest_attempt_error_class": "RuntimeError",
       "latest_attempt_state": "SENSOR_GAP",
       "series": [
@@ -212,7 +212,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 16.914000166666668,
+      "temporal_evidence_age_hours_at_generation": 25.58242927138889,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -221,9 +221,9 @@
       "entity_key": "crochet_interruption_insider_humor",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": null,
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_state": "NOT_DUE",
       "series": [
         {
           "acceleration": null,
@@ -270,8 +270,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -281,9 +281,9 @@
       "entity_key": "dog_parent_dramatic_personality",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -347,8 +347,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -356,9 +356,9 @@
       "entity_key": "emotional_support_yarn_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T21:00:00+00:00",
-      "latest_attempt_at": null,
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "NOT_DUE",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -405,8 +405,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.914000166666667,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 16.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -416,7 +416,7 @@
       "entity_key": "engineer_coffee_problem_solving",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T21:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
       "latest_attempt_error_class": "RuntimeError",
       "latest_attempt_state": "SENSOR_GAP",
       "series": [
@@ -482,8 +482,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.914000166666667,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 16.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -493,7 +493,7 @@
       "entity_key": "engineering_stress_wordplay",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
       "latest_attempt_error_class": "RuntimeError",
       "latest_attempt_state": "SENSOR_GAP",
       "series": [
@@ -559,7 +559,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 25.914000166666664,
+      "temporal_evidence_age_hours_at_generation": 34.58242927138889,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -570,9 +570,9 @@
       "entity_key": "lawyer_billable_hour_humor",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -636,8 +636,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -647,9 +647,9 @@
       "entity_key": "librarian_expertise_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -713,8 +713,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -723,10 +723,10 @@
       ],
       "entity_key": "physical_therapy_anatomy_pun",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-09-23T12:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": "RuntimeError",
-      "latest_attempt_state": "SENSOR_GAP",
+      "last_successful_observed_at": "2026-09-24T12:00:00+00:00",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": null,
+      "latest_attempt_state": "SUCCESS",
       "series": [
         {
           "acceleration": null,
@@ -751,10 +751,6 @@
           "entity_type": "MECHANISM",
           "normalized_velocity": null,
           "points": [
-            {
-              "t": "2026-09-17T12:00:00+00:00",
-              "value": 0.0
-            },
             {
               "t": "2026-09-18T12:00:00+00:00",
               "value": 0.0
@@ -773,25 +769,29 @@
             },
             {
               "t": "2026-09-22T12:00:00+00:00",
-              "value": 0.0
+              "value": 4.166667
             },
             {
               "t": "2026-09-23T12:00:00+00:00",
-              "value": 4.166667
+              "value": 0.0
+            },
+            {
+              "t": "2026-09-24T12:00:00+00:00",
+              "value": 0.0
             }
           ],
-          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-16T13:00:00+00:00__2026-09-23T12:00:00+00:00",
-          "series_state": "POSITIVE_VELOCITY",
+          "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-17T13:00:00+00:00__2026-09-24T12:00:00+00:00",
+          "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.173611125
+          "velocity": 0.0
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 16.914000166666668,
-      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 1.582429271388889,
+      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -801,7 +801,7 @@
       "entity_key": "pickleball_dink_insider_pun",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T21:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
       "latest_attempt_error_class": "RuntimeError",
       "latest_attempt_state": "SENSOR_GAP",
       "series": [
@@ -867,8 +867,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.914000166666667,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 16.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -876,9 +876,9 @@
       "entity_key": "programmer_interruption_boundary",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": null,
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_state": "NOT_DUE",
       "series": [
         {
           "acceleration": null,
@@ -925,8 +925,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -936,8 +936,8 @@
       "entity_key": "spreadsheet_reflex_professional_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-23T12:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-09-24T13:34:24.654290+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "series": [
         {
@@ -1002,7 +1002,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 16.914000166666668,
+      "temporal_evidence_age_hours_at_generation": 25.58242927138889,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -1011,9 +1011,9 @@
       "entity_key": "teacher_voice_authority_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-09-24T03:00:00+00:00",
-      "latest_attempt_at": "2026-09-24T04:54:19.578649+00:00",
+      "latest_attempt_at": null,
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_state": "NOT_DUE",
       "series": [
         {
           "acceleration": null,
@@ -1060,8 +1060,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.9140001666666666,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.58242927138889,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     }
   ],
   "fallback_pool_status": {
@@ -1069,19 +1069,19 @@
     "minimum_pool_target": 14,
     "status": "PASS"
   },
-  "generated_at": "2026-09-24T04:54:50.400600+00:00",
+  "generated_at": "2026-09-24T13:34:56.745377+00:00",
   "observation_count": 25,
   "observation_set_count": 2,
   "result": "PASS_BENCHMARK",
   "schema": "A_MOMENTUM_RECEIPT",
   "temporal_evidence_summary": {
-    "fresh_entity_count": 11,
+    "fresh_entity_count": 1,
     "freshness_basis": "LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT",
     "freshness_threshold_hours": 8.0,
-    "latest_successful_observed_at": "2026-09-24T03:00:00+00:00",
+    "latest_successful_observed_at": "2026-09-24T12:00:00+00:00",
     "not_due_advances_freshness": false,
     "sensor_gap_advances_freshness": false,
-    "stale_entity_count": 4,
+    "stale_entity_count": 14,
     "unobserved_entity_count": 0
   }
 }
