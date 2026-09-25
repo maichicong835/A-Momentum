@@ -44,7 +44,7 @@ jobs:
           python scripts/due.py --watchlist runtime/watchlist.json --bootstrap runtime/bootstrap-observations.json --continuity-seed runtime/continuity-bootstrap-google-trends.json --observations-glob 'runtime/latest/google-trends-observations.json' --out runtime/latest/due-plan.json
       - name: Collect Google Trends native history
         run: |
-          python scripts/google_trends.py --due-plan runtime/latest/due-plan.json --previous runtime/latest/google-trends-observations.json --continuity-seed runtime/continuity-bootstrap-google-trends.json --out runtime/latest/google-trends-observations.json --status-out runtime/latest/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 15
+          python scripts/google_trends.py --due-plan runtime/latest/due-plan.json --previous runtime/latest/google-trends-observations.json --continuity-seed runtime/continuity-bootstrap-google-trends.json --out runtime/latest/google-trends-observations.json --status-out runtime/latest/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 15 --max-query-variants 3 --retries-per-query 2 --sleep-seconds 3
       - name: Build sanitized Momentum receipt
         run: |
           python scripts/build_receipt.py --observations runtime/bootstrap-observations.json --observations-glob 'runtime/latest/google-trends-observations.json' --pool runtime/quality-pool.json --engine-commit-sha "$GITHUB_SHA" --evidence-fresh-hours 8 --out runtime/latest/receipt.json
@@ -52,7 +52,9 @@ jobs:
           import hashlib,json,os
           from pathlib import Path
           receipt=Path('runtime/latest/receipt.json'); sensor=json.loads(Path('runtime/latest/sensor-status.json').read_text())
-          index={'schema':'A_MOMENTUM_PUBLIC_RUNTIME_INDEX','engine_version':'0.2.0','provider_engine_commit_sha':os.environ['GITHUB_SHA'],'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'receipt_path':'runtime/latest/receipt.json','receipt_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest(),'sensor_result':sensor['result'],'sensor_success_count':sensor['success_count'],'sensor_gap_count':sensor['gap_count'],'credentials_used':False}
+          r=json.loads(receipt.read_text())
+          ts=r['temporal_evidence_summary']
+          index={'schema':'A_MOMENTUM_PUBLIC_RUNTIME_INDEX','engine_version':'0.2.0','provider_engine_commit_sha':os.environ['GITHUB_SHA'],'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'receipt_path':'runtime/latest/receipt.json','receipt_sha256':hashlib.sha256(receipt.read_bytes()).hexdigest(),'sensor_result':sensor['result'],'sensor_success_count':sensor['success_count'],'sensor_gap_count':sensor['gap_count'],'fresh_entity_count':ts['fresh_entity_count'],'fresh_entity_ratio':ts['fresh_entity_ratio'],'credentials_used':False}
           Path('runtime/latest/index.json').write_text(json.dumps(index,indent=2)+'\n')
           print('A_MOMENTUM_RECEIPT_SHA256',index['receipt_sha256']); print('A_MOMENTUM_SENSOR_RESULT',index['sensor_result'])
           PY
@@ -70,8 +72,14 @@ jobs:
           assert r['temporal_evidence_summary']['freshness_basis']=='LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT'
           assert r['temporal_evidence_summary']['sensor_gap_advances_freshness'] is False
           assert r['temporal_evidence_summary']['not_due_advances_freshness'] is False
+          assert r['temporal_evidence_summary']['entity_count']==len(r['entities'])
+          assert 0.0 <= r['temporal_evidence_summary']['fresh_entity_ratio'] <= 1.0
+          assert i['fresh_entity_count']==r['temporal_evidence_summary']['fresh_entity_count']
+          assert i['fresh_entity_ratio']==r['temporal_evidence_summary']['fresh_entity_ratio']
           assert all('last_successful_observed_at' in e and 'latest_attempt_state' in e for e in r['entities'])
           assert s['provider_failure_is_zero_demand'] is False
+          assert s['query_variant_policy']=='TRY_DISTINCT_QUERY_FAMILY_VARIANTS_BEFORE_ENTITY_GAP'
+          assert s['provider_attempt_count'] >= s['success_count']
           assert s['result'] in {'PASS_WITH_DATA','SENSOR_GAP_FALLBACK_REQUIRED'}
           print('A_MOMENTUM_PUBLIC_RUNTIME_CONTRACT_PASS',s['result'])
           PY
