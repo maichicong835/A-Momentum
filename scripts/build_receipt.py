@@ -170,13 +170,20 @@ def attach_temporal_freshness(entities,sets,generated_at,fresh_hours):
           "latest_attempt_error_class":cur.get("latest_attempt_error_class"),
           "signal_state_is_last_known_not_freshness_claim":True
         })
+    states=[v.get("latest_attempt_state","NO_CURRENT_CYCLE_RECORD") for v in cycle.values()]
+    total=len(entities)
     return {
       "freshness_basis":"LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT",
       "freshness_threshold_hours":fresh_hours,
       "latest_successful_observed_at":latest_time,
+      "entity_count":total,
       "fresh_entity_count":fresh,
       "stale_entity_count":stale,
       "unobserved_entity_count":unobserved,
+      "fresh_entity_ratio":0.0 if total==0 else round(fresh/total,6),
+      "current_cycle_success_count":sum(1 for s in states if s=="SUCCESS"),
+      "current_cycle_gap_count":sum(1 for s in states if s=="SENSOR_GAP"),
+      "current_cycle_not_due_count":sum(1 for s in states if s=="NOT_DUE"),
       "sensor_gap_advances_freshness":False,
       "not_due_advances_freshness":False
     }
