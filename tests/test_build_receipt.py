@@ -40,4 +40,24 @@ class T(unittest.TestCase):
         ss=[{"entity_key":"x","surface":"GOOGLE_TRENDS","series_state":"POSITIVE_ACCELERATION"}]
         x=b.aggregate_entities(ss,{},{"x":set()})[0]
         self.assertEqual(x["state"],"VELOCITY_POSITIVE_ACCELERATION_UNPROVEN")
+    def test_temporal_coverage_metrics_are_factual(self):
+        entities=[{"entity_key":"x"},{"entity_key":"y"}]
+        sets=[{
+          "as_of":"2026-09-25T04:00:00+00:00",
+          "observations":[
+            {"surface":"GOOGLE_TRENDS","entity_key":"x","observed_at":"2026-09-25T03:00:00+00:00"},
+            {"surface":"GOOGLE_TRENDS","entity_key":"y","observed_at":"2026-09-24T00:00:00+00:00"}
+          ],
+          "current_attempts":[
+            {"entity_key":"x","attempted_at":"2026-09-25T04:00:00+00:00","result":"SUCCESS"},
+            {"entity_key":"y","attempted_at":"2026-09-25T04:00:00+00:00","result":"SENSOR_GAP"}
+          ]
+        }]
+        s=b.attach_temporal_freshness(entities,sets,"2026-09-25T04:00:00+00:00",8)
+        self.assertEqual(s["entity_count"],2)
+        self.assertEqual(s["fresh_entity_count"],1)
+        self.assertEqual(s["stale_entity_count"],1)
+        self.assertEqual(s["fresh_entity_ratio"],0.5)
+        self.assertEqual(s["current_cycle_success_count"],1)
+        self.assertEqual(s["current_cycle_gap_count"],1)
 if __name__=="__main__":unittest.main()

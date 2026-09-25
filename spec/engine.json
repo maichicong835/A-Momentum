@@ -128,7 +128,9 @@
     "active_sensor_may_not_be_claimed_without_machine_run_evidence": true,
     "public_runtime_does_not_transfer_selection_or_safety_authority": true,
     "temporal_route_requires_fresh_entity_evidence_not_fresh_packaging_only": true,
-    "sensor_gap_may_not_erase_last_good_signal": true
+    "sensor_gap_may_not_erase_last_good_signal": true,
+    "query_family_first_query_failure_may_not_define_entity_gap": true,
+    "freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -169,7 +171,18 @@
     "receipt_generated_at_is_not_evidence_freshness": true,
     "per_entity_last_successful_observed_at_required": true,
     "per_entity_latest_attempt_state_required": true,
-    "evidence_freshness_threshold_hours": 8
+    "evidence_freshness_threshold_hours": 8,
+    "warm_cadence_may_not_exceed_evidence_freshness_threshold": true,
+    "receipt_temporal_coverage_fields": [
+      "entity_count",
+      "fresh_entity_count",
+      "stale_entity_count",
+      "unobserved_entity_count",
+      "fresh_entity_ratio",
+      "current_cycle_success_count",
+      "current_cycle_gap_count",
+      "current_cycle_not_due_count"
+    ]
   },
   "runtime_data_boundary": {
     "public_repository_mode": "PUBLIC_RUNTIME_WITH_SECRET_ISOLATION",
@@ -206,7 +219,7 @@
   "runtime_execution": {
     "owner_repository": "maichicong835/A-Momentum",
     "schedule_hot_hours": 4,
-    "schedule_warm_hours": 12,
+    "schedule_warm_hours": 8,
     "scheduler_workflow": ".github/workflows/runtime.yml",
     "google_trends": {
       "active": true,
@@ -218,7 +231,15 @@
       "aggregation": "NON_OVERLAPPING_COMPLETED_24H_MEAN",
       "minimum_blocks": 3,
       "cross_pull_normalization_arithmetic_forbidden": true,
-      "failure_semantics": "SENSOR_GAP_NOT_ZERO_DEMAND"
+      "failure_semantics": "SENSOR_GAP_NOT_ZERO_DEMAND",
+      "query_family_fallback": {
+        "enabled": true,
+        "maximum_distinct_variants_per_entity": 3,
+        "retries_per_query": 2,
+        "base_backoff_seconds": 3,
+        "retry_policy": "BOUNDED_EXPONENTIAL_BACKOFF_THEN_NEXT_DISTINCT_QUERY",
+        "entity_gap_only_after_all_selected_query_variants_fail": true
+      }
     },
     "other_declared_surfaces_are_not_active_collectors_until_machine_proven": true,
     "runtime_failure_may_not_block_daily7": true,

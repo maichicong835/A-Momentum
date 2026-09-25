@@ -4,11 +4,12 @@
   "as_of": "2026-09-20T14:12:06+07:00",
   "policy": {
     "hot_cadence_hours": 4,
-    "warm_cadence_hours": 12,
+    "warm_cadence_hours": 8,
     "adaptive_skip_if_not_due": true,
     "price_unit_economics_forbidden": true,
     "social_only_supporting": true,
-    "same_proxy_only": true
+    "same_proxy_only": true,
+    "freshness_alignment": "WARM_CADENCE_MUST_NOT_EXCEED_DAILY7_FRESHNESS_THRESHOLD_8H"
   },
   "entries": [
     {
@@ -198,7 +199,7 @@
       "watch_id": "watch-11",
       "mechanism_key": "teacher_voice_authority_identity",
       "cadence_class": "WARM",
-      "cadence_hours": 12,
+      "cadence_hours": 8,
       "query_family": [
         "teacher sticker",
         "teacher voice sticker"
@@ -216,7 +217,7 @@
       "watch_id": "watch-12",
       "mechanism_key": "programmer_interruption_boundary",
       "cadence_class": "WARM",
-      "cadence_hours": 12,
+      "cadence_hours": 8,
       "query_family": [
         "programmer sticker",
         "developer sticker",
@@ -235,7 +236,7 @@
       "watch_id": "watch-13",
       "mechanism_key": "crochet_interruption_insider_humor",
       "cadence_class": "WARM",
-      "cadence_hours": 12,
+      "cadence_hours": 8,
       "query_family": [
         "crochet sticker",
         "crochet humor sticker"
@@ -253,7 +254,7 @@
       "watch_id": "watch-14",
       "mechanism_key": "emotional_support_yarn_identity",
       "cadence_class": "WARM",
-      "cadence_hours": 12,
+      "cadence_hours": 8,
       "query_family": [
         "yarn sticker",
         "crochet sticker",
@@ -272,7 +273,7 @@
       "watch_id": "watch-15",
       "mechanism_key": "accounting_caffeine_work_identity",
       "cadence_class": "WARM",
-      "cadence_hours": 12,
+      "cadence_hours": 8,
       "query_family": [
         "accountant sticker",
         "CPA sticker",

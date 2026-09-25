@@ -47,6 +47,19 @@ def merge_last_good(history_observations,current_observations):
             latest[key]=o
     return [latest[k] for k in sorted(latest)]
 
+def query_candidates(item,max_variants=3):
+    out=[]
+    for raw in item.get("query_family") or []:
+        q=str(raw).strip()
+        if q and q not in out:
+            out.append(q)
+        if len(out)>=max(1,int(max_variants)):
+            break
+    return out
+
+def retry_backoff_seconds(attempt_index,base_seconds):
+    return max(float(base_seconds),0.2)*(2**max(0,int(attempt_index)))
+
 def self_test():
     base=datetime(2026,1,1,tzinfo=timezone.utc)
     rows=[(base+timedelta(hours=i),float(i%17)) for i in range(72)]
@@ -56,15 +69,21 @@ def self_test():
     new={"entity_key":"x","observed_at":"2026-01-02T00:00:00+00:00"}
     assert merge_last_good([old],[])[0]["observed_at"]==old["observed_at"]
     assert merge_last_good([old],[new])[0]["observed_at"]==new["observed_at"]
+    assert query_candidates({"query_family":["a","a"," b ","c"]},3)==["a","b","c"]
+    assert retry_backoff_seconds(0,3)==3 and retry_backoff_seconds(2,3)==12
     print("AMOMENTUM_GOOGLE_24H_AGGREGATION_SELF_TEST_PASS")
     print("AMOMENTUM_OBSERVATION_CONTINUITY_SELF_TEST_PASS")
+    print("AMOMENTUM_QUERY_FALLBACK_SELF_TEST_PASS")
 
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--due-plan"); ap.add_argument("--out"); ap.add_argument("--status-out")
     ap.add_argument("--previous"); ap.add_argument("--continuity-seed")
     ap.add_argument("--timeframe",default="now 7-d"); ap.add_argument("--geo",default="US")
-    ap.add_argument("--max-queries",type=int,default=15); ap.add_argument("--sleep-seconds",type=float,default=1.0)
+    ap.add_argument("--max-queries",type=int,default=15)
+    ap.add_argument("--max-query-variants",type=int,default=3)
+    ap.add_argument("--retries-per-query",type=int,default=2)
+    ap.add_argument("--sleep-seconds",type=float,default=3.0)
     ap.add_argument("--self-test",action="store_true"); a=ap.parse_args()
     if a.self_test: self_test(); return
     if not a.due_plan or not a.out or not a.status_out: raise SystemExit("--due-plan --out --status-out required")
@@ -75,52 +94,71 @@ def main():
         if s: history.extend(s.get("observations",[]))
     history_latest=latest_success_by_entity(history)
     observations=[]; gaps=[]; attempts=[]
+    provider_attempt_count=0; fallback_success_count=0
     try:
         from pytrends.request import TrendReq
     except Exception as e:
         gaps.append({"scope":"COLLECTOR_IMPORT","state":"SENSOR_GAP_PROVIDER_RUNTIME","error_class":type(e).__name__}); selected=[]
     for idx,item in enumerate(selected,1):
-        queries=item.get("query_family") or []; query=str(queries[0]).strip() if queries else ""
+        queries=query_candidates(item,a.max_query_variants)
         attempted_at=plan.get("as_of")
-        if not query:
+        if not queries:
             gaps.append({"watch_id":item.get("watch_id"),"mechanism_key":item.get("mechanism_key"),"surface":"GOOGLE_TRENDS",
                          "state":"SENSOR_GAP_NO_QUERY_FAMILY","error_class":"NO_QUERY_FAMILY"})
             attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),
-                             "attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":"NO_QUERY_FAMILY"})
+                             "attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":"NO_QUERY_FAMILY",
+                             "queries_attempted":[]})
             continue
-        success=False; last_error=None; successful_observation=None
-        for attempt in range(2):
-            try:
-                py=TrendReq(hl="en-US",tz=0,timeout=(10,25),retries=0,backoff_factor=0)
-                py.build_payload([query],cat=0,timeframe=a.timeframe,geo=a.geo,gprop="")
-                df=py.interest_over_time()
-                if df is None or df.empty or query not in df.columns: raise RuntimeError("EMPTY_NATIVE_SERIES")
-                if "isPartial" in df.columns: df=df[df["isPartial"]==False]
-                rows=[(parse_iso(iso_utc(t)),float(v)) for t,v in df[query].items()]
-                blocks=completed_24h_blocks(rows,max_blocks=7)
-                if len(blocks)<3: raise RuntimeError("COMPLETED_24H_BLOCKS_LT_3")
-                token=blocks[0]["window_start"]+"__"+blocks[-1]["window_end"]
-                successful_observation={
-                  "observation_id":f"google-trends-24h-{item['watch_id']}-{idx:02d}",
-                  "observed_at":blocks[-1]["t"],"entity_type":"MECHANISM","entity_key":item["mechanism_key"],
-                  "surface":"GOOGLE_TRENDS","proxy":f"INTEREST_24H_MEAN_NATIVE_WINDOW::{token}",
-                  "points":[{"t":x["t"],"value":x["value"]} for x in blocks],
-                  "native_series":True,"supporting_only":False,
-                  "provenance":{"source_ref":"GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME","machine_observed":True,
-                                "note":f"geo={a.geo}; timeframe={a.timeframe}; completed non-overlapping 24h means; query={query}"}}
-                observations.append(successful_observation)
-                attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),
-                                 "attempted_at":attempted_at,"result":"SUCCESS",
-                                 "observed_at":successful_observation["observed_at"]})
-                success=True; break
-            except Exception as e:
-                last_error=type(e).__name__
-                if attempt==0: time.sleep(max(a.sleep_seconds,0.2))
+        success=False; last_error=None; successful_observation=None; successful_query=None; successful_query_ordinal=None
+        entity_attempt_log=[]
+        for q_index,query in enumerate(queries,1):
+            for attempt in range(max(1,a.retries_per_query)):
+                provider_attempt_count+=1
+                try:
+                    py=TrendReq(hl="en-US",tz=0,timeout=(10,25),retries=0,backoff_factor=0)
+                    py.build_payload([query],cat=0,timeframe=a.timeframe,geo=a.geo,gprop="")
+                    df=py.interest_over_time()
+                    if df is None or df.empty or query not in df.columns: raise RuntimeError("EMPTY_NATIVE_SERIES")
+                    if "isPartial" in df.columns: df=df[df["isPartial"]==False]
+                    rows=[(parse_iso(iso_utc(t)),float(v)) for t,v in df[query].items()]
+                    blocks=completed_24h_blocks(rows,max_blocks=7)
+                    if len(blocks)<3: raise RuntimeError("COMPLETED_24H_BLOCKS_LT_3")
+                    token=blocks[0]["window_start"]+"__"+blocks[-1]["window_end"]
+                    successful_observation={
+                      "observation_id":f"google-trends-24h-{item['watch_id']}-{idx:02d}",
+                      "observed_at":blocks[-1]["t"],"entity_type":"MECHANISM","entity_key":item["mechanism_key"],
+                      "surface":"GOOGLE_TRENDS","proxy":f"INTEREST_24H_MEAN_NATIVE_WINDOW::{token}",
+                      "points":[{"t":x["t"],"value":x["value"]} for x in blocks],
+                      "native_series":True,"supporting_only":False,
+                      "provenance":{"source_ref":"GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME","machine_observed":True,
+                                    "note":f"geo={a.geo}; timeframe={a.timeframe}; completed non-overlapping 24h means; query={query}",
+                                    "query_used":query,"query_ordinal":q_index}}
+                    observations.append(successful_observation)
+                    successful_query=query; successful_query_ordinal=q_index
+                    entity_attempt_log.append({"query":query,"query_ordinal":q_index,"attempt":attempt+1,"result":"SUCCESS"})
+                    attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),
+                                     "attempted_at":attempted_at,"result":"SUCCESS",
+                                     "observed_at":successful_observation["observed_at"],
+                                     "query_used":successful_query,"query_ordinal":successful_query_ordinal,
+                                     "provider_attempts":len(entity_attempt_log)})
+                    if q_index>1: fallback_success_count+=1
+                    success=True; break
+                except Exception as e:
+                    last_error=type(e).__name__
+                    entity_attempt_log.append({"query":query,"query_ordinal":q_index,"attempt":attempt+1,
+                                               "result":"SENSOR_GAP","error_class":last_error})
+                    if attempt+1<max(1,a.retries_per_query):
+                        time.sleep(retry_backoff_seconds(attempt,a.sleep_seconds))
+            if success: break
+            if q_index<len(queries):
+                time.sleep(max(a.sleep_seconds,0.2))
         if not success:
             gaps.append({"watch_id":item.get("watch_id"),"mechanism_key":item.get("mechanism_key"),"surface":"GOOGLE_TRENDS",
-                         "state":"SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND","error_class":last_error})
+                         "state":"SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND","error_class":last_error,
+                         "queries_attempted":queries,"provider_attempts":len(entity_attempt_log)})
             attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),
-                             "attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":last_error})
+                             "attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":last_error,
+                             "queries_attempted":queries,"provider_attempts":len(entity_attempt_log)})
         time.sleep(max(a.sleep_seconds,0.0))
     merged=merge_last_good(history,observations)
     current_success_keys={o["entity_key"] for o in observations}
@@ -137,14 +175,20 @@ def main():
            "history_success_count_before":len(history_latest),
            "current_success_count":len(observations),
            "current_gap_count":len(gaps),
+           "provider_attempt_count":provider_attempt_count,
+           "query_fallback_success_count":fallback_success_count,
            "preserved_not_due_count":sum(1 for x in not_due if x.get("mechanism_key") in history_latest and x.get("mechanism_key") not in current_success_keys),
            "preserved_gap_count":sum(1 for k in gap_keys if k in history_latest and k not in current_success_keys),
            "merged_last_good_count":len(merged),
            "sensor_gap_advances_freshness":False,
            "not_due_advances_freshness":False
          }}
+    rate_limit_gap_count=sum(1 for g in gaps if g.get("error_class")=="TooManyRequestsError")
     status={"schema":"A_MOMENTUM_SENSOR_STATUS","surface":"GOOGLE_TRENDS","engine_version":ENGINE_VERSION,
             "as_of":plan.get("as_of"),"due_count":len(selected),"success_count":len(observations),"gap_count":len(gaps),
+            "provider_attempt_count":provider_attempt_count,"query_fallback_success_count":fallback_success_count,
+            "rate_limit_gap_count":rate_limit_gap_count,
+            "query_variant_policy":"TRY_DISTINCT_QUERY_FAMILY_VARIANTS_BEFORE_ENTITY_GAP",
             "aggregation":"NON_OVERLAPPING_COMPLETED_24H_MEAN","minimum_blocks":3,
             "provider_failure_is_zero_demand":False,"credentials_used":False,
             "result":"PASS_WITH_DATA" if observations else "SENSOR_GAP_FALLBACK_REQUIRED"}
@@ -153,6 +197,8 @@ def main():
     Path(a.status_out).write_text(json.dumps(status,indent=2)+"\n",encoding="utf-8")
     print("AMOMENTUM_GOOGLE_TRENDS_SUCCESS_COUNT",len(observations))
     print("AMOMENTUM_GOOGLE_TRENDS_GAP_COUNT",len(gaps))
+    print("AMOMENTUM_GOOGLE_TRENDS_PROVIDER_ATTEMPT_COUNT",provider_attempt_count)
+    print("AMOMENTUM_GOOGLE_TRENDS_QUERY_FALLBACK_SUCCESS_COUNT",fallback_success_count)
     print("AMOMENTUM_GOOGLE_TRENDS_MERGED_LAST_GOOD_COUNT",len(merged))
     print("AMOMENTUM_GOOGLE_TRENDS_RESULT",status["result"])
 if __name__=="__main__": main()
