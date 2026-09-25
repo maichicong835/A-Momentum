@@ -37,7 +37,12 @@ jobs:
           rb=e['runtime_data_boundary']; assert rb['public_repository_mode']=='PUBLIC_RUNTIME_WITH_SECRET_ISOLATION'
           assert rb['current_google_trends_sensor_requires_credentials'] is False and rb['secret_values_may_not_be_logged_artifacted_cached_or_committed'] is True
           x=e['runtime_execution']; assert x['owner_repository']=='maichicong835/A-Momentum' and x['schedule_hot_hours']==4
+          assert x['schedule_warm_hours']==8
           assert x['google_trends']['active'] and not x['google_trends']['credential_required']
+          qf=x['google_trends']['query_family_fallback']
+          assert qf['enabled'] is True and qf['maximum_distinct_variants_per_entity']==3
+          assert qf['retries_per_query']==2 and qf['base_backoff_seconds']==3
+          assert qf['entity_gap_only_after_all_selected_query_variants_fail'] is True
           assert x['google_trends']['aggregation']=='NON_OVERLAPPING_COMPLETED_24H_MEAN' and x['google_trends']['minimum_blocks']==3
           assert x['google_trends']['cross_pull_normalization_arithmetic_forbidden'] is True
           assert x['other_declared_surfaces_are_not_active_collectors_until_machine_proven'] is True and x['runtime_failure_may_not_block_daily7'] is True
@@ -60,6 +65,12 @@ jobs:
           assert op['per_entity_last_successful_observed_at_required'] is True
           assert op['per_entity_latest_attempt_state_required'] is True
           assert op['evidence_freshness_threshold_hours']==8
+          assert op['warm_cadence_may_not_exceed_evidence_freshness_threshold'] is True
+          assert x['schedule_warm_hours']<=op['evidence_freshness_threshold_hours']
+          assert w['policy']['warm_cadence_hours']<=op['evidence_freshness_threshold_hours']
+          assert all(z['cadence_hours']<=op['evidence_freshness_threshold_hours'] for z in w['entries'] if z['cadence_class']=='WARM')
+          assert e['anti_drift']['query_family_first_query_failure_may_not_define_entity_gap'] is True
+          assert e['anti_drift']['freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh'] is True
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'
@@ -75,6 +86,9 @@ jobs:
           assert "--continuity-seed runtime/continuity-bootstrap-google-trends.json" in runtime_workflow_text
           assert "--previous runtime/latest/google-trends-observations.json" in runtime_workflow_text
           assert "--evidence-fresh-hours 8" in runtime_workflow_text
+          assert "--max-query-variants 3" in runtime_workflow_text
+          assert "--retries-per-query 2" in runtime_workflow_text
+          assert "--sleep-seconds 3" in runtime_workflow_text
           assert w['count']==len(w['entries'])==15 and p['count']==len(p['entries'])==15 and p['minimum_pool_target']==14
           assert all(z['launch_authorization'] is False for z in p['entries']) and len(b['observations'])==10
           assert e['anti_drift']['daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run'] is True
