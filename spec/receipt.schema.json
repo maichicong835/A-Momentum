@@ -7,6 +7,7 @@
     "engine_version",
     "as_of",
     "entities",
+    "temporal_evidence_summary",
     "fallback_pool_status",
     "result"
   ],
@@ -29,6 +30,78 @@
     },
     "result": {
       "type": "string"
+    },
+    "temporal_evidence_summary": {
+      "type": "object",
+      "required": [
+        "freshness_basis",
+        "freshness_threshold_hours",
+        "entity_count",
+        "fresh_entity_count",
+        "stale_entity_count",
+        "unobserved_entity_count",
+        "fresh_entity_ratio",
+        "current_cycle_success_count",
+        "current_cycle_gap_count",
+        "current_cycle_not_due_count",
+        "sensor_gap_advances_freshness",
+        "not_due_advances_freshness"
+      ],
+      "properties": {
+        "freshness_basis": {
+          "const": "LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT"
+        },
+        "freshness_threshold_hours": {
+          "type": "number",
+          "minimum": 0
+        },
+        "latest_successful_observed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fresh_entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stale_entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unobserved_entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fresh_entity_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "current_cycle_success_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "current_cycle_gap_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "current_cycle_not_due_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sensor_gap_advances_freshness": {
+          "const": false
+        },
+        "not_due_advances_freshness": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true
