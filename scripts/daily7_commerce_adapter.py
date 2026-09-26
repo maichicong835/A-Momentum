@@ -24,7 +24,10 @@ ETSY_LISTING = re.compile(r"^[0-9]+$")
 
 
 def parse_dt(value):
-    return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    if parsed.utcoffset() is None:
+        raise ValueError("timestamps must be timezone-aware")
+    return parsed
 
 
 def load_json(path):
@@ -56,7 +59,7 @@ def validate_export(payload, allowed_mechanisms):
         raise ValueError("unsupported Daily7 commerce export schema_version")
     if payload.get("source_repository") != SOURCE_REPOSITORY:
         raise ValueError("source repository drift")
-    commit = str(payload.get("source_commit_sha", "")).strip().lower()
+    commit = str(payload.get("source_commit_sha", "")).strip()
     if not SHA40.fullmatch(commit):
         raise ValueError("source_commit_sha must be exact 40-char lowercase hex")
     run_key = str(payload.get("run_key", "")).strip()
