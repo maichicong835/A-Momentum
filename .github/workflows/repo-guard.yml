@@ -71,6 +71,27 @@ jobs:
           assert all(z['cadence_hours']<=op['evidence_freshness_threshold_hours'] for z in w['entries'] if z['cadence_class']=='WARM')
           assert e['anti_drift']['query_family_first_query_failure_may_not_define_entity_gap'] is True
           assert e['anti_drift']['freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh'] is True
+          assert e['anti_drift']['daily7_commerce_prose_may_not_be_parsed_as_timeseries'] is True
+          assert e['anti_drift']['market_object_commerce_may_not_auto_promote_linked_mechanism'] is True
+          assert e['anti_drift']['daily7_credentials_may_not_cross_provider_boundary'] is True
+          assert e['anti_drift']['p1_runtime_ingest_requires_machine_proven_sanitized_transport'] is True
+          p1=op['commerce_confirmation_p1']
+          assert p1['status']=='CONTRACT_READY_RUNTIME_INGEST_INACTIVE'
+          assert p1['source_repository']=='maichicong835/Amazon-Daily7Source'
+          assert p1['structured_export_schema']=='spec/daily7-commerce-export.schema.json'
+          assert p1['adapter']=='scripts/daily7_commerce_adapter.py'
+          assert p1['legacy_prose_parsing_forbidden'] is True
+          assert p1['exact_source_commit_and_run_binding_required'] is True
+          assert p1['mechanism_keys_must_exist_in_watchlist'] is True
+          assert p1['market_object_signal_may_not_auto_promote_linked_mechanism'] is True
+          assert p1['mechanism_independent_listing_count_supporting_only'] is True
+          assert p1['no_composite_score'] is True
+          assert p1['daily7_selection_authority'] is False
+          assert p1['daily7_credentials_transfer_forbidden'] is True
+          assert p1['public_runtime_private_daily7_fetch_forbidden'] is True
+          assert p1['runtime_ingest_active'] is False
+          assert p1['activation_requires']=='MACHINE_PROVEN_SANITIZED_EXPORT_TRANSPORT'
+          assert Path(p1['structured_export_schema']).is_file() and Path(p1['adapter']).is_file()
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'
@@ -89,6 +110,8 @@ jobs:
           assert "--max-query-variants 3" in runtime_workflow_text
           assert "--retries-per-query 2" in runtime_workflow_text
           assert "--sleep-seconds 3" in runtime_workflow_text
+          assert "daily7_commerce_adapter.py" not in runtime_workflow_text
+          assert "daily7-commerce" not in runtime_workflow_text
           assert w['count']==len(w['entries'])==15 and p['count']==len(p['entries'])==15 and p['minimum_pool_target']==14
           assert all(z['launch_authorization'] is False for z in p['entries']) and len(b['observations'])==10
           assert e['anti_drift']['daily7_must_freeze_provider_output_commit_and_receipt_sha256_per_run'] is True
