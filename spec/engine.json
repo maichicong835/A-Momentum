@@ -130,7 +130,11 @@
     "temporal_route_requires_fresh_entity_evidence_not_fresh_packaging_only": true,
     "sensor_gap_may_not_erase_last_good_signal": true,
     "query_family_first_query_failure_may_not_define_entity_gap": true,
-    "freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh": true
+    "freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh": true,
+    "daily7_commerce_prose_may_not_be_parsed_as_timeseries": true,
+    "market_object_commerce_may_not_auto_promote_linked_mechanism": true,
+    "daily7_credentials_may_not_cross_provider_boundary": true,
+    "p1_runtime_ingest_requires_machine_proven_sanitized_transport": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -182,7 +186,41 @@
       "current_cycle_success_count",
       "current_cycle_gap_count",
       "current_cycle_not_due_count"
-    ]
+    ],
+    "commerce_confirmation_p1": {
+      "status": "CONTRACT_READY_RUNTIME_INGEST_INACTIVE",
+      "source_repository": "maichicong835/Amazon-Daily7Source",
+      "structured_export_schema": "spec/daily7-commerce-export.schema.json",
+      "adapter": "scripts/daily7_commerce_adapter.py",
+      "accepted_surfaces": [
+        "ETSY",
+        "AMAZON"
+      ],
+      "accepted_entity_types": [
+        "MARKET_OBJECT",
+        "MECHANISM"
+      ],
+      "object_level_proxies": [
+        "LISTING_FAVORITES",
+        "LISTING_REVIEW_COUNT"
+      ],
+      "mechanism_level_supporting_proxies": [
+        "INDEPENDENT_LISTING_COUNT"
+      ],
+      "higher_is_stronger_only": true,
+      "legacy_prose_parsing_forbidden": true,
+      "exact_source_commit_and_run_binding_required": true,
+      "mechanism_keys_must_exist_in_watchlist": true,
+      "market_object_keys_namespaced": true,
+      "market_object_signal_may_not_auto_promote_linked_mechanism": true,
+      "mechanism_independent_listing_count_supporting_only": true,
+      "no_composite_score": true,
+      "daily7_selection_authority": false,
+      "daily7_credentials_transfer_forbidden": true,
+      "public_runtime_private_daily7_fetch_forbidden": true,
+      "runtime_ingest_active": false,
+      "activation_requires": "MACHINE_PROVEN_SANITIZED_EXPORT_TRANSPORT"
+    }
   },
   "runtime_data_boundary": {
     "public_repository_mode": "PUBLIC_RUNTIME_WITH_SECRET_ISOLATION",

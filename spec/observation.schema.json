@@ -120,6 +120,10 @@
     },
     "candidate_key": {
       "type": "string"
+    },
+    "linked_mechanism_key": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "additionalProperties": false
