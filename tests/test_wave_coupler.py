@@ -32,6 +32,23 @@ class Coupler(unittest.TestCase):
         self.assertEqual(c["unresolved_reason"],"PARTIAL_PHRASE_OR_ENTITY_OVERLAP_NOT_PHENOMENON_PROOF")
         self.assertEqual(len(c["merch_overlap_candidates"]),1)
 
+    def test_m_primary_intake_does_not_wait_for_r(self):
+        raw={"candidates":[]}
+        merch={"provider_status":"PASS_WITH_DATA","merch_waves":[
+            {"source_seed":"shirt","rank":1,"related_query":"Crochet gifts shirt","rising_value":500,"is_breakout":False}
+        ]}
+        out=w.build(raw,merch)
+        self.assertEqual(out["opportunity_intake_count"],1)
+        c=out["opportunity_intake"][0]
+        self.assertEqual(c["source_lane"],"M_PRIMARY")
+        self.assertEqual(c["intake_state"],"DISCOVERY_INTAKE_READY_UNSCREENED")
+        self.assertFalse(c["requires_r_coupling"])
+        self.assertEqual(c["r_context_state"],"NO_RAW_CONTEXT")
+        self.assertEqual(c["fixed_wait_before_discovery_hours"],0)
+        self.assertEqual(c["temporal_observation_mode"],"PARALLEL_NON_BLOCKING")
+        self.assertTrue(c["structural_triage_required"])
+        self.assertFalse(c["mechanism_decomposition_automatic"])
+
     def test_states_and_boundaries(self):
         raw={"candidates":[{"wave_id":"r1","raw_trend_title":"Alpha Wave"},{"wave_id":"r2","raw_trend_title":"Beta Event"}]}
         merch={"provider_status":"PASS_WITH_DATA","merch_waves":[
@@ -46,6 +63,11 @@ class Coupler(unittest.TestCase):
         self.assertEqual(out["coupling_summary"]["MERCH_NATIVE_WAVE"],1)
         self.assertEqual(out["merch_observation_count"],3)
         self.assertEqual(out["unique_merch_core_count"],2)
+        self.assertEqual(out["opportunity_intake_count"],2)
+        self.assertEqual(len(out["opportunity_intake"]),2)
+        self.assertTrue(all(x["requires_r_coupling"] is False for x in out["opportunity_intake"]))
+        self.assertTrue(all(x["fixed_wait_before_discovery_hours"]==0 for x in out["opportunity_intake"]))
+        self.assertTrue(all(x["structural_triage_required"] is True for x in out["opportunity_intake"]))
         self.assertFalse(out["commercial_eligibility_automatic"])
         self.assertTrue(all(x["bridge_queries"]==[] and x["anchor_query"] is None for x in out["couplings"]))
 if __name__=="__main__": unittest.main()

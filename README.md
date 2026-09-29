@@ -36,6 +36,13 @@ The shadow now observes two independent Google Trends evidence tracks. **Raw Mar
 
 The coupler emits only `COUPLED_WAVE`, `MERCH_NATIVE_WAVE`, `RAW_ONLY_WAVE`, or `UNRESOLVED`. Coupling does not grant commercial eligibility, mechanism identity, bridge queries, anchors, or watchlist promotion. Scores from independent Google Trends requests must not be compared as absolute 0-100 magnitudes; initial learning uses presence, provider-reported rising status/rank within each seed, conservative phrase coupling, timing, and persistence. Cross-seed duplicates are grouped into one normalized merch core while every original seed/rank/value observation is preserved as evidence, preventing the `shirt`/`shirts`/`t shirt` family from inflating apparent wave counts. `COUPLED_WAVE` requires exact normalized core equality; partial phrase or named-entity overlap is `UNRESOLVED`, because sharing an entity does not prove that the raw-news phenomenon and merch-expression phenomenon are the same wave.
 
+
+### M-primary opportunity intake
+
+Dual-Wave discovery does **not** wait for Raw and Merch waves to intersect. Every unique Merch Proxy core enters the shadow opportunity-intake lane immediately as `DISCOVERY_INTAKE_READY_UNSCREENED`. Raw Trending Now remains a parallel attention/context radar, and exact/partial R↔M relationships are evidence enrichment only; they are never an admission gate.
+
+There is no fixed 24–48 hour wait before M-wave discovery intake. Temporal observation runs in parallel and may later describe flash, short, persistent, leading, lagging, or coupled behavior, but persistence is not required to notice an opportunity early. Each M-primary intake still requires structural triage before any mechanism decomposition. The merch proxy remains an expression lens, not proof of sticker demand, commercial eligibility, IP safety, or launch authorization.
+
 Raw RSS capture remains independent of pytrends. The merch-proxy track currently uses pytrends experimentally and degrades to an explicit shadow sensor gap if that transport fails; such a gap never means zero demand and may not invalidate the raw-wave capture.
 
 The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority. Raw Wave RSS capture does not depend on pytrends; only the experimental Merch Proxy shadow currently does. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
