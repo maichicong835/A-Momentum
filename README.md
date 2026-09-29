@@ -51,6 +51,12 @@ HTTP 429 opens a circuit instead of triggering an immediate retry storm on the s
 
 This hardening reduces request footprint but does not make pytrends authoritative. pytrends remains archived/unofficial, and hosted-runner network variability remains a transport risk. The seed family is not expanded merely to compensate for transport failure.
 
+### Merch Proxy transport acceptance gate
+
+Every live Merch Proxy artifact now classifies transport health as one of `RECOVERED_WITH_DATA`, `PARTIAL_WITH_DATA`, `THROTTLED`, `PASS_NO_RISING_DATA`, `PARTIAL_NO_RISING_DATA`, or `OTHER_SENSOR_GAP`. Only the first two states set `bridge_experiment_input_ready=true`.
+
+That readiness flag means only that usable Merch Proxy evidence exists for a downstream experiment. It is **not** commercial eligibility, bridge authority, launch authorization, or proof of demand. A throttled or otherwise empty run blocks the bridge experiment for that snapshot while remaining explicitly distinct from zero demand.
+
 ### M-primary opportunity intake
 
 Dual-Wave discovery does **not** wait for Raw and Merch waves to intersect. Every unique Merch Proxy core enters the shadow opportunity-intake lane immediately as `DISCOVERY_INTAKE_READY_UNSCREENED`. Raw Trending Now remains a parallel attention/context radar, and exact/partial R↔M relationships are evidence enrichment only; they are never an admission gate.

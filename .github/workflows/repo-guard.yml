@@ -112,6 +112,9 @@ jobs:
           assert e['anti_drift']['wave_shadow_push_may_not_call_external_market_providers'] is True
           assert e['anti_drift']['wave_shadow_live_provider_calls_are_schedule_or_manual_only'] is True
           assert e['anti_drift']['code_validation_must_not_consume_market_provider_request_budget'] is True
+          assert e['anti_drift']['bridge_experiment_may_not_open_without_usable_merch_evidence'] is True
+          assert e['anti_drift']['transport_readiness_is_not_commercial_eligibility'] is True
+          assert e['anti_drift']['throttled_merch_transport_must_block_bridge_experiment_input'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -161,6 +164,13 @@ jobs:
           assert wc['anti_drift']['wave_shadow_push_may_not_call_external_market_providers'] is True
           assert wc['anti_drift']['wave_shadow_live_provider_calls_are_schedule_or_manual_only'] is True
           assert wc['anti_drift']['code_validation_must_not_consume_market_provider_request_budget'] is True
+          assert wc['anti_drift']['bridge_experiment_may_not_open_without_usable_merch_evidence'] is True
+          assert wc['anti_drift']['transport_readiness_is_not_commercial_eligibility'] is True
+          assert wc['anti_drift']['throttled_merch_transport_must_block_bridge_experiment_input'] is True
+          mag=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['acceptance_gate']
+          assert mag['bridge_experiment_input_ready_states']==['RECOVERED_WITH_DATA','PARTIAL_WITH_DATA']
+          assert mag['readiness_role']=='TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY'
+          assert mag['throttled_blocks_bridge_experiment_input'] is True
           trw=wc['dual_wave_shadow']['trigger_roles']
           assert trw['schedule']=='LIVE_SHADOW_PROVIDER_CAPTURE'
           assert trw['workflow_dispatch']=='OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE'

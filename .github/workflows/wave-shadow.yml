@@ -90,6 +90,10 @@ jobs:
           assert x['merch_proxy_capture']['cross_seed_score_comparison_forbidden'] is True
           assert x['merch_proxy_capture']['provider_gap_is_no_rising_queries'] is False
           assert x['merch_proxy_capture']['partial_success_preserved'] is True
+          assert x['merch_proxy_capture']['transport_health_state'] in {'RECOVERED_WITH_DATA','PARTIAL_WITH_DATA','THROTTLED','PASS_NO_RISING_DATA','PARTIAL_NO_RISING_DATA','OTHER_SENSOR_GAP'}
+          assert x['merch_proxy_capture']['usable_merch_evidence'] is (x['merch_proxy_capture']['merch_wave_count']>0)
+          assert x['merch_proxy_capture']['bridge_experiment_input_ready'] is (x['merch_proxy_capture']['transport_health_state'] in {'RECOVERED_WITH_DATA','PARTIAL_WITH_DATA'})
+          assert x['merch_proxy_capture']['bridge_experiment_input_readiness_role']=='TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY'
           mt=x['merch_proxy_capture']['transport']
           assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
           assert mt['batched_seed_payload'] is True

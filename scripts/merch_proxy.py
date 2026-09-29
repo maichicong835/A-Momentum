@@ -85,6 +85,19 @@ def is_rate_limit_error(exc):
         return True
     return "429" in str(exc)
 
+def classify_transport_health(provider_status,waves,transport):
+    if provider_status=="PASS_WITH_DATA" and waves:
+        return "RECOVERED_WITH_DATA"
+    if provider_status=="PARTIAL_WITH_DATA" and waves:
+        return "PARTIAL_WITH_DATA"
+    if transport.get("rate_limit_event_count",0)>0 or transport.get("rate_limit_circuit_open") is True:
+        return "THROTTLED"
+    if provider_status=="PASS_NO_RISING_DATA":
+        return "PASS_NO_RISING_DATA"
+    if provider_status=="PARTIAL_NO_RISING_DATA":
+        return "PARTIAL_NO_RISING_DATA"
+    return "OTHER_SENSOR_GAP"
+
 def make_output(seeds,geo,timeframe,seed_results,waves,gaps,transport):
     success_seed_count=sum(1 for x in seed_results if x.get("result")=="SUCCESS")
     if success_seed_count==0:
@@ -93,6 +106,8 @@ def make_output(seeds,geo,timeframe,seed_results,waves,gaps,transport):
         provider_status="PARTIAL_WITH_DATA" if waves else "PARTIAL_NO_RISING_DATA"
     else:
         provider_status="PASS_WITH_DATA" if waves else "PASS_NO_RISING_DATA"
+    transport_health_state=classify_transport_health(provider_status,waves,transport)
+    downstream_ready=transport_health_state in {"RECOVERED_WITH_DATA","PARTIAL_WITH_DATA"}
     return {
         "schema":"A_MOMENTUM_MERCH_PROXY_SHADOW",
         "schema_version":"1.1",
@@ -107,6 +122,10 @@ def make_output(seeds,geo,timeframe,seed_results,waves,gaps,transport):
         "merch_wave_count":len(waves),
         "sensor_gaps":gaps,
         "provider_status":provider_status,
+        "transport_health_state":transport_health_state,
+        "usable_merch_evidence":bool(waves),
+        "bridge_experiment_input_ready":downstream_ready,
+        "bridge_experiment_input_readiness_role":"TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY",
         "credentials_used":False,
         "provider_failure_is_zero_demand":False,
         "provider_gap_is_no_rising_queries":False,
@@ -222,6 +241,10 @@ def validate_output(out):
     assert out["partial_success_preserved"] is True
     assert out["merch_wave_count"]==len(out["merch_waves"])
     assert out["provider_status"] in {"PASS_WITH_DATA","PASS_NO_RISING_DATA","PARTIAL_WITH_DATA","PARTIAL_NO_RISING_DATA","SENSOR_GAP"}
+    assert out["transport_health_state"] in {"RECOVERED_WITH_DATA","PARTIAL_WITH_DATA","THROTTLED","PASS_NO_RISING_DATA","PARTIAL_NO_RISING_DATA","OTHER_SENSOR_GAP"}
+    assert out["usable_merch_evidence"] is (out["merch_wave_count"]>0)
+    assert out["bridge_experiment_input_ready"] is (out["transport_health_state"] in {"RECOVERED_WITH_DATA","PARTIAL_WITH_DATA"})
+    assert out["bridge_experiment_input_readiness_role"]=="TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY"
     t=out["transport"]
     assert t["strategy"]==TRANSPORT_STRATEGY
     assert t["batched_seed_payload"] is True
@@ -255,9 +278,13 @@ def self_test():
     c=FakeClient()
     out=collect_once(["shirt","shirts","t shirt"],client_factory=lambda:c,build_retries=1,between_seed_seconds=0,rate_limit_cooldown_seconds=0,sleep_fn=lambda _:None)
     assert validate_output(out) and c.build_calls==1
+    assert out["transport_health_state"]=="RECOVERED_WITH_DATA"
+    assert out["bridge_experiment_input_ready"] is True
     c2=FakeClient("shirts")
     out2=collect_once(["shirt","shirts","t shirt"],client_factory=lambda:c2,build_retries=1,between_seed_seconds=0,rate_limit_cooldown_seconds=0,sleep_fn=lambda _:None)
     assert out2["provider_status"]=="PARTIAL_WITH_DATA"
+    assert out2["transport_health_state"]=="PARTIAL_WITH_DATA"
+    assert out2["bridge_experiment_input_ready"] is True
     assert out2["transport"]["related_query_attempt_count"]==2
     assert out2["seed_results"][2]["gap_state"]=="RATE_LIMIT_CIRCUIT_OPEN"
     print("A_MOMENTUM_MERCH_PROXY_SELF_TEST_PASS",out["merch_wave_count"],out2["provider_status"])
