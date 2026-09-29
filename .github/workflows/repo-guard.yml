@@ -170,6 +170,16 @@ jobs:
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
           assert "scripts/structural_triage.py" in wave_workflow_text
           assert "scripts/semantic_resolver.py" in wave_workflow_text
+          required_wave_shadow_paths=[
+              "scripts/wave_capture.py","tests/test_wave_capture.py",
+              "scripts/merch_proxy.py","tests/test_merch_proxy.py",
+              "scripts/wave_coupler.py","tests/test_wave_coupler.py",
+              "scripts/structural_triage.py","tests/test_structural_triage.py",
+              "scripts/semantic_resolver.py","tests/test_semantic_resolver.py",
+              "scripts/security_scan.py","spec/wave-capture.json","spec/engine.json",
+              ".github/workflows/wave-shadow.yml"
+          ]
+          assert all(f"- '{p}'" in wave_workflow_text for p in required_wave_shadow_paths)
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'
