@@ -52,9 +52,9 @@ def group_merch_waves(rows):
         g["any_breakout"]=g["any_breakout"] or bool(evidence["is_breakout"])
     return [groups[k] for k in order]
 
-def conservative_match(raw_title,merch_core):
+def conservative_match(raw_title,merch_query_or_core):
     r=norm_tokens(raw_title)
-    m=norm_tokens(merch_core)
+    m=norm_tokens(merch_core_key(merch_query_or_core))
     if not r or not m:
         return False
     if r==m:
