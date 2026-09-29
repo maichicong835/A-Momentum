@@ -1,0 +1,57 @@
+{
+  "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "authority": "SHADOW_DISCOVERY_ONLY",
+  "objective": "OPEN_UNIVERSE_GOOGLE_TRENDS_WAVE_CAPTURE_THEN_COMMERCIAL_BRIDGE_WITHOUT_PRODUCTION_MUTATION",
+  "source": {
+    "provider": "GOOGLE_TRENDS",
+    "endpoint_family": "TRENDING_NOW_RSS",
+    "default_geo": "US",
+    "credentials_used": false
+  },
+  "query_semantics": {
+    "DISCOVERY_QUERY": {
+      "purpose": "CAPTURE_RAW_MARKET_WAVE",
+      "may_define_momentum_anchor": false
+    },
+    "BRIDGE_QUERY": {
+      "purpose": "TEST_COMMERCIAL_EXPRESSION_PROXIMITY",
+      "templates": [
+        "{trend} shirt",
+        "{trend} sticker"
+      ],
+      "may_define_momentum_anchor": false
+    },
+    "ANCHOR_QUERY": {
+      "purpose": "STABLE_LONGITUDINAL_MECHANISM_MEASUREMENT",
+      "assigned_automatically": false,
+      "required_before_production_watchlist_promotion": true
+    }
+  },
+  "promotion_policy": {
+    "automatic_watchlist_promotion": false,
+    "production_watchlist_mutation_forbidden": true,
+    "runtime_latest_mutation_forbidden": true,
+    "shadow_candidate_default_state": "SHADOW_UNPROVEN",
+    "eligible_state": "ELIGIBLE_FOR_ANCHOR_DESIGN",
+    "explicit_anchor_design_required": true,
+    "downstream_commercial_refresh_required": true,
+    "downstream_property_trademark_safety_recheck_required": true
+  },
+  "anti_drift": {
+    "raw_trend_is_not_commercial_opportunity": true,
+    "bridge_success_is_not_momentum_confirmation": true,
+    "support_query_may_not_replace_anchor_series": true,
+    "provider_failure_is_not_zero_demand": true,
+    "no_new_h24_engine": true,
+    "no_new_pte_engine": true,
+    "no_amazon_etsy_tiktok_pinterest_collectors_in_initial_rollout": true
+  },
+  "current_transport_risk": {
+    "longitudinal_sensor_uses_pytrends": true,
+    "pytrends_is_unofficial": true,
+    "wave_shadow_does_not_depend_on_pytrends": true,
+    "official_google_trends_api_alpha_not_assumed_available": true
+  }
+}

@@ -130,7 +130,11 @@
     "temporal_route_requires_fresh_entity_evidence_not_fresh_packaging_only": true,
     "sensor_gap_may_not_erase_last_good_signal": true,
     "query_family_first_query_failure_may_not_define_entity_gap": true,
-    "freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh": true
+    "freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh": true,
+    "wave_capture_shadow_may_not_mutate_production_watchlist": true,
+    "wave_capture_shadow_may_not_publish_runtime_latest": true,
+    "discovery_bridge_anchor_query_roles_must_remain_distinct": true,
+    "bridge_or_support_query_may_not_redefine_anchor_longitudinal_series": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -255,6 +259,42 @@
       "push_may_publish_runtime_latest": false,
       "schedule_may_publish_runtime_latest": true,
       "workflow_dispatch_may_publish_runtime_latest": true
+    }
+  },
+  "wave_capture_shadow": {
+    "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+    "purpose": "CATCH_OPEN_GOOGLE_TRENDS_WAVES_AND_FORM_PROBATIONARY_COMMERCIAL_EXPRESSION_CANDIDATES_WITHOUT_MUTATING_MOMENTUM_CORE",
+    "source": "GOOGLE_TRENDS_TRENDING_NOW_RSS",
+    "market": "US",
+    "credential_required": false,
+    "production_authority": false,
+    "daily7_selection_authority": false,
+    "trademark_or_property_safety_authority": false,
+    "production_watchlist_mutation_forbidden": true,
+    "runtime_latest_publication_forbidden": true,
+    "query_roles": {
+      "DISCOVERY_QUERY": "RAW_TREND_QUERY_OR_CLUSTER_TITLE_FOR_OPEN_WAVE_CAPTURE_ONLY",
+      "BRIDGE_QUERY": "MERCH_EXPRESSION_PROBE_SUCH_AS_SHIRT_OR_STICKER_WITHOUT_LONGITUDINAL_AUTHORITY",
+      "ANCHOR_QUERY": "STABLE_MECHANISM_QUERY_ASSIGNED_ONLY_AFTER_SHADOW_EVIDENCE_AND_EXPLICIT_PROMOTION"
+    },
+    "promotion": {
+      "automatic": false,
+      "initial_state": "SHADOW_UNPROVEN",
+      "next_state": "ELIGIBLE_FOR_ANCHOR_DESIGN",
+      "production_watchlist_write": "FORBIDDEN_IN_SHADOW_MODE",
+      "anchor_required_before_momentum_core_entry": true
+    },
+    "initial_rollout": {
+      "collector": "GOOGLE_TRENDS_ONLY",
+      "h24_capability": "WAVE_CAPTURE_FUNCTION_NOT_SEPARATE_ENGINE",
+      "pte_capability": "COMMERCIAL_MECHANISM_DECOMPOSITION_CONCEPT_NOT_SEPARATE_RUNTIME_ENGINE",
+      "other_surface_collectors_forbidden": true
+    },
+    "transport": {
+      "trending_now": "PUBLIC_RSS_NO_CREDENTIAL",
+      "existing_longitudinal_sensor": "PYTRENDS_UNOFFICIAL_TRANSPORT",
+      "pytrends_is_fragility_not_authority": true,
+      "official_trends_api_alpha_may_be_evaluated_when_accessIBLE": true
     }
   }
 }

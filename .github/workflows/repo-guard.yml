@@ -71,6 +71,25 @@ jobs:
           assert all(z['cadence_hours']<=op['evidence_freshness_threshold_hours'] for z in w['entries'] if z['cadence_class']=='WARM')
           assert e['anti_drift']['query_family_first_query_failure_may_not_define_entity_gap'] is True
           assert e['anti_drift']['freshness_may_not_be_improved_by_relabeling_stale_last_good_as_fresh'] is True
+          assert e['anti_drift']['wave_capture_shadow_may_not_mutate_production_watchlist'] is True
+          assert e['anti_drift']['wave_capture_shadow_may_not_publish_runtime_latest'] is True
+          assert e['anti_drift']['discovery_bridge_anchor_query_roles_must_remain_distinct'] is True
+          assert e['anti_drift']['bridge_or_support_query_may_not_redefine_anchor_longitudinal_series'] is True
+          wc=json.loads(Path('spec/wave-capture.json').read_text())
+          assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
+          assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
+          assert wc['promotion_policy']['automatic_watchlist_promotion'] is False
+          assert wc['promotion_policy']['production_watchlist_mutation_forbidden'] is True
+          assert wc['promotion_policy']['runtime_latest_mutation_forbidden'] is True
+          assert wc['query_semantics']['DISCOVERY_QUERY']['may_define_momentum_anchor'] is False
+          assert wc['query_semantics']['BRIDGE_QUERY']['may_define_momentum_anchor'] is False
+          assert wc['query_semantics']['ANCHOR_QUERY']['assigned_automatically'] is False
+          wave_workflow_text=Path('.github/workflows/wave-shadow.yml').read_text()
+          assert 'permissions:\n  contents: read' in wave_workflow_text
+          assert 'git push' not in wave_workflow_text
+          assert 'runtime/latest' not in wave_workflow_text
+          assert 'runtime/watchlist.json' not in wave_workflow_text
+          assert "cron: '47 */4 * * *'" in wave_workflow_text
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'
