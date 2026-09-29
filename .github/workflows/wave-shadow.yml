@@ -1,0 +1,56 @@
+name: A-Momentum Wave Shadow
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 */4 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/wave_capture.py'
+      - 'tests/test_wave_capture.py'
+      - 'spec/wave-capture.json'
+      - 'spec/engine.json'
+      - '.github/workflows/wave-shadow.yml'
+permissions:
+  contents: read
+concurrency:
+  group: a-momentum-wave-shadow
+  cancel-in-progress: false
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Credential scan before shadow discovery
+        run: python scripts/security_scan.py --repository
+      - name: Validate wave-capture semantics locally
+        run: |
+          python scripts/wave_capture.py --self-test
+          python -m unittest tests.test_wave_capture
+      - name: Capture Google Trends open waves
+        run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-wave-shadow.json
+      - name: Enforce shadow-only boundary
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/a-momentum-wave-shadow.json'))
+          assert x['mode']=='SHADOW_ONLY_NO_PRODUCTION_AUTHORITY'
+          assert x['credentials_used'] is False
+          assert x['runtime_latest_mutation'] is False
+          assert x['production_watchlist_mutation'] is False
+          assert x['anchor_assignment_automatic'] is False
+          assert x['candidate_count']>0
+          assert all(c['anchor_query'] is None for c in x['candidates'])
+          assert all(c['automatic_watchlist_promotion'] is False for c in x['candidates'])
+          print('A_MOMENTUM_WAVE_SHADOW_BOUNDARY_PASS',x['candidate_count'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: a-momentum-wave-shadow
+          path: /tmp/a-momentum-wave-shadow.json
+          if-no-files-found: error
+          retention-days: 14

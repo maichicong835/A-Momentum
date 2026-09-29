@@ -17,3 +17,18 @@ Public runtime does not mean public credentials. Credentials, tokens, cookies, s
 ## Receipt consumption
 
 `runtime/latest/receipt.json` is a discovery pointer, not immutable Daily7 authority. Each Daily7 run must freeze the exact provider-output commit and SHA-256 of the receipt it consumes. Provider failure falls back to F5 direct Daily7 discovery.
+
+## Google Trends wave shadow
+
+The production Momentum Core remains the fixed-watchlist longitudinal engine. A separate **shadow-only** wave-capture path probes the open Google Trends Trending Now universe without changing production authority.
+
+`scripts/wave_capture.py` captures public US Trending Now RSS items and keeps three query roles explicit:
+
+- **DISCOVERY_QUERY**: the raw trend query/cluster used only to catch a market wave.
+- **BRIDGE_QUERY**: commercial-expression probes such as `<trend> shirt` and `<trend> sticker`; these are supporting probes and may not redefine a longitudinal Momentum series.
+- **ANCHOR_QUERY**: intentionally unassigned in shadow mode. An anchor requires later evidence and explicit promotion before a candidate may enter the production watchlist.
+
+The shadow workflow `.github/workflows/wave-shadow.yml` has read-only repository permissions, uploads an artifact only, and is forbidden from mutating `runtime/latest` or `runtime/watchlist.json`. It does not create separate H24 or PTE engines: H24 is represented only as the wave-capture capability, while PTE-like decomposition remains a later mechanism-design function.
+
+The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority; the new wave shadow does not depend on pytrends. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
+
