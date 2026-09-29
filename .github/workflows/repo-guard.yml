@@ -105,6 +105,10 @@ jobs:
           assert e['anti_drift']['mechanism_hypothesis_may_not_generate_product_creative'] is True
           assert e['anti_drift']['mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist'] is True
           assert e['anti_drift']['unsupported_review_type_must_hold_not_infer'] is True
+          assert e['anti_drift']['merch_proxy_429_may_not_trigger_seed_retry_storm'] is True
+          assert e['anti_drift']['merch_proxy_partial_success_must_survive_later_seed_gap'] is True
+          assert e['anti_drift']['merch_proxy_provider_gap_may_not_mean_no_rising_queries'] is True
+          assert e['anti_drift']['merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -147,6 +151,18 @@ jobs:
           assert wc['anti_drift']['mechanism_hypothesis_may_not_generate_product_creative'] is True
           assert wc['anti_drift']['mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist'] is True
           assert wc['anti_drift']['unsupported_review_type_must_hold_not_infer'] is True
+          assert wc['anti_drift']['merch_proxy_429_may_not_trigger_seed_retry_storm'] is True
+          assert wc['anti_drift']['merch_proxy_partial_success_must_survive_later_seed_gap'] is True
+          assert wc['anti_drift']['merch_proxy_provider_gap_may_not_mean_no_rising_queries'] is True
+          assert wc['anti_drift']['merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure'] is True
+          mt=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['transport_policy']
+          assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
+          assert mt['one_batched_seed_payload'] is True
+          assert mt['per_widget_fetch'] is True
+          assert mt['partial_success_preserved'] is True
+          assert mt['immediate_seed_retry_on_429'] is False
+          assert mt['rate_limit_circuit_breaker'] is True
+          assert mt['rate_limit_is_sensor_gap_not_zero_demand'] is True
           md=wc['dual_wave_shadow']['mechanism_decomposition']
           assert md['authority']=='SHADOW_ABSTRACTION_ONLY'
           assert md['input_gate']=='EXPLICIT_MECHANISM_REVIEW_ALLOWED_ONLY'
@@ -198,6 +214,10 @@ jobs:
           assert 'runtime/watchlist.json' not in wave_workflow_text
           assert "cron: '47 */4 * * *'" in wave_workflow_text
           assert "shirt|shirts|t shirt" in wave_workflow_text
+          assert "--between-seed-seconds 6" in wave_workflow_text
+          assert "--rate-limit-cooldown-seconds 30" in wave_workflow_text
+          assert "--build-retries 2" in wave_workflow_text
+          assert "--retries 2 --sleep-seconds 2" not in wave_workflow_text
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
           assert "scripts/structural_triage.py" in wave_workflow_text
           assert "scripts/semantic_resolver.py" in wave_workflow_text
