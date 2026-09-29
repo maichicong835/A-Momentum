@@ -52,17 +52,21 @@ def group_merch_waves(rows):
         g["any_breakout"]=g["any_breakout"] or bool(evidence["is_breakout"])
     return [groups[k] for k in order]
 
-def conservative_match(raw_title,merch_query_or_core):
+def match_relation(raw_title,merch_query_or_core):
     r=norm_tokens(raw_title)
     m=norm_tokens(merch_core_key(merch_query_or_core))
     if not r or not m:
-        return False
+        return "NONE"
     if r==m:
-        return True
+        return "EXACT"
     if len(r)>=2 and len(m)>=2:
         rs=" ".join(r); ms=" ".join(m)
-        return rs in ms or ms in rs
-    return False
+        if rs in ms or ms in rs:
+            return "PARTIAL_PHRASE_OVERLAP"
+    return "NONE"
+
+def conservative_match(raw_title,merch_query_or_core):
+    return match_relation(raw_title,merch_query_or_core)=="EXACT"
 
 def build(raw,merch):
     raw_waves=raw.get("candidates",[])
@@ -71,23 +75,35 @@ def build(raw,merch):
     provider_status=merch.get("provider_status","SENSOR_GAP")
     used=set(); couplings=[]
     for rw in raw_waves:
-        matches=[]
+        matches=[]; overlaps=[]; overlap_indexes=[]
         for i,group in enumerate(merch_groups):
-            if conservative_match(rw.get("raw_trend_title"),group.get("merch_core")):
+            relation=match_relation(rw.get("raw_trend_title"),group.get("merch_core"))
+            if relation=="EXACT":
                 used.add(i)
                 matches.append(group)
+            elif relation=="PARTIAL_PHRASE_OVERLAP":
+                overlaps.append(group)
+                overlap_indexes.append(i)
+        unresolved_reason=None
         if matches:
             state="COUPLED_WAVE"
         elif provider_status=="SENSOR_GAP":
             state="UNRESOLVED"
+            unresolved_reason="MERCH_PROXY_SENSOR_GAP"
+        elif overlaps:
+            state="UNRESOLVED"
+            unresolved_reason="PARTIAL_PHRASE_OR_ENTITY_OVERLAP_NOT_PHENOMENON_PROOF"
+            used.update(overlap_indexes)
         else:
             state="RAW_ONLY_WAVE"
         couplings.append({
             "wave_id":rw.get("wave_id"),
             "raw_trend_title":rw.get("raw_trend_title"),
             "coupling_state":state,
-            "match_policy":"CONSERVATIVE_NORMALIZED_PHRASE_MATCH",
+            "match_policy":"EXACT_NORMALIZED_CORE_ONLY_PARTIAL_OVERLAP_IS_UNRESOLVED",
             "merch_matches":matches,
+            "merch_overlap_candidates":overlaps,
+            "unresolved_reason":unresolved_reason,
             "commercial_eligibility_decision":None,
             "mechanism_key":None,
             "bridge_queries":[],
@@ -103,6 +119,8 @@ def build(raw,merch):
             "coupling_state":"MERCH_NATIVE_WAVE",
             "match_policy":"UNMATCHED_UNIQUE_MERCH_CORE",
             "merch_matches":[group],
+            "merch_overlap_candidates":[],
+            "unresolved_reason":None,
             "commercial_eligibility_decision":None,
             "mechanism_key":None,
             "bridge_queries":[],
@@ -112,7 +130,7 @@ def build(raw,merch):
     summary={k:sum(1 for x in couplings if x["coupling_state"]==k) for k in ["COUPLED_WAVE","MERCH_NATIVE_WAVE","RAW_ONLY_WAVE","UNRESOLVED"]}
     return {
         "schema":"A_MOMENTUM_DUAL_WAVE_SHADOW",
-        "schema_version":"1.1",
+        "schema_version":"1.2",
         "engine_version":ENGINE_VERSION,
         "mode":"SHADOW_ONLY_NO_PRODUCTION_AUTHORITY",
         "raw_wave_capture":raw,
@@ -172,6 +190,7 @@ def self_test():
     assert gap["coupling_summary"]["UNRESOLVED"]==2
     assert conservative_match("Delta","delta")
     assert not conservative_match("Delta","delta airlines")
+    assert match_relation("Dolly Parton estate planning","dolly parton")=="PARTIAL_PHRASE_OVERLAP"
     print("A_MOMENTUM_DUAL_WAVE_COUPLER_SELF_TEST_PASS")
 
 def main():

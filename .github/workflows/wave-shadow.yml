@@ -60,6 +60,7 @@ jobs:
           assert x['merch_proxy_capture']['cross_seed_score_comparison_forbidden'] is True
           assert x['unique_merch_core_count'] <= x['merch_observation_count']
           assert x['merch_grouping_policy']=='NORMALIZED_QUERY_WITH_MERCH_FORMAT_TOKENS_REMOVED_PRESERVE_SEED_EVIDENCE'
+          assert all(c['match_policy'] in {'EXACT_NORMALIZED_CORE_ONLY_PARTIAL_OVERLAP_IS_UNRESOLVED','UNMATCHED_UNIQUE_MERCH_CORE'} for c in x['couplings'])
           assert all(c['bridge_queries']==[] for c in x['couplings'])
           assert all(c['anchor_query'] is None for c in x['couplings'])
           assert all(c['mechanism_key'] is None for c in x['couplings'])
