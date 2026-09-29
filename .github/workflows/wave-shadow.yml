@@ -59,6 +59,15 @@ jobs:
           assert x['merch_proxy_capture']['provider_failure_is_zero_demand'] is False
           assert x['merch_proxy_capture']['cross_seed_score_comparison_forbidden'] is True
           assert x['unique_merch_core_count'] <= x['merch_observation_count']
+          assert x['opportunity_intake_count']==x['unique_merch_core_count']
+          assert x['discovery_model']['primary_opportunity_lane']=='MERCH_PROXY_WAVE'
+          assert x['discovery_model']['r_coupling_required_for_m_intake'] is False
+          assert x['discovery_model']['fixed_wait_before_m_intake_hours']==0
+          assert x['discovery_model']['temporal_observation_mode']=='PARALLEL_NON_BLOCKING'
+          assert all(c['source_lane']=='M_PRIMARY' for c in x['opportunity_intake'])
+          assert all(c['intake_state']=='DISCOVERY_INTAKE_READY_UNSCREENED' for c in x['opportunity_intake'])
+          assert all(c['requires_r_coupling'] is False for c in x['opportunity_intake'])
+          assert all(c['structural_triage_required'] is True for c in x['opportunity_intake'])
           assert x['merch_grouping_policy']=='NORMALIZED_QUERY_WITH_MERCH_FORMAT_TOKENS_REMOVED_PRESERVE_SEED_EVIDENCE'
           assert all(c['match_policy'] in {'EXACT_NORMALIZED_CORE_ONLY_PARTIAL_OVERLAP_IS_UNRESOLVED','UNMATCHED_UNIQUE_MERCH_CORE'} for c in x['couplings'])
           assert all(c['bridge_queries']==[] for c in x['couplings'])

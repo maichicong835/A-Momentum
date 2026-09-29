@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Conservative dual-wave coupler for A-Momentum shadow evidence."""
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -68,11 +69,54 @@ def match_relation(raw_title,merch_query_or_core):
 def conservative_match(raw_title,merch_query_or_core):
     return match_relation(raw_title,merch_query_or_core)=="EXACT"
 
+
+def opportunity_id(merch_core):
+    return "m-" + hashlib.sha256(str(merch_core).encode("utf-8")).hexdigest()[:16]
+
+def build_m_primary_intake(merch_groups,raw_waves):
+    intake=[]
+    for group in merch_groups:
+        exact=[]; partial=[]
+        for rw in raw_waves:
+            relation=match_relation(rw.get("raw_trend_title"),group.get("merch_core"))
+            if relation=="EXACT":
+                exact.append({"wave_id":rw.get("wave_id"),"raw_trend_title":rw.get("raw_trend_title")})
+            elif relation=="PARTIAL_PHRASE_OVERLAP":
+                partial.append({"wave_id":rw.get("wave_id"),"raw_trend_title":rw.get("raw_trend_title")})
+        if exact:
+            r_state="EXACT_COUPLED_CONTEXT"
+        elif partial:
+            r_state="PARTIAL_OVERLAP_CONTEXT"
+        else:
+            r_state="NO_RAW_CONTEXT"
+        intake.append({
+            "opportunity_id":opportunity_id(group.get("merch_core")),
+            "source_lane":"M_PRIMARY",
+            "intake_state":"DISCOVERY_INTAKE_READY_UNSCREENED",
+            "merch_core":group.get("merch_core"),
+            "query_variants":group.get("query_variants",[]),
+            "seed_evidence":group.get("seed_evidence",[]),
+            "any_breakout":group.get("any_breakout",False),
+            "requires_r_coupling":False,
+            "r_context_role":"OPTIONAL_ENRICHMENT_NOT_ADMISSION_GATE",
+            "r_context_state":r_state,
+            "r_exact_matches":exact,
+            "r_partial_matches":partial,
+            "fixed_wait_before_discovery_hours":0,
+            "temporal_observation_mode":"PARALLEL_NON_BLOCKING",
+            "structural_triage_required":True,
+            "mechanism_decomposition_automatic":False,
+            "commercial_eligibility_decision":None,
+            "production_eligible":False
+        })
+    return intake
+
 def build(raw,merch):
     raw_waves=raw.get("candidates",[])
     merch_observations=merch.get("merch_waves",[])
     merch_groups=group_merch_waves(merch_observations)
     provider_status=merch.get("provider_status","SENSOR_GAP")
+    opportunity_intake=build_m_primary_intake(merch_groups,raw_waves)
     used=set(); couplings=[]
     for rw in raw_waves:
         matches=[]; overlaps=[]; overlap_indexes=[]
@@ -130,7 +174,7 @@ def build(raw,merch):
     summary={k:sum(1 for x in couplings if x["coupling_state"]==k) for k in ["COUPLED_WAVE","MERCH_NATIVE_WAVE","RAW_ONLY_WAVE","UNRESOLVED"]}
     return {
         "schema":"A_MOMENTUM_DUAL_WAVE_SHADOW",
-        "schema_version":"1.2",
+        "schema_version":"1.3",
         "engine_version":ENGINE_VERSION,
         "mode":"SHADOW_ONLY_NO_PRODUCTION_AUTHORITY",
         "raw_wave_capture":raw,
@@ -138,6 +182,16 @@ def build(raw,merch):
         "merch_observation_count":len(merch_observations),
         "unique_merch_core_count":len(merch_groups),
         "merch_grouping_policy":"NORMALIZED_QUERY_WITH_MERCH_FORMAT_TOKENS_REMOVED_PRESERVE_SEED_EVIDENCE",
+        "discovery_model":{
+            "primary_opportunity_lane":"MERCH_PROXY_WAVE",
+            "raw_wave_role":"PARALLEL_ATTENTION_CONTEXT",
+            "coupling_role":"OPTIONAL_EVIDENCE_ENRICHMENT_NOT_ADMISSION_GATE",
+            "r_coupling_required_for_m_intake":False,
+            "fixed_wait_before_m_intake_hours":0,
+            "temporal_observation_mode":"PARALLEL_NON_BLOCKING"
+        },
+        "opportunity_intake":opportunity_intake,
+        "opportunity_intake_count":len(opportunity_intake),
         "couplings":couplings,
         "coupling_summary":summary,
         "coupling_authority":"EVIDENCE_CLASSIFICATION_ONLY_NOT_COMMERCIAL_ELIGIBILITY",
@@ -163,6 +217,16 @@ def validate_output(out):
     assert out["bridge_query_materialization_automatic"] is False
     assert out["anchor_assignment_automatic"] is False
     assert out["unique_merch_core_count"]<=out["merch_observation_count"]
+    assert out["opportunity_intake_count"]==out["unique_merch_core_count"]==len(out["opportunity_intake"])
+    assert out["discovery_model"]["primary_opportunity_lane"]=="MERCH_PROXY_WAVE"
+    assert out["discovery_model"]["r_coupling_required_for_m_intake"] is False
+    assert out["discovery_model"]["fixed_wait_before_m_intake_hours"]==0
+    assert out["discovery_model"]["temporal_observation_mode"]=="PARALLEL_NON_BLOCKING"
+    assert all(x["source_lane"]=="M_PRIMARY" for x in out["opportunity_intake"])
+    assert all(x["intake_state"]=="DISCOVERY_INTAKE_READY_UNSCREENED" for x in out["opportunity_intake"])
+    assert all(x["requires_r_coupling"] is False for x in out["opportunity_intake"])
+    assert all(x["structural_triage_required"] is True for x in out["opportunity_intake"])
+    assert all(x["mechanism_decomposition_automatic"] is False for x in out["opportunity_intake"])
     valid={"COUPLED_WAVE","MERCH_NATIVE_WAVE","RAW_ONLY_WAVE","UNRESOLVED"}
     assert all(x["coupling_state"] in valid for x in out["couplings"])
     assert all(x["bridge_queries"]==[] and x["anchor_query"] is None and x["mechanism_key"] is None for x in out["couplings"])
@@ -186,6 +250,9 @@ def self_test():
     assert out["coupling_summary"]["RAW_ONLY_WAVE"]==1
     assert out["coupling_summary"]["MERCH_NATIVE_WAVE"]==1
     assert out["merch_observation_count"]==3 and out["unique_merch_core_count"]==2
+    assert out["opportunity_intake_count"]==2
+    assert all(x["requires_r_coupling"] is False for x in out["opportunity_intake"])
+    assert [x for x in out["opportunity_intake"] if x["merch_core"]=="crochet gifts"][0]["r_context_state"]=="NO_RAW_CONTEXT"
     gap=build(raw,{"provider_status":"SENSOR_GAP","merch_waves":[]})
     assert gap["coupling_summary"]["UNRESOLVED"]==2
     assert conservative_match("Delta","delta")

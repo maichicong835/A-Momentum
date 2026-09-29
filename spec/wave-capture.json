@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "DUAL_WAVE_GOOGLE_TRENDS_SHADOW_CAPTURE_AND_COUPLING_WITHOUT_COMMERCIAL_OR_PRODUCTION_AUTHORITY",
+  "objective": "M_PRIMARY_DUAL_WAVE_GOOGLE_TRENDS_SHADOW_DISCOVERY_WITH_R_CONTEXT_AND_NONBLOCKING_TEMPORAL_OBSERVATION",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -58,7 +58,11 @@
     "coupled_wave_is_not_commercial_eligibility": true,
     "merch_native_wave_is_not_commercial_eligibility": true,
     "cross_seed_duplicate_related_queries_must_not_inflate_merch_wave_count": true,
-    "named_entity_or_partial_phrase_overlap_may_not_claim_coupled_wave": true
+    "named_entity_or_partial_phrase_overlap_may_not_claim_coupled_wave": true,
+    "m_wave_may_enter_discovery_without_r_coupling": true,
+    "r_m_coupling_may_not_be_discovery_admission_gate": true,
+    "temporal_observation_may_not_delay_initial_m_discovery_intake": true,
+    "merch_proxy_is_expression_proxy_not_sticker_demand_authority": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -106,6 +110,19 @@
       "raw_merch_observations_remain_preserved": true,
       "exact_coupling_required": true,
       "partial_phrase_overlap_state": "UNRESOLVED"
+    },
+    "discovery_model": {
+      "primary_opportunity_lane": "MERCH_PROXY_WAVE",
+      "m_intake_state": "DISCOVERY_INTAKE_READY_UNSCREENED",
+      "r_wave_role": "PARALLEL_ATTENTION_CONTEXT",
+      "coupling_role": "OPTIONAL_EVIDENCE_ENRICHMENT_NOT_ADMISSION_GATE",
+      "r_coupling_required_for_m_intake": false,
+      "fixed_wait_before_m_intake_hours": 0,
+      "temporal_observation_mode": "PARALLEL_NON_BLOCKING",
+      "structural_triage_required_before_mechanism_decomposition": true,
+      "automatic_mechanism_decomposition": false,
+      "automatic_commercial_eligibility": false,
+      "production_authority": false
     }
   }
 }
