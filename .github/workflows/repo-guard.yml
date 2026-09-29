@@ -93,7 +93,8 @@ jobs:
           assert e['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
           assert e['anti_drift']['semantic_metadata_provider_may_not_become_market_signal'] is True
           assert e['anti_drift']['semantic_resolution_requires_exact_label_or_alias_match'] is True
-          assert e['anti_drift']['multiple_exact_semantic_matches_must_remain_ambiguous'] is True
+          assert e['anti_drift']['multiple_exact_semantic_matches_require_unique_canonical_evidence_or_remain_ambiguous'] is True
+          assert e['anti_drift']['semantic_provider_throttling_must_be_gap_not_semantic_absence'] is True
           assert e['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
           assert e['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
           assert e['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
@@ -127,7 +128,8 @@ jobs:
           assert wc['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
           assert wc['anti_drift']['semantic_metadata_provider_may_not_become_market_signal'] is True
           assert wc['anti_drift']['semantic_resolution_requires_exact_label_or_alias_match'] is True
-          assert wc['anti_drift']['multiple_exact_semantic_matches_must_remain_ambiguous'] is True
+          assert wc['anti_drift']['multiple_exact_semantic_matches_require_unique_canonical_evidence_or_remain_ambiguous'] is True
+          assert wc['anti_drift']['semantic_provider_throttling_must_be_gap_not_semantic_absence'] is True
           assert wc['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
           assert wc['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
           assert wc['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
@@ -135,7 +137,9 @@ jobs:
           assert sr['provider']=='WIKIDATA'
           assert sr['provider_role']=='METADATA_ONLY_NOT_MARKET_SIGNAL'
           assert sr['exact_match_required'] is True
-          assert sr['ambiguous_or_missing_exact_match_remains_hold'] is True
+          assert sr['ambiguous_or_missing_canonical_match_remains_hold'] is True
+          assert sr['canonicalization_policy']=='UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES'
+          assert sr['provider_throttling_is_gap_not_semantic_absence'] is True
           assert sr['market_signal_authority'] is False
           assert sr['commercial_eligibility_authority'] is False
           assert sr['ip_safety_authority'] is False
