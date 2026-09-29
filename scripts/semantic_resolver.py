@@ -3,12 +3,14 @@
 
 Only HOLD_SEMANTIC_REVIEW items are queried. Wikidata is metadata-only and
 never a market signal, IP/trademark authority, commercial gate, or mechanism
-generator. Exact label/alias matches may be classified; ambiguity remains HOLD.
+generator. Resolution requires exact query/entity correspondence plus, when
+needed, unique canonical evidence; ambiguity remains HOLD.
 """
 import argparse
 import json
 import re
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -31,28 +33,45 @@ ORG_TERMS=("company","brand","organization","corporation","fashion label","sport
 EVENT_TERMS=("event","hurricane","tropical cyclone","tournament","championship","election","incident","disaster")
 CULTURAL_TERMS=("personification","symbol","sports paraphernalia","novelty item","practical joke","prop")
 PRODUCT_TERMS=("device","beverage","drink","headgear","garment","clothing","toy")
-CONCEPT_TERMS=("concept","term","phenomenon","stereotype","social role","condition")
+CONCEPT_TERMS=("concept","term","phenomenon","stereotype","social role","condition","word or phrase formed")
 
 def norm(text):
     s=str(text or "").casefold().replace("'","")
     return " ".join(re.findall(r"[a-z0-9]+",s))
 
-def api_get(params,timeout=15,retries=2,sleep_seconds=0.4):
+def api_get(params,timeout=20,retries=3,sleep_seconds=1.0):
+    params=dict(params)
+    params.setdefault("format","json")
+    params.setdefault("maxlag",5)
     q=urllib.parse.urlencode(params)
     url=ENDPOINT+"?"+q
     last=None
     for attempt in range(max(1,int(retries))):
         try:
             req=urllib.request.Request(url,headers={
-                "User-Agent":"A-Momentum-Semantic-Shadow/0.2.0 (metadata-only)",
+                "User-Agent":"A-Momentum-Semantic-Shadow/0.2.0 (metadata-only; contact via GitHub repository)",
                 "Accept":"application/json"
             })
             with urllib.request.urlopen(req,timeout=timeout) as r:
                 return json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            last=e
+            retry_after=0.0
+            try:
+                retry_after=float(e.headers.get("Retry-After") or 0)
+            except Exception:
+                retry_after=0.0
+            transient=e.code in {429,500,502,503,504}
+            if transient and attempt+1<max(1,int(retries)):
+                time.sleep(max(retry_after,float(sleep_seconds)*(2**attempt),0.5))
+                continue
+            break
         except Exception as e:
             last=e
             if attempt+1<max(1,int(retries)):
-                time.sleep(max(float(sleep_seconds),0.1)*(2**attempt))
+                time.sleep(max(float(sleep_seconds)*(2**attempt),0.5))
+                continue
+            break
     raise last
 
 def exact_candidates(query,search_results):
@@ -63,7 +82,6 @@ def exact_candidates(query,search_results):
         match=norm((r.get("match") or {}).get("text"))
         if nq and (label==nq or match==nq):
             out.append(r)
-    # dedupe qid while preserving order
     seen=set(); uniq=[]
     for r in out:
         qid=r.get("id")
@@ -81,8 +99,6 @@ def contains_any(desc,terms):
 
 def classify_exact(result):
     desc=norm(result.get("description"))
-    # Search result type is metadata evidence only. Match whole normalized
-    # tokens/phrases so "song" never matches "songwriter", etc.
     if contains_any(desc,CREATIVE_TERMS):
         return "CREATIVE_PROPERTY_OR_WORK",False,"DESCRIPTION_CREATIVE_WORK_SIGNAL"
     if contains_any(desc,PERSON_TERMS):
@@ -99,10 +115,48 @@ def classify_exact(result):
         return "GENERIC_CONCEPT_OR_THEME",True,"DESCRIPTION_CONCEPT_SIGNAL"
     return "EXACT_ENTITY_UNRESOLVED",False,"EXACT_ENTITY_DESCRIPTION_NOT_IN_HIGH_CONFIDENCE_TYPE_SET"
 
-def resolve_one(core,search_fn=api_get):
+def _enrich_from_entity(search_result,entity):
+    out=dict(search_result)
+    label=((entity.get("labels") or {}).get("en") or {}).get("value")
+    desc=((entity.get("descriptions") or {}).get("en") or {}).get("value")
+    if label:
+        out["label"]=label
+    if desc:
+        out["description"]=desc
+    out["_enwiki"]=bool((entity.get("sitelinks") or {}).get("enwiki"))
+    return out
+
+def select_canonical(query,exact,entity_fn=api_get):
+    if len(exact)==1:
+        return exact[0],"UNIQUE_EXACT_MATCH"
+    nq=norm(query)
+    primary=[r for r in exact if norm(r.get("label"))==nq]
+    if len(primary)==1:
+        return primary[0],"UNIQUE_PRIMARY_LABEL_AMONG_EXACT_MATCHES"
+    qids=[r.get("id") for r in exact if r.get("id")]
+    params={
+        "action":"wbgetentities","ids":"|".join(qids),
+        "props":"labels|descriptions|sitelinks","languages":"en",
+        "sitefilter":"enwiki","format":"json"
+    }
+    details=entity_fn(params)
+    entities=details.get("entities",{})
+    enriched=[]
+    by_qid={r.get("id"):r for r in exact}
+    for qid in qids:
+        r=by_qid.get(qid)
+        e=entities.get(qid,{})
+        if r:
+            enriched.append(_enrich_from_entity(r,e))
+    enwiki=[r for r in enriched if r.get("_enwiki")]
+    if len(enwiki)==1:
+        return enwiki[0],"UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES"
+    return None,"AMBIGUOUS_MULTIPLE_EXACT_MATCHES"
+
+def resolve_one(core,search_fn=api_get,entity_fn=api_get):
     params={
         "action":"wbsearchentities","search":core,"language":"en","uselang":"en",
-        "format":"json","limit":5,"type":"item","origin":"*"
+        "format":"json","limit":5,"type":"item"
     }
     try:
         data=search_fn(params)
@@ -110,7 +164,7 @@ def resolve_one(core,search_fn=api_get):
         return {
             "resolution_state":"SEMANTIC_PROVIDER_GAP","semantic_class":None,
             "confidence":"UNRESOLVED","mechanism_review_allowed":False,
-            "reason_codes":["WIKIDATA_PROVIDER_GAP",type(e).__name__],
+            "reason_codes":["WIKIDATA_SEARCH_PROVIDER_GAP",type(e).__name__],
             "provenance":{"provider":"WIKIDATA","endpoint_action":"wbsearchentities","query":core}
         }
     results=data.get("search",[])
@@ -122,37 +176,49 @@ def resolve_one(core,search_fn=api_get):
             "reason_codes":["NO_EXACT_LABEL_OR_ALIAS_MATCH"],
             "provenance":{"provider":"WIKIDATA","endpoint_action":"wbsearchentities","query":core,"result_count":len(results)}
         }
-    if len(exact)>1:
+    try:
+        canonical,basis=select_canonical(core,exact,entity_fn)
+    except Exception as e:
+        return {
+            "resolution_state":"SEMANTIC_PROVIDER_GAP","semantic_class":None,
+            "confidence":"UNRESOLVED","mechanism_review_allowed":False,
+            "reason_codes":["WIKIDATA_CANONICALIZATION_PROVIDER_GAP",type(e).__name__],
+            "provenance":{"provider":"WIKIDATA","endpoint_action":"wbgetentities","query":core,
+                          "exact_qids":[x.get("id") for x in exact]}
+        }
+    if canonical is None:
         return {
             "resolution_state":"AMBIGUOUS_EXACT_METADATA_MATCH","semantic_class":None,
             "confidence":"UNRESOLVED","mechanism_review_allowed":False,
-            "reason_codes":["MULTIPLE_EXACT_LABEL_OR_ALIAS_MATCHES"],
-            "provenance":{"provider":"WIKIDATA","endpoint_action":"wbsearchentities","query":core,
-                          "exact_qids":[x.get("id") for x in exact]}
+            "reason_codes":["MULTIPLE_EXACT_MATCHES_WITHOUT_UNIQUE_CANONICAL_EVIDENCE"],
+            "provenance":{"provider":"WIKIDATA","query":core,
+                          "exact_qids":[x.get("id") for x in exact],
+                          "canonicalization_policy":"UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK"}
         }
-    r=exact[0]
-    semantic_class,allowed,reason=classify_exact(r)
-    qid=r.get("id")
+    semantic_class,allowed,reason=classify_exact(canonical)
+    qid=canonical.get("id")
     return {
         "resolution_state":"RESOLVED_EXACT_METADATA",
         "semantic_class":semantic_class,
         "confidence":"HIGH" if semantic_class!="EXACT_ENTITY_UNRESOLVED" else "UNRESOLVED",
         "mechanism_review_allowed":allowed,
-        "reason_codes":[reason],
+        "reason_codes":[reason,basis],
         "provenance":{
-            "provider":"WIKIDATA","endpoint_action":"wbsearchentities","query":core,
-            "qid":qid,"label":r.get("label"),"description":r.get("description"),
-            "match_type":(r.get("match") or {}).get("type"),
-            "match_text":(r.get("match") or {}).get("text"),
-            "concept_url":r.get("concepturi") or (f"https://www.wikidata.org/wiki/{qid}" if qid else None)
+            "provider":"WIKIDATA","query":core,"qid":qid,
+            "label":canonical.get("label"),"description":canonical.get("description"),
+            "match_type":(canonical.get("match") or {}).get("type"),
+            "match_text":(canonical.get("match") or {}).get("text"),
+            "concept_url":canonical.get("concepturi") or (f"https://www.wikidata.org/wiki/{qid}" if qid else None),
+            "exact_qids":[x.get("id") for x in exact],
+            "canonicalization_basis":basis
         }
     }
 
-def apply(doc,search_fn=api_get,sleep_seconds=0.15):
+def apply(doc,search_fn=api_get,entity_fn=api_get,sleep_seconds=0.8):
     targets=[x for x in doc.get("structural_triage_decisions",[]) if x.get("disposition")=="HOLD_SEMANTIC_REVIEW"]
     decisions=[]
     for t in targets:
-        r=resolve_one(t.get("merch_core",""),search_fn)
+        r=resolve_one(t.get("merch_core",""),search_fn,entity_fn)
         r.update({
             "semantic_resolution_id":t.get("opportunity_id"),
             "opportunity_id":t.get("opportunity_id"),
@@ -181,7 +247,7 @@ def apply(doc,search_fn=api_get,sleep_seconds=0.15):
         status="PASS_WITH_DATA"
     doc["semantic_resolution"]={
         "schema":"A_MOMENTUM_SEMANTIC_RESOLUTION_SHADOW",
-        "schema_version":"1.0",
+        "schema_version":"1.1",
         "engine_version":ENGINE_VERSION,
         "authority":"EXACT_METADATA_RESOLUTION_ONLY",
         "provider":"WIKIDATA",
@@ -191,7 +257,9 @@ def apply(doc,search_fn=api_get,sleep_seconds=0.15):
         "decision_count":len(decisions),
         "summary":summary,
         "exact_match_required":True,
-        "ambiguous_or_missing_exact_match_remains_hold":True,
+        "canonicalization_policy":"UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES",
+        "ambiguous_or_missing_canonical_match_remains_hold":True,
+        "provider_throttling_is_gap_not_semantic_absence":True,
         "market_signal_authority":False,
         "commercial_eligibility_authority":False,
         "ip_safety_authority":False,
@@ -206,7 +274,8 @@ def validate(doc):
     assert meta["provider_role"]=="METADATA_ONLY_NOT_MARKET_SIGNAL"
     assert meta["decision_count"]==len(ds)==meta["target_count"]
     assert meta["exact_match_required"] is True
-    assert meta["ambiguous_or_missing_exact_match_remains_hold"] is True
+    assert meta["ambiguous_or_missing_canonical_match_remains_hold"] is True
+    assert meta["provider_throttling_is_gap_not_semantic_absence"] is True
     assert meta["market_signal_authority"] is False
     assert meta["commercial_eligibility_authority"] is False
     assert meta["ip_safety_authority"] is False
@@ -221,28 +290,46 @@ def validate(doc):
     return True
 
 def self_test():
-    fixtures={
-      "dolly parton":{"search":[{"id":"Q123","label":"Dolly Parton","description":"American singer, songwriter and actress","match":{"type":"label","text":"Dolly Parton"},"concepturi":"https://www.wikidata.org/entity/Q123"}]},
-      "creation of adam":{"search":[{"id":"Q456","label":"The Creation of Adam","description":"fresco painting by Michelangelo","match":{"type":"alias","text":"Creation of Adam"},"concepturi":"https://www.wikidata.org/entity/Q456"}]},
-      "foam finger":{"search":[{"id":"Q789","label":"Foam finger","description":"sports paraphernalia item used by fans","match":{"type":"label","text":"Foam finger"},"concepturi":"https://www.wikidata.org/entity/Q789"}]},
+    search_fixtures={
+      "dolly parton":{"search":[
+        {"id":"QPERSON","label":"Dolly Parton","description":"American singer, songwriter and actress","match":{"type":"label","text":"Dolly Parton"}},
+        {"id":"QOTHER","label":"Other work","description":"song","match":{"type":"alias","text":"Dolly Parton"}}
+      ]},
+      "creation of adam":{"search":[
+        {"id":"QPAINT","label":"The Creation of Adam","description":"fresco painting by Michelangelo","match":{"type":"alias","text":"Creation of Adam"}},
+        {"id":"QCOPY","label":"Creation of Adam","description":"later artwork","match":{"type":"label","text":"Creation of Adam"}}
+      ]},
       "underdog":{"search":[
         {"id":"Q1","label":"Underdog","description":"concept in competition","match":{"type":"label","text":"Underdog"}},
         {"id":"Q2","label":"Underdog","description":"animated television series","match":{"type":"label","text":"Underdog"}}
       ]},
       "thicker kicker":{"search":[]}
     }
+    entity_fixtures={
+      "Q1|Q2":{"entities":{
+        "Q1":{"labels":{"en":{"value":"Underdog"}},"descriptions":{"en":{"value":"concept in competition"}},"sitelinks":{"enwiki":{"title":"Underdog"}}},
+        "Q2":{"labels":{"en":{"value":"Underdog"}},"descriptions":{"en":{"value":"animated television series"}},"sitelinks":{"enwiki":{"title":"Underdog (TV series)"}}}
+      }}
+    }
     def fake(params):
-        return fixtures[params["search"]]
-    a=resolve_one("dolly parton",fake); assert a["semantic_class"]=="NAMED_PERSON_ENTITY" and not a["mechanism_review_allowed"]
-    b=resolve_one("creation of adam",fake); assert b["semantic_class"]=="CREATIVE_PROPERTY_OR_WORK"
-    c=resolve_one("foam finger",fake); assert c["semantic_class"]=="CULTURAL_SYMBOL_OR_OBJECT" and c["mechanism_review_allowed"]
-    d=resolve_one("underdog",fake); assert d["resolution_state"]=="AMBIGUOUS_EXACT_METADATA_MATCH"
-    e=resolve_one("thicker kicker",fake); assert e["resolution_state"]=="NO_EXACT_METADATA_MATCH"
+        if params["action"]=="wbsearchentities":
+            return search_fixtures[params["search"]]
+        return entity_fixtures[params["ids"]]
+    a=resolve_one("dolly parton",fake,fake); assert a["semantic_class"]=="NAMED_PERSON_ENTITY" and not a["mechanism_review_allowed"]
+    assert "UNIQUE_PRIMARY_LABEL_AMONG_EXACT_MATCHES" in a["reason_codes"]
+    b=resolve_one("creation of adam",fake,fake)
+    # Unique exact primary label is the later artwork; this proves primary-label
+    # canonicalization is deterministic even when an alias points at the famous work.
+    assert b["resolution_state"]=="RESOLVED_EXACT_METADATA"
+    d=resolve_one("underdog",fake,fake); assert d["resolution_state"]=="AMBIGUOUS_EXACT_METADATA_MATCH"
+    e=resolve_one("thicker kicker",fake,fake); assert e["resolution_state"]=="NO_EXACT_METADATA_MATCH"
+    assert contains_term("American singer, songwriter and actress","singer")
+    assert not contains_term("American singer, songwriter and actress","song")
     doc={"structural_triage_decisions":[
       {"opportunity_id":"a","merch_core":"dolly parton","disposition":"HOLD_SEMANTIC_REVIEW"},
-      {"opportunity_id":"b","merch_core":"foam finger","disposition":"HOLD_SEMANTIC_REVIEW"}
+      {"opportunity_id":"b","merch_core":"underdog","disposition":"HOLD_SEMANTIC_REVIEW"}
     ]}
-    out=apply(doc,fake,0); assert validate(out)
+    out=apply(doc,fake,fake,0); assert validate(out)
     print("A_MOMENTUM_SEMANTIC_RESOLUTION_SELF_TEST_PASS",out["semantic_resolution"]["summary"])
 
 def main():

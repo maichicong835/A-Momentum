@@ -153,10 +153,11 @@
     "product_configuration_demand_may_not_be_relabelled_expression_demand": true,
     "semantic_metadata_provider_may_not_become_market_signal": true,
     "semantic_resolution_requires_exact_label_or_alias_match": true,
-    "multiple_exact_semantic_matches_must_remain_ambiguous": true,
     "no_exact_semantic_match_must_remain_hold": true,
     "semantic_resolution_may_not_claim_ip_or_commercial_clearance": true,
-    "semantic_resolution_may_not_auto_generate_mechanism": true
+    "semantic_resolution_may_not_auto_generate_mechanism": true,
+    "multiple_exact_semantic_matches_require_unique_canonical_evidence_or_remain_ambiguous": true,
+    "semantic_provider_throttling_must_be_gap_not_semantic_absence": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -374,7 +375,9 @@
         "no_market_signal_authority": true,
         "no_commercial_or_ip_authority": true,
         "no_auto_mechanism_generation": true,
-        "no_production_mutation": true
+        "no_production_mutation": true,
+        "canonicalization_policy": "UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES",
+        "provider_throttling_is_gap_not_zero_opportunity": true
       }
     }
   }

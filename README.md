@@ -53,7 +53,7 @@ This is intentionally not named-entity recognition, property/title detection, tr
 
 ### Provenance-first semantic resolution
 
-Only `HOLD_SEMANTIC_REVIEW` items are sent to a lightweight Wikidata metadata resolver. Wikidata is used only to answer “what exact entity/concept does this query name?” and never contributes market demand or trend strength. Resolution requires one exact normalized label/alias match; multiple exact matches, no exact match, or provider failure remain unresolved.
+Only `HOLD_SEMANTIC_REVIEW` items are sent to a lightweight Wikidata metadata resolver. Wikidata is used only to answer “what exact entity/concept does this query name?” and never contributes market demand or trend strength. Resolution still starts from exact normalized label/alias evidence. When several exact matches exist, the resolver may disambiguate only with unique canonical metadata: either one unique primary label match or one unique English-Wikipedia sitelink among the exact candidates. Otherwise it remains unresolved. Provider throttling is recorded as a metadata gap, never semantic absence.
 
 Resolved metadata keeps QID, label, description, match basis, and concept URL as provenance. The resolver may distinguish named people, creative works/properties, organizations/brands, events, cultural symbols/objects, product/physical objects, and generic concepts/themes. This still does not perform trademark/copyright clearance, commercial eligibility, or automatic mechanism generation. Cultural/concept metadata may only become eligible for later human/machine mechanism review, not automatic decomposition.
 
