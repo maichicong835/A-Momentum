@@ -109,6 +109,9 @@ jobs:
           assert e['anti_drift']['merch_proxy_partial_success_must_survive_later_seed_gap'] is True
           assert e['anti_drift']['merch_proxy_provider_gap_may_not_mean_no_rising_queries'] is True
           assert e['anti_drift']['merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure'] is True
+          assert e['anti_drift']['wave_shadow_push_may_not_call_external_market_providers'] is True
+          assert e['anti_drift']['wave_shadow_live_provider_calls_are_schedule_or_manual_only'] is True
+          assert e['anti_drift']['code_validation_must_not_consume_market_provider_request_budget'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -155,6 +158,13 @@ jobs:
           assert wc['anti_drift']['merch_proxy_partial_success_must_survive_later_seed_gap'] is True
           assert wc['anti_drift']['merch_proxy_provider_gap_may_not_mean_no_rising_queries'] is True
           assert wc['anti_drift']['merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure'] is True
+          assert wc['anti_drift']['wave_shadow_push_may_not_call_external_market_providers'] is True
+          assert wc['anti_drift']['wave_shadow_live_provider_calls_are_schedule_or_manual_only'] is True
+          assert wc['anti_drift']['code_validation_must_not_consume_market_provider_request_budget'] is True
+          trw=wc['dual_wave_shadow']['trigger_roles']
+          assert trw['schedule']=='LIVE_SHADOW_PROVIDER_CAPTURE'
+          assert trw['workflow_dispatch']=='OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE'
+          assert trw['push']=='VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS'
           mt=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['transport_policy']
           assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
           assert mt['one_batched_seed_payload'] is True
@@ -218,6 +228,9 @@ jobs:
           assert "--rate-limit-cooldown-seconds 30" in wave_workflow_text
           assert "--build-retries 2" in wave_workflow_text
           assert "--retries 2 --sleep-seconds 2" not in wave_workflow_text
+          assert "Push validation does not call external market providers" in wave_workflow_text
+          assert "if: github.event_name == 'push'" in wave_workflow_text
+          assert wave_workflow_text.count("if: github.event_name != 'push'")>=8
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
           assert "scripts/structural_triage.py" in wave_workflow_text
           assert "scripts/semantic_resolver.py" in wave_workflow_text
