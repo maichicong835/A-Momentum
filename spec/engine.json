@@ -150,7 +150,13 @@
     "structural_triage_pass_is_not_commercial_eligibility": true,
     "structural_triage_pass_is_not_ip_safety_clearance": true,
     "ambiguous_structure_must_default_to_hold": true,
-    "product_configuration_demand_may_not_be_relabelled_expression_demand": true
+    "product_configuration_demand_may_not_be_relabelled_expression_demand": true,
+    "semantic_metadata_provider_may_not_become_market_signal": true,
+    "semantic_resolution_requires_exact_label_or_alias_match": true,
+    "multiple_exact_semantic_matches_must_remain_ambiguous": true,
+    "no_exact_semantic_match_must_remain_hold": true,
+    "semantic_resolution_may_not_claim_ip_or_commercial_clearance": true,
+    "semantic_resolution_may_not_auto_generate_mechanism": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -357,6 +363,17 @@
         "commercial_eligibility_authority": false,
         "ip_safety_authority": false,
         "automatic_mechanism_decomposition": false,
+        "no_production_mutation": true
+      },
+      "semantic_resolution": {
+        "status": "SHADOW_ONLY",
+        "provider": "WIKIDATA",
+        "provider_role": "METADATA_ONLY_NOT_MARKET_SIGNAL",
+        "exact_match_required": true,
+        "provider_failure_is_hold_not_zero_opportunity": true,
+        "no_market_signal_authority": true,
+        "no_commercial_or_ip_authority": true,
+        "no_auto_mechanism_generation": true,
         "no_production_mutation": true
       }
     }

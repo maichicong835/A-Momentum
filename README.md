@@ -50,6 +50,13 @@ M-primary intake now receives a conservative structural triage before any mechan
 
 This is intentionally not named-entity recognition, property/title detection, trademark clearance, commercial eligibility, or idea generation. A query such as `dolly parton`, `foam finger`, or `creation of adam` is not force-classified from lexical shape alone; it remains unresolved until a later semantic evidence layer exists. A structural PASS only means the query shape is compatible with expression-oriented decomposition. It does not mean the idea is safe, ownable, commercially validated, or launchable.
 
+
+### Provenance-first semantic resolution
+
+Only `HOLD_SEMANTIC_REVIEW` items are sent to a lightweight Wikidata metadata resolver. Wikidata is used only to answer “what exact entity/concept does this query name?” and never contributes market demand or trend strength. Resolution requires one exact normalized label/alias match; multiple exact matches, no exact match, or provider failure remain unresolved.
+
+Resolved metadata keeps QID, label, description, match basis, and concept URL as provenance. The resolver may distinguish named people, creative works/properties, organizations/brands, events, cultural symbols/objects, product/physical objects, and generic concepts/themes. This still does not perform trademark/copyright clearance, commercial eligibility, or automatic mechanism generation. Cultural/concept metadata may only become eligible for later human/machine mechanism review, not automatic decomposition.
+
 Raw RSS capture remains independent of pytrends. The merch-proxy track currently uses pytrends experimentally and degrades to an explicit shadow sensor gap if that transport fails; such a gap never means zero demand and may not invalidate the raw-wave capture.
 
 The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority. Raw Wave RSS capture does not depend on pytrends; only the experimental Merch Proxy shadow currently does. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
