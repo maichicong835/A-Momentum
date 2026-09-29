@@ -98,6 +98,13 @@ jobs:
           assert e['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
           assert e['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
           assert e['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
+          assert e['anti_drift']['mechanism_decomposition_only_for_explicit_review_allowed_candidates'] is True
+          assert e['anti_drift']['mechanism_hypothesis_may_not_reuse_source_wording_or_iconography'] is True
+          assert e['anti_drift']['mechanism_hypothesis_is_not_commercial_eligibility'] is True
+          assert e['anti_drift']['mechanism_hypothesis_is_not_ip_or_property_clearance'] is True
+          assert e['anti_drift']['mechanism_hypothesis_may_not_generate_product_creative'] is True
+          assert e['anti_drift']['mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist'] is True
+          assert e['anti_drift']['unsupported_review_type_must_hold_not_infer'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -133,6 +140,26 @@ jobs:
           assert wc['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
           assert wc['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
           assert wc['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
+          assert wc['anti_drift']['mechanism_decomposition_only_for_explicit_review_allowed_candidates'] is True
+          assert wc['anti_drift']['mechanism_hypothesis_may_not_reuse_source_wording_or_iconography'] is True
+          assert wc['anti_drift']['mechanism_hypothesis_is_not_commercial_eligibility'] is True
+          assert wc['anti_drift']['mechanism_hypothesis_is_not_ip_or_property_clearance'] is True
+          assert wc['anti_drift']['mechanism_hypothesis_may_not_generate_product_creative'] is True
+          assert wc['anti_drift']['mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist'] is True
+          assert wc['anti_drift']['unsupported_review_type_must_hold_not_infer'] is True
+          md=wc['dual_wave_shadow']['mechanism_decomposition']
+          assert md['authority']=='SHADOW_ABSTRACTION_ONLY'
+          assert md['input_gate']=='EXPLICIT_MECHANISM_REVIEW_ALLOWED_ONLY'
+          assert md['abstraction_level']=='MECHANISM_FAMILY_ONLY_NOT_PRODUCT_CREATIVE'
+          assert md['source_wording_or_iconography_reuse_allowed'] is False
+          assert md['commercial_eligibility_authority'] is False
+          assert md['ip_safety_authority'] is False
+          assert md['mechanism_production_authority'] is False
+          assert md['idea_generation_authority'] is False
+          assert md['bridge_query_authority'] is False
+          assert md['anchor_assignment_authority'] is False
+          assert md['watchlist_promotion_authority'] is False
+          assert md['daily7_selection_authority'] is False
           sr=wc['dual_wave_shadow']['semantic_resolution']
           assert sr['provider']=='WIKIDATA'
           assert sr['provider_role']=='METADATA_ONLY_NOT_MARKET_SIGNAL'
@@ -174,12 +201,14 @@ jobs:
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
           assert "scripts/structural_triage.py" in wave_workflow_text
           assert "scripts/semantic_resolver.py" in wave_workflow_text
+          assert "scripts/mechanism_decomposer.py" in wave_workflow_text
           required_wave_shadow_paths=[
               "scripts/wave_capture.py","tests/test_wave_capture.py",
               "scripts/merch_proxy.py","tests/test_merch_proxy.py",
               "scripts/wave_coupler.py","tests/test_wave_coupler.py",
               "scripts/structural_triage.py","tests/test_structural_triage.py",
               "scripts/semantic_resolver.py","tests/test_semantic_resolver.py",
+              "scripts/mechanism_decomposer.py","tests/test_mechanism_decomposer.py",
               "scripts/security_scan.py","spec/wave-capture.json","spec/engine.json",
               ".github/workflows/wave-shadow.yml"
           ]

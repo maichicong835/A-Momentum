@@ -16,6 +16,8 @@ on:
       - 'tests/test_structural_triage.py'
       - 'scripts/semantic_resolver.py'
       - 'tests/test_semantic_resolver.py'
+      - 'scripts/mechanism_decomposer.py'
+      - 'tests/test_mechanism_decomposer.py'
       - 'scripts/security_scan.py'
       - 'spec/wave-capture.json'
       - 'spec/engine.json'
@@ -45,7 +47,8 @@ jobs:
           python scripts/wave_coupler.py --raw /tmp/unused --merch /tmp/unused --out /tmp/unused --self-test
           python scripts/structural_triage.py --self-test
           python scripts/semantic_resolver.py --self-test
-          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler tests.test_structural_triage tests.test_semantic_resolver
+          python scripts/mechanism_decomposer.py --self-test
+          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler tests.test_structural_triage tests.test_semantic_resolver tests.test_mechanism_decomposer
       - name: Capture Google Trends raw market waves
         run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json
       - name: Capture merch-proxy Rising waves
@@ -56,6 +59,8 @@ jobs:
         run: python scripts/structural_triage.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Resolve semantic HOLDs with provenance-only metadata
         run: python scripts/semantic_resolver.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
+      - name: Build mechanism hypotheses from review-allowed evidence
+        run: python scripts/mechanism_decomposer.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Enforce shadow-only boundary
         run: |
           python - <<'PY'
@@ -109,6 +114,35 @@ jobs:
           assert all(c['ip_safety_authority'] is False for c in x['semantic_resolution_decisions'])
           assert all(c['mechanism_decomposition_automatic'] is False for c in x['semantic_resolution_decisions'])
           assert all(c['production_eligible'] is False for c in x['semantic_resolution_decisions'])
+          assert x['mechanism_decomposition']['authority']=='SHADOW_ABSTRACTION_ONLY'
+          eligible_ids={
+              c['opportunity_id'] for c in x['structural_triage_decisions']
+              if c['mechanism_decomposition_allowed'] is True
+          } | {
+              c['opportunity_id'] for c in x['semantic_resolution_decisions']
+              if c['mechanism_review_allowed'] is True
+          }
+          assert x['mechanism_decomposition']['review_allowed_input_count']==len(eligible_ids)
+          assert x['mechanism_decomposition']['decision_count']==len(x['mechanism_decomposition_decisions'])==len(eligible_ids)
+          assert {c['opportunity_id'] for c in x['mechanism_decomposition_decisions']}==eligible_ids
+          assert x['mechanism_decomposition']['source_wording_or_iconography_reuse_forbidden'] is True
+          assert x['mechanism_decomposition']['commercial_eligibility_authority'] is False
+          assert x['mechanism_decomposition']['ip_safety_authority'] is False
+          assert x['mechanism_decomposition']['mechanism_production_authority'] is False
+          assert x['mechanism_decomposition']['idea_generation_authority'] is False
+          assert x['mechanism_decomposition']['bridge_query_authority'] is False
+          assert x['mechanism_decomposition']['anchor_assignment_authority'] is False
+          assert x['mechanism_decomposition']['watchlist_promotion_authority'] is False
+          assert x['mechanism_decomposition']['daily7_selection_authority'] is False
+          assert all(c['production_eligible'] is False for c in x['mechanism_decomposition_decisions'])
+          for c in x['mechanism_decomposition_decisions']:
+              if c['decomposition_state']=='SHADOW_MECHANISM_HYPOTHESIS':
+                  assert c['mechanism_hypothesis']['source_specific_wording_or_iconography_reuse_allowed'] is False
+                  assert c['mechanism_hypothesis']['abstraction_level']=='MECHANISM_FAMILY_ONLY_NOT_PRODUCT_CREATIVE'
+                  assert c['idea_generation_performed'] is False
+                  assert c['bridge_query_materialized'] is False
+                  assert c['anchor_query_assigned'] is False
+                  assert c['watchlist_promotion_allowed'] is False
           assert x['merch_grouping_policy']=='NORMALIZED_QUERY_WITH_MERCH_FORMAT_TOKENS_REMOVED_PRESERVE_SEED_EVIDENCE'
           assert all(c['match_policy'] in {'EXACT_NORMALIZED_CORE_ONLY_PARTIAL_OVERLAP_IS_UNRESOLVED','UNMATCHED_UNIQUE_MERCH_CORE'} for c in x['couplings'])
           assert all(c['bridge_queries']==[] for c in x['couplings'])
