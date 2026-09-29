@@ -1,6 +1,6 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.9",
+  "schema_version": "2.0",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
   "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_SEMANTIC_RESOLUTION_AND_MECHANISM_ABSTRACTION",
@@ -85,7 +85,10 @@
     "merch_proxy_429_may_not_trigger_seed_retry_storm": true,
     "merch_proxy_partial_success_must_survive_later_seed_gap": true,
     "merch_proxy_provider_gap_may_not_mean_no_rising_queries": true,
-    "merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure": true
+    "merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure": true,
+    "wave_shadow_push_may_not_call_external_market_providers": true,
+    "wave_shadow_live_provider_calls_are_schedule_or_manual_only": true,
+    "code_validation_must_not_consume_market_provider_request_budget": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -235,6 +238,17 @@
       "anchor_assignment_authority": false,
       "watchlist_promotion_authority": false,
       "daily7_selection_authority": false
+    },
+    "trigger_roles": {
+      "schedule": "LIVE_SHADOW_PROVIDER_CAPTURE",
+      "workflow_dispatch": "OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE",
+      "push": "VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS"
+    },
+    "request_budget_policy": {
+      "live_provider_calls_on_push": false,
+      "live_provider_calls_on_schedule": true,
+      "live_provider_calls_on_workflow_dispatch": true,
+      "reason": "PRESERVE_PROVIDER_REQUEST_BUDGET_AND_REDUCE_SELF_INDUCED_THROTTLING"
     }
   }
 }
