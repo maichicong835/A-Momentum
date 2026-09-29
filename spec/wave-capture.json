@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "M_PRIMARY_DUAL_WAVE_GOOGLE_TRENDS_SHADOW_DISCOVERY_WITH_R_CONTEXT_AND_NONBLOCKING_TEMPORAL_OBSERVATION",
+  "objective": "M_PRIMARY_DUAL_WAVE_DISCOVERY_WITH_CONSERVATIVE_STRUCTURAL_TRIAGE_AND_NONBLOCKING_R_CONTEXT",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -62,7 +62,12 @@
     "m_wave_may_enter_discovery_without_r_coupling": true,
     "r_m_coupling_may_not_be_discovery_admission_gate": true,
     "temporal_observation_may_not_delay_initial_m_discovery_intake": true,
-    "merch_proxy_is_expression_proxy_not_sticker_demand_authority": true
+    "merch_proxy_is_expression_proxy_not_sticker_demand_authority": true,
+    "structural_triage_may_not_claim_semantic_entity_resolution": true,
+    "structural_triage_pass_is_not_commercial_eligibility": true,
+    "structural_triage_pass_is_not_ip_safety_clearance": true,
+    "ambiguous_structure_must_default_to_hold": true,
+    "product_configuration_demand_may_not_be_relabelled_expression_demand": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -123,6 +128,27 @@
       "automatic_mechanism_decomposition": false,
       "automatic_commercial_eligibility": false,
       "production_authority": false
+    },
+    "structural_triage": {
+      "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+      "policy": "HIGH_CONFIDENCE_STRUCTURE_ONLY_DEFAULT_AMBIGUITY_TO_HOLD",
+      "dispositions": [
+        "PASS_EXPRESSION_STRUCTURE",
+        "HOLD_PRODUCT_CONFIGURATION",
+        "HOLD_LOCAL_PURCHASE_INTENT",
+        "HOLD_SEMANTIC_REVIEW"
+      ],
+      "pass_types": [
+        "PHRASE_EXPRESSION",
+        "CAUSE_AWARENESS_EXPRESSION"
+      ],
+      "unresolved_type": "UNRESOLVED_THEME_OBJECT_ENTITY_OR_PROPERTY",
+      "semantic_entity_resolution": false,
+      "named_entity_or_property_clearance": false,
+      "commercial_eligibility_authority": false,
+      "ip_safety_authority": false,
+      "mechanism_generation_authority": false,
+      "automatic_mechanism_decomposition": false
     }
   }
 }

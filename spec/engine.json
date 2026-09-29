@@ -145,7 +145,12 @@
     "m_wave_may_enter_discovery_without_r_coupling": true,
     "r_m_coupling_may_not_be_discovery_admission_gate": true,
     "temporal_observation_may_not_delay_initial_m_discovery_intake": true,
-    "merch_proxy_is_expression_proxy_not_sticker_demand_authority": true
+    "merch_proxy_is_expression_proxy_not_sticker_demand_authority": true,
+    "structural_triage_may_not_claim_semantic_entity_resolution": true,
+    "structural_triage_pass_is_not_commercial_eligibility": true,
+    "structural_triage_pass_is_not_ip_safety_clearance": true,
+    "ambiguous_structure_must_default_to_hold": true,
+    "product_configuration_demand_may_not_be_relabelled_expression_demand": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -343,6 +348,16 @@
         "next_required_step": "STRUCTURAL_TRIAGE",
         "no_auto_mechanism_decomposition": true,
         "no_auto_production_promotion": true
+      },
+      "structural_triage": {
+        "status": "SHADOW_ONLY",
+        "policy": "HIGH_CONFIDENCE_STRUCTURE_ONLY_DEFAULT_AMBIGUITY_TO_HOLD",
+        "next_step_for_pass": "MECHANISM_DECOMPOSITION_MAY_BE_CONSIDERED_NOT_AUTOMATIC",
+        "semantic_entity_resolution": false,
+        "commercial_eligibility_authority": false,
+        "ip_safety_authority": false,
+        "automatic_mechanism_decomposition": false,
+        "no_production_mutation": true
       }
     }
   }
