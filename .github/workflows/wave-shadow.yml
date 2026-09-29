@@ -49,19 +49,29 @@ jobs:
           python scripts/semantic_resolver.py --self-test
           python scripts/mechanism_decomposer.py --self-test
           python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler tests.test_structural_triage tests.test_semantic_resolver tests.test_mechanism_decomposer
+      - name: Push validation does not call external market providers
+        if: github.event_name == 'push'
+        run: echo A_MOMENTUM_WAVE_SHADOW_PUSH_VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS
       - name: Capture Google Trends raw market waves
+        if: github.event_name != 'push'
         run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json
       - name: Capture merch-proxy Rising waves
+        if: github.event_name != 'push'
         run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --build-retries 2 --between-seed-seconds 6 --rate-limit-cooldown-seconds 30 --out /tmp/a-momentum-merch-proxy-shadow.json
       - name: Couple raw and merch-proxy waves
+        if: github.event_name != 'push'
         run: python scripts/wave_coupler.py --raw /tmp/a-momentum-raw-wave-shadow.json --merch /tmp/a-momentum-merch-proxy-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Structural triage M-primary intake
+        if: github.event_name != 'push'
         run: python scripts/structural_triage.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Resolve semantic HOLDs with provenance-only metadata
+        if: github.event_name != 'push'
         run: python scripts/semantic_resolver.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Build mechanism hypotheses from review-allowed evidence
+        if: github.event_name != 'push'
         run: python scripts/mechanism_decomposer.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Enforce shadow-only boundary
+        if: github.event_name != 'push'
         run: |
           python - <<'PY'
           import json
@@ -159,7 +169,9 @@ jobs:
           assert all(c['mechanism_key'] is None for c in x['couplings'])
           print('A_MOMENTUM_DUAL_WAVE_SHADOW_BOUNDARY_PASS',x['coupling_summary'])
           PY
-      - uses: actions/upload-artifact@v4
+      - name: Upload live Wave Shadow artifact
+        if: github.event_name != 'push'
+        uses: actions/upload-artifact@v4
         with:
           name: a-momentum-wave-shadow
           path: /tmp/a-momentum-dual-wave-shadow.json

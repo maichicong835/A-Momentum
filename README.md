@@ -37,6 +37,12 @@ The shadow now observes two independent Google Trends evidence tracks. **Raw Mar
 The coupler emits only `COUPLED_WAVE`, `MERCH_NATIVE_WAVE`, `RAW_ONLY_WAVE`, or `UNRESOLVED`. Coupling does not grant commercial eligibility, mechanism identity, bridge queries, anchors, or watchlist promotion. Scores from independent Google Trends requests must not be compared as absolute 0-100 magnitudes; initial learning uses presence, provider-reported rising status/rank within each seed, conservative phrase coupling, timing, and persistence. Cross-seed duplicates are grouped into one normalized merch core while every original seed/rank/value observation is preserved as evidence, preventing the `shirt`/`shirts`/`t shirt` family from inflating apparent wave counts. `COUPLED_WAVE` requires exact normalized core equality; partial phrase or named-entity overlap is `UNRESOLVED`, because sharing an entity does not prove that the raw-news phenomenon and merch-expression phenomenon are the same wave.
 
 
+### Wave Shadow trigger/request budget
+
+Wave Shadow now separates code validation from live market-provider access. `push` runs execute credential scanning, local self-tests and unit tests only; they do **not** call Google Trends live endpoints. Live Raw/Merch capture is reserved for `schedule` and `workflow_dispatch`.
+
+This prevents routine code merges from consuming the same external-provider request budget used for actual discovery and reduces self-induced throttling. A successful push validates code/contract only and is not a fresh market observation. Scheduled/manual live artifacts remain the only authority for current Wave Shadow market evidence.
+
 ### Merch Proxy rate-limit transport
 
 The Merch Proxy remains an experimental Google Trends Related/Rising Queries sensor, but its transport is deliberately rate-shaped. The fixed seed family is sent in one batched payload so token/cookie setup is shared instead of repeated per seed. Related-query widgets are then fetched independently with spacing, so a later seed failure cannot erase earlier seed data.
