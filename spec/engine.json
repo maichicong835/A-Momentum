@@ -135,7 +135,11 @@
     "wave_capture_shadow_may_not_publish_runtime_latest": true,
     "discovery_bridge_anchor_query_roles_must_remain_distinct": true,
     "bridge_or_support_query_may_not_redefine_anchor_longitudinal_series": true,
-    "raw_wave_may_not_auto_materialize_merch_queries": true
+    "raw_wave_may_not_auto_materialize_merch_queries": true,
+    "raw_and_merch_proxy_wave_are_independent_evidence_tracks": true,
+    "merch_proxy_failure_may_not_fail_raw_wave_capture": true,
+    "independent_google_trends_requests_may_not_be_compared_by_absolute_0_100_magnitude": true,
+    "coupled_wave_is_not_commercial_eligibility": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -297,7 +301,30 @@
       "trending_now": "PUBLIC_RSS_NO_CREDENTIAL",
       "existing_longitudinal_sensor": "PYTRENDS_UNOFFICIAL_TRANSPORT",
       "pytrends_is_fragility_not_authority": true,
-      "official_trends_api_alpha_may_be_evaluated_when_accessIBLE": true
+      "official_trends_api_alpha_may_be_evaluated_when_accessIBLE": true,
+      "merch_proxy": "PYTRENDS_EXPERIMENTAL_SHADOW_ONLY_NON_AUTHORITY",
+      "raw_wave_capture_does_not_depend_on_pytrends": true
+    },
+    "dual_wave": {
+      "status": "SHADOW_ONLY",
+      "raw_track": "GOOGLE_TRENDS_TRENDING_NOW_RSS",
+      "merch_proxy_track": "GOOGLE_TRENDS_RELATED_QUERIES_RISING",
+      "merch_proxy_seeds": [
+        "shirt",
+        "shirts",
+        "t shirt"
+      ],
+      "coupling_states": [
+        "COUPLED_WAVE",
+        "MERCH_NATIVE_WAVE",
+        "RAW_ONLY_WAVE",
+        "UNRESOLVED"
+      ],
+      "no_auto_commercial_eligibility": true,
+      "no_auto_mechanism_decomposition": true,
+      "no_auto_bridge_queries": true,
+      "no_auto_anchor": true,
+      "no_production_mutation": true
     }
   }
 }
