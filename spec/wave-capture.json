@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.7",
+  "schema_version": "1.8",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_AND_PROVENANCE_FIRST_SEMANTIC_RESOLUTION",
+  "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_SEMANTIC_RESOLUTION_AND_MECHANISM_ABSTRACTION",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -74,7 +74,14 @@
     "semantic_resolution_may_not_claim_ip_or_commercial_clearance": true,
     "semantic_resolution_may_not_auto_generate_mechanism": true,
     "multiple_exact_semantic_matches_require_unique_canonical_evidence_or_remain_ambiguous": true,
-    "semantic_provider_throttling_must_be_gap_not_semantic_absence": true
+    "semantic_provider_throttling_must_be_gap_not_semantic_absence": true,
+    "mechanism_decomposition_only_for_explicit_review_allowed_candidates": true,
+    "mechanism_hypothesis_may_not_reuse_source_wording_or_iconography": true,
+    "mechanism_hypothesis_is_not_commercial_eligibility": true,
+    "mechanism_hypothesis_is_not_ip_or_property_clearance": true,
+    "mechanism_hypothesis_may_not_generate_product_creative": true,
+    "mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist": true,
+    "unsupported_review_type_must_hold_not_infer": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -182,6 +189,31 @@
       "canonicalization_policy": "UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES",
       "ambiguous_or_missing_canonical_match_remains_hold": true,
       "provider_throttling_is_gap_not_semantic_absence": true
+    },
+    "mechanism_decomposition": {
+      "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+      "authority": "SHADOW_ABSTRACTION_ONLY",
+      "input_gate": "EXPLICIT_MECHANISM_REVIEW_ALLOWED_ONLY",
+      "execution_mode": "AUTOMATIC_SHADOW_TRANSFORM_ON_EXPLICIT_REVIEW_ALLOWED_INPUTS",
+      "supported_structural_types": [
+        "PHRASE_EXPRESSION",
+        "CAUSE_AWARENESS_EXPRESSION"
+      ],
+      "supported_semantic_classes": [
+        "CULTURAL_SYMBOL_OR_OBJECT",
+        "GENERIC_CONCEPT_OR_THEME"
+      ],
+      "unsupported_review_type": "HOLD_UNSUPPORTED_REVIEW_TYPE",
+      "abstraction_level": "MECHANISM_FAMILY_ONLY_NOT_PRODUCT_CREATIVE",
+      "source_wording_or_iconography_reuse_allowed": false,
+      "commercial_eligibility_authority": false,
+      "ip_safety_authority": false,
+      "mechanism_production_authority": false,
+      "idea_generation_authority": false,
+      "bridge_query_authority": false,
+      "anchor_assignment_authority": false,
+      "watchlist_promotion_authority": false,
+      "daily7_selection_authority": false
     }
   }
 }

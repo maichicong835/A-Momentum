@@ -57,6 +57,13 @@ Only `HOLD_SEMANTIC_REVIEW` items are sent to a lightweight Wikidata metadata re
 
 Resolved metadata keeps QID, label, description, match basis, and concept URL as provenance. The resolver may distinguish named people, creative works/properties, organizations/brands, events, cultural symbols/objects, product/physical objects, and generic concepts/themes. This still does not perform trademark/copyright clearance, commercial eligibility, or automatic mechanism generation. Cultural/concept metadata may only become eligible for later human/machine mechanism review, not automatic decomposition.
 
+
+### Mechanism decomposition shadow
+
+Only evidence that has already received explicit mechanism-review permission may enter mechanism decomposition. Structural passes currently support phrase-expression and cause-awareness structures; semantic resolution may additionally admit cultural-symbol/object or generic-concept/theme evidence when that resolver explicitly sets `mechanism_review_allowed=true`.
+
+The output is a **mechanism hypothesis**, not a production mechanism. It keeps the source query only as provenance and abstracts it into a coarse mechanism family, expression mode, social function, and transferable unit. Source wording or iconography may not be reused as generated product copy. The layer performs no trademark/copyright/property clearance, commercial eligibility, sticker idea generation, bridge-query materialization, anchor assignment, watchlist promotion, or Daily7 selection.
+
 Raw RSS capture remains independent of pytrends. The merch-proxy track currently uses pytrends experimentally and degrades to an explicit shadow sensor gap if that transport fails; such a gap never means zero demand and may not invalidate the raw-wave capture.
 
 The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority. Raw Wave RSS capture does not depend on pytrends; only the experimental Merch Proxy shadow currently does. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
