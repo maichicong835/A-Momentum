@@ -97,7 +97,9 @@ jobs:
           assert x['semantic_resolution']['provider']=='WIKIDATA'
           assert x['semantic_resolution']['provider_role']=='METADATA_ONLY_NOT_MARKET_SIGNAL'
           assert x['semantic_resolution']['exact_match_required'] is True
-          assert x['semantic_resolution']['ambiguous_or_missing_exact_match_remains_hold'] is True
+          assert x['semantic_resolution']['ambiguous_or_missing_canonical_match_remains_hold'] is True
+          assert x['semantic_resolution']['canonicalization_policy']=='UNIQUE_PRIMARY_LABEL_OR_UNIQUE_ENWIKI_SITELINK_AMONG_EXACT_MATCHES'
+          assert x['semantic_resolution']['provider_throttling_is_gap_not_semantic_absence'] is True
           assert x['semantic_resolution']['market_signal_authority'] is False
           assert x['semantic_resolution']['commercial_eligibility_authority'] is False
           assert x['semantic_resolution']['ip_safety_authority'] is False
