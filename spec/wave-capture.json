@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "OPEN_UNIVERSE_GOOGLE_TRENDS_WAVE_CAPTURE_THEN_COMMERCIAL_BRIDGE_WITHOUT_PRODUCTION_MUTATION",
+  "objective": "DUAL_WAVE_GOOGLE_TRENDS_SHADOW_CAPTURE_AND_COUPLING_WITHOUT_COMMERCIAL_OR_PRODUCTION_AUTHORITY",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -51,12 +51,55 @@
     "no_new_h24_engine": true,
     "no_new_pte_engine": true,
     "no_amazon_etsy_tiktok_pinterest_collectors_in_initial_rollout": true,
-    "raw_wave_may_not_auto_materialize_merch_queries": true
+    "raw_wave_may_not_auto_materialize_merch_queries": true,
+    "raw_and_merch_proxy_wave_are_independent_evidence_tracks": true,
+    "merch_proxy_failure_may_not_fail_raw_wave_capture": true,
+    "independent_google_trends_requests_may_not_be_compared_by_absolute_0_100_magnitude": true,
+    "coupled_wave_is_not_commercial_eligibility": true,
+    "merch_native_wave_is_not_commercial_eligibility": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
     "pytrends_is_unofficial": true,
     "wave_shadow_does_not_depend_on_pytrends": true,
-    "official_google_trends_api_alpha_not_assumed_available": true
+    "official_google_trends_api_alpha_not_assumed_available": true,
+    "wave_raw_capture_does_not_depend_on_pytrends": true,
+    "merch_proxy_shadow_uses_pytrends_experimentally": true
+  },
+  "dual_wave_shadow": {
+    "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+    "tracks": {
+      "RAW_MARKET_WAVE": {
+        "source": "GOOGLE_TRENDS_TRENDING_NOW_RSS",
+        "role": "OPEN_MARKET_SURGE_DISCOVERY",
+        "transport": "PUBLIC_RSS_NO_CREDENTIAL"
+      },
+      "MERCH_PROXY_WAVE": {
+        "source": "GOOGLE_TRENDS_RELATED_QUERIES_RISING",
+        "role": "MERCH_EXPRESSION_LENS",
+        "seeds": [
+          "shirt",
+          "shirts",
+          "t shirt"
+        ],
+        "seed_policy": "FIXED_SMALL_FAMILY_INITIAL_LEARNING_PHASE",
+        "transport": "PYTRENDS_EXPERIMENTAL_SHADOW_ONLY",
+        "provider_failure_is_zero_demand": false,
+        "cross_seed_score_comparison_forbidden": true
+      }
+    },
+    "coupler": {
+      "states": [
+        "COUPLED_WAVE",
+        "MERCH_NATIVE_WAVE",
+        "RAW_ONLY_WAVE",
+        "UNRESOLVED"
+      ],
+      "match_policy": "CONSERVATIVE_NORMALIZED_PHRASE_MATCH",
+      "commercial_eligibility_authority": false,
+      "mechanism_decomposition_authority": false,
+      "bridge_query_materialization": false,
+      "anchor_assignment": false
+    }
   }
 }

@@ -27,33 +27,45 @@ jobs:
           python-version: '3.12'
       - name: Credential scan before shadow discovery
         run: python scripts/security_scan.py --repository
-      - name: Validate wave-capture semantics locally
+      - name: Install experimental merch-proxy dependency
+        run: python -m pip install --disable-pip-version-check 'pytrends==4.9.2' 'pandas>=2.2,<3'
+      - name: Validate dual-wave semantics locally
         run: |
           python scripts/wave_capture.py --self-test
-          python -m unittest tests.test_wave_capture
-      - name: Capture Google Trends open waves
-        run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-wave-shadow.json
+          python scripts/merch_proxy.py --self-test
+          python scripts/wave_coupler.py --raw /tmp/unused --merch /tmp/unused --out /tmp/unused --self-test
+          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler
+      - name: Capture Google Trends raw market waves
+        run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json
+      - name: Capture merch-proxy Rising waves
+        run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --retries 2 --sleep-seconds 2 --out /tmp/a-momentum-merch-proxy-shadow.json
+      - name: Couple raw and merch-proxy waves
+        run: python scripts/wave_coupler.py --raw /tmp/a-momentum-raw-wave-shadow.json --merch /tmp/a-momentum-merch-proxy-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Enforce shadow-only boundary
         run: |
           python - <<'PY'
           import json
-          x=json.load(open('/tmp/a-momentum-wave-shadow.json'))
+          x=json.load(open('/tmp/a-momentum-dual-wave-shadow.json'))
           assert x['mode']=='SHADOW_ONLY_NO_PRODUCTION_AUTHORITY'
           assert x['credentials_used'] is False
           assert x['runtime_latest_mutation'] is False
           assert x['production_watchlist_mutation'] is False
           assert x['anchor_assignment_automatic'] is False
-          assert x['candidate_count']>0
-          assert all(c['commercial_bridge_status']=='UNSCREENED_RAW_WAVE' for c in x['candidates'])
-          assert all(c['commercial_bridge_eligible'] is False for c in x['candidates'])
-          assert all(c['bridge_queries']==[] for c in x['candidates'])
-          assert all(c['anchor_query'] is None for c in x['candidates'])
-          assert all(c['automatic_watchlist_promotion'] is False for c in x['candidates'])
-          print('A_MOMENTUM_WAVE_SHADOW_BOUNDARY_PASS',x['candidate_count'])
+          assert x['commercial_eligibility_automatic'] is False
+          assert x['mechanism_decomposition_automatic'] is False
+          assert x['bridge_query_materialization_automatic'] is False
+          assert x['magnitude_comparison_across_independent_trends_requests_forbidden'] is True
+          assert x['raw_wave_capture']['candidate_count']>0
+          assert x['merch_proxy_capture']['provider_failure_is_zero_demand'] is False
+          assert x['merch_proxy_capture']['cross_seed_score_comparison_forbidden'] is True
+          assert all(c['bridge_queries']==[] for c in x['couplings'])
+          assert all(c['anchor_query'] is None for c in x['couplings'])
+          assert all(c['mechanism_key'] is None for c in x['couplings'])
+          print('A_MOMENTUM_DUAL_WAVE_SHADOW_BOUNDARY_PASS',x['coupling_summary'])
           PY
       - uses: actions/upload-artifact@v4
         with:
           name: a-momentum-wave-shadow
-          path: /tmp/a-momentum-wave-shadow.json
+          path: /tmp/a-momentum-dual-wave-shadow.json
           if-no-files-found: error
           retention-days: 14

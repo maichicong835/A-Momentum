@@ -30,5 +30,13 @@ The production Momentum Core remains the fixed-watchlist longitudinal engine. A 
 
 The shadow workflow `.github/workflows/wave-shadow.yml` has read-only repository permissions, uploads an artifact only, and is forbidden from mutating `runtime/latest` or `runtime/watchlist.json`. It does not create separate H24 or PTE engines: H24 is represented only as the wave-capture capability, while PTE-like decomposition remains a later mechanism-design function.
 
+### Dual-wave shadow
+
+The shadow now observes two independent Google Trends evidence tracks. **Raw Market Wave** comes from Trending Now RSS. **Merch Proxy Wave** comes from Rising related queries around the deliberately small fixed seed family `shirt`, `shirts`, and `t shirt`. The merch track is an experimental expression lens, not a sales/demand authority.
+
+The coupler emits only `COUPLED_WAVE`, `MERCH_NATIVE_WAVE`, `RAW_ONLY_WAVE`, or `UNRESOLVED`. Coupling does not grant commercial eligibility, mechanism identity, bridge queries, anchors, or watchlist promotion. Scores from independent Google Trends requests must not be compared as absolute 0-100 magnitudes; initial learning uses presence, provider-reported rising status/rank within each seed, conservative phrase coupling, timing, and persistence.
+
+Raw RSS capture remains independent of pytrends. The merch-proxy track currently uses pytrends experimentally and degrades to an explicit shadow sensor gap if that transport fails; such a gap never means zero demand and may not invalidate the raw-wave capture.
+
 The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority; the new wave shadow does not depend on pytrends. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
 
