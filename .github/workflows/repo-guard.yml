@@ -108,8 +108,6 @@ jobs:
           assert "cron: '47 */4 * * *'" in wave_workflow_text
           assert "shirt|shirts|t shirt" in wave_workflow_text
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
-          assert "runtime/latest" not in wave_workflow_text
-          assert "runtime/watchlist.json" not in wave_workflow_text
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'

@@ -61,10 +61,10 @@
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
     "pytrends_is_unofficial": true,
-    "wave_shadow_does_not_depend_on_pytrends": true,
     "official_google_trends_api_alpha_not_assumed_available": true,
     "wave_raw_capture_does_not_depend_on_pytrends": true,
-    "merch_proxy_shadow_uses_pytrends_experimentally": true
+    "merch_proxy_shadow_uses_pytrends_experimentally": true,
+    "raw_wave_capture_does_not_depend_on_pytrends": true
   },
   "dual_wave_shadow": {
     "status": "SHADOW_ONLY_NON_AUTHORITATIVE",

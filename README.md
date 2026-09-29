@@ -38,5 +38,5 @@ The coupler emits only `COUPLED_WAVE`, `MERCH_NATIVE_WAVE`, `RAW_ONLY_WAVE`, or 
 
 Raw RSS capture remains independent of pytrends. The merch-proxy track currently uses pytrends experimentally and degrades to an explicit shadow sensor gap if that transport fails; such a gap never means zero demand and may not invalidate the raw-wave capture.
 
-The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority; the new wave shadow does not depend on pytrends. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
+The existing Google Trends longitudinal sensor still uses the unofficial `pytrends` transport. That transport is treated as a fragility, not as authority. Raw Wave RSS capture does not depend on pytrends; only the experimental Merch Proxy shadow currently does. The official Google Trends API alpha can be evaluated when access is actually available rather than assumed.
 
