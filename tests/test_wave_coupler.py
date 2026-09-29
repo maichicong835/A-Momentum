@@ -9,6 +9,7 @@ class Coupler(unittest.TestCase):
         self.assertTrue(w.conservative_match("Alpha Wave","alpha wave shirt"))
         self.assertTrue(w.conservative_match("Delta","delta shirts"))
         self.assertFalse(w.conservative_match("Delta","delta airlines shirt sale"))
+        self.assertEqual(w.match_relation("Dolly Parton estate planning","dolly parton"),"PARTIAL_PHRASE_OVERLAP")
     def test_cross_seed_merch_variants_group_without_losing_evidence(self):
         rows=[
             {"source_seed":"shirt","rank":1,"related_query":"im with stupid shirt","rising_value":6000,"is_breakout":False},
@@ -18,6 +19,18 @@ class Coupler(unittest.TestCase):
         self.assertEqual(len(groups),1)
         self.assertEqual(groups[0]["merch_core"],"im with stupid")
         self.assertEqual(len(groups[0]["seed_evidence"]),2)
+
+    def test_partial_entity_overlap_is_unresolved_not_coupled(self):
+        raw={"candidates":[{"wave_id":"r1","raw_trend_title":"Dolly Parton estate planning"}]}
+        merch={"provider_status":"PASS_WITH_DATA","merch_waves":[
+            {"source_seed":"shirt","rank":1,"related_query":"Dolly Parton shirt","rising_value":80,"is_breakout":False}
+        ]}
+        out=w.build(raw,merch)
+        self.assertEqual(out["coupling_summary"]["COUPLED_WAVE"],0)
+        self.assertEqual(out["coupling_summary"]["UNRESOLVED"],1)
+        c=out["couplings"][0]
+        self.assertEqual(c["unresolved_reason"],"PARTIAL_PHRASE_OR_ENTITY_OVERLAP_NOT_PHENOMENON_PROOF")
+        self.assertEqual(len(c["merch_overlap_candidates"]),1)
 
     def test_states_and_boundaries(self):
         raw={"candidates":[{"wave_id":"r1","raw_trend_title":"Alpha Wave"},{"wave_id":"r2","raw_trend_title":"Beta Event"}]}
