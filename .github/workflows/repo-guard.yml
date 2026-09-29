@@ -86,6 +86,11 @@ jobs:
           assert e['anti_drift']['r_m_coupling_may_not_be_discovery_admission_gate'] is True
           assert e['anti_drift']['temporal_observation_may_not_delay_initial_m_discovery_intake'] is True
           assert e['anti_drift']['merch_proxy_is_expression_proxy_not_sticker_demand_authority'] is True
+          assert e['anti_drift']['structural_triage_may_not_claim_semantic_entity_resolution'] is True
+          assert e['anti_drift']['structural_triage_pass_is_not_commercial_eligibility'] is True
+          assert e['anti_drift']['structural_triage_pass_is_not_ip_safety_clearance'] is True
+          assert e['anti_drift']['ambiguous_structure_must_default_to_hold'] is True
+          assert e['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -109,6 +114,18 @@ jobs:
           assert wc['anti_drift']['r_m_coupling_may_not_be_discovery_admission_gate'] is True
           assert wc['anti_drift']['temporal_observation_may_not_delay_initial_m_discovery_intake'] is True
           assert wc['anti_drift']['merch_proxy_is_expression_proxy_not_sticker_demand_authority'] is True
+          assert wc['anti_drift']['structural_triage_may_not_claim_semantic_entity_resolution'] is True
+          assert wc['anti_drift']['structural_triage_pass_is_not_commercial_eligibility'] is True
+          assert wc['anti_drift']['structural_triage_pass_is_not_ip_safety_clearance'] is True
+          assert wc['anti_drift']['ambiguous_structure_must_default_to_hold'] is True
+          assert wc['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
+          st=wc['dual_wave_shadow']['structural_triage']
+          assert st['status']=='SHADOW_ONLY_NON_AUTHORITATIVE'
+          assert st['semantic_entity_resolution'] is False
+          assert st['named_entity_or_property_clearance'] is False
+          assert st['commercial_eligibility_authority'] is False
+          assert st['ip_safety_authority'] is False
+          assert st['automatic_mechanism_decomposition'] is False
           dm=wc['dual_wave_shadow']['discovery_model']
           assert dm['primary_opportunity_lane']=='MERCH_PROXY_WAVE'
           assert dm['r_coupling_required_for_m_intake'] is False
@@ -130,6 +147,7 @@ jobs:
           assert "cron: '47 */4 * * *'" in wave_workflow_text
           assert "shirt|shirts|t shirt" in wave_workflow_text
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
+          assert "scripts/structural_triage.py" in wave_workflow_text
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'

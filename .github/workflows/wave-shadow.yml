@@ -34,13 +34,16 @@ jobs:
           python scripts/wave_capture.py --self-test
           python scripts/merch_proxy.py --self-test
           python scripts/wave_coupler.py --raw /tmp/unused --merch /tmp/unused --out /tmp/unused --self-test
-          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler
+          python scripts/structural_triage.py --self-test
+          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler tests.test_structural_triage
       - name: Capture Google Trends raw market waves
         run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json
       - name: Capture merch-proxy Rising waves
         run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --retries 2 --sleep-seconds 2 --out /tmp/a-momentum-merch-proxy-shadow.json
       - name: Couple raw and merch-proxy waves
         run: python scripts/wave_coupler.py --raw /tmp/a-momentum-raw-wave-shadow.json --merch /tmp/a-momentum-merch-proxy-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
+      - name: Structural triage M-primary intake
+        run: python scripts/structural_triage.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Enforce shadow-only boundary
         run: |
           python - <<'PY'
@@ -68,6 +71,16 @@ jobs:
           assert all(c['intake_state']=='DISCOVERY_INTAKE_READY_UNSCREENED' for c in x['opportunity_intake'])
           assert all(c['requires_r_coupling'] is False for c in x['opportunity_intake'])
           assert all(c['structural_triage_required'] is True for c in x['opportunity_intake'])
+          assert x['structural_triage']['authority']=='SHADOW_STRUCTURE_ONLY'
+          assert x['structural_triage']['decision_count']==x['opportunity_intake_count']
+          assert x['structural_triage']['semantic_entity_resolution_performed'] is False
+          assert x['structural_triage']['commercial_eligibility_authority'] is False
+          assert x['structural_triage']['ip_safety_authority'] is False
+          assert x['structural_triage']['mechanism_generation_authority'] is False
+          assert all(c['mechanism_decomposition_automatic'] is False for c in x['structural_triage_decisions'])
+          assert all(c['commercial_eligibility_decision'] is None for c in x['structural_triage_decisions'])
+          assert all(c['ip_safety_decision'] is None for c in x['structural_triage_decisions'])
+          assert all(c['production_eligible'] is False for c in x['structural_triage_decisions'])
           assert x['merch_grouping_policy']=='NORMALIZED_QUERY_WITH_MERCH_FORMAT_TOKENS_REMOVED_PRESERVE_SEED_EVIDENCE'
           assert all(c['match_policy'] in {'EXACT_NORMALIZED_CORE_ONLY_PARTIAL_OVERLAP_IS_UNRESOLVED','UNMATCHED_UNIQUE_MERCH_CORE'} for c in x['couplings'])
           assert all(c['bridge_queries']==[] for c in x['couplings'])
