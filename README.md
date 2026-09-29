@@ -25,7 +25,7 @@ The production Momentum Core remains the fixed-watchlist longitudinal engine. A 
 `scripts/wave_capture.py` captures public US Trending Now RSS items and keeps three query roles explicit:
 
 - **DISCOVERY_QUERY**: the raw trend query/cluster used only to catch a market wave.
-- **BRIDGE_QUERY**: commercial-expression probes such as `<trend> shirt` and `<trend> sticker`; these are supporting probes and may not redefine a longitudinal Momentum series.
+- **BRIDGE_QUERY**: commercial-expression probes such as `<trend> shirt` and `<trend> sticker`; these are supporting probes and may not redefine a longitudinal Momentum series. Raw Trending Now waves do **not** materialize these probes automatically. A separate commercial-eligibility decision must happen first, because raw waves commonly include protected entertainment, named people, politics, disasters/weather and other non-Daily7-ready topics.
 - **ANCHOR_QUERY**: intentionally unassigned in shadow mode. An anchor requires later evidence and explicit promotion before a candidate may enter the production watchlist.
 
 The shadow workflow `.github/workflows/wave-shadow.yml` has read-only repository permissions, uploads an artifact only, and is forbidden from mutating `runtime/latest` or `runtime/watchlist.json`. It does not create separate H24 or PTE engines: H24 is represented only as the wave-capture capability, while PTE-like decomposition remains a later mechanism-design function.

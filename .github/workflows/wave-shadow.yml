@@ -44,6 +44,9 @@ jobs:
           assert x['production_watchlist_mutation'] is False
           assert x['anchor_assignment_automatic'] is False
           assert x['candidate_count']>0
+          assert all(c['commercial_bridge_status']=='UNSCREENED_RAW_WAVE' for c in x['candidates'])
+          assert all(c['commercial_bridge_eligible'] is False for c in x['candidates'])
+          assert all(c['bridge_queries']==[] for c in x['candidates'])
           assert all(c['anchor_query'] is None for c in x['candidates'])
           assert all(c['automatic_watchlist_promotion'] is False for c in x['candidates'])
           print('A_MOMENTUM_WAVE_SHADOW_BOUNDARY_PASS',x['candidate_count'])

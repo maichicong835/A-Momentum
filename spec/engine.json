@@ -134,7 +134,8 @@
     "wave_capture_shadow_may_not_mutate_production_watchlist": true,
     "wave_capture_shadow_may_not_publish_runtime_latest": true,
     "discovery_bridge_anchor_query_roles_must_remain_distinct": true,
-    "bridge_or_support_query_may_not_redefine_anchor_longitudinal_series": true
+    "bridge_or_support_query_may_not_redefine_anchor_longitudinal_series": true,
+    "raw_wave_may_not_auto_materialize_merch_queries": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -282,7 +283,9 @@
       "initial_state": "SHADOW_UNPROVEN",
       "next_state": "ELIGIBLE_FOR_ANCHOR_DESIGN",
       "production_watchlist_write": "FORBIDDEN_IN_SHADOW_MODE",
-      "anchor_required_before_momentum_core_entry": true
+      "anchor_required_before_momentum_core_entry": true,
+      "commercial_bridge_screening_required_before_bridge_query_materialization": true,
+      "raw_wave_default_commercial_bridge_eligible": false
     },
     "initial_rollout": {
       "collector": "GOOGLE_TRENDS_ONLY",
