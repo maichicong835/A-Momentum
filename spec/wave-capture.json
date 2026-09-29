@@ -1,6 +1,6 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.8",
+  "schema_version": "1.9",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
   "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_SEMANTIC_RESOLUTION_AND_MECHANISM_ABSTRACTION",
@@ -81,7 +81,11 @@
     "mechanism_hypothesis_is_not_ip_or_property_clearance": true,
     "mechanism_hypothesis_may_not_generate_product_creative": true,
     "mechanism_hypothesis_may_not_materialize_bridge_anchor_or_watchlist": true,
-    "unsupported_review_type_must_hold_not_infer": true
+    "unsupported_review_type_must_hold_not_infer": true,
+    "merch_proxy_429_may_not_trigger_seed_retry_storm": true,
+    "merch_proxy_partial_success_must_survive_later_seed_gap": true,
+    "merch_proxy_provider_gap_may_not_mean_no_rising_queries": true,
+    "merch_proxy_seed_family_may_not_expand_to_compensate_for_transport_failure": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -89,7 +93,11 @@
     "official_google_trends_api_alpha_not_assumed_available": true,
     "wave_raw_capture_does_not_depend_on_pytrends": true,
     "merch_proxy_shadow_uses_pytrends_experimentally": true,
-    "raw_wave_capture_does_not_depend_on_pytrends": true
+    "raw_wave_capture_does_not_depend_on_pytrends": true,
+    "pytrends_repository_archived_since_2025": true,
+    "related_queries_429_is_known_pytrends_failure_mode": true,
+    "github_hosted_runner_shared_egress_is_rate_limit_risk_not_proven_cause": true,
+    "official_trends_api_public_docs_do_not_currently_replace_related_rising_queries": true
   },
   "dual_wave_shadow": {
     "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
@@ -110,7 +118,20 @@
         "seed_policy": "FIXED_SMALL_FAMILY_INITIAL_LEARNING_PHASE",
         "transport": "PYTRENDS_EXPERIMENTAL_SHADOW_ONLY",
         "provider_failure_is_zero_demand": false,
-        "cross_seed_score_comparison_forbidden": true
+        "cross_seed_score_comparison_forbidden": true,
+        "transport_policy": {
+          "strategy": "BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION",
+          "one_batched_seed_payload": true,
+          "per_widget_fetch": true,
+          "partial_success_preserved": true,
+          "immediate_seed_retry_on_429": false,
+          "rate_limit_circuit_breaker": true,
+          "between_seed_seconds": 6,
+          "batch_build_retries": 2,
+          "rate_limit_cooldown_seconds": 30,
+          "rate_limit_is_sensor_gap_not_zero_demand": true,
+          "rate_limit_is_not_no_rising_queries": true
+        }
       }
     },
     "coupler": {
