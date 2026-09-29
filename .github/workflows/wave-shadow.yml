@@ -52,7 +52,7 @@ jobs:
       - name: Capture Google Trends raw market waves
         run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json
       - name: Capture merch-proxy Rising waves
-        run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --retries 2 --sleep-seconds 2 --out /tmp/a-momentum-merch-proxy-shadow.json
+        run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --build-retries 2 --between-seed-seconds 6 --rate-limit-cooldown-seconds 30 --out /tmp/a-momentum-merch-proxy-shadow.json
       - name: Couple raw and merch-proxy waves
         run: python scripts/wave_coupler.py --raw /tmp/a-momentum-raw-wave-shadow.json --merch /tmp/a-momentum-merch-proxy-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
       - name: Structural triage M-primary intake
@@ -78,6 +78,15 @@ jobs:
           assert x['raw_wave_capture']['candidate_count']>0
           assert x['merch_proxy_capture']['provider_failure_is_zero_demand'] is False
           assert x['merch_proxy_capture']['cross_seed_score_comparison_forbidden'] is True
+          assert x['merch_proxy_capture']['provider_gap_is_no_rising_queries'] is False
+          assert x['merch_proxy_capture']['partial_success_preserved'] is True
+          mt=x['merch_proxy_capture']['transport']
+          assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
+          assert mt['batched_seed_payload'] is True
+          assert mt['shared_client_context'] is True
+          assert mt['per_widget_partial_preservation'] is True
+          assert mt['immediate_seed_retry_on_429'] is False
+          assert mt['rate_limit_circuit_breaker'] is True
           assert x['unique_merch_core_count'] <= x['merch_observation_count']
           assert x['opportunity_intake_count']==x['unique_merch_core_count']
           assert x['discovery_model']['primary_opportunity_lane']=='MERCH_PROXY_WAVE'
