@@ -71,22 +71,31 @@ def exact_candidates(query,search_results):
             seen.add(qid); uniq.append(r)
     return uniq
 
+def contains_term(desc,term):
+    d=" "+norm(desc)+" "
+    t=" "+norm(term)+" "
+    return t in d
+
+def contains_any(desc,terms):
+    return any(contains_term(desc,x) for x in terms)
+
 def classify_exact(result):
     desc=norm(result.get("description"))
-    # Search result type is metadata evidence only. Use narrow keyword families.
-    if any(x in desc for x in CREATIVE_TERMS):
+    # Search result type is metadata evidence only. Match whole normalized
+    # tokens/phrases so "song" never matches "songwriter", etc.
+    if contains_any(desc,CREATIVE_TERMS):
         return "CREATIVE_PROPERTY_OR_WORK",False,"DESCRIPTION_CREATIVE_WORK_SIGNAL"
-    if any(x in desc for x in PERSON_TERMS):
+    if contains_any(desc,PERSON_TERMS):
         return "NAMED_PERSON_ENTITY",False,"DESCRIPTION_PERSON_ROLE_SIGNAL"
-    if any(x in desc for x in ORG_TERMS):
+    if contains_any(desc,ORG_TERMS):
         return "ORGANIZATION_OR_BRAND_ENTITY",False,"DESCRIPTION_ORGANIZATION_SIGNAL"
-    if any(x in desc for x in EVENT_TERMS):
+    if contains_any(desc,EVENT_TERMS):
         return "EVENT_OR_INCIDENT",False,"DESCRIPTION_EVENT_SIGNAL"
-    if any(x in desc for x in CULTURAL_TERMS):
+    if contains_any(desc,CULTURAL_TERMS):
         return "CULTURAL_SYMBOL_OR_OBJECT",True,"DESCRIPTION_CULTURAL_OBJECT_SIGNAL"
-    if any(x in desc for x in PRODUCT_TERMS):
+    if contains_any(desc,PRODUCT_TERMS):
         return "PRODUCT_OR_PHYSICAL_OBJECT",False,"DESCRIPTION_PRODUCT_OBJECT_SIGNAL"
-    if any(x in desc for x in CONCEPT_TERMS):
+    if contains_any(desc,CONCEPT_TERMS):
         return "GENERIC_CONCEPT_OR_THEME",True,"DESCRIPTION_CONCEPT_SIGNAL"
     return "EXACT_ENTITY_UNRESOLVED",False,"EXACT_ENTITY_DESCRIPTION_NOT_IN_HIGH_CONFIDENCE_TYPE_SET"
 

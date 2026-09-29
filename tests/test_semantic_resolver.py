@@ -10,13 +10,15 @@ class SemanticResolver(unittest.TestCase):
 
     def test_exact_person_is_metadata_resolved_but_not_mechanism_allowed(self):
         r=s.resolve_one("dolly parton",self.fake([{
-            "id":"Q1","label":"Dolly Parton","description":"American singer and actress",
+            "id":"Q1","label":"Dolly Parton","description":"American singer, songwriter and actress",
             "match":{"type":"label","text":"Dolly Parton"},"concepturi":"https://www.wikidata.org/entity/Q1"
         }]))
         self.assertEqual(r["resolution_state"],"RESOLVED_EXACT_METADATA")
         self.assertEqual(r["semantic_class"],"NAMED_PERSON_ENTITY")
         self.assertFalse(r["mechanism_review_allowed"])
         self.assertEqual(r["provenance"]["qid"],"Q1")
+        self.assertTrue(s.contains_term("American singer, songwriter and actress","singer"))
+        self.assertFalse(s.contains_term("American singer, songwriter and actress","song"))
 
     def test_exact_alias_and_cultural_object_can_enter_review_not_auto_decomposition(self):
         r=s.resolve_one("foam finger",self.fake([{
