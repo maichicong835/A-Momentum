@@ -14,7 +14,10 @@ class WaveCapture(unittest.TestCase):
         </channel></rss>"""
         c=w.parse_rss(xml,"TEST",5)[0]
         self.assertEqual(c["discovery_query"]["role"],"DISCOVERY_QUERY")
-        self.assertTrue(all(x["role"]=="BRIDGE_QUERY" for x in c["bridge_queries"]))
+        self.assertEqual(c["commercial_bridge_status"],"UNSCREENED_RAW_WAVE")
+        self.assertFalse(c["commercial_bridge_eligible"])
+        self.assertEqual(c["bridge_queries"],[])
+        self.assertEqual(c["bridge_query_templates"],["{trend} shirt","{trend} sticker"])
         self.assertIsNone(c["anchor_query"])
         self.assertFalse(c["automatic_watchlist_promotion"])
 

@@ -21,7 +21,8 @@
         "{trend} shirt",
         "{trend} sticker"
       ],
-      "may_define_momentum_anchor": false
+      "may_define_momentum_anchor": false,
+      "generation_requires": "EXPLICIT_COMMERCIAL_BRIDGE_ELIGIBILITY"
     },
     "ANCHOR_QUERY": {
       "purpose": "STABLE_LONGITUDINAL_MECHANISM_MEASUREMENT",
@@ -37,7 +38,10 @@
     "eligible_state": "ELIGIBLE_FOR_ANCHOR_DESIGN",
     "explicit_anchor_design_required": true,
     "downstream_commercial_refresh_required": true,
-    "downstream_property_trademark_safety_recheck_required": true
+    "downstream_property_trademark_safety_recheck_required": true,
+    "raw_wave_capture_precedes_commercial_bridge": true,
+    "raw_wave_default_commercial_bridge_eligible": false,
+    "bridge_queries_empty_until_eligibility_pass": true
   },
   "anti_drift": {
     "raw_trend_is_not_commercial_opportunity": true,
@@ -46,7 +50,8 @@
     "provider_failure_is_not_zero_demand": true,
     "no_new_h24_engine": true,
     "no_new_pte_engine": true,
-    "no_amazon_etsy_tiktok_pinterest_collectors_in_initial_rollout": true
+    "no_amazon_etsy_tiktok_pinterest_collectors_in_initial_rollout": true,
+    "raw_wave_may_not_auto_materialize_merch_queries": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,

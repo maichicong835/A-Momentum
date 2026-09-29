@@ -75,6 +75,7 @@ jobs:
           assert e['anti_drift']['wave_capture_shadow_may_not_publish_runtime_latest'] is True
           assert e['anti_drift']['discovery_bridge_anchor_query_roles_must_remain_distinct'] is True
           assert e['anti_drift']['bridge_or_support_query_may_not_redefine_anchor_longitudinal_series'] is True
+          assert e['anti_drift']['raw_wave_may_not_auto_materialize_merch_queries'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -83,6 +84,11 @@ jobs:
           assert wc['promotion_policy']['runtime_latest_mutation_forbidden'] is True
           assert wc['query_semantics']['DISCOVERY_QUERY']['may_define_momentum_anchor'] is False
           assert wc['query_semantics']['BRIDGE_QUERY']['may_define_momentum_anchor'] is False
+          assert wc['query_semantics']['BRIDGE_QUERY']['generation_requires']=='EXPLICIT_COMMERCIAL_BRIDGE_ELIGIBILITY'
+          assert wc['promotion_policy']['raw_wave_capture_precedes_commercial_bridge'] is True
+          assert wc['promotion_policy']['raw_wave_default_commercial_bridge_eligible'] is False
+          assert wc['promotion_policy']['bridge_queries_empty_until_eligibility_pass'] is True
+          assert wc['anti_drift']['raw_wave_may_not_auto_materialize_merch_queries'] is True
           assert wc['query_semantics']['ANCHOR_QUERY']['assigned_automatically'] is False
           wave_workflow_text=Path('.github/workflows/wave-shadow.yml').read_text()
           assert 'permissions:\n  contents: read' in wave_workflow_text

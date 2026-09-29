@@ -85,15 +85,17 @@ def build_candidate(item, source_ref):
     digest=hashlib.sha256(title.casefold().encode("utf-8")).hexdigest()[:16]
     traffic=normalize_text(find_text(item,"approx_traffic"))
     discovery=title
-    bridges=[
-        {"role":"BRIDGE_QUERY","query":f"{title} shirt","intent":"MERCH_EXPRESSION_PROBE"},
-        {"role":"BRIDGE_QUERY","query":f"{title} sticker","intent":"STICKER_EXPRESSION_PROBE"},
-    ]
+    # Raw waves are deliberately NOT converted into merch probes automatically.
+    # Bridge queries are materialized only after a separate commercial-eligibility decision.
+    bridges=[]
     return {
         "wave_id":f"gt-wave-{digest}",
         "raw_trend_title":title,
         "discovery_query":{"role":"DISCOVERY_QUERY","query":discovery},
+        "commercial_bridge_status":"UNSCREENED_RAW_WAVE",
+        "commercial_bridge_eligible":False,
         "bridge_queries":bridges,
+        "bridge_query_templates":["{trend} shirt","{trend} sticker"],
         "anchor_query":None,
         "anchor_status":"UNASSIGNED_REQUIRES_SHADOW_EVIDENCE_AND_EXPLICIT_PROMOTION",
         "promotion_state":"SHADOW_UNPROVEN",
@@ -149,9 +151,11 @@ def validate_output(out):
     assert out["candidate_count"]==len(out["candidates"])
     for c in out["candidates"]:
         assert c["discovery_query"]["role"]=="DISCOVERY_QUERY"
+        assert c["commercial_bridge_status"]=="UNSCREENED_RAW_WAVE"
+        assert c["commercial_bridge_eligible"] is False
+        assert c["bridge_queries"]==[]
         assert c["anchor_query"] is None
         assert c["automatic_watchlist_promotion"] is False
-        assert all(x["role"]=="BRIDGE_QUERY" for x in c["bridge_queries"])
     return True
 
 def self_test():
@@ -166,8 +170,10 @@ def self_test():
     assert len(c)==2
     assert c[0]["approx_search_traffic_floor"]==200000
     assert c[1]["approx_search_traffic_floor"]==1000000
-    assert c[0]["bridge_queries"][0]["query"]=="Example Wave shirt"
-    assert c[0]["bridge_queries"][1]["query"]=="Example Wave sticker"
+    assert c[0]["commercial_bridge_status"]=="UNSCREENED_RAW_WAVE"
+    assert c[0]["commercial_bridge_eligible"] is False
+    assert c[0]["bridge_queries"]==[]
+    assert c[0]["bridge_query_templates"]==["{trend} shirt","{trend} sticker"]
     assert c[0]["anchor_query"] is None
     out=build_output(c,"US","SELF_TEST","2026-09-29T00:00:00+00:00")
     validate_output(out)
