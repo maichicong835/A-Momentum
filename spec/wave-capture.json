@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "1.5",
+  "schema_version": "1.6",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "M_PRIMARY_DUAL_WAVE_DISCOVERY_WITH_CONSERVATIVE_STRUCTURAL_TRIAGE_AND_NONBLOCKING_R_CONTEXT",
+  "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_AND_PROVENANCE_FIRST_SEMANTIC_RESOLUTION",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -67,7 +67,13 @@
     "structural_triage_pass_is_not_commercial_eligibility": true,
     "structural_triage_pass_is_not_ip_safety_clearance": true,
     "ambiguous_structure_must_default_to_hold": true,
-    "product_configuration_demand_may_not_be_relabelled_expression_demand": true
+    "product_configuration_demand_may_not_be_relabelled_expression_demand": true,
+    "semantic_metadata_provider_may_not_become_market_signal": true,
+    "semantic_resolution_requires_exact_label_or_alias_match": true,
+    "multiple_exact_semantic_matches_must_remain_ambiguous": true,
+    "no_exact_semantic_match_must_remain_hold": true,
+    "semantic_resolution_may_not_claim_ip_or_commercial_clearance": true,
+    "semantic_resolution_may_not_auto_generate_mechanism": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -145,6 +151,29 @@
       "unresolved_type": "UNRESOLVED_THEME_OBJECT_ENTITY_OR_PROPERTY",
       "semantic_entity_resolution": false,
       "named_entity_or_property_clearance": false,
+      "commercial_eligibility_authority": false,
+      "ip_safety_authority": false,
+      "mechanism_generation_authority": false,
+      "automatic_mechanism_decomposition": false
+    },
+    "semantic_resolution": {
+      "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+      "provider": "WIKIDATA",
+      "provider_role": "METADATA_ONLY_NOT_MARKET_SIGNAL",
+      "target_disposition": "HOLD_SEMANTIC_REVIEW",
+      "exact_match_required": true,
+      "ambiguous_or_missing_exact_match_remains_hold": true,
+      "semantic_classes": [
+        "NAMED_PERSON_ENTITY",
+        "CREATIVE_PROPERTY_OR_WORK",
+        "ORGANIZATION_OR_BRAND_ENTITY",
+        "EVENT_OR_INCIDENT",
+        "CULTURAL_SYMBOL_OR_OBJECT",
+        "PRODUCT_OR_PHYSICAL_OBJECT",
+        "GENERIC_CONCEPT_OR_THEME",
+        "EXACT_ENTITY_UNRESOLVED"
+      ],
+      "market_signal_authority": false,
       "commercial_eligibility_authority": false,
       "ip_safety_authority": false,
       "mechanism_generation_authority": false,

@@ -91,6 +91,12 @@ jobs:
           assert e['anti_drift']['structural_triage_pass_is_not_ip_safety_clearance'] is True
           assert e['anti_drift']['ambiguous_structure_must_default_to_hold'] is True
           assert e['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
+          assert e['anti_drift']['semantic_metadata_provider_may_not_become_market_signal'] is True
+          assert e['anti_drift']['semantic_resolution_requires_exact_label_or_alias_match'] is True
+          assert e['anti_drift']['multiple_exact_semantic_matches_must_remain_ambiguous'] is True
+          assert e['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
+          assert e['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
+          assert e['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -119,6 +125,21 @@ jobs:
           assert wc['anti_drift']['structural_triage_pass_is_not_ip_safety_clearance'] is True
           assert wc['anti_drift']['ambiguous_structure_must_default_to_hold'] is True
           assert wc['anti_drift']['product_configuration_demand_may_not_be_relabelled_expression_demand'] is True
+          assert wc['anti_drift']['semantic_metadata_provider_may_not_become_market_signal'] is True
+          assert wc['anti_drift']['semantic_resolution_requires_exact_label_or_alias_match'] is True
+          assert wc['anti_drift']['multiple_exact_semantic_matches_must_remain_ambiguous'] is True
+          assert wc['anti_drift']['no_exact_semantic_match_must_remain_hold'] is True
+          assert wc['anti_drift']['semantic_resolution_may_not_claim_ip_or_commercial_clearance'] is True
+          assert wc['anti_drift']['semantic_resolution_may_not_auto_generate_mechanism'] is True
+          sr=wc['dual_wave_shadow']['semantic_resolution']
+          assert sr['provider']=='WIKIDATA'
+          assert sr['provider_role']=='METADATA_ONLY_NOT_MARKET_SIGNAL'
+          assert sr['exact_match_required'] is True
+          assert sr['ambiguous_or_missing_exact_match_remains_hold'] is True
+          assert sr['market_signal_authority'] is False
+          assert sr['commercial_eligibility_authority'] is False
+          assert sr['ip_safety_authority'] is False
+          assert sr['automatic_mechanism_decomposition'] is False
           st=wc['dual_wave_shadow']['structural_triage']
           assert st['status']=='SHADOW_ONLY_NON_AUTHORITATIVE'
           assert st['semantic_entity_resolution'] is False
@@ -148,6 +169,7 @@ jobs:
           assert "shirt|shirts|t shirt" in wave_workflow_text
           assert "a-momentum-dual-wave-shadow.json" in wave_workflow_text
           assert "scripts/structural_triage.py" in wave_workflow_text
+          assert "scripts/semantic_resolver.py" in wave_workflow_text
           seed=json.loads(Path(op['continuity_bootstrap_path']).read_text())
           assert seed['schema']=='A_MOMENTUM_CONTINUITY_BOOTSTRAP'
           assert seed['engine_version']=='0.2.0'
