@@ -10,7 +10,7 @@ from pathlib import Path
 import wave_coupler as wc
 
 ENGINE_VERSION="0.2.0"
-S_FORMAT_TOKENS={"sticker","stickers","vinyl"}
+S_FORMAT_TOKENS={"sticker","stickers"}
 
 def load(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
