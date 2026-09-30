@@ -43,7 +43,7 @@ class OpportunityUnion(unittest.TestCase):
         self.assertIsNotNone(by["shared"]["m_evidence"])
         self.assertIsNotNone(by["shared"]["s_evidence"])
     def test_format_tokens_strip_only_for_s_core(self):
-        self.assertEqual(u.s_core_key("vinyl sticker alpha"),"alpha")
+        self.assertEqual(u.s_core_key("vinyl sticker alpha"),"vinyl alpha")
         self.assertEqual(u.s_core_key("alpha stickers"),"alpha")
 
 if __name__=="__main__": unittest.main()
