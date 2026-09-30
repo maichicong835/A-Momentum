@@ -5,8 +5,9 @@ M (shirt-expression) and S (sticker-native) are independent discovery radars.
 Exact normalized core equality may dedupe them into one opportunity. Neither
 radar is a confirmation gate for the other.
 """
-import argparse, hashlib, json, re
+import argparse, hashlib, json, re, sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 import wave_coupler as wc
 
 ENGINE_VERSION="0.2.0"
