@@ -448,13 +448,13 @@
       }
     },
     "trigger_roles": {
-      "schedule": "LIVE_SHADOW_PROVIDER_CAPTURE",
+      "schedule": "PAUSED_AFTER_S_WAVE_CROSS_SNAPSHOT_PROOF",
       "workflow_dispatch": "OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE",
       "push": "VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS"
     },
     "request_budget_policy": {
       "live_provider_calls_on_push": false,
-      "live_provider_calls_on_schedule": true,
+      "live_provider_calls_on_schedule": false,
       "live_provider_calls_on_workflow_dispatch": true
     },
     "multi_radar": {
@@ -494,7 +494,15 @@
         "active": false,
         "deferred": true
       },
-      "no_production_mutation": true
+      "no_production_mutation": true,
+      "cross_snapshot_proof": {
+        "state": "COMPLETE_TWO_SCHEDULED_SNAPSHOTS_OFFLINE_AUDITED",
+        "acceptance_receipt": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+        "scheduled_provider_calls_paused": true,
+        "production_intake_promotion_authorized": false,
+        "seed_family_expansion_authorized": false,
+        "commercial_bridge_activation_authorized": false
+      }
     }
   }
 }

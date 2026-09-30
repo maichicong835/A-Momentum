@@ -1,0 +1,221 @@
+{
+  "schema": "A_MOMENTUM_S_WAVE_CROSS_SNAPSHOT_PROOF",
+  "schema_version": "1.0",
+  "authority": "OFFLINE_SHADOW_EVIDENCE_AUDIT_ONLY_NO_PRODUCTION_AUTHORITY",
+  "generated_at": "2026-10-01T06:14:00+07:00",
+  "input_binding": {
+    "snapshot_1": {
+      "workflow_run_id": 36736089652,
+      "artifact_id": 11107530618,
+      "head_sha": "9906831777b00eb4961145d562d000079759a8b7",
+      "artifact_json_sha256": "f4b1401fe79c56e44aee9b9b1f1951be42d3a25cd434cb587251073a7e87bffe",
+      "artifact_zip_sha256": "430326ec3476f0bde41d6becad9c2759b2a33dfed43bdde1a3617bdd3b6c4a24"
+    },
+    "snapshot_2": {
+      "workflow_run_id": 36776641127,
+      "artifact_id": 11126002010,
+      "head_sha": "3d5a9815067de972adcc107f5ad865ffb5657db6",
+      "artifact_json_sha256": "01e6990cf45772c8541f99ac32571ca670813f564f072003e2ecb0da117c1d16",
+      "artifact_zip_sha256": "9e803aca9309229e8e0f98e1e25c2fabc9cbb05249814874eaa03d1390382605"
+    }
+  },
+  "audit_boundary": {
+    "provider_calls_performed": false,
+    "production_mutation_performed": false,
+    "watchlist_mutation_performed": false,
+    "runtime_latest_mutation_performed": false,
+    "commercial_bridge_activation_performed": false,
+    "daily7_selection_authority": false
+  },
+  "exact_core_persistence": {
+    "M": {
+      "snapshot_1_count": 14,
+      "snapshot_2_count": 14,
+      "persistent_count": 12,
+      "retention_from_snapshot_1": 0.857143,
+      "snapshot_2_backed_by_snapshot_1": 0.857143,
+      "jaccard": 0.75,
+      "persistent_cores": [
+        "beer hat",
+        "breast cancer",
+        "breast cancer awareness",
+        "creation of adam",
+        "foam finger",
+        "herb tea",
+        "im with stupid",
+        "orange day",
+        "snakes in a can",
+        "sophie cunningham indiana fever",
+        "thicker kicker",
+        "uncle sam"
+      ],
+      "added_in_snapshot_2": [
+        "obvious",
+        "orange"
+      ],
+      "dropped_after_snapshot_1": [
+        "halloween",
+        "robert barakett"
+      ]
+    },
+    "S": {
+      "snapshot_1_count": 26,
+      "snapshot_2_count": 30,
+      "persistent_count": 24,
+      "retention_from_snapshot_1": 0.923077,
+      "snapshot_2_backed_by_snapshot_1": 0.8,
+      "jaccard": 0.75,
+      "persistent_cores": [
+        "7 brew",
+        "7 brew license plate",
+        "7 brew state",
+        "7 brew sticker day",
+        "7brew license plate",
+        "cricket sticker maker",
+        "cricut",
+        "cricut sticker machine",
+        "cricut sticker maker",
+        "cricut sticker pix",
+        "cricut sticker print and cut",
+        "cricut sticker printer",
+        "cricut sticker printer and cutter",
+        "cricut stickerpix",
+        "halloween nail",
+        "how do i delete stickers on iphone",
+        "liene sticker printer",
+        "pokemon tcg tech sticker collection discount",
+        "sticker machine",
+        "sticker maker",
+        "sticker maker machine",
+        "sticker therapy",
+        "vexyls sticker by number",
+        "vinyl sticker maker machine"
+      ],
+      "added_in_snapshot_2": [
+        "clear vinyl sticker paper",
+        "joyeza vinyl sticker paper",
+        "large vinyl",
+        "texas sticker renewal",
+        "vinyl sticker paper for laser printer",
+        "zuru sticker therapy"
+      ],
+      "dropped_after_snapshot_1": [
+        "death by",
+        "sticker therapy zuru"
+      ]
+    }
+  },
+  "lagged_exact_cross_lane_migration": {
+    "S_snapshot_1_to_M_snapshot_2_count": 0,
+    "S_snapshot_1_to_M_snapshot_2_cores": [],
+    "M_snapshot_1_to_S_snapshot_2_count": 0,
+    "M_snapshot_1_to_S_snapshot_2_cores": []
+  },
+  "downstream_yield_by_lane": {
+    "snapshot_1": {
+      "M_ONLY": {
+        "opportunity_count": 14,
+        "structural_pass_count": 2,
+        "structural_pass_ratio": 0.142857,
+        "triage": {
+          "HOLD_SEMANTIC_REVIEW": 12,
+          "PASS_EXPRESSION_STRUCTURE": 2
+        },
+        "semantic_resolution": {
+          "NO_EXACT_METADATA_MATCH": 6,
+          "EXACT_ENTITY_UNRESOLVED": 2,
+          "CREATIVE_PROPERTY_OR_WORK": 1,
+          "AMBIGUOUS_EXACT_METADATA_MATCH": 3
+        },
+        "mechanism_hypothesis_count": 2
+      },
+      "S_ONLY": {
+        "opportunity_count": 26,
+        "structural_pass_count": 0,
+        "structural_pass_ratio": 0,
+        "triage": {
+          "HOLD_SEMANTIC_REVIEW": 26
+        },
+        "semantic_resolution": {
+          "EXACT_ENTITY_UNRESOLVED": 1,
+          "NO_EXACT_METADATA_MATCH": 24,
+          "ORGANIZATION_OR_BRAND_ENTITY": 1
+        },
+        "mechanism_hypothesis_count": 0
+      }
+    },
+    "snapshot_2": {
+      "M_ONLY": {
+        "opportunity_count": 14,
+        "structural_pass_count": 2,
+        "structural_pass_ratio": 0.142857,
+        "triage": {
+          "HOLD_SEMANTIC_REVIEW": 12,
+          "PASS_EXPRESSION_STRUCTURE": 2
+        },
+        "semantic_resolution": {
+          "NO_EXACT_METADATA_MATCH": 5,
+          "EXACT_ENTITY_UNRESOLVED": 2,
+          "CREATIVE_PROPERTY_OR_WORK": 1,
+          "AMBIGUOUS_EXACT_METADATA_MATCH": 4
+        },
+        "mechanism_hypothesis_count": 2
+      },
+      "S_ONLY": {
+        "opportunity_count": 30,
+        "structural_pass_count": 0,
+        "structural_pass_ratio": 0,
+        "triage": {
+          "HOLD_SEMANTIC_REVIEW": 30
+        },
+        "semantic_resolution": {
+          "EXACT_ENTITY_UNRESOLVED": 1,
+          "NO_EXACT_METADATA_MATCH": 28,
+          "ORGANIZATION_OR_BRAND_ENTITY": 1
+        },
+        "mechanism_hypothesis_count": 0
+      }
+    }
+  },
+  "mechanism_hypothesis_persistence": {
+    "exact_same_hypotheses_count": 2,
+    "exact_same_hypotheses": [
+      {
+        "source_lane": "M_ONLY",
+        "opportunity_core": "breast cancer awareness",
+        "mechanism_family": "CAUSE_AFFILIATION_AND_AWARENESS_SIGNALING",
+        "mechanism_candidate_id": "mh-c03d2fd787468fb3"
+      },
+      {
+        "source_lane": "M_ONLY",
+        "opportunity_core": "im with stupid",
+        "mechanism_family": "RELATIONAL_OR_IDENTITY_PHRASE_EXPRESSION",
+        "mechanism_candidate_id": "mh-65376232cd2d4e5e"
+      }
+    ],
+    "S_mechanism_hypothesis_count_across_both_snapshots": 0
+  },
+  "semantic_or_mechanism_space_overlap": {
+    "state": "NOT_MACHINE_PROVEN_BY_CURRENT_PIPELINE",
+    "reason": "S produced no review-allowed mechanism hypotheses in either snapshot; exact-core independence is proven, but mechanism-space independence is not.",
+    "exact_core_overlap_is_not_semantic_overlap_proof": true
+  },
+  "architecture_findings": {
+    "S_is_exact_core_redundant_with_M_in_either_snapshot": false,
+    "S_exact_core_persistence_is_observed": true,
+    "lagged_exact_cross_lane_migration_observed": false,
+    "S_review_allowed_expression_yield_observed": false,
+    "S_production_intake_promotion_authorized": false,
+    "seed_family_expansion_authorized": false,
+    "commercial_bridge_activation_authorized": false,
+    "third_snapshot_automatically_required": false
+  },
+  "next_state": {
+    "scheduled_wave_shadow_provider_calls": "PAUSED",
+    "manual_wave_shadow_provider_calls": "AVAILABLE_FOR_EXPLICIT_FUTURE_PROOF_ONLY",
+    "production_watchlist": "NO_MUTATION",
+    "runtime_latest": "NO_MUTATION",
+    "S_lane": "PRESERVE_AS_SHADOW_EVIDENCE_NOT_PRODUCTION_INTAKE",
+    "next_question": "IMPROVE_OR_TEST_REVIEW_ALLOWED_YIELD_BEFORE_ANY_PRODUCTION_ADMISSION"
+  }
+}

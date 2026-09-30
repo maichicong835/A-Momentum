@@ -213,9 +213,27 @@ jobs:
           assert mr['opportunity_union']['sticker_core_normalization']=='TRAILING_STICKER_OR_STICKERS_ONLY'
           assert mr['commercial_bridge']['active'] is False
           trw=wc['dual_wave_shadow']['trigger_roles']
-          assert trw['schedule']=='LIVE_SHADOW_PROVIDER_CAPTURE'
+          assert trw['schedule']=='PAUSED_AFTER_S_WAVE_CROSS_SNAPSHOT_PROOF'
           assert trw['workflow_dispatch']=='OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE'
           assert trw['push']=='VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS'
+          assert wc['dual_wave_shadow']['request_budget_policy']['live_provider_calls_on_schedule'] is False
+          assert wc['dual_wave_shadow']['request_budget_policy']['live_provider_calls_on_workflow_dispatch'] is True
+          cp=mr['cross_snapshot_proof']
+          assert cp['state']=='COMPLETE_TWO_SCHEDULED_SNAPSHOTS_OFFLINE_AUDITED'
+          assert cp['acceptance_receipt']=='acceptance/s-wave-cross-snapshot-proof-20261001.json'
+          assert cp['scheduled_provider_calls_paused'] is True
+          assert cp['workflow_run_ids']==[36736089652,36776641127]
+          assert cp['exact_core_independence_observed_in_both_snapshots'] is True
+          assert cp['s_review_allowed_expression_yield_observed'] is False
+          assert cp['semantic_or_mechanism_space_independence_proven'] is False
+          assert cp['production_intake_promotion_authorized'] is False
+          assert cp['seed_family_expansion_authorized'] is False
+          assert cp['third_snapshot_automatically_required'] is False
+          proof=json.loads(Path(cp['acceptance_receipt']).read_text())
+          assert proof['schema']=='A_MOMENTUM_S_WAVE_CROSS_SNAPSHOT_PROOF'
+          assert proof['architecture_findings']['S_production_intake_promotion_authorized'] is False
+          assert proof['architecture_findings']['seed_family_expansion_authorized'] is False
+          assert proof['mechanism_hypothesis_persistence']['S_mechanism_hypothesis_count_across_both_snapshots']==0
           mt=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['transport_policy']
           assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
           assert mt['one_batched_seed_payload'] is True
@@ -275,13 +293,23 @@ jobs:
           assert emr['opportunity_union']['exact_core_dedupe_only'] is True
           assert emr['opportunity_union']['cross_radar_confirmation_required'] is False
           assert emr['commercial_bridge']['active'] is False
+          ews=e['wave_capture_shadow']
+          assert ews['trigger_roles']['schedule']=='PAUSED_AFTER_S_WAVE_CROSS_SNAPSHOT_PROOF'
+          assert ews['request_budget_policy']['live_provider_calls_on_schedule'] is False
+          ecp=emr['cross_snapshot_proof']
+          assert ecp['state']=='COMPLETE_TWO_SCHEDULED_SNAPSHOTS_OFFLINE_AUDITED'
+          assert ecp['acceptance_receipt']=='acceptance/s-wave-cross-snapshot-proof-20261001.json'
+          assert ecp['scheduled_provider_calls_paused'] is True
+          assert ecp['production_intake_promotion_authorized'] is False
+          assert ecp['seed_family_expansion_authorized'] is False
+          assert ecp['commercial_bridge_activation_authorized'] is False
           assert wc['query_semantics']['ANCHOR_QUERY']['assigned_automatically'] is False
           wave_workflow_text=Path('.github/workflows/wave-shadow.yml').read_text()
           assert 'permissions:\n  contents: read' in wave_workflow_text
           assert 'git push' not in wave_workflow_text
           assert 'runtime/latest' not in wave_workflow_text
           assert 'runtime/watchlist.json' not in wave_workflow_text
-          assert "cron: '47 */4 * * *'" in wave_workflow_text
+          assert "cron: '47 */4 * * *'" not in wave_workflow_text
           assert "shirt|shirts|t shirt" in wave_workflow_text
           assert "sticker|stickers|vinyl sticker" in wave_workflow_text
           assert "Pause between independent proxy radars" in wave_workflow_text

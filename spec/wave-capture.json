@@ -276,13 +276,13 @@
       "daily7_selection_authority": false
     },
     "trigger_roles": {
-      "schedule": "LIVE_SHADOW_PROVIDER_CAPTURE",
+      "schedule": "PAUSED_AFTER_S_WAVE_CROSS_SNAPSHOT_PROOF",
       "workflow_dispatch": "OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE",
       "push": "VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS"
     },
     "request_budget_policy": {
       "live_provider_calls_on_push": false,
-      "live_provider_calls_on_schedule": true,
+      "live_provider_calls_on_schedule": false,
       "live_provider_calls_on_workflow_dispatch": true,
       "reason": "PRESERVE_PROVIDER_REQUEST_BUDGET_AND_REDUCE_SELF_INDUCED_THROTTLING"
     }
@@ -346,7 +346,6 @@
     "provider_budget": {
       "push_live_provider_calls": false,
       "live_triggers": [
-        "schedule",
         "workflow_dispatch"
       ],
       "pause_seconds_between_M_and_S": 30
@@ -354,6 +353,21 @@
     "commercial_bridge": {
       "active": false,
       "reason": "INDEPENDENT_STICKER_DISCOVERY_HAS_HIGHER_INFORMATION_YIELD_THAN_CONFIRMING_M_WITH_STICKER"
+    },
+    "cross_snapshot_proof": {
+      "state": "COMPLETE_TWO_SCHEDULED_SNAPSHOTS_OFFLINE_AUDITED",
+      "acceptance_receipt": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+      "scheduled_provider_calls_paused": true,
+      "workflow_run_ids": [
+        36736089652,
+        36776641127
+      ],
+      "exact_core_independence_observed_in_both_snapshots": true,
+      "s_review_allowed_expression_yield_observed": false,
+      "semantic_or_mechanism_space_independence_proven": false,
+      "production_intake_promotion_authorized": false,
+      "seed_family_expansion_authorized": false,
+      "third_snapshot_automatically_required": false
     }
   }
 }
