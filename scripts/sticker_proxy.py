@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Independent sticker-native S-wave radar built on the hardened pytrends transport."""
-import argparse, json
+import argparse, json, sys
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 import merch_proxy as base
 
 ENGINE_VERSION="0.2.0"
