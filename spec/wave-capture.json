@@ -1,6 +1,6 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "2.2",
+  "schema_version": "2.3",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
   "objective": "INDEPENDENT_R_M_S_DISCOVERY_WITH_M_OR_S_OPPORTUNITY_UNION_AND_CONSERVATIVE_DOWNSTREAM_ABSTRACTION",
@@ -103,7 +103,9 @@
     "sticker_native_wave_is_not_commercial_eligibility": true,
     "commercial_bridge_is_deferred_not_current_admission_path": true,
     "sticker_seed_family_may_not_expand_without_evidence": true,
-    "m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation": true
+    "m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation": true,
+    "sticker_core_normalization_may_strip_only_trailing_format_token": true,
+    "sticker_prefix_or_middle_token_may_not_be_erased_for_dedupe": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -338,7 +340,8 @@
       "cross_radar_confirmation_required": false,
       "partial_overlap_merge_forbidden": true,
       "upstream_redundancy_allowed": true,
-      "downstream_structural_triage_required": true
+      "downstream_structural_triage_required": true,
+      "sticker_core_normalization": "TRAILING_STICKER_OR_STICKERS_ONLY"
     },
     "provider_budget": {
       "push_live_provider_calls": false,

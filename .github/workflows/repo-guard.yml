@@ -125,6 +125,8 @@ jobs:
           assert e['anti_drift']['commercial_bridge_is_deferred_not_current_admission_path'] is True
           assert e['anti_drift']['sticker_seed_family_may_not_expand_without_evidence'] is True
           assert e['anti_drift']['m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation'] is True
+          assert e['anti_drift']['sticker_core_normalization_may_strip_only_trailing_format_token'] is True
+          assert e['anti_drift']['sticker_prefix_or_middle_token_may_not_be_erased_for_dedupe'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -189,6 +191,8 @@ jobs:
           assert wc['anti_drift']['commercial_bridge_is_deferred_not_current_admission_path'] is True
           assert wc['anti_drift']['sticker_seed_family_may_not_expand_without_evidence'] is True
           assert wc['anti_drift']['m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation'] is True
+          assert wc['anti_drift']['sticker_core_normalization_may_strip_only_trailing_format_token'] is True
+          assert wc['anti_drift']['sticker_prefix_or_middle_token_may_not_be_erased_for_dedupe'] is True
           mag=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['acceptance_gate']
           assert mag['bridge_experiment_input_ready_states']==['RECOVERED_WITH_DATA','PARTIAL_WITH_DATA']
           assert mag['readiness_role']=='TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY'
@@ -206,6 +210,7 @@ jobs:
           assert mr['opportunity_union']['cross_radar_confirmation_required'] is False
           assert mr['opportunity_union']['partial_overlap_merge_forbidden'] is True
           assert mr['opportunity_union']['upstream_redundancy_allowed'] is True
+          assert mr['opportunity_union']['sticker_core_normalization']=='TRAILING_STICKER_OR_STICKERS_ONLY'
           assert mr['commercial_bridge']['active'] is False
           trw=wc['dual_wave_shadow']['trigger_roles']
           assert trw['schedule']=='LIVE_SHADOW_PROVIDER_CAPTURE'

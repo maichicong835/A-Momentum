@@ -21,8 +21,13 @@ def norm_tokens(text):
     return re.findall(r"[a-z0-9]+",s)
 
 def s_core_key(text):
-    toks=[t for t in norm_tokens(text) if t not in S_FORMAT_TOKENS]
-    return " ".join(toks) if toks else " ".join(norm_tokens(text))
+    toks=norm_tokens(text)
+    # Strip only a trailing product-format token. Prefix/middle "sticker" may
+    # be semantically meaningful (for example, an entity/brand name) and must
+    # not be erased merely to increase cross-radar dedupe.
+    if len(toks)>1 and toks[-1] in S_FORMAT_TOKENS:
+        toks=toks[:-1]
+    return " ".join(toks)
 
 def group_s(rows):
     groups={}; order=[]
