@@ -1,9 +1,9 @@
 {
   "schema": "A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC",
-  "schema_version": "2.1",
+  "schema_version": "2.2",
   "engine_version": "0.2.0",
   "authority": "SHADOW_DISCOVERY_ONLY",
-  "objective": "M_PRIMARY_DISCOVERY_WITH_CONSERVATIVE_STRUCTURE_SEMANTIC_RESOLUTION_AND_MECHANISM_ABSTRACTION",
+  "objective": "INDEPENDENT_R_M_S_DISCOVERY_WITH_M_OR_S_OPPORTUNITY_UNION_AND_CONSERVATIVE_DOWNSTREAM_ABSTRACTION",
   "source": {
     "provider": "GOOGLE_TRENDS",
     "endpoint_family": "TRENDING_NOW_RSS",
@@ -22,7 +22,8 @@
         "{trend} sticker"
       ],
       "may_define_momentum_anchor": false,
-      "generation_requires": "EXPLICIT_COMMERCIAL_BRIDGE_ELIGIBILITY"
+      "generation_requires": "EXPLICIT_FUTURE_REACTIVATION_AFTER_MULTI_RADAR_LEARNING",
+      "status": "DEFERRED_NOT_ACTIVE_CURRENT_MULTI_RADAR_PHASE"
     },
     "ANCHOR_QUERY": {
       "purpose": "STABLE_LONGITUDINAL_MECHANISM_MEASUREMENT",
@@ -41,7 +42,8 @@
     "downstream_property_trademark_safety_recheck_required": true,
     "raw_wave_capture_precedes_commercial_bridge": true,
     "raw_wave_default_commercial_bridge_eligible": false,
-    "bridge_queries_empty_until_eligibility_pass": true
+    "bridge_queries_empty_until_eligibility_pass": true,
+    "commercial_bridge_currently_active": false
   },
   "anti_drift": {
     "raw_trend_is_not_commercial_opportunity": true,
@@ -91,7 +93,17 @@
     "code_validation_must_not_consume_market_provider_request_budget": true,
     "bridge_experiment_may_not_open_without_usable_merch_evidence": true,
     "transport_readiness_is_not_commercial_eligibility": true,
-    "throttled_merch_transport_must_block_bridge_experiment_input": true
+    "throttled_merch_transport_must_block_bridge_experiment_input": true,
+    "sticker_native_wave_is_independent_discovery_not_m_confirmation": true,
+    "opportunity_union_is_m_or_s_not_intersection": true,
+    "upstream_cross_radar_redundancy_is_allowed": true,
+    "cross_radar_dedupe_requires_exact_normalized_core": true,
+    "s_wave_failure_may_not_fail_m_wave": true,
+    "m_wave_failure_may_not_fail_s_wave": true,
+    "sticker_native_wave_is_not_commercial_eligibility": true,
+    "commercial_bridge_is_deferred_not_current_admission_path": true,
+    "sticker_seed_family_may_not_expand_without_evidence": true,
+    "m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation": true
   },
   "current_transport_risk": {
     "longitudinal_sensor_uses_pytrends": true,
@@ -153,7 +165,9 @@
           ],
           "readiness_role": "TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY",
           "throttled_blocks_bridge_experiment_input": true,
-          "no_data_may_not_be_interpreted_as_zero_demand": true
+          "no_data_may_not_be_interpreted_as_zero_demand": true,
+          "legacy_bridge_readiness_field_only": true,
+          "current_multi_radar_union_ignores_bridge_readiness_field": true
         }
       }
     },
@@ -269,6 +283,74 @@
       "live_provider_calls_on_schedule": true,
       "live_provider_calls_on_workflow_dispatch": true,
       "reason": "PRESERVE_PROVIDER_REQUEST_BUDGET_AND_REDUCE_SELF_INDUCED_THROTTLING"
+    }
+  },
+  "multi_radar_shadow": {
+    "status": "SHADOW_ONLY_NON_AUTHORITATIVE",
+    "tracks": {
+      "R_RAW_MARKET": {
+        "source": "GOOGLE_TRENDS_TRENDING_NOW_RSS",
+        "role": "PARALLEL_ATTENTION_CONTEXT",
+        "admission_authority": false
+      },
+      "M_SHIRT_EXPRESSION": {
+        "source": "GOOGLE_TRENDS_RELATED_QUERIES_RISING",
+        "seeds": [
+          "shirt",
+          "shirts",
+          "t shirt"
+        ],
+        "role": "INDEPENDENT_SHIRT_EXPRESSION_DISCOVERY",
+        "confirmation_required_from_S": false
+      },
+      "S_STICKER_NATIVE": {
+        "source": "GOOGLE_TRENDS_RELATED_QUERIES_RISING",
+        "seeds": [
+          "sticker",
+          "stickers",
+          "vinyl sticker"
+        ],
+        "role": "INDEPENDENT_STICKER_NATIVE_DISCOVERY",
+        "confirmation_required_from_M": false,
+        "commercial_eligibility_authority": false,
+        "transport": "PYTRENDS_EXPERIMENTAL_SHADOW_ONLY",
+        "transport_policy": {
+          "strategy": "BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION",
+          "one_batched_seed_payload": true,
+          "per_widget_fetch": true,
+          "partial_success_preserved": true,
+          "immediate_seed_retry_on_429": false,
+          "rate_limit_circuit_breaker": true,
+          "between_seed_seconds": 6,
+          "batch_build_retries": 2,
+          "rate_limit_cooldown_seconds": 30
+        }
+      }
+    },
+    "opportunity_union": {
+      "rule": "M_OR_S",
+      "dedupe_policy": "EXACT_NORMALIZED_CORE_ONLY",
+      "allowed_source_states": [
+        "M_ONLY",
+        "S_ONLY",
+        "M_S_MULTI_RADAR"
+      ],
+      "cross_radar_confirmation_required": false,
+      "partial_overlap_merge_forbidden": true,
+      "upstream_redundancy_allowed": true,
+      "downstream_structural_triage_required": true
+    },
+    "provider_budget": {
+      "push_live_provider_calls": false,
+      "live_triggers": [
+        "schedule",
+        "workflow_dispatch"
+      ],
+      "pause_seconds_between_M_and_S": 30
+    },
+    "commercial_bridge": {
+      "active": false,
+      "reason": "INDEPENDENT_STICKER_DISCOVERY_HAS_HIGHER_INFORMATION_YIELD_THAN_CONFIRMING_M_WITH_STICKER"
     }
   }
 }
