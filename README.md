@@ -53,16 +53,22 @@ This hardening reduces request footprint but does not make pytrends authoritativ
 
 ### Merch Proxy transport acceptance gate
 
-Every live Merch Proxy artifact now classifies transport health as one of `RECOVERED_WITH_DATA`, `PARTIAL_WITH_DATA`, `THROTTLED`, `PASS_NO_RISING_DATA`, `PARTIAL_NO_RISING_DATA`, or `OTHER_SENSOR_GAP`. Only the first two states set `bridge_experiment_input_ready=true`.
+Every live Merch Proxy artifact classifies transport health as one of `RECOVERED_WITH_DATA`, `PARTIAL_WITH_DATA`, `THROTTLED`, `PASS_NO_RISING_DATA`, `PARTIAL_NO_RISING_DATA`, or `OTHER_SENSOR_GAP`. The historical field `bridge_experiment_input_ready` is retained only for backward-compatible transport/evidence readiness; the current multi-radar pipeline does **not** use it as an admission gate and Commercial Bridge is deferred. It is not commercial eligibility, launch authorization, or proof of demand.
 
-That readiness flag means only that usable Merch Proxy evidence exists for a downstream experiment. It is **not** commercial eligibility, bridge authority, launch authorization, or proof of demand. A throttled or otherwise empty run blocks the bridge experiment for that snapshot while remaining explicitly distinct from zero demand.
+### M opportunity intake sublayer
 
-### M-primary opportunity intake
+The R/M Dual-Wave sublayer does **not** wait for Raw and Merch waves to intersect. Every unique M core can enter discovery immediately; R remains parallel attention/context evidence. This M intake is now one input to the broader M ∪ S Opportunity Union rather than the sole final intake.
 
-Dual-Wave discovery does **not** wait for Raw and Merch waves to intersect. Every unique Merch Proxy core enters the shadow opportunity-intake lane immediately as `DISCOVERY_INTAKE_READY_UNSCREENED`. Raw Trending Now remains a parallel attention/context radar, and exact/partial R↔M relationships are evidence enrichment only; they are never an admission gate.
 
-There is no fixed 24–48 hour wait before M-wave discovery intake. Temporal observation runs in parallel and may later describe flash, short, persistent, leading, lagging, or coupled behavior, but persistence is not required to notice an opportunity early. Each M-primary intake still requires structural triage before any mechanism decomposition. The merch proxy remains an expression lens, not proof of sticker demand, commercial eligibility, IP safety, or launch authorization.
+### Independent sticker-native S-wave and M ∪ S union
 
+Sticker is no longer used as a confirmation bridge for M. A separate **S-wave** radar queries the deliberately small sticker-native seed family `sticker`, `stickers`, and `vinyl sticker` using the same hardened Related/Rising transport. Its purpose is to discover category-native sticker opportunities that may never appear in shirt-expression space.
+
+M and S are independent discovery lanes. The current admission rule is `M OR S`, not `M AND S`. Upstream redundancy is allowed because missing an opportunity is more expensive than carrying duplicate evidence. Dedupe happens only when the normalized opportunity core is exactly equal; ambiguous partial overlap is not merged. A unique opportunity therefore carries one of three origin states: `M_ONLY`, `S_ONLY`, or `M_S_MULTI_RADAR`, while retaining the original per-radar seed/query/rank evidence.
+
+The R/M coupler is preserved as an evidence sublayer rather than rewritten. After R/M coupling, the workflow unions M evidence with S evidence, then sends the deduped union through the existing structural triage, semantic resolution, and mechanism-abstraction layers. Neither radar confirms the other, neither grants commercial eligibility, and neither can auto-generate creative, bridge queries, anchors, watchlist entries, or Daily7 selections.
+
+To protect provider request budget, M and S remain separate three-seed batches with a pause between them; a sensor gap in one radar may not erase usable evidence from the other. Push runs remain validation-only and make no live provider calls. Commercial Bridge is intentionally deferred because open sticker-native discovery has higher information yield than re-querying sticker space merely to confirm an M observation.
 
 ### Structural triage shadow
 

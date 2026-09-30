@@ -10,6 +10,10 @@ on:
       - 'tests/test_wave_capture.py'
       - 'scripts/merch_proxy.py'
       - 'tests/test_merch_proxy.py'
+      - 'scripts/sticker_proxy.py'
+      - 'tests/test_sticker_proxy.py'
+      - 'scripts/opportunity_union.py'
+      - 'tests/test_opportunity_union.py'
       - 'scripts/wave_coupler.py'
       - 'tests/test_wave_coupler.py'
       - 'scripts/structural_triage.py'
@@ -38,17 +42,19 @@ jobs:
           python-version: '3.12'
       - name: Credential scan before shadow discovery
         run: python scripts/security_scan.py --repository
-      - name: Install experimental merch-proxy dependency
+      - name: Install experimental proxy dependencies
         run: python -m pip install --disable-pip-version-check 'pytrends==4.9.2' 'pandas>=2.2,<3'
-      - name: Validate dual-wave semantics locally
+      - name: Validate multi-radar semantics locally
         run: |
           python scripts/wave_capture.py --self-test
           python scripts/merch_proxy.py --self-test
+          python scripts/sticker_proxy.py --self-test
           python scripts/wave_coupler.py --raw /tmp/unused --merch /tmp/unused --out /tmp/unused --self-test
+          python scripts/opportunity_union.py --dual /tmp/unused --sticker /tmp/unused --out /tmp/unused --self-test
           python scripts/structural_triage.py --self-test
           python scripts/semantic_resolver.py --self-test
           python scripts/mechanism_decomposer.py --self-test
-          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_wave_coupler tests.test_structural_triage tests.test_semantic_resolver tests.test_mechanism_decomposer
+          python -m unittest tests.test_wave_capture tests.test_merch_proxy tests.test_sticker_proxy tests.test_wave_coupler tests.test_opportunity_union tests.test_structural_triage tests.test_semantic_resolver tests.test_mechanism_decomposer
       - name: Push validation does not call external market providers
         if: github.event_name == 'push'
         run: echo A_MOMENTUM_WAVE_SHADOW_PUSH_VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS
@@ -58,24 +64,33 @@ jobs:
       - name: Capture merch-proxy Rising waves
         if: github.event_name != 'push'
         run: python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --build-retries 2 --between-seed-seconds 6 --rate-limit-cooldown-seconds 30 --out /tmp/a-momentum-merch-proxy-shadow.json
+      - name: Pause between independent proxy radars
+        if: github.event_name != 'push'
+        run: sleep 30
+      - name: Capture sticker-native S-wave Rising signals
+        if: github.event_name != 'push'
+        run: python scripts/sticker_proxy.py --geo US --timeframe 'now 7-d' --seeds 'sticker|stickers|vinyl sticker' --limit 25 --build-retries 2 --between-seed-seconds 6 --rate-limit-cooldown-seconds 30 --out /tmp/a-momentum-sticker-proxy-shadow.json
       - name: Couple raw and merch-proxy waves
         if: github.event_name != 'push'
         run: python scripts/wave_coupler.py --raw /tmp/a-momentum-raw-wave-shadow.json --merch /tmp/a-momentum-merch-proxy-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
-      - name: Structural triage M-primary intake
+      - name: Union independent M and S opportunities
         if: github.event_name != 'push'
-        run: python scripts/structural_triage.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
+        run: python scripts/opportunity_union.py --dual /tmp/a-momentum-dual-wave-shadow.json --sticker /tmp/a-momentum-sticker-proxy-shadow.json --out /tmp/a-momentum-multi-radar-shadow.json
+      - name: Structural triage M-or-S opportunity union
+        if: github.event_name != 'push'
+        run: python scripts/structural_triage.py --input /tmp/a-momentum-multi-radar-shadow.json --out /tmp/a-momentum-multi-radar-shadow.json
       - name: Resolve semantic HOLDs with provenance-only metadata
         if: github.event_name != 'push'
-        run: python scripts/semantic_resolver.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
+        run: python scripts/semantic_resolver.py --input /tmp/a-momentum-multi-radar-shadow.json --out /tmp/a-momentum-multi-radar-shadow.json
       - name: Build mechanism hypotheses from review-allowed evidence
         if: github.event_name != 'push'
-        run: python scripts/mechanism_decomposer.py --input /tmp/a-momentum-dual-wave-shadow.json --out /tmp/a-momentum-dual-wave-shadow.json
+        run: python scripts/mechanism_decomposer.py --input /tmp/a-momentum-multi-radar-shadow.json --out /tmp/a-momentum-multi-radar-shadow.json
       - name: Enforce shadow-only boundary
         if: github.event_name != 'push'
         run: |
           python - <<'PY'
           import json
-          x=json.load(open('/tmp/a-momentum-dual-wave-shadow.json'))
+          x=json.load(open('/tmp/a-momentum-multi-radar-shadow.json'))
           assert x['mode']=='SHADOW_ONLY_NO_PRODUCTION_AUTHORITY'
           assert x['credentials_used'] is False
           assert x['runtime_latest_mutation'] is False
@@ -101,15 +116,27 @@ jobs:
           assert mt['per_widget_partial_preservation'] is True
           assert mt['immediate_seed_retry_on_429'] is False
           assert mt['rate_limit_circuit_breaker'] is True
+          sx=x['sticker_proxy_capture']
+          assert sx['schema']=='A_MOMENTUM_STICKER_PROXY_SHADOW'
+          assert sx['radar']=='S_STICKER_NATIVE'
+          assert sx['radar_role']=='INDEPENDENT_STICKER_NATIVE_DISCOVERY_NOT_M_CONFIRMATION'
+          assert sx['commercial_eligibility_authority'] is False
+          assert sx['m_confirmation_authority'] is False
+          assert sx['provider_failure_is_zero_demand'] is False
+          assert sx['provider_gap_is_no_rising_queries'] is False
           assert x['unique_merch_core_count'] <= x['merch_observation_count']
-          assert x['opportunity_intake_count']==x['unique_merch_core_count']
-          assert x['discovery_model']['primary_opportunity_lane']=='MERCH_PROXY_WAVE'
-          assert x['discovery_model']['r_coupling_required_for_m_intake'] is False
-          assert x['discovery_model']['fixed_wait_before_m_intake_hours']==0
+          assert x['unique_sticker_core_count'] <= x['sticker_observation_count']
+          assert x['opportunity_intake_count']==x['opportunity_union_summary']['TOTAL_UNIQUE']
+          assert x['opportunity_union_policy']=='EXACT_NORMALIZED_CORE_DEDUPE_M_OR_S_NO_INTERSECTION_GATE'
+          assert x['discovery_model']['independent_opportunity_lanes']==['MERCH_PROXY_WAVE','STICKER_NATIVE_WAVE']
+          assert x['discovery_model']['opportunity_union']=='M_OR_S'
+          assert x['discovery_model']['cross_radar_confirmation_required'] is False
           assert x['discovery_model']['temporal_observation_mode']=='PARALLEL_NON_BLOCKING'
-          assert all(c['source_lane']=='M_PRIMARY' for c in x['opportunity_intake'])
+          assert x['commercial_bridge_active'] is False
+          assert x['sticker_radar_is_m_confirmation'] is False
+          assert all(c['source_lane'] in {'M_ONLY','S_ONLY','M_S_MULTI_RADAR'} for c in x['opportunity_intake'])
           assert all(c['intake_state']=='DISCOVERY_INTAKE_READY_UNSCREENED' for c in x['opportunity_intake'])
-          assert all(c['requires_r_coupling'] is False for c in x['opportunity_intake'])
+          assert all(c['requires_cross_radar_confirmation'] is False for c in x['opportunity_intake'])
           assert all(c['structural_triage_required'] is True for c in x['opportunity_intake'])
           assert x['structural_triage']['authority']=='SHADOW_STRUCTURE_ONLY'
           assert x['structural_triage']['decision_count']==x['opportunity_intake_count']
@@ -171,13 +198,13 @@ jobs:
           assert all(c['bridge_queries']==[] for c in x['couplings'])
           assert all(c['anchor_query'] is None for c in x['couplings'])
           assert all(c['mechanism_key'] is None for c in x['couplings'])
-          print('A_MOMENTUM_DUAL_WAVE_SHADOW_BOUNDARY_PASS',x['coupling_summary'])
+          print('A_MOMENTUM_MULTI_RADAR_SHADOW_BOUNDARY_PASS',x['coupling_summary'])
           PY
       - name: Upload live Wave Shadow artifact
         if: github.event_name != 'push'
         uses: actions/upload-artifact@v4
         with:
           name: a-momentum-wave-shadow
-          path: /tmp/a-momentum-dual-wave-shadow.json
+          path: /tmp/a-momentum-multi-radar-shadow.json
           if-no-files-found: error
           retention-days: 14
