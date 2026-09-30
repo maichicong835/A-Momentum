@@ -115,6 +115,16 @@ jobs:
           assert e['anti_drift']['bridge_experiment_may_not_open_without_usable_merch_evidence'] is True
           assert e['anti_drift']['transport_readiness_is_not_commercial_eligibility'] is True
           assert e['anti_drift']['throttled_merch_transport_must_block_bridge_experiment_input'] is True
+          assert e['anti_drift']['sticker_native_wave_is_independent_discovery_not_m_confirmation'] is True
+          assert e['anti_drift']['opportunity_union_is_m_or_s_not_intersection'] is True
+          assert e['anti_drift']['upstream_cross_radar_redundancy_is_allowed'] is True
+          assert e['anti_drift']['cross_radar_dedupe_requires_exact_normalized_core'] is True
+          assert e['anti_drift']['s_wave_failure_may_not_fail_m_wave'] is True
+          assert e['anti_drift']['m_wave_failure_may_not_fail_s_wave'] is True
+          assert e['anti_drift']['sticker_native_wave_is_not_commercial_eligibility'] is True
+          assert e['anti_drift']['commercial_bridge_is_deferred_not_current_admission_path'] is True
+          assert e['anti_drift']['sticker_seed_family_may_not_expand_without_evidence'] is True
+          assert e['anti_drift']['m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation'] is True
           wc=json.loads(Path('spec/wave-capture.json').read_text())
           assert wc['schema']=='A_MOMENTUM_WAVE_CAPTURE_SHADOW_SPEC'
           assert wc['engine_version']=='0.2.0' and wc['authority']=='SHADOW_DISCOVERY_ONLY'
@@ -123,7 +133,9 @@ jobs:
           assert wc['promotion_policy']['runtime_latest_mutation_forbidden'] is True
           assert wc['query_semantics']['DISCOVERY_QUERY']['may_define_momentum_anchor'] is False
           assert wc['query_semantics']['BRIDGE_QUERY']['may_define_momentum_anchor'] is False
-          assert wc['query_semantics']['BRIDGE_QUERY']['generation_requires']=='EXPLICIT_COMMERCIAL_BRIDGE_ELIGIBILITY'
+          assert wc['query_semantics']['BRIDGE_QUERY']['generation_requires']=='EXPLICIT_FUTURE_REACTIVATION_AFTER_MULTI_RADAR_LEARNING'
+          assert wc['query_semantics']['BRIDGE_QUERY']['status']=='DEFERRED_NOT_ACTIVE_CURRENT_MULTI_RADAR_PHASE'
+          assert wc['promotion_policy']['commercial_bridge_currently_active'] is False
           assert wc['promotion_policy']['raw_wave_capture_precedes_commercial_bridge'] is True
           assert wc['promotion_policy']['raw_wave_default_commercial_bridge_eligible'] is False
           assert wc['promotion_policy']['bridge_queries_empty_until_eligibility_pass'] is True
@@ -167,10 +179,34 @@ jobs:
           assert wc['anti_drift']['bridge_experiment_may_not_open_without_usable_merch_evidence'] is True
           assert wc['anti_drift']['transport_readiness_is_not_commercial_eligibility'] is True
           assert wc['anti_drift']['throttled_merch_transport_must_block_bridge_experiment_input'] is True
+          assert wc['anti_drift']['sticker_native_wave_is_independent_discovery_not_m_confirmation'] is True
+          assert wc['anti_drift']['opportunity_union_is_m_or_s_not_intersection'] is True
+          assert wc['anti_drift']['upstream_cross_radar_redundancy_is_allowed'] is True
+          assert wc['anti_drift']['cross_radar_dedupe_requires_exact_normalized_core'] is True
+          assert wc['anti_drift']['s_wave_failure_may_not_fail_m_wave'] is True
+          assert wc['anti_drift']['m_wave_failure_may_not_fail_s_wave'] is True
+          assert wc['anti_drift']['sticker_native_wave_is_not_commercial_eligibility'] is True
+          assert wc['anti_drift']['commercial_bridge_is_deferred_not_current_admission_path'] is True
+          assert wc['anti_drift']['sticker_seed_family_may_not_expand_without_evidence'] is True
+          assert wc['anti_drift']['m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation'] is True
           mag=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['acceptance_gate']
           assert mag['bridge_experiment_input_ready_states']==['RECOVERED_WITH_DATA','PARTIAL_WITH_DATA']
           assert mag['readiness_role']=='TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY'
           assert mag['throttled_blocks_bridge_experiment_input'] is True
+          assert mag['legacy_bridge_readiness_field_only'] is True
+          assert mag['current_multi_radar_union_ignores_bridge_readiness_field'] is True
+          mr=wc['multi_radar_shadow']
+          assert mr['status']=='SHADOW_ONLY_NON_AUTHORITATIVE'
+          assert mr['tracks']['M_SHIRT_EXPRESSION']['seeds']==['shirt','shirts','t shirt']
+          assert mr['tracks']['S_STICKER_NATIVE']['seeds']==['sticker','stickers','vinyl sticker']
+          assert mr['tracks']['S_STICKER_NATIVE']['confirmation_required_from_M'] is False
+          assert mr['tracks']['S_STICKER_NATIVE']['commercial_eligibility_authority'] is False
+          assert mr['opportunity_union']['rule']=='M_OR_S'
+          assert mr['opportunity_union']['dedupe_policy']=='EXACT_NORMALIZED_CORE_ONLY'
+          assert mr['opportunity_union']['cross_radar_confirmation_required'] is False
+          assert mr['opportunity_union']['partial_overlap_merge_forbidden'] is True
+          assert mr['opportunity_union']['upstream_redundancy_allowed'] is True
+          assert mr['commercial_bridge']['active'] is False
           trw=wc['dual_wave_shadow']['trigger_roles']
           assert trw['schedule']=='LIVE_SHADOW_PROVIDER_CAPTURE'
           assert trw['workflow_dispatch']=='OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE'
@@ -226,6 +262,14 @@ jobs:
           assert wc['dual_wave_shadow']['coupler']['raw_merch_observations_remain_preserved'] is True
           assert wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['seeds']==['shirt','shirts','t shirt']
           assert wc['dual_wave_shadow']['coupler']['commercial_eligibility_authority'] is False
+          emr=e['wave_capture_shadow']['multi_radar']
+          assert emr['tracks']['M_SHIRT_EXPRESSION']['seeds']==['shirt','shirts','t shirt']
+          assert emr['tracks']['S_STICKER_NATIVE']['seeds']==['sticker','stickers','vinyl sticker']
+          assert emr['tracks']['S_STICKER_NATIVE']['not_m_confirmation'] is True
+          assert emr['opportunity_union']['rule']=='M_OR_S'
+          assert emr['opportunity_union']['exact_core_dedupe_only'] is True
+          assert emr['opportunity_union']['cross_radar_confirmation_required'] is False
+          assert emr['commercial_bridge']['active'] is False
           assert wc['query_semantics']['ANCHOR_QUERY']['assigned_automatically'] is False
           wave_workflow_text=Path('.github/workflows/wave-shadow.yml').read_text()
           assert 'permissions:\n  contents: read' in wave_workflow_text
@@ -234,6 +278,11 @@ jobs:
           assert 'runtime/watchlist.json' not in wave_workflow_text
           assert "cron: '47 */4 * * *'" in wave_workflow_text
           assert "shirt|shirts|t shirt" in wave_workflow_text
+          assert "sticker|stickers|vinyl sticker" in wave_workflow_text
+          assert "Pause between independent proxy radars" in wave_workflow_text
+          assert "sleep 30" in wave_workflow_text
+          assert "Union independent M and S opportunities" in wave_workflow_text
+          assert "a-momentum-multi-radar-shadow.json" in wave_workflow_text
           assert "--between-seed-seconds 6" in wave_workflow_text
           assert "--rate-limit-cooldown-seconds 30" in wave_workflow_text
           assert "--build-retries 2" in wave_workflow_text
@@ -245,10 +294,14 @@ jobs:
           assert "scripts/structural_triage.py" in wave_workflow_text
           assert "scripts/semantic_resolver.py" in wave_workflow_text
           assert "scripts/mechanism_decomposer.py" in wave_workflow_text
+          assert "scripts/sticker_proxy.py" in wave_workflow_text
+          assert "scripts/opportunity_union.py" in wave_workflow_text
           required_wave_shadow_paths=[
               "scripts/wave_capture.py","tests/test_wave_capture.py",
               "scripts/merch_proxy.py","tests/test_merch_proxy.py",
+              "scripts/sticker_proxy.py","tests/test_sticker_proxy.py",
               "scripts/wave_coupler.py","tests/test_wave_coupler.py",
+              "scripts/opportunity_union.py","tests/test_opportunity_union.py",
               "scripts/structural_triage.py","tests/test_structural_triage.py",
               "scripts/semantic_resolver.py","tests/test_semantic_resolver.py",
               "scripts/mechanism_decomposer.py","tests/test_mechanism_decomposer.py",
