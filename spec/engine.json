@@ -174,7 +174,17 @@
     "code_validation_must_not_consume_market_provider_request_budget": true,
     "bridge_experiment_may_not_open_without_usable_merch_evidence": true,
     "transport_readiness_is_not_commercial_eligibility": true,
-    "throttled_merch_transport_must_block_bridge_experiment_input": true
+    "throttled_merch_transport_must_block_bridge_experiment_input": true,
+    "sticker_native_wave_is_independent_discovery_not_m_confirmation": true,
+    "opportunity_union_is_m_or_s_not_intersection": true,
+    "upstream_cross_radar_redundancy_is_allowed": true,
+    "cross_radar_dedupe_requires_exact_normalized_core": true,
+    "s_wave_failure_may_not_fail_m_wave": true,
+    "m_wave_failure_may_not_fail_s_wave": true,
+    "sticker_native_wave_is_not_commercial_eligibility": true,
+    "commercial_bridge_is_deferred_not_current_admission_path": true,
+    "sticker_seed_family_may_not_expand_without_evidence": true,
+    "m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -430,7 +440,9 @@
         ],
         "readiness_role": "TRANSPORT_AND_EVIDENCE_AVAILABILITY_ONLY_NOT_COMMERCIAL_ELIGIBILITY",
         "throttled_blocks_bridge_experiment_input": true,
-        "no_production_mutation": true
+        "no_production_mutation": true,
+        "legacy_bridge_readiness_field_only": true,
+        "current_multi_radar_union_ignores_bridge_readiness_field": true
       }
     },
     "trigger_roles": {
@@ -442,6 +454,44 @@
       "live_provider_calls_on_push": false,
       "live_provider_calls_on_schedule": true,
       "live_provider_calls_on_workflow_dispatch": true
+    },
+    "multi_radar": {
+      "status": "SHADOW_ONLY",
+      "tracks": {
+        "R_RAW_MARKET": {
+          "role": "PARALLEL_ATTENTION_CONTEXT"
+        },
+        "M_SHIRT_EXPRESSION": {
+          "seeds": [
+            "shirt",
+            "shirts",
+            "t shirt"
+          ],
+          "role": "INDEPENDENT_SHIRT_EXPRESSION_DISCOVERY"
+        },
+        "S_STICKER_NATIVE": {
+          "seeds": [
+            "sticker",
+            "stickers",
+            "vinyl sticker"
+          ],
+          "role": "INDEPENDENT_STICKER_NATIVE_DISCOVERY",
+          "not_m_confirmation": true,
+          "no_commercial_eligibility_authority": true
+        }
+      },
+      "opportunity_union": {
+        "rule": "M_OR_S",
+        "exact_core_dedupe_only": true,
+        "partial_overlap_merge_forbidden": true,
+        "cross_radar_confirmation_required": false,
+        "upstream_redundancy_allowed": true
+      },
+      "commercial_bridge": {
+        "active": false,
+        "deferred": true
+      },
+      "no_production_mutation": true
     }
   }
 }
