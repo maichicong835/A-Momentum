@@ -234,6 +234,30 @@ jobs:
           assert proof['architecture_findings']['S_production_intake_promotion_authorized'] is False
           assert proof['architecture_findings']['seed_family_expansion_authorized'] is False
           assert proof['mechanism_hypothesis_persistence']['S_mechanism_hypothesis_count_across_both_snapshots']==0
+          ia=cp['intent_composition_audit']
+          assert ia['state']=='COMPLETE_FROZEN_32_CORE_OFFLINE_SHADOW_REPLAY'
+          assert ia['acceptance_receipt']=='acceptance/s-wave-intent-composition-audit-20261001.json'
+          assert ia['frozen_unique_s_only_core_count']==32
+          assert ia['clear_non_expression_intent_count']==22
+          assert ia['entity_or_property_review_count']==6
+          assert ia['ambiguous_count']==4
+          assert ia['high_confidence_expression_candidate_count']==0
+          assert ia['structural_triage_subtype_blind_spot_count']==22
+          assert ia['production_triage_mutation_authorized'] is False
+          assert ia['s_wave_reactivation_authorized'] is False
+          assert ia['seed_family_expansion_authorized'] is False
+          intent=json.loads(Path(ia['acceptance_receipt']).read_text())
+          assert intent['schema']=='A_MOMENTUM_S_WAVE_INTENT_COMPOSITION_AUDIT'
+          assert intent['source_binding']['frozen_unique_s_only_core_count']==32
+          assert intent['shadow_replay']['clear_non_expression_intent_count']==22
+          assert intent['shadow_replay']['entity_or_property_review_count']==6
+          assert intent['shadow_replay']['ambiguous_count']==4
+          assert intent['shadow_replay']['high_confidence_expression_candidate_count']==0
+          assert intent['shadow_replay']['structural_triage_subtype_blind_spot_count']==22
+          assert intent['findings']['triage_blind_spot_explains_missing_expression_yield_in_frozen_sample'] is False
+          assert intent['architecture_decision']['production_triage_mutation_authorized'] is False
+          assert intent['architecture_decision']['s_wave_reactivation_authorized'] is False
+          assert intent['architecture_decision']['seed_family_expansion_authorized'] is False
           mt=wc['dual_wave_shadow']['tracks']['MERCH_PROXY_WAVE']['transport_policy']
           assert mt['strategy']=='BATCH_PAYLOAD_SHARED_COOKIE_PER_WIDGET_PARTIAL_PRESERVATION'
           assert mt['one_batched_seed_payload'] is True
@@ -303,6 +327,15 @@ jobs:
           assert ecp['production_intake_promotion_authorized'] is False
           assert ecp['seed_family_expansion_authorized'] is False
           assert ecp['commercial_bridge_activation_authorized'] is False
+          eia=ecp['intent_composition_audit']
+          assert eia['state']=='COMPLETE_FROZEN_32_CORE_OFFLINE_SHADOW_REPLAY'
+          assert eia['acceptance_receipt']=='acceptance/s-wave-intent-composition-audit-20261001.json'
+          assert eia['frozen_unique_s_only_core_count']==32
+          assert eia['clear_non_expression_intent_count']==22
+          assert eia['high_confidence_expression_candidate_count']==0
+          assert eia['production_triage_mutation_authorized'] is False
+          assert eia['s_wave_reactivation_authorized'] is False
+          assert eia['seed_family_expansion_authorized'] is False
           assert wc['query_semantics']['ANCHOR_QUERY']['assigned_automatically'] is False
           wave_workflow_text=Path('.github/workflows/wave-shadow.yml').read_text()
           assert 'permissions:\n  contents: read' in wave_workflow_text

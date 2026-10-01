@@ -1,0 +1,578 @@
+{
+  "schema": "A_MOMENTUM_S_WAVE_INTENT_COMPOSITION_AUDIT",
+  "schema_version": "1.0",
+  "authority": "OFFLINE_SHADOW_CLASSIFICATION_ONLY_NO_PRODUCTION_AUTHORITY",
+  "generated_at": "2026-10-01T08:01:00+07:00",
+  "source_binding": {
+    "cross_snapshot_proof": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+    "snapshot_1": {
+      "workflow_run_id": 36736089652,
+      "artifact_id": 11107530618,
+      "artifact_json_sha256": "f4b1401fe79c56e44aee9b9b1f1951be42d3a25cd434cb587251073a7e87bffe"
+    },
+    "snapshot_2": {
+      "workflow_run_id": 36776641127,
+      "artifact_id": 11126002010,
+      "artifact_json_sha256": "01e6990cf45772c8541f99ac32571ca670813f564f072003e2ecb0da117c1d16"
+    },
+    "frozen_unique_s_only_core_count": 32
+  },
+  "audit_boundary": {
+    "provider_calls_performed": false,
+    "production_structural_triage_mutated": false,
+    "semantic_resolver_mutated": false,
+    "mechanism_decomposer_mutated": false,
+    "production_watchlist_mutated": false,
+    "runtime_latest_mutated": false,
+    "seed_family_expanded": false,
+    "s_wave_reactivated": false,
+    "commercial_eligibility_authority": false,
+    "ip_safety_authority": false
+  },
+  "taxonomy": {
+    "purpose": "SEPARATE_STICKER_CATEGORY_INTENT_FROM_EXPRESSION_CONTENT_WITHOUT_LOOSENING_EXISTING_PASS_GATES",
+    "buckets": [
+      "PRODUCTION_TOOL_OR_MATERIAL",
+      "PRODUCT_OR_CONFIGURATION",
+      "UTILITY_OR_ADMIN",
+      "ENTITY_OR_PROPERTY_REVIEW",
+      "EXPRESSION_CONTENT_CANDIDATE",
+      "AMBIGUOUS"
+    ],
+    "precedence": [
+      "UTILITY_OR_ADMIN",
+      "PRODUCTION_TOOL_OR_MATERIAL",
+      "PRODUCT_OR_CONFIGURATION",
+      "ENTITY_OR_PROPERTY_REVIEW",
+      "EXPRESSION_CONTENT_CANDIDATE",
+      "AMBIGUOUS"
+    ],
+    "conservative_rules": {
+      "production_tool_or_material": [
+        "machine",
+        "maker",
+        "printer",
+        "cutter",
+        "print and cut",
+        "sticker paper"
+      ],
+      "product_or_configuration": [
+        "license plate",
+        "nail sticker form",
+        "collection/discount product intent",
+        "size/material configuration",
+        "sticker by number"
+      ],
+      "utility_or_admin": [
+        "how-to task query",
+        "renewal/admin query"
+      ],
+      "entity_or_property_review": "Only exact semantic family anchors already present in frozen evidence may make this bucket high-confidence; other named-looking tokens do not grant entity clearance.",
+      "expression_content_candidate": "Requires high-confidence expression structure independent of product/tool/admin/entity intent.",
+      "ambiguous": "Default when the frozen query is insufficient for a safe intent assignment."
+    },
+    "no_source_specific_wording_reuse_authority": true,
+    "no_ip_clearance_from_intent_bucket": true
+  },
+  "shadow_replay": {
+    "current_pipeline_on_frozen_union": {
+      "HOLD_SEMANTIC_REVIEW": 32,
+      "PASS_EXPRESSION_STRUCTURE": 0
+    },
+    "intent_composition": {
+      "ENTITY_OR_PROPERTY_REVIEW": 6,
+      "PRODUCT_OR_CONFIGURATION": 6,
+      "PRODUCTION_TOOL_OR_MATERIAL": 14,
+      "AMBIGUOUS": 4,
+      "UTILITY_OR_ADMIN": 2
+    },
+    "clear_non_expression_intent_count": 22,
+    "clear_non_expression_intent_ratio": 0.6875,
+    "entity_or_property_review_count": 6,
+    "ambiguous_count": 4,
+    "high_confidence_expression_candidate_count": 0,
+    "high_confidence_expression_candidate_ratio": 0,
+    "structural_triage_subtype_blind_spot_count": 22,
+    "structural_triage_subtype_blind_spot_ratio": 0.6875,
+    "interpretation": "The frozen S sample contains a real structural-triage taxonomy gap, but the gap resolves to non-expression tool/material/product/admin intent rather than revealing missed high-confidence expression candidates."
+  },
+  "rows": [
+    {
+      "opportunity_core": "7 brew",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_ENTITY_FAMILY_7_BREW"
+      ],
+      "rationale": "Exact semantic metadata identifies 7 Brew as an entity; no expression structure.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "7 brew license plate",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "LICENSE_PLATE_PRODUCT_FORM",
+        "EXACT_ENTITY_FAMILY_7_BREW"
+      ],
+      "rationale": "Product-form query around an entity family; not expression content.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "7 brew state",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_ENTITY_FAMILY_7_BREW"
+      ],
+      "rationale": "Entity-family query with unresolved modifier; keep entity/property review.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "7 brew sticker day",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_ENTITY_FAMILY_7_BREW"
+      ],
+      "rationale": "Entity-family promotional/event-like query; not expression structure.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "7brew license plate",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "LICENSE_PLATE_PRODUCT_FORM",
+        "ENTITY_FAMILY_STRING_VARIANT_7BREW"
+      ],
+      "rationale": "Product-form query around a compact spelling variant of the 7 Brew family.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "clear vinyl sticker paper",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "STICKER_PAPER_MATERIAL"
+      ],
+      "rationale": "Sticker production material intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricket sticker maker",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MAKER_TOOL_TERM"
+      ],
+      "rationale": "Maker/tool intent regardless of possible token ambiguity.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Exact semantic metadata identifies Cricut as an organization/brand entity.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker machine",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MACHINE_TOOL_TERM",
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Sticker production machine intent; entity family remains a secondary flag.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker maker",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MAKER_TOOL_TERM",
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Sticker production tool intent; entity family remains a secondary flag.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker pix",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Entity-family product/name query without a safe generic expression interpretation.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker print and cut",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "PRINT_AND_CUT_PROCESS",
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Production process/tool intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker printer",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "PRINTER_TOOL_TERM",
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Printer/tool intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut sticker printer and cutter",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "PRINTER_TOOL_TERM",
+        "CUTTER_TOOL_TERM",
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Printer/cutter production-tool intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "cricut stickerpix",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "ENTITY_OR_PROPERTY_REVIEW",
+      "reason_codes": [
+        "EXACT_BRAND_FAMILY_CRICUT"
+      ],
+      "rationale": "Entity-family product/name query without safe expression structure.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "death by",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": false,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "AMBIGUOUS",
+      "reason_codes": [
+        "INCOMPLETE_PHRASE_FRAGMENT"
+      ],
+      "rationale": "Phrase fragment is insufficient to distinguish expression from title/entity/product usage.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "halloween nail",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "NAIL_STICKER_PRODUCT_FORM"
+      ],
+      "rationale": "Decorative product-form intent rather than sticker expression content.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "how do i delete stickers on iphone",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "UTILITY_OR_ADMIN",
+      "reason_codes": [
+        "HOW_TO_TASK_QUERY"
+      ],
+      "rationale": "Operational how-to intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "joyeza vinyl sticker paper",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "STICKER_PAPER_MATERIAL"
+      ],
+      "rationale": "Sticker production material intent; named token is not used as clearance evidence.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "large vinyl",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "SIZE_OR_MATERIAL_CONFIGURATION"
+      ],
+      "rationale": "Format/size/material configuration query.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "liene sticker printer",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "PRINTER_TOOL_TERM"
+      ],
+      "rationale": "Printer/tool intent; named token is not used as clearance evidence.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "pokemon tcg tech sticker collection discount",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "COLLECTION_OR_DISCOUNT_PURCHASE_INTENT"
+      ],
+      "rationale": "Collection/discount/product intent; no expression structure inferred.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "sticker machine",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MACHINE_TOOL_TERM"
+      ],
+      "rationale": "Sticker production machine intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "sticker maker",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MAKER_TOOL_TERM"
+      ],
+      "rationale": "Sticker creation/tool intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "sticker maker machine",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MAKER_TOOL_TERM",
+        "MACHINE_TOOL_TERM"
+      ],
+      "rationale": "Sticker production machine intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "sticker therapy",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "AMBIGUOUS",
+      "reason_codes": [
+        "THEME_OR_PRODUCT_AMBIGUITY"
+      ],
+      "rationale": "Could be theme/phrase or product/name; no safe expression classification.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "sticker therapy zuru",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": false,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "AMBIGUOUS",
+      "reason_codes": [
+        "THEME_PRODUCT_OR_NAMED_TOKEN_AMBIGUITY"
+      ],
+      "rationale": "Named-token/product/theme ambiguity; no exact metadata basis for promotion.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "texas sticker renewal",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "UTILITY_OR_ADMIN",
+      "reason_codes": [
+        "RENEWAL_ADMIN_QUERY"
+      ],
+      "rationale": "Administrative renewal intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "vexyls sticker by number",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCT_OR_CONFIGURATION",
+      "reason_codes": [
+        "STICKER_BY_NUMBER_PRODUCT_FORM"
+      ],
+      "rationale": "Product-format intent; named token is not used as clearance evidence.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "vinyl sticker maker machine",
+      "present_in_snapshot_1": true,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": true,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "MAKER_TOOL_TERM",
+        "MACHINE_TOOL_TERM"
+      ],
+      "rationale": "Sticker production machine intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "vinyl sticker paper for laser printer",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "PRODUCTION_TOOL_OR_MATERIAL",
+      "reason_codes": [
+        "STICKER_PAPER_MATERIAL",
+        "PRINTER_COMPATIBILITY"
+      ],
+      "rationale": "Production material/compatibility intent.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    },
+    {
+      "opportunity_core": "zuru sticker therapy",
+      "present_in_snapshot_1": false,
+      "present_in_snapshot_2": true,
+      "persistent_across_both": false,
+      "current_structural_disposition": "HOLD_SEMANTIC_REVIEW",
+      "proposed_shadow_intent_bucket": "AMBIGUOUS",
+      "reason_codes": [
+        "THEME_PRODUCT_OR_NAMED_TOKEN_AMBIGUITY"
+      ],
+      "rationale": "Named-token/product/theme ambiguity; no exact metadata basis for promotion.",
+      "expression_review_allowed": false,
+      "production_eligible": false
+    }
+  ],
+  "findings": {
+    "persistent_sticker_native_breadth_remains_supported": true,
+    "current_s_seed_family_expression_targeting_supported_by_frozen_sample": false,
+    "structural_triage_has_sticker_intent_subtype_blind_spot": true,
+    "triage_blind_spot_explains_missing_expression_yield_in_frozen_sample": false,
+    "missed_high_confidence_expression_candidate_count": 0,
+    "s_review_allowed_expression_yield_observed": false,
+    "semantic_or_mechanism_space_independence_proven": false
+  },
+  "architecture_decision": {
+    "production_triage_mutation_authorized": false,
+    "production_intake_promotion_authorized": false,
+    "seed_family_expansion_authorized": false,
+    "s_wave_reactivation_authorized": false,
+    "commercial_bridge_activation_authorized": false,
+    "next_frontier": "REDESIGN_S_DISCOVERY_QUERY_SEMANTICS_TOWARD_STICKER_EXPRESSION_INTENT_BEFORE_ANY_REACTIVATION",
+    "rationale": "The current sticker/stickers/vinyl sticker seed family proves persistent category-native breadth but the frozen sample is dominated by production-tool/material, product/configuration, utility/admin, or entity/property intent. Fixing triage labels alone would improve diagnostics but would not create expression yield."
+  }
+}

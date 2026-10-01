@@ -501,7 +501,17 @@
         "scheduled_provider_calls_paused": true,
         "production_intake_promotion_authorized": false,
         "seed_family_expansion_authorized": false,
-        "commercial_bridge_activation_authorized": false
+        "commercial_bridge_activation_authorized": false,
+        "intent_composition_audit": {
+          "state": "COMPLETE_FROZEN_32_CORE_OFFLINE_SHADOW_REPLAY",
+          "acceptance_receipt": "acceptance/s-wave-intent-composition-audit-20261001.json",
+          "frozen_unique_s_only_core_count": 32,
+          "clear_non_expression_intent_count": 22,
+          "high_confidence_expression_candidate_count": 0,
+          "production_triage_mutation_authorized": false,
+          "s_wave_reactivation_authorized": false,
+          "seed_family_expansion_authorized": false
+        }
       }
     }
   }

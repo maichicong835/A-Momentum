@@ -367,7 +367,21 @@
       "semantic_or_mechanism_space_independence_proven": false,
       "production_intake_promotion_authorized": false,
       "seed_family_expansion_authorized": false,
-      "third_snapshot_automatically_required": false
+      "third_snapshot_automatically_required": false,
+      "intent_composition_audit": {
+        "state": "COMPLETE_FROZEN_32_CORE_OFFLINE_SHADOW_REPLAY",
+        "acceptance_receipt": "acceptance/s-wave-intent-composition-audit-20261001.json",
+        "frozen_unique_s_only_core_count": 32,
+        "clear_non_expression_intent_count": 22,
+        "entity_or_property_review_count": 6,
+        "ambiguous_count": 4,
+        "high_confidence_expression_candidate_count": 0,
+        "structural_triage_subtype_blind_spot_count": 22,
+        "production_triage_mutation_authorized": false,
+        "s_wave_reactivation_authorized": false,
+        "seed_family_expansion_authorized": false,
+        "next_frontier": "REDESIGN_S_DISCOVERY_QUERY_SEMANTICS_TOWARD_STICKER_EXPRESSION_INTENT_BEFORE_ANY_REACTIVATION"
+      }
     }
   }
 }
