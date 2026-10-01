@@ -1,43 +1,43 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
   "engine_version": "0.2.0",
-  "as_of": "2026-10-01T05:58:03.469515+00:00",
+  "as_of": "2026-10-01T15:28:32.639316+00:00",
   "source": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME_24H_MEAN",
   "observations": [
     {
       "observation_id": "google-trends-24h-watch-01-01",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "accountant_spreadsheet_frustration",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
-          "value": 0.541667
-        },
-        {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 4.958333
+          "t": "2026-09-30T14:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -53,39 +53,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-15-15",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "accounting_caffeine_work_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
-          "value": 0.541667
-        },
-        {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 4.958333
+          "t": "2026-09-30T14:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
-          "value": 0.0
+          "t": "2026-10-01T14:00:00+00:00",
+          "value": 3.041667
         }
       ],
       "native_series": true,
@@ -100,38 +100,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-05-05",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "bookish_emotional_damage_five_star",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -140,9 +140,9 @@
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=bookish sticker",
-        "query_used": "bookish sticker",
-        "query_ordinal": 1
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=reader sticker",
+        "query_used": "reader sticker",
+        "query_ordinal": 3
       }
     },
     {
@@ -335,38 +335,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-02-02",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "engineering_stress_wordplay",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-26T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-27T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-28T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-29T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -382,38 +382,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-08-08",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "lawyer_billable_hour_humor",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
+          "value": 3.833333
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
+          "value": 3.958333
+        },
+        {
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -422,92 +422,45 @@
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=lawyer sticker",
-        "query_used": "lawyer sticker",
-        "query_ordinal": 1
-      }
-    },
-    {
-      "observation_id": "google-trends-24h-watch-09-09",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "entity_type": "MECHANISM",
-      "entity_key": "librarian_expertise_identity",
-      "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
-      "points": [
-        {
-          "t": "2026-09-25T04:00:00+00:00",
-          "value": 2.958333
-        },
-        {
-          "t": "2026-09-26T04:00:00+00:00",
-          "value": 4.166667
-        },
-        {
-          "t": "2026-09-27T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-28T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-29T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-01T04:00:00+00:00",
-          "value": 3.458333
-        }
-      ],
-      "native_series": true,
-      "supporting_only": false,
-      "provenance": {
-        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
-        "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=library sticker",
-        "query_used": "library sticker",
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=legal humor sticker",
+        "query_used": "legal humor sticker",
         "query_ordinal": 2
       }
     },
     {
-      "observation_id": "google-trends-24h-watch-06-06",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observation_id": "google-trends-24h-watch-09-09",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
-      "entity_key": "physical_therapy_anatomy_pun",
+      "entity_key": "librarian_expertise_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-26T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-30T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -516,46 +469,93 @@
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=physical therapist sticker",
-        "query_used": "physical therapist sticker",
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=librarian sticker",
+        "query_used": "librarian sticker",
         "query_ordinal": 1
       }
     },
     {
-      "observation_id": "google-trends-24h-watch-04-04",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observation_id": "google-trends-24h-watch-06-06",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
-      "entity_key": "pickleball_dink_insider_pun",
+      "entity_key": "physical_therapy_anatomy_pun",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
+          "value": 0.416667
+        },
+        {
+          "t": "2026-09-27T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
+          "value": 0.0
+        }
+      ],
+      "native_series": true,
+      "supporting_only": false,
+      "provenance": {
+        "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
+        "machine_observed": true,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=psoas sticker",
+        "query_used": "psoas sticker",
+        "query_ordinal": 3
+      }
+    },
+    {
+      "observation_id": "google-trends-24h-watch-04-04",
+      "observed_at": "2026-10-01T14:00:00+00:00",
+      "entity_type": "MECHANISM",
+      "entity_key": "pickleball_dink_insider_pun",
+      "surface": "GOOGLE_TRENDS",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
+      "points": [
+        {
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 0.0
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-29T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-30T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-01T14:00:00+00:00",
+          "value": 4.166667
         }
       ],
       "native_series": true,
@@ -570,38 +570,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-12-12",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "programmer_interruption_boundary",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
-          "value": 0.291667
+          "t": "2026-09-26T14:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -617,39 +617,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-10-10",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "spreadsheet_reflex_professional_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-27T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-28T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-29T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-09-30T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 4.166667
+        },
+        {
+          "t": "2026-09-27T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-28T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-29T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-09-30T14:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-01T14:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -664,38 +664,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-11-11",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "teacher_voice_authority_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T05:00:00+00:00__2026-10-01T04:00:00+00:00",
+      "proxy": "INTEREST_24H_MEAN_NATIVE_WINDOW::2026-09-24T15:00:00+00:00__2026-10-01T14:00:00+00:00",
       "points": [
         {
-          "t": "2026-09-25T04:00:00+00:00",
+          "t": "2026-09-25T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-26T04:00:00+00:00",
+          "t": "2026-09-26T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-27T04:00:00+00:00",
+          "t": "2026-09-27T14:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-09-28T04:00:00+00:00",
+          "t": "2026-09-28T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-29T04:00:00+00:00",
+          "t": "2026-09-29T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-09-30T04:00:00+00:00",
+          "t": "2026-09-30T14:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-01T04:00:00+00:00",
+          "t": "2026-10-01T14:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -714,9 +714,9 @@
     {
       "watch_id": "watch-01",
       "entity_key": "accountant_spreadsheet_frustration",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "accountant sticker",
       "query_ordinal": 1,
       "provider_attempts": 1
@@ -724,9 +724,9 @@
     {
       "watch_id": "watch-02",
       "entity_key": "engineering_stress_wordplay",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "engineering humor sticker",
       "query_ordinal": 2,
       "provider_attempts": 3
@@ -734,7 +734,7 @@
     {
       "watch_id": "watch-03",
       "entity_key": "dog_parent_dramatic_personality",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError",
       "queries_attempted": [
@@ -746,9 +746,9 @@
     {
       "watch_id": "watch-04",
       "entity_key": "pickleball_dink_insider_pun",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "pickleball sticker",
       "query_ordinal": 1,
       "provider_attempts": 1
@@ -756,27 +756,27 @@
     {
       "watch_id": "watch-05",
       "entity_key": "bookish_emotional_damage_five_star",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "query_used": "bookish sticker",
-      "query_ordinal": 1,
-      "provider_attempts": 1
+      "observed_at": "2026-10-01T14:00:00+00:00",
+      "query_used": "reader sticker",
+      "query_ordinal": 3,
+      "provider_attempts": 5
     },
     {
       "watch_id": "watch-06",
       "entity_key": "physical_therapy_anatomy_pun",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "query_used": "physical therapist sticker",
-      "query_ordinal": 1,
-      "provider_attempts": 1
+      "observed_at": "2026-10-01T14:00:00+00:00",
+      "query_used": "psoas sticker",
+      "query_ordinal": 3,
+      "provider_attempts": 5
     },
     {
       "watch_id": "watch-07",
       "entity_key": "engineer_coffee_problem_solving",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError",
       "queries_attempted": [
@@ -788,29 +788,29 @@
     {
       "watch_id": "watch-08",
       "entity_key": "lawyer_billable_hour_humor",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "query_used": "lawyer sticker",
-      "query_ordinal": 1,
-      "provider_attempts": 1
-    },
-    {
-      "watch_id": "watch-09",
-      "entity_key": "librarian_expertise_identity",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "query_used": "library sticker",
+      "observed_at": "2026-10-01T14:00:00+00:00",
+      "query_used": "legal humor sticker",
       "query_ordinal": 2,
       "provider_attempts": 3
     },
     {
+      "watch_id": "watch-09",
+      "entity_key": "librarian_expertise_identity",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-01T14:00:00+00:00",
+      "query_used": "librarian sticker",
+      "query_ordinal": 1,
+      "provider_attempts": 1
+    },
+    {
       "watch_id": "watch-10",
       "entity_key": "spreadsheet_reflex_professional_identity",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "spreadsheet sticker",
       "query_ordinal": 1,
       "provider_attempts": 1
@@ -818,9 +818,9 @@
     {
       "watch_id": "watch-11",
       "entity_key": "teacher_voice_authority_identity",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "teacher sticker",
       "query_ordinal": 1,
       "provider_attempts": 1
@@ -828,9 +828,9 @@
     {
       "watch_id": "watch-12",
       "entity_key": "programmer_interruption_boundary",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "developer sticker",
       "query_ordinal": 2,
       "provider_attempts": 3
@@ -838,9 +838,9 @@
     {
       "watch_id": "watch-13",
       "entity_key": "crochet_interruption_insider_humor",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SENSOR_GAP",
-      "error_class": "RuntimeError",
+      "error_class": "TooManyRequestsError",
       "queries_attempted": [
         "crochet sticker",
         "crochet humor sticker"
@@ -850,19 +850,22 @@
     {
       "watch_id": "watch-14",
       "entity_key": "emotional_support_yarn_identity",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
-      "query_used": "crochet sticker",
-      "query_ordinal": 2,
-      "provider_attempts": 3
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError",
+      "queries_attempted": [
+        "yarn sticker",
+        "crochet sticker",
+        "knitting sticker"
+      ],
+      "provider_attempts": 6
     },
     {
       "watch_id": "watch-15",
       "entity_key": "accounting_caffeine_work_identity",
-      "attempted_at": "2026-10-01T05:58:03.469515+00:00",
+      "attempted_at": "2026-10-01T15:28:32.639316+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-01T04:00:00+00:00",
+      "observed_at": "2026-10-01T14:00:00+00:00",
       "query_used": "accountant sticker",
       "query_ordinal": 1,
       "provider_attempts": 1
@@ -899,23 +902,36 @@
       "mechanism_key": "crochet_interruption_insider_humor",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError",
+      "error_class": "TooManyRequestsError",
       "queries_attempted": [
         "crochet sticker",
         "crochet humor sticker"
       ],
       "provider_attempts": 4
+    },
+    {
+      "watch_id": "watch-14",
+      "mechanism_key": "emotional_support_yarn_identity",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "TooManyRequestsError",
+      "queries_attempted": [
+        "yarn sticker",
+        "crochet sticker",
+        "knitting sticker"
+      ],
+      "provider_attempts": 6
     }
   ],
   "continuity": {
     "policy": "LAST_GOOD_PER_MECHANISM_WITH_ATTEMPT_TRUTH",
     "history_success_count_before": 15,
-    "current_success_count": 12,
-    "current_gap_count": 3,
-    "provider_attempt_count": 32,
-    "query_fallback_success_count": 4,
+    "current_success_count": 11,
+    "current_gap_count": 4,
+    "provider_attempt_count": 43,
+    "query_fallback_success_count": 5,
     "preserved_not_due_count": 0,
-    "preserved_gap_count": 3,
+    "preserved_gap_count": 4,
     "merged_last_good_count": 15,
     "sensor_gap_advances_freshness": false,
     "not_due_advances_freshness": false
