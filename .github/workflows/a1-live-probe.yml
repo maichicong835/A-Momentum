@@ -1,0 +1,156 @@
+name: A-Momentum A1 One-Shot Market Probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/a1-live-probe-request-20261008.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: a-momentum-a1-one-shot-20261008
+  cancel-in-progress: false
+jobs:
+  a1-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check no credentials and install existing sensor dependencies
+        run: |
+          python scripts/security_scan.py --repository
+          python -m pip install --disable-pip-version-check 'pytrends==4.9.2' 'pandas>=2.2,<3'
+          python scripts/google_trends.py --self-test
+      - name: Bind scheduled M1 proof and frozen A1 identity
+        run: |
+          mkdir -p /tmp/a1-probe
+          python - <<'PY'
+          import json, hashlib
+          from datetime import datetime,timezone
+          from pathlib import Path
+          req=json.loads(Path('experiments/a1-live-probe-request-20261008.json').read_text())
+          a1=json.loads(Path(req['source_acceptance']).read_text())
+          index=json.loads(Path('runtime/latest/index.json').read_text())
+          receipt_file=Path('runtime/latest/receipt.json')
+          receipt=json.loads(receipt_file.read_text())
+          m1=req['m1_scheduled_gate']
+          assert m1['proven_run_id']==37688539659
+          assert m1['proven_head_sha']=='0588af8d781de038279603e1e3c8324c2c7a28e3'
+          assert m1['proven_receipt_sha256']=='2bb416394b0a4c1fef9805910c2a11cec1c76f71bb1212b3e782492abe6670bf'
+          assert index['receipt_sha256']==hashlib.sha256(receipt_file.read_bytes()).hexdigest()
+          assert index['workflow_run_id']>=m1['proven_run_id']
+          assert receipt['engine_commit_sha']==index['provider_engine_commit_sha']
+          assert index['credentials_used'] is False
+          assert receipt['measurement_identity_summary']['state']=='M1_MEASUREMENT_IDENTITY_ACTIVE'
+          assert len(receipt['entities'])==receipt['measurement_identity_summary']['entity_count']==15
+          assert all(x['measurement_truth_state'] in {'PRIMARY_ANCHOR','FALLBACK_PROXY','ANCHOR_GAP'} for x in receipt['entities'])
+          c=req['candidate']; frozen=a1['exploration_measurement_design']
+          assert c['opportunity_core']==a1['candidate']['opportunity_core']=='breast cancer awareness'
+          assert c['mechanism_candidate_id']==a1['candidate']['mechanism_hypothesis_id']
+          assert c['anchor_query']==frozen['anchor_query']
+          assert c['anchor_proxy_id']==frozen['anchor_proxy_id']
+          assert req['measurement']['max_queries']==req['measurement']['max_query_variants']==1
+          assert req['authorization_limit']['production_runtime_latest_mutation'] is False
+          assert req['authorization_limit']['commercial_eligibility_authority'] is False
+          assert req['authorization_limit']['keep_or_retire_on_one_pull'] is False
+          due={
+            'schema':'A_MOMENTUM_DUE_PLAN',
+            'as_of':datetime.now(timezone.utc).isoformat(),
+            'watch_count':1,'due_count':1,'not_due_count':0,
+            'due':[{
+              'watch_id':'a1-single-market-probe',
+              'mechanism_key':'a1_cause_affiliation_and_awareness_signaling',
+              'cadence_class':'EXPLORATION_ONE_SHOT',
+              'cadence_hours':4,
+              'elapsed_hours':None,
+              'last_observed_at':None,
+              'query_family':[c['anchor_query']],
+              'preferred_surfaces':['GOOGLE_TRENDS'],
+              'measurement_identity':{
+                'surface':'GOOGLE_TRENDS',
+                'anchor_query':c['anchor_query'],
+                'anchor_proxy_id':c['anchor_proxy_id']
+              }
+            }],
+            'not_due':[]
+          }
+          Path('/tmp/a1-probe/due-plan.json').write_text(json.dumps(due,indent=2)+'\n')
+          print('A1_M1_SCHEDULED_PROOF_BOUND',m1['proven_run_id'])
+          print('A1_SINGLE_CANDIDATE_ANCHOR_BOUND',c['anchor_proxy_id'])
+          PY
+      - name: One targeted live Google Trends native-window pull
+        run: |
+          python scripts/google_trends.py --due-plan /tmp/a1-probe/due-plan.json --out /tmp/a1-probe/observation-set.json --status-out /tmp/a1-probe/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 1 --max-query-variants 1 --retries-per-query 2 --sleep-seconds 3
+      - name: Classify measured evidence without implying commercial eligibility
+        run: |
+          python - <<'PY'
+          import json,os
+          from datetime import datetime,timezone
+          from pathlib import Path
+          from scripts.build_receipt import analyze_series
+          p=Path('/tmp/a1-probe')
+          req=json.loads(Path('experiments/a1-live-probe-request-20261008.json').read_text())
+          observations=json.loads((p/'observation-set.json').read_text())
+          sensor=json.loads((p/'sensor-status.json').read_text())
+          measured=observations.get('observations',[])
+          success=sensor['success_count']==1 and len(measured)==1
+          assert sensor['credentials_used'] is False
+          assert sensor['provider_failure_is_zero_demand'] is False
+          assert sensor['success_count'] in {0,1}
+          assert sensor['success_count']+sensor['gap_count']>=1
+          result='SENSOR_GAP'; points=[]; shape=None; observed_at=None
+          if success:
+              o=measured[0]; mi=o['measurement_identity']; c=req['candidate']
+              assert o['entity_key']=='a1_cause_affiliation_and_awareness_signaling'
+              assert o['surface']=='GOOGLE_TRENDS' and o['native_series'] is True
+              assert o['proxy']==c['anchor_proxy_id']==mi['anchor_proxy_id']==mi['query_proxy_id']
+              assert mi['anchor_query']==mi['query_used']==c['anchor_query']
+              assert mi['signal_basis']=='PRIMARY_ANCHOR'
+              points=o['points']; assert len(points)>=3
+              observed_at=o['observed_at']
+              shape=analyze_series(points)
+              result='OBSERVED_NONZERO_NATIVE_SERIES' if any(float(x['value'])>0 for x in points) else 'OBSERVED_NO_NONZERO_SIGNAL'
+          else:
+              assert sensor['success_count']==0
+          out={
+           'schema':'A_MOMENTUM_A1_LIVE_PROBE_RESULT','schema_version':'1.0',
+           'mode':'SHADOW_ONLY_ONE_SHOT','generated_at':datetime.now(timezone.utc).isoformat(),
+           'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),
+           'workflow_head_sha':os.environ['GITHUB_SHA'],
+           'm1_scheduled_proof_run_id':req['m1_scheduled_gate']['proven_run_id'],
+           'opportunity_core':req['candidate']['opportunity_core'],
+           'mechanism_candidate_id':req['candidate']['mechanism_candidate_id'],
+           'anchor_query':req['candidate']['anchor_query'],
+           'anchor_proxy_id':req['candidate']['anchor_proxy_id'],
+           'native_window_observed_at':observed_at,
+           'measured_point_count':len(points),
+           'native_within_pull_series_analysis':shape,
+           'native_window_cross_pull_comparison_performed':False,
+           'measurement_result':result,
+           'provider_attempt_count':sensor['provider_attempt_count'],
+           'sensor_gaps':observations.get('sensor_gaps',[]),
+           'commercial_eligibility_authority':False,
+           'ip_safety_authority':False,
+           'daily7_selection_authority':False,
+           'keep_probation_or_retire_decision':'NOT_AUTHORIZED_FROM_SINGLE_NATIVE_PULL',
+           'longitudinal_repeat_authorized':False,
+           'production_watchlist_mutation':False,
+           'production_runtime_latest_mutation':False,
+           'credentials_used':False
+          }
+          (p/'probe-result.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          assert out['production_watchlist_mutation'] is False and out['production_runtime_latest_mutation'] is False
+          print('A1_REAL_MARKET_PROBE_RESULT',result)
+          print('A1_LIVE_MEASURED_POINTS',len(points))
+          print('A1_KEEPOBATION_OR_RETIRE_NOT_INFERRED_FROM_ONE_PULL')
+          PY
+      - name: Upload one-shot machine evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: a-momentum-a1-live-probe-20261008
+          path: /tmp/a1-probe/*.json
+          if-no-files-found: error
+          retention-days: 30

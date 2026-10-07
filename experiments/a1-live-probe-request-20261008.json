@@ -1,0 +1,41 @@
+{
+  "schema": "A_MOMENTUM_A1_ONE_SHOT_PROBE_REQUEST",
+  "schema_version": "1.0",
+  "trigger_purpose": "USER_AUTHORIZED_ONE_TARGETED_LIVE_MARKET_MEASUREMENT",
+  "mode": "SHADOW_MEASUREMENT_ONLY_NO_PRODUCTION_WRITE",
+  "source_acceptance": "acceptance/a1-minimum-adaptive-loop-admission-replay-20261007.json",
+  "m1_scheduled_gate": {
+    "proven_run_id": 37688539659,
+    "proven_head_sha": "0588af8d781de038279603e1e3c8324c2c7a28e3",
+    "proven_receipt_sha256": "2bb416394b0a4c1fef9805910c2a11cec1c76f71bb1212b3e782492abe6670bf"
+  },
+  "candidate": {
+    "opportunity_core": "breast cancer awareness",
+    "source_lane": "M_ONLY",
+    "mechanism_candidate_id": "mh-c03d2fd787468fb3",
+    "anchor_query": "breast cancer awareness sticker",
+    "anchor_proxy_id": "GT_US_WEB_NOW_7_D::breast_cancer_awareness_sticker"
+  },
+  "measurement": {
+    "geo": "US",
+    "timeframe": "now 7-d",
+    "max_queries": 1,
+    "max_query_variants": 1,
+    "retries_per_query": 2,
+    "sleep_seconds": 3
+  },
+  "authorization_limit": {
+    "one_candidate_only": true,
+    "one_collector_run_only": true,
+    "no_new_sensor": true,
+    "no_new_scheduler": true,
+    "production_watchlist_mutation": false,
+    "production_runtime_latest_mutation": false,
+    "wave_shadow_reactivation": false,
+    "daily7_authority": false,
+    "commercial_eligibility_authority": false,
+    "ip_safety_authority": false,
+    "keep_or_retire_on_one_pull": false,
+    "credential_use": false
+  }
+}
