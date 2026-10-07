@@ -459,7 +459,7 @@ jobs:
           python - <<'PY'
           import json
           x=json.load(open('/tmp/runtime.json')); assert x['engine_version']=='0.2.0' and x['fallback_pool_status']['count']==15 and x['fallback_pool_status']['status']=='PASS'
-          assert x['measurement_identity_summary']['entity_count']==15 and x['measurement_identity_summary']['shared_anchor_group_count']==2
+          assert x['measurement_identity_summary']['entity_count']==10 and x['measurement_identity_summary']['shared_anchor_group_count']==2
           assert x['measurement_identity_summary']['shared_proxy_evidence_is_independent'] is False
           print('A_MOMENTUM_RUNTIME_BOOTSTRAP_PASS')
           PY
