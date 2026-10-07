@@ -1,0 +1,80 @@
+{
+  "schema": "A_MOMENTUM_A1_LIVE_PROBE_ACCEPTANCE",
+  "schema_version": "1.0",
+  "evidence_role": "IMMUTABLE_EXECUTION_OUTCOME_NOT_NEW_ENGINE_AUTHORITY",
+  "execution_day_utc": "2026-10-07",
+  "execution_day_vietnam": "2026-10-08",
+  "state": "A1_LIVE_PROBE_EXECUTED_SENSOR_GAP_NO_MARKET_CONCLUSION",
+  "m1_scheduled_publication_proof": {
+    "state": "SCHEDULED_PRODUCTION_PUBLICATION_PROVEN",
+    "verified_schedule_run_id": 37688539659,
+    "provider_engine_commit_sha": "0588af8d781de038279603e1e3c8324c2c7a28e3",
+    "receipt_sha256": "2bb416394b0a4c1fef9805910c2a11cec1c76f71bb1212b3e782492abe6670bf",
+    "computed_receipt_sha256_matched_index": true,
+    "measurement_identity_summary_present": true,
+    "measured_entities": 15,
+    "measurement_truth_counts": {
+      "PRIMARY_ANCHOR": 8,
+      "FALLBACK_PROXY": 5,
+      "ANCHOR_GAP": 2
+    },
+    "index_credentials_used": false,
+    "sensor_credentials_used": false
+  },
+  "a1_one_shot_execution": {
+    "workflow": "A-Momentum A1 One-Shot Market Probe",
+    "workflow_run_id": 37704649502,
+    "workflow_event": "push",
+    "workflow_head_sha": "01a2694f83d68055b54d1940a143ba895bed1af1",
+    "workflow_conclusion": "success",
+    "job_conclusion": "success",
+    "artifact_id": 11519101957,
+    "artifact_name": "a-momentum-a1-live-probe-20261008",
+    "artifact_zip_sha256": "1004c22f17fa50c201b661b2ba1de94929d916085f9469d788e1ec10ac44fd71",
+    "artifact_includes": [
+      "due-plan.json",
+      "observation-set.json",
+      "sensor-status.json",
+      "probe-result.json"
+    ],
+    "candidate": "breast cancer awareness",
+    "mechanism_candidate_id": "mh-c03d2fd787468fb3",
+    "anchor_query": "breast cancer awareness sticker",
+    "anchor_proxy_id": "GT_US_WEB_NOW_7_D::breast_cancer_awareness_sticker",
+    "surface": "GOOGLE_TRENDS",
+    "market": "US",
+    "timeframe": "now 7-d",
+    "provider_attempt_count": 2,
+    "current_success_count": 0,
+    "current_gap_count": 1,
+    "observation_point_count": 0,
+    "sensor_result": "SENSOR_GAP_FALLBACK_REQUIRED",
+    "probe_result": "SENSOR_GAP",
+    "sensor_error_class": "RuntimeError",
+    "sensor_error_state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+    "rate_limit_gap_count": 0,
+    "error_root_cause": "UNRESOLVED_ERROR_CLASS_ONLY_DOES_NOT_IDENTIFY_PROVIDER_VERSUS_NATIVE_SHAPE",
+    "credentials_used": false
+  },
+  "interpretation": {
+    "workflow_success_means_market_measurement_success": false,
+    "market_demand_is_zero": false,
+    "commercial_eligibility_proven": false,
+    "ip_safety_proven": false,
+    "daily7_selection_authority": false,
+    "keep_probation_decision_authorized": false,
+    "retire_decision_authorized": false,
+    "automatic_retry_authorized": false,
+    "valid_next_state": "A1_MEASUREMENT_BLOCKED_NEEDS_BOUNDED_DIAGNOSTIC_IF_CONTINUED"
+  },
+  "unchanged_boundaries": {
+    "production_watchlist_changed": false,
+    "runtime_latest_published_by_a1": false,
+    "new_sensor_or_provider_added": false,
+    "s_wave_reactivated": false,
+    "core_exploration_quota_added": false,
+    "daily7_modified": false,
+    "a_ver_modified": false
+  },
+  "next_frontier": "ONLY_IF_CONTINUED_ISOLATE_OBSERVED_RUNTIMEERROR_IN_A1_SENSOR_WITHOUT_REPEAT_OR_ARCHITECTURE_EXPANSION"
+}
