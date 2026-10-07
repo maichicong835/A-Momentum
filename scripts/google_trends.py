@@ -59,6 +59,14 @@ def query_specs(item,max_variants=3,geo="US",timeframe="now 7-d"):
              "query_proxy_id":anchor_pid if i==1 else stable_query_proxy_id(q,geo,timeframe),
              "anchor_query":anchor,"anchor_proxy_id":anchor_pid} for i,q in enumerate(queries,1)]
 def retry_backoff_seconds(attempt_index,base_seconds): return max(float(base_seconds),0.2)*(2**max(0,int(attempt_index)))
+def safe_exception_diagnostic(error,stage):
+    """Expose only a bounded stage/code; never serialize raw provider error text."""
+    owned_shape_errors={
+        ("VALIDATE_NATIVE_SERIES","EMPTY_NATIVE_SERIES"):"EMPTY_NATIVE_SERIES",
+        ("VALIDATE_COMPLETED_BLOCKS","COMPLETED_24H_BLOCKS_LT_3"):"COMPLETED_24H_BLOCKS_LT_3",
+    }
+    code=owned_shape_errors.get((stage,str(error))) if type(error) is RuntimeError else None
+    return {"error_stage":stage,"error_code":code or "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"}
 def self_test():
     base=datetime(2026,1,1,tzinfo=timezone.utc); rows=[(base+timedelta(hours=i),float(i%17)) for i in range(72)]
     b=completed_24h_blocks(rows); assert len(b)==3 and all(x["sample_count"]==24 for x in b); assert completed_24h_blocks(rows[:20]+rows[21:])==[]
@@ -93,17 +101,24 @@ def main():
         if not specs:
             err=identity_error or "NO_QUERY_FAMILY"; gaps.append({"watch_id":item.get("watch_id"),"mechanism_key":item.get("mechanism_key"),"surface":"GOOGLE_TRENDS","state":"SENSOR_GAP_NO_QUERY_FAMILY_OR_IDENTITY","error_class":err})
             attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),"attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":err,"measurement_basis":"ANCHOR_GAP","queries_attempted":[]}); continue
-        success=False; last_error=None; entity_attempt_log=[]
+        success=False; last_error=None; last_diagnostic=None; entity_attempt_log=[]
         for spec in specs:
             query=spec["query"]; q_index=spec["query_ordinal"]
             for attempt in range(max(1,a.retries_per_query)):
                 provider_attempt_count+=1
+                stage="INITIALIZE_CLIENT"
                 try:
-                    py=TrendReq(hl="en-US",tz=0,timeout=(10,25),retries=0,backoff_factor=0); py.build_payload([query],cat=0,timeframe=a.timeframe,geo=a.geo,gprop="")
+                    py=TrendReq(hl="en-US",tz=0,timeout=(10,25),retries=0,backoff_factor=0)
+                    stage="BUILD_QUERY_PAYLOAD"
+                    py.build_payload([query],cat=0,timeframe=a.timeframe,geo=a.geo,gprop="")
+                    stage="FETCH_NATIVE_SERIES"
                     df=py.interest_over_time()
+                    stage="VALIDATE_NATIVE_SERIES"
                     if df is None or df.empty or query not in df.columns: raise RuntimeError("EMPTY_NATIVE_SERIES")
                     if "isPartial" in df.columns: df=df[df["isPartial"]==False]
-                    rows=[(parse_iso(iso_utc(t)),float(v)) for t,v in df[query].items()]; blocks=completed_24h_blocks(rows,max_blocks=7)
+                    rows=[(parse_iso(iso_utc(t)),float(v)) for t,v in df[query].items()]
+                    stage="VALIDATE_COMPLETED_BLOCKS"
+                    blocks=completed_24h_blocks(rows,max_blocks=7)
                     if len(blocks)<3: raise RuntimeError("COMPLETED_24H_BLOCKS_LT_3")
                     o={"observation_id":f"google-trends-24h-{item['watch_id']}-{idx:02d}","observed_at":blocks[-1]["t"],"entity_type":"MECHANISM","entity_key":item["mechanism_key"],
                        "surface":"GOOGLE_TRENDS","proxy":spec["query_proxy_id"],"points":[{"t":x["t"],"value":x["value"]} for x in blocks],"native_series":True,"supporting_only":False,
@@ -118,15 +133,16 @@ def main():
                     if q_index>1: fallback_success_count+=1
                     success=True; break
                 except Exception as e:
-                    last_error=type(e).__name__; entity_attempt_log.append({"query":query,"query_ordinal":q_index,"attempt":attempt+1,"result":"SENSOR_GAP","error_class":last_error})
+                    last_error=type(e).__name__; last_diagnostic=safe_exception_diagnostic(e,stage)
+                    entity_attempt_log.append({"query":query,"query_ordinal":q_index,"attempt":attempt+1,"result":"SENSOR_GAP","error_class":last_error,**last_diagnostic})
                     if attempt+1<max(1,a.retries_per_query): time.sleep(retry_backoff_seconds(attempt,a.sleep_seconds))
             if success: break
             if q_index<len(specs): time.sleep(max(a.sleep_seconds,0.2))
         if not success:
             gaps.append({"watch_id":item.get("watch_id"),"mechanism_key":item.get("mechanism_key"),"surface":"GOOGLE_TRENDS","state":"SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-              "error_class":last_error,"measurement_basis":"ANCHOR_GAP","anchor_query":specs[0]["anchor_query"],"anchor_proxy_id":specs[0]["anchor_proxy_id"],
+              "error_class":last_error,**(last_diagnostic or {}),"attempt_diagnostics":[{"query_ordinal":x["query_ordinal"],"attempt":x["attempt"],"error_class":x["error_class"],"error_stage":x["error_stage"],"error_code":x["error_code"]} for x in entity_attempt_log if x["result"]=="SENSOR_GAP"],"measurement_basis":"ANCHOR_GAP","anchor_query":specs[0]["anchor_query"],"anchor_proxy_id":specs[0]["anchor_proxy_id"],
               "queries_attempted":[x["query"] for x in specs],"provider_attempts":len(entity_attempt_log)})
-            attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),"attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":last_error,
+            attempts.append({"watch_id":item.get("watch_id"),"entity_key":item.get("mechanism_key"),"attempted_at":attempted_at,"result":"SENSOR_GAP","error_class":last_error,**(last_diagnostic or {}),
               "measurement_basis":"ANCHOR_GAP","anchor_query":specs[0]["anchor_query"],"anchor_proxy_id":specs[0]["anchor_proxy_id"],"queries_attempted":[x["query"] for x in specs],
               "provider_attempts":len(entity_attempt_log)})
         time.sleep(max(a.sleep_seconds,0.0))
