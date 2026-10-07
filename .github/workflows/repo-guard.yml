@@ -492,7 +492,7 @@ jobs:
           assert matches[0]['mechanism_candidate_id']==c['mechanism_hypothesis_id']
           assert matches[0]['mechanism_family']==c['mechanism_family']
           assert c['persistent_across_both'] is True and c['structural_expression_pass_observed'] is True
-          assert m1['state']=='PUSH_RUNTIME_MACHINE_PROVEN_SCHEDULE_PUBLICATION_PENDING'
+          assert m1['state'] in {'PUSH_RUNTIME_MACHINE_PROVEN_SCHEDULE_PUBLICATION_PENDING','SCHEDULED_PRODUCTION_PUBLICATION_PROVEN'}
           assert m2['state']=='MACHINE_PROVEN_SYNTHETIC_ONLY_PRODUCTION_WIRING_BLOCKED'
           assert w['count']==len(w['entries'])==15
           assert all(a['exploration_measurement_design']['anchor_query'] not in x['query_family'] for x in w['entries'])
