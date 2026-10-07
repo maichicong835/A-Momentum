@@ -23,6 +23,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   runtime:
+    # Production provider calls are schedule/manual only; Repository Guard validates push changes offline.
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
