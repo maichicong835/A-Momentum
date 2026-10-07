@@ -16,6 +16,12 @@ Each production watch entry now declares a stable Google Trends `anchor_query` a
 
 Receipts expose whether each mechanism's current measurement truth is based on `PRIMARY_ANCHOR`, `FALLBACK_PROXY`, or `ANCHOR_GAP`. When two mechanisms share the same anchor or current query proxy, that sharing is machine-visible and must not be interpreted as independent evidence.
 
+### Fair slot allocation shadow (M2a)
+
+M2a is currently a **shadow/synthetic-only** capacity experiment. `scripts/slot_allocator.py` proves behavior for a due universe larger than the 15-query budget without changing the production watchlist or wiring the allocator into `.github/workflows/runtime.yml`.
+
+The shadow allocator ranks due entries by normalized overdue age (`elapsed_hours / cadence_hours`), prioritizes never-observed entries, and uses a stable ID only as a deterministic tie-break. Overflow is `DEFERRED_BY_ALLOCATION`: it is neither `NOT_DUE` nor `SENSOR_GAP`, and it may not advance evidence freshness. Production wiring remains blocked until the first scheduled M1 publication is machine-proven; CORE/EXPLORATION quotas are intentionally not defined in M2a.
+
 ## Credential boundary
 
 Public runtime does not mean public credentials. Credentials, tokens, cookies, session data, API keys, passwords, OAuth tokens, private keys and secret-bearing signed URLs must never be committed, logged, cached or uploaded as artifacts. Future authenticated sensors may receive secrets only through GitHub Actions/Environment secrets with least privilege. The current Google Trends sensor uses no credential. Google Drive credentials remain exclusively with Daily7.

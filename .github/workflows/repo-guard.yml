@@ -443,6 +443,18 @@ jobs:
               print('A_MOMENTUM_SCHEDULE_AUTONOMY_CLOSURE_PASS')
           print('A_MOMENTUM_V020_AUTHORITY_PASS')
           PY
+      - name: M2a shadow allocator boundary and synthetic proof
+        run: |
+          python scripts/slot_allocator.py --self-test
+          python - <<'PY'
+          from pathlib import Path
+          runtime=Path('.github/workflows/runtime.yml').read_text()
+          assert 'slot_allocator.py' not in runtime
+          assert '--allocation-budget' not in runtime
+          assert Path('scripts/slot_allocator.py').is_file()
+          assert Path('tests/test_slot_allocator.py').is_file()
+          print('A_MOMENTUM_M2A_SHADOW_NOT_PRODUCTION_WIRED_PASS')
+          PY
       - name: Unit tests
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Build synthetic receipt
