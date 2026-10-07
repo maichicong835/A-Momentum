@@ -1,0 +1,63 @@
+{
+  "schema": "A_MOMENTUM_M2A_SLOT_ALLOCATION_ACCEPTANCE",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "state": "MACHINE_PROVEN_SYNTHETIC_ONLY_PRODUCTION_WIRING_BLOCKED",
+  "recorded_at": "2026-10-07T21:24:00+07:00",
+  "code_binding": {
+    "shadow_allocator_commit_sha": "fd90ebc33a400616d7c2d7decffc8b084b67793b",
+    "allocator_path": "scripts/slot_allocator.py",
+    "test_path": "tests/test_slot_allocator.py"
+  },
+  "machine_proof": {
+    "repository_guard_run_id": 37636235411,
+    "repository_guard_conclusion": "success",
+    "synthetic_receipt_run_id": 37636235482,
+    "synthetic_receipt_conclusion": "success",
+    "self_test_marker": "A_MOMENTUM_M2A_SLOT_ALLOCATOR_SELF_TEST_PASS",
+    "boundary_marker": "A_MOMENTUM_M2A_SHADOW_NOT_PRODUCTION_WIRED_PASS"
+  },
+  "synthetic_universe": {
+    "due_count": 18,
+    "measurement_budget": 15,
+    "cycle_1_allocated_count": 15,
+    "cycle_1_deferred_count": 3,
+    "cycle_2_allocated_count": 15,
+    "two_cycle_unique_allocated_count": 18,
+    "cycle_1_deferred_are_prioritized_next_cycle": true,
+    "all_entries_receive_measurement_by_cycle_2": true
+  },
+  "ranking_policy": {
+    "primary": "NORMALIZED_OVERDUE_MULTIPLE_DESC",
+    "normalized_overdue_definition": "elapsed_hours / cadence_hours",
+    "never_observed_priority": "FIRST",
+    "deterministic_tie_break": "watch_id_or_mechanism_key_ascending",
+    "input_order_affects_selection": false
+  },
+  "state_semantics": {
+    "allocated": "ALLOCATED_FOR_MEASUREMENT",
+    "overflow": "DEFERRED_BY_ALLOCATION",
+    "deferred_by_allocation_is_not_due": false,
+    "deferred_by_allocation_is_sensor_gap": false,
+    "deferred_by_allocation_advances_freshness": false,
+    "allocation_budget_is_capacity_not_demand": true
+  },
+  "production_boundaries": {
+    "production_runtime_wired": false,
+    "runtime_workflow_mentions_slot_allocator": false,
+    "production_watchlist_mutated": false,
+    "production_watchlist_count": 15,
+    "query_families_mutated": false,
+    "cadence_mutated": false,
+    "core_exploration_quota_defined": false,
+    "s_wave_reactivated": false,
+    "daily7_authority_changed": false,
+    "provider_calls_required_for_m2a_proof": false
+  },
+  "dependency_gate": {
+    "m1_acceptance_receipt": "acceptance/measurement-identity-m1-20261007.json",
+    "first_scheduled_m1_publication_proof_required_before_production_wiring": true,
+    "first_scheduled_m1_publication_proof_observed": false
+  },
+  "next_frontier": "WAIT_FOR_FIRST_SCHEDULED_M1_PUBLICATION_PROOF_THEN_WIRE_M2_ALLOCATION_SEMANTICS_WITHOUT_YET_DEFINING_CORE_EXPLORATION_QUOTAS"
+}

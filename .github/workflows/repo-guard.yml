@@ -443,6 +443,35 @@ jobs:
               print('A_MOMENTUM_SCHEDULE_AUTONOMY_CLOSURE_PASS')
           print('A_MOMENTUM_V020_AUTHORITY_PASS')
           PY
+      - name: Validate M2a synthetic acceptance
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('acceptance/slot-allocation-m2a-synthetic-20261007.json')
+          assert p.is_file()
+          x=json.loads(p.read_text())
+          assert x['schema']=='A_MOMENTUM_M2A_SLOT_ALLOCATION_ACCEPTANCE'
+          assert x['state']=='MACHINE_PROVEN_SYNTHETIC_ONLY_PRODUCTION_WIRING_BLOCKED'
+          assert x['synthetic_universe']['due_count']==18
+          assert x['synthetic_universe']['measurement_budget']==15
+          assert x['synthetic_universe']['cycle_1_deferred_count']==3
+          assert x['synthetic_universe']['two_cycle_unique_allocated_count']==18
+          assert x['synthetic_universe']['cycle_1_deferred_are_prioritized_next_cycle'] is True
+          assert x['synthetic_universe']['all_entries_receive_measurement_by_cycle_2'] is True
+          s=x['state_semantics']
+          assert s['deferred_by_allocation_is_not_due'] is False
+          assert s['deferred_by_allocation_is_sensor_gap'] is False
+          assert s['deferred_by_allocation_advances_freshness'] is False
+          b=x['production_boundaries']
+          assert b['production_runtime_wired'] is False
+          assert b['production_watchlist_mutated'] is False
+          assert b['production_watchlist_count']==15
+          assert b['core_exploration_quota_defined'] is False
+          assert x['dependency_gate']['first_scheduled_m1_publication_proof_required_before_production_wiring'] is True
+          assert x['dependency_gate']['first_scheduled_m1_publication_proof_observed'] is False
+          print('A_MOMENTUM_M2A_SYNTHETIC_ACCEPTANCE_PASS')
+          PY
       - name: M2a shadow allocator boundary and synthetic proof
         run: |
           python scripts/slot_allocator.py --self-test
