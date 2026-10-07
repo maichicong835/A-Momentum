@@ -472,6 +472,55 @@ jobs:
           assert x['dependency_gate']['first_scheduled_m1_publication_proof_observed'] is False
           print('A_MOMENTUM_M2A_SYNTHETIC_ACCEPTANCE_PASS')
           PY
+      - name: Validate A1 minimum adaptive-loop admission replay
+        run: |
+          python - <<'PY'
+          import importlib.util,json
+          from pathlib import Path
+          root=Path('.')
+          a=json.loads((root/'acceptance/a1-minimum-adaptive-loop-admission-replay-20261007.json').read_text())
+          cross=json.loads((root/'acceptance/s-wave-cross-snapshot-proof-20261001.json').read_text())
+          m1=json.loads((root/'acceptance/measurement-identity-m1-20261007.json').read_text())
+          m2=json.loads((root/'acceptance/slot-allocation-m2a-synthetic-20261007.json').read_text())
+          w=json.loads((root/'runtime/watchlist.json').read_text())
+          assert a['schema']=='A_MOMENTUM_A1_MINIMUM_ADAPTIVE_LOOP_ADMISSION_REPLAY'
+          assert a['state']=='MACHINE_PROVEN_THROUGH_ADMISSION_AND_BOUNDED_CAPACITY_LIVE_LONGITUDINAL_OBSERVATION_PENDING'
+          c=a['candidate']
+          matches=[x for x in cross['mechanism_hypothesis_persistence']['exact_same_hypotheses'] if x['opportunity_core']==c['opportunity_core']]
+          assert len(matches)==1
+          assert matches[0]['source_lane']=='M_ONLY'
+          assert matches[0]['mechanism_candidate_id']==c['mechanism_hypothesis_id']
+          assert matches[0]['mechanism_family']==c['mechanism_family']
+          assert c['persistent_across_both'] is True and c['structural_expression_pass_observed'] is True
+          assert m1['state']=='PUSH_RUNTIME_MACHINE_PROVEN_SCHEDULE_PUBLICATION_PENDING'
+          assert m2['state']=='MACHINE_PROVEN_SYNTHETIC_ONLY_PRODUCTION_WIRING_BLOCKED'
+          assert w['count']==len(w['entries'])==15
+          assert all(a['exploration_measurement_design']['anchor_query'] not in x['query_family'] for x in w['entries'])
+          assert a['boundaries']['production_watchlist_mutated'] is False
+          assert a['boundaries']['production_runtime_wired'] is False
+          assert a['boundaries']['core_exploration_quota_defined'] is False
+          assert a['exploration_measurement_design']['anchor_observed_live'] is False
+          spec=importlib.util.spec_from_file_location('slot_allocator',root/'scripts/slot_allocator.py')
+          sa=importlib.util.module_from_spec(spec); spec.loader.exec_module(sa)
+          cores=sa.synthetic_due(15,elapsed=8.0,cadence=4.0)
+          cycle1=sa.allocate(cores,14)
+          assert cycle1['allocated_count']==14 and cycle1['deferred_count']==1
+          deferred=cycle1['deferred'][0]['watch_id']
+          cycle2=[]
+          for x in cores:
+              y=dict(x); y['elapsed_hours']=12.0 if y['watch_id']==deferred else 4.0
+              cycle2.append(y)
+          cycle2=sa.allocate(cycle2,15)
+          assert deferred in {x['watch_id'] for x in cycle2['allocated']}
+          cap=a['bounded_capacity_canary']
+          assert cap['measurement_budget']==15 and cap['one_cycle_exploration_reservation']==1
+          assert cap['cycle_1_core_capacity']==14 and cap['cycle_1_core_deferred_count']==1
+          assert cap['deferred_core_gets_next_cycle_opportunity'] is True
+          assert a['decision_state']['keep_probation_not_yet_authorized'] is True
+          assert a['decision_state']['retire_not_yet_authorized'] is True
+          assert a['anti_loop']['fix_only_machine_observed_failures'] is True
+          print('A_MOMENTUM_A1_ADMISSION_REPLAY_PASS',c['opportunity_core'],deferred)
+          PY
       - name: M2a shadow allocator boundary and synthetic proof
         run: |
           python scripts/slot_allocator.py --self-test

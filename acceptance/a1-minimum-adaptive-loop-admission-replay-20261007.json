@@ -1,0 +1,72 @@
+{
+  "schema": "A_MOMENTUM_A1_MINIMUM_ADAPTIVE_LOOP_ADMISSION_REPLAY",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "state": "MACHINE_PROVEN_THROUGH_ADMISSION_AND_BOUNDED_CAPACITY_LIVE_LONGITUDINAL_OBSERVATION_PENDING",
+  "recorded_at": "2026-10-07T21:48:00+07:00",
+  "purpose": "PROVE_ONE_REAL_DISCOVERY_CANDIDATE_CAN_REACH_A_BOUNDED_EXPLORATION_SLOT_WITHOUT_MUTATING_PRODUCTION_AUTHORITY",
+  "candidate": {
+    "opportunity_core": "breast cancer awareness",
+    "source_lane": "M_ONLY",
+    "discovery_evidence": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+    "observed_in_snapshot_1": true,
+    "observed_in_snapshot_2": true,
+    "persistent_across_both": true,
+    "structural_expression_pass_observed": true,
+    "mechanism_hypothesis_id": "mh-c03d2fd787468fb3",
+    "mechanism_family": "CAUSE_AFFILIATION_AND_AWARENESS_SIGNALING",
+    "commercial_eligibility_authority": false,
+    "ip_safety_authority": false,
+    "daily7_selection_authority": false
+  },
+  "exploration_measurement_design": {
+    "entity_role": "EXPLORATION_QUERY_FAMILY",
+    "anchor_query": "breast cancer awareness sticker",
+    "anchor_proxy_id": "GT_US_WEB_NOW_7_D::breast_cancer_awareness_sticker",
+    "query_family": [
+      "breast cancer awareness sticker"
+    ],
+    "measurement_identity_contract": "M1_STABLE_ANCHOR_IDENTITY",
+    "anchor_observed_live": false,
+    "live_observation_required_before_keep_or_retire": true
+  },
+  "bounded_capacity_canary": {
+    "production_watchlist_count": 15,
+    "measurement_budget": 15,
+    "one_cycle_exploration_reservation": 1,
+    "cycle_1_core_capacity": 14,
+    "cycle_1_core_deferred_count": 1,
+    "cycle_2_core_capacity_after_canary": 15,
+    "deferred_core_gets_next_cycle_opportunity": true,
+    "exploration_reservation_is_not_permanent_quota": true
+  },
+  "decision_state": {
+    "current": "READY_FOR_ONE_LIVE_EXPLORATION_SLOT_AFTER_M1_SCHEDULED_PROOF",
+    "keep_probation_not_yet_authorized": true,
+    "retire_not_yet_authorized": true,
+    "required_next_evidence": "ONE_BOUNDED_LIVE_LONGITUDINAL_ANCHOR_MEASUREMENT"
+  },
+  "boundaries": {
+    "production_watchlist_mutated": false,
+    "runtime_latest_mutated": false,
+    "production_runtime_wired": false,
+    "core_exploration_quota_defined": false,
+    "lifecycle_framework_added": false,
+    "new_market_surface_added": false,
+    "s_wave_reactivated": false,
+    "daily7_authority_changed": false,
+    "provider_calls_performed_for_this_replay": false
+  },
+  "dependency_gate": {
+    "m1_acceptance": "acceptance/measurement-identity-m1-20261007.json",
+    "m1_scheduled_publication_proof_required_before_live_slot": true,
+    "m2a_acceptance": "acceptance/slot-allocation-m2a-synthetic-20261007.json"
+  },
+  "anti_loop": {
+    "no_m2a_1_subproject_before_observed_failure": true,
+    "no_10_5_quota_design_before_live_a1_result": true,
+    "no_s1_redesign_before_exploration_landing_zone_is_live_proven": true,
+    "fix_only_machine_observed_failures": true
+  },
+  "next_frontier": "AFTER_M1_SCHEDULED_PUBLICATION_PROOF_RUN_ONE_LIVE_A1_EXPLORATION_MEASUREMENT_THEN_DECIDE_KEEP_PROBATION_OR_RETIRE"
+}
