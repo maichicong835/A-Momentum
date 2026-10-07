@@ -114,12 +114,79 @@
         },
         "note": {
           "type": "string"
+        },
+        "query_used": {
+          "type": "string"
+        },
+        "query_ordinal": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "measurement_basis": {
+          "enum": [
+            "PRIMARY_ANCHOR",
+            "FALLBACK_PROXY"
+          ]
         }
       },
       "additionalProperties": false
     },
     "candidate_key": {
       "type": "string"
+    },
+    "measurement_identity": {
+      "type": "object",
+      "required": [
+        "anchor_query",
+        "anchor_proxy_id",
+        "query_used",
+        "query_proxy_id",
+        "signal_basis",
+        "native_window"
+      ],
+      "properties": {
+        "anchor_query": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor_proxy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query_used": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query_proxy_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signal_basis": {
+          "enum": [
+            "PRIMARY_ANCHOR",
+            "FALLBACK_PROXY"
+          ]
+        },
+        "native_window": {
+          "type": "object",
+          "required": [
+            "window_start",
+            "window_end"
+          ],
+          "properties": {
+            "window_start": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "window_end": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

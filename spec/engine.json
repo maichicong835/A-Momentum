@@ -186,7 +186,11 @@
     "sticker_seed_family_may_not_expand_without_evidence": true,
     "m_or_s_candidate_may_enter_structural_triage_without_cross_radar_confirmation": true,
     "sticker_core_normalization_may_strip_only_trailing_format_token": true,
-    "sticker_prefix_or_middle_token_may_not_be_erased_for_dedupe": true
+    "sticker_prefix_or_middle_token_may_not_be_erased_for_dedupe": true,
+    "mechanism_identity_may_not_imply_measurement_proxy_independence": true,
+    "shared_proxy_across_mechanisms_may_not_count_as_independent_evidence": true,
+    "fallback_query_success_may_not_redefine_anchor_identity": true,
+    "native_window_token_may_not_define_proxy_identity": true
   },
   "quality_pool": {
     "purpose": "ENSURE_DAILY7_HAS_HIGH_QUALITY_COMMERCIAL_SEEDS_WHEN_TEMPORAL_EVIDENCE_IS_COLD_OR_PLATFORM_FILTERS_FAIL",
@@ -238,7 +242,11 @@
       "current_cycle_success_count",
       "current_cycle_gap_count",
       "current_cycle_not_due_count"
-    ]
+    ],
+    "stable_query_proxy_identity_required": true,
+    "rolling_native_window_may_not_define_proxy_identity": true,
+    "measurement_truth_state_required": true,
+    "shared_anchor_groups_machine_visible": true
   },
   "runtime_data_boundary": {
     "public_repository_mode": "PUBLIC_RUNTIME_WITH_SECRET_ISOLATION",
@@ -295,6 +303,22 @@
         "base_backoff_seconds": 3,
         "retry_policy": "BOUNDED_EXPONENTIAL_BACKOFF_THEN_NEXT_DISTINCT_QUERY",
         "entity_gap_only_after_all_selected_query_variants_fail": true
+      },
+      "measurement_identity": {
+        "state": "M1_ACTIVE",
+        "watchlist_anchor_query_required": true,
+        "anchor_proxy_id_required": true,
+        "query_family_first_is_anchor": true,
+        "stable_query_proxy_identity_required": true,
+        "rolling_native_window_may_not_define_proxy_identity": true,
+        "fallback_proxy_has_distinct_identity": true,
+        "fallback_proxy_may_not_redefine_anchor": true,
+        "shared_anchor_or_proxy_is_not_independent_evidence": true,
+        "receipt_measurement_truth_states": [
+          "PRIMARY_ANCHOR",
+          "FALLBACK_PROXY",
+          "ANCHOR_GAP"
+        ]
       }
     },
     "other_declared_surfaces_are_not_active_collectors_until_machine_proven": true,

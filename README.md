@@ -10,6 +10,12 @@ Starting with v0.2.0, production runtime executes here. Business watchlists, que
 
 The first active external sensor is Google Trends native history. It removes partial rows, requires a contiguous hourly tail, aggregates non-overlapping completed 24-hour means, and requires at least three completed blocks for acceleration-capable analysis. Provider/shape failure is `SENSOR_GAP`, never zero demand. Other declared surfaces are not active collectors until machine-proven.
 
+### Measurement identity (M1)
+
+Each production watch entry now declares a stable Google Trends `anchor_query` and `anchor_proxy_id`. The first query in the ordered query family is the anchor; later queries are availability fallbacks with their own proxy identity. A fallback success may provide a usable current signal, but it may not silently redefine the anchor. Native rolling-window timestamps remain provenance, not proxy identity.
+
+Receipts expose whether each mechanism's current measurement truth is based on `PRIMARY_ANCHOR`, `FALLBACK_PROXY`, or `ANCHOR_GAP`. When two mechanisms share the same anchor or current query proxy, that sharing is machine-visible and must not be interpreted as independent evidence.
+
 ## Credential boundary
 
 Public runtime does not mean public credentials. Credentials, tokens, cookies, session data, API keys, passwords, OAuth tokens, private keys and secret-bearing signed URLs must never be committed, logged, cached or uploaded as artifacts. Future authenticated sensors may receive secrets only through GitHub Actions/Environment secrets with least privilege. The current Google Trends sensor uses no credential. Google Drive credentials remain exclusively with Daily7.
@@ -39,9 +45,9 @@ The coupler emits only `COUPLED_WAVE`, `MERCH_NATIVE_WAVE`, `RAW_ONLY_WAVE`, or 
 
 ### Wave Shadow trigger/request budget
 
-Wave Shadow now separates code validation from live market-provider access. `push` runs execute credential scanning, local self-tests and unit tests only; they do **not** call Google Trends live endpoints. Live Raw/Merch capture is reserved for `schedule` and `workflow_dispatch`.
+Wave Shadow now separates code validation from live market-provider access. `push` runs execute credential scanning, local self-tests and unit tests only; they do **not** call Google Trends live endpoints. Scheduled Wave Shadow provider capture is currently paused after the completed S-wave cross-snapshot proof. While paused, live Raw/Merch/S capture is available only through explicit `workflow_dispatch`; `push` remains validation-only.
 
-This prevents routine code merges from consuming the same external-provider request budget used for actual discovery and reduces self-induced throttling. A successful push validates code/contract only and is not a fresh market observation. Scheduled/manual live artifacts remain the only authority for current Wave Shadow market evidence.
+This prevents routine code merges from consuming the same external-provider request budget used for actual discovery and reduces self-induced throttling. A successful push validates code/contract only and is not a fresh market observation. While the schedule remains paused, explicitly dispatched live artifacts are the only source of fresh Wave Shadow market evidence; historical scheduled artifacts remain frozen evidence for the completed proofs.
 
 ### Merch Proxy rate-limit transport
 

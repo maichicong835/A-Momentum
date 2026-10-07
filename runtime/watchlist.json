@@ -9,7 +9,11 @@
     "price_unit_economics_forbidden": true,
     "social_only_supporting": true,
     "same_proxy_only": true,
-    "freshness_alignment": "WARM_CADENCE_MUST_NOT_EXCEED_DAILY7_FRESHNESS_THRESHOLD_8H"
+    "freshness_alignment": "WARM_CADENCE_MUST_NOT_EXCEED_DAILY7_FRESHNESS_THRESHOLD_8H",
+    "measurement_identity_required": true,
+    "query_family_first_is_anchor": true,
+    "fallback_query_may_not_redefine_anchor": true,
+    "shared_proxy_evidence_is_not_independent": true
   },
   "entries": [
     {
@@ -29,7 +33,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "accountant sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker"
+      }
     },
     {
       "watch_id": "watch-02",
@@ -47,7 +56,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "engineer sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker"
+      }
     },
     {
       "watch_id": "watch-03",
@@ -65,7 +79,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "dog parent sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker"
+      }
     },
     {
       "watch_id": "watch-04",
@@ -83,7 +102,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "pickleball sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker"
+      }
     },
     {
       "watch_id": "watch-05",
@@ -102,7 +126,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "bookish sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker"
+      }
     },
     {
       "watch_id": "watch-06",
@@ -121,7 +150,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "physical therapist sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker"
+      }
     },
     {
       "watch_id": "watch-07",
@@ -139,7 +173,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "engineer sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker"
+      }
     },
     {
       "watch_id": "watch-08",
@@ -157,7 +196,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "lawyer sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker"
+      }
     },
     {
       "watch_id": "watch-09",
@@ -175,7 +219,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "librarian sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::librarian_sticker"
+      }
     },
     {
       "watch_id": "watch-10",
@@ -193,7 +242,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "spreadsheet sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker"
+      }
     },
     {
       "watch_id": "watch-11",
@@ -211,7 +265,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "teacher sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker"
+      }
     },
     {
       "watch_id": "watch-12",
@@ -230,7 +289,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "programmer sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker"
+      }
     },
     {
       "watch_id": "watch-13",
@@ -248,7 +312,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "crochet sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker"
+      }
     },
     {
       "watch_id": "watch-14",
@@ -267,7 +336,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "yarn sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker"
+      }
     },
     {
       "watch_id": "watch-15",
@@ -286,7 +360,12 @@
         "PINTEREST_TRENDS",
         "TIKTOK_TRENDS"
       ],
-      "state": "ACTIVE"
+      "state": "ACTIVE",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "accountant sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker"
+      }
     }
   ],
   "count": 15,
