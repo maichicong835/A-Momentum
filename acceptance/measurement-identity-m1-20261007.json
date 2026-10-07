@@ -1,0 +1,86 @@
+{
+  "schema": "A_MOMENTUM_M1_MEASUREMENT_IDENTITY_ACCEPTANCE",
+  "schema_version": "1.0",
+  "engine_version": "0.2.0",
+  "state": "PUSH_RUNTIME_MACHINE_PROVEN_SCHEDULE_PUBLICATION_PENDING",
+  "recorded_at": "2026-10-07T20:51:00+07:00",
+  "code_binding": {
+    "design_commit_sha": "9f30d38244bd828fc5dfa033da72938dabab0fb1",
+    "guard_fix_commit_sha": "adeff96b7fc8592105efb342b376dfaa014aba50"
+  },
+  "machine_proof": {
+    "workflow_run_id": 37633442717,
+    "event": "push",
+    "conclusion": "success",
+    "artifact_id": 11487746254,
+    "artifact_name": "a-momentum-public-runtime",
+    "artifact_zip_sha256": "41bb6aff9865208877d97aab3241d60c8d0c61e15bfaa53293d92529b9dbe272",
+    "receipt_sha256": "6d878ebb6e103763a5812fe85c262480dc41ea33388b8a6aa82c7c025f2c82a0",
+    "sensor_status_sha256": "bc5b916d4a63b25a1b0b9b09854421bbda2f7dc68cdc6eebc8a97420d8c3d64f",
+    "index_sha256": "09e9638fcf83f952411b9515dc039674f5ff57521a5cf7fc354722bb4281e38a"
+  },
+  "sensor_result": {
+    "due_count": 15,
+    "success_count": 11,
+    "gap_count": 4,
+    "provider_attempt_count": 35,
+    "primary_anchor_success_count": 8,
+    "fallback_proxy_success_count": 3,
+    "anchor_gap_count": 4,
+    "query_fallback_success_count": 3,
+    "rate_limit_gap_count": 1,
+    "result": "PASS_WITH_DATA",
+    "credentials_used": false
+  },
+  "receipt_result": {
+    "entity_count": 15,
+    "fresh_entity_count": 11,
+    "fresh_entity_ratio": 0.733333,
+    "measurement_identity_state": "M1_MEASUREMENT_IDENTITY_ACTIVE",
+    "shared_anchor_group_count": 2,
+    "shared_proxy_evidence_is_independent": false,
+    "fallback_proxy_redefines_anchor_identity": false
+  },
+  "shared_anchor_groups": [
+    {
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
+      "mechanism_keys": [
+        "accountant_spreadsheet_frustration",
+        "accounting_caffeine_work_identity"
+      ]
+    },
+    {
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
+      "mechanism_keys": [
+        "engineer_coffee_problem_solving",
+        "engineering_stress_wordplay"
+      ]
+    }
+  ],
+  "shared_signal_proxy_groups": [
+    {
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
+      "mechanism_keys": [
+        "accountant_spreadsheet_frustration",
+        "spreadsheet_reflex_professional_identity"
+      ]
+    }
+  ],
+  "boundaries": {
+    "watchlist_count_unchanged": 15,
+    "query_families_reordered": false,
+    "cadence_changed": false,
+    "slot_allocator_added": false,
+    "lifecycle_added": false,
+    "s_wave_reactivated": false,
+    "daily7_authority_changed": false,
+    "production_watchlist_expanded": false,
+    "credential_boundary_changed": false
+  },
+  "publication_gate": {
+    "push_runtime_does_not_publish_runtime_latest": true,
+    "first_scheduled_m1_publication_still_required": true,
+    "m2_slot_allocator_execution_before_scheduled_m1_publication_proof": false
+  },
+  "next_frontier": "WAIT_FOR_FIRST_SCHEDULED_M1_PUBLICATION_PROOF_THEN_M2_FAIR_SLOT_ALLOCATION"
+}
