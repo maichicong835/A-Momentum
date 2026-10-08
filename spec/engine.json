@@ -472,13 +472,13 @@
       }
     },
     "trigger_roles": {
-      "schedule": "PAUSED_AFTER_S_WAVE_CROSS_SNAPSHOT_PROOF",
+      "schedule": "BOUNDED_M_ONLY_SHADOW_CANARY_OCT_2026",
       "workflow_dispatch": "OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE",
       "push": "VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS"
     },
     "request_budget_policy": {
       "live_provider_calls_on_push": false,
-      "live_provider_calls_on_schedule": false,
+      "live_provider_calls_on_schedule": true,
       "live_provider_calls_on_workflow_dispatch": true
     },
     "multi_radar": {
@@ -537,6 +537,29 @@
           "seed_family_expansion_authorized": false
         }
       }
+    },
+    "scheduled_m_only_canary": {
+      "source_mode": "M_ONLY_SHADOW",
+      "start_utc_date": "2026-10-08",
+      "end_utc_date": "2026-10-10",
+      "cron": "11 4 8-10 10 *",
+      "workflow": ".github/workflows/wave-shadow.yml",
+      "seeds": [
+        "shirt",
+        "shirts",
+        "t shirt"
+      ],
+      "batch_build_retries": 1,
+      "R_and_S_provider_calls": false,
+      "wikidata_provider_calls": false,
+      "provider_calls_after_window": false,
+      "automatic_Daily7_handoff": false,
+      "production_watchlist_mutation": false,
+      "runtime_latest_publication": false,
+      "new_provider_or_secret": false,
+      "cross_pull_velocity_authority": false,
+      "canary_is_not_commercial_pass": true,
+      "auto_extend": false
     }
   }
 }
