@@ -1,0 +1,82 @@
+{
+  "schema": "A_MOMENTUM_A1_DIAGNOSTIC_RETRY_CLOSURE",
+  "schema_version": "1.0",
+  "state": "A1_ANCHOR_MEASUREMENT_UNAVAILABLE_SAFELY_STOPPED",
+  "scope": "BOUNDED_ONE_CANDIDATE_ONE_RETRY_NO_EXPANSION",
+  "prior_execution": {
+    "workflow_run_id": 37704649502,
+    "result": "SENSOR_GAP",
+    "provider_attempt_count": 2,
+    "error_class": "RuntimeError",
+    "error_stage": "UNRECORDED_LEGACY",
+    "root_cause": "UNRESOLVED",
+    "acceptance": "acceptance/a1-live-probe-outcome-20261008.json"
+  },
+  "diagnostic_fix": {
+    "commit_sha": "9e61e365bd55b3e17b34f76b17aaaaa5892f15f3",
+    "repository_guard_run_id": 37705329578,
+    "repository_guard_conclusion": "success",
+    "error_stage_and_safe_code_added": true,
+    "push_event_runtime_provider_calls_disabled": true
+  },
+  "retry": {
+    "workflow_run_id": 37705868777,
+    "workflow_event": "push",
+    "workflow_head_sha": "a5e382026c5e0457b52f432a333b60cd7a0acbb7",
+    "workflow_conclusion": "success",
+    "repository_guard_run_id": 37705868765,
+    "repository_guard_conclusion": "success",
+    "artifact_id": 11519920592,
+    "artifact_name": "a-momentum-a1-live-probe-20261008",
+    "artifact_zip_sha256": "c2420562e81f275e1c5b5ad48f8089dfcbe34875c3bdff8a1de276f68db9108f",
+    "candidate": "breast cancer awareness",
+    "mechanism_candidate_id": "mh-c03d2fd787468fb3",
+    "anchor_query": "breast cancer awareness sticker",
+    "anchor_proxy_id": "GT_US_WEB_NOW_7_D::breast_cancer_awareness_sticker",
+    "surface": "GOOGLE_TRENDS",
+    "market": "US",
+    "native_timeframe": "now 7-d",
+    "provider_attempt_count": 2,
+    "success_count": 0,
+    "gap_count": 1,
+    "valid_observation_points": 0,
+    "first_attempt_error_stage": "VALIDATE_NATIVE_SERIES",
+    "first_attempt_error_code": "EMPTY_NATIVE_SERIES",
+    "second_attempt_error_stage": "VALIDATE_NATIVE_SERIES",
+    "second_attempt_error_code": "EMPTY_NATIVE_SERIES",
+    "rate_limit_gap_count": 0,
+    "provider_failure_is_zero_demand": false,
+    "exception_class": "RuntimeError",
+    "query_fallback_variant_count": 0,
+    "no_credentials_used": true
+  },
+  "technical_interpretation": {
+    "precise_observed_failure": "COLLECTOR_NATIVE_FRAME_NONE_OR_EMPTY_OR_MISSING_QUERY_COLUMN",
+    "precise_subcause_known": false,
+    "commercial_demand_proven_zero": false,
+    "positive_native_market_signal_proven": false,
+    "keep_probation_authorized": false,
+    "retire_based_on_market_demand_authorized": false,
+    "measurement_anchor_current_status": "UNMEASURABLE_WITH_PRESENT_SENSOR_SAMPLE",
+    "decision": "BLOCK_MEASUREMENT_FOR_THIS_ANCHOR_NOT_COMMERCIAL_RETIREMENT",
+    "third_retry_authorized": false,
+    "retry_after_same_failure_without_new_evidence": false,
+    "observed_fault_is_bounded_not_rationale_for_new_subsystems": true
+  },
+  "boundaries": {
+    "production_watchlist_mutated": false,
+    "production_runtime_latest_mutated": false,
+    "s_wave_reactivated": false,
+    "core_exploration_quota_defined": false,
+    "daily7_authority_changed": false,
+    "a_ver_authority_changed": false,
+    "new_external_sensor_added": false,
+    "new_workflow_added_for_retry": false
+  },
+  "north_star_reflection": {
+    "achieved": "FIRST_REAL_A1_SENSING_PATH_RUNS_AND_RETURNS_TYPED_SENSOR_FAILURE",
+    "not_achieved": "A1_NATIVE_OBSERVATION_AND_ADAPTIVE_KEEP_OR_RETIRE_DECISION",
+    "next_frontier": "DO_NOT_REPEAT_A1_WITH_SAME_ANCHOR; PREFER_AN_EXISTING_DISCOVERY_CANDIDATE_WITH_INDEPENDENT_MEASURABLE_SIGNAL_EVIDENCE_FOR_NEXT_BOUNDED_ADAPTIVE_EXPERIMENT",
+    "no_automatic_next_probes": true
+  }
+}
