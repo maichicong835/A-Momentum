@@ -1,0 +1,92 @@
+{
+  "schema": "A_MOMENTUM_A2_ONE_SHOT_MEASUREMENT_CLOSURE",
+  "schema_version": "1.0",
+  "status": "CLOSED_MEASUREMENT_GAP_NO_COMMERCIAL_DECISION",
+  "cause": "ONE_SHOT_EXPLORATION_NATIVE_HISTORY_UNAVAILABLE_AFTER_TWO_ATTEMPTS",
+  "evidence_authority": "MACHINE_OBSERVED_GITHUB_ACTIONS_AND_FROZEN_SOURCE_ARTIFACT",
+  "input_source": {
+    "opportunity_core": "im with stupid",
+    "mechanism_family": "RELATIONAL_OR_IDENTITY_PHRASE_EXPRESSION",
+    "mechanism_candidate_id": "mh-65376232cd2d4e5e",
+    "radar": "M_ONLY_SHIRT_EXPRESSION",
+    "frozen_source_proof": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+    "snapshot_1": {
+      "run_id": 36736089652,
+      "artifact_id": 11107530618,
+      "related_query": "im with stupid shirt",
+      "seed": "shirt",
+      "rank": 5,
+      "rising_value_reported_percent": 5550
+    },
+    "snapshot_2": {
+      "run_id": 36776641127,
+      "artifact_id": 11126002010,
+      "related_query": "im with stupid shirt",
+      "seed": "shirt",
+      "rank": 5,
+      "rising_value_reported_percent": 5200
+    },
+    "relative_rising_percentages_are_not_comparable_absolute_market_volumes": true,
+    "sticker_native_demand_evidence": false,
+    "commercial_eligibility": false,
+    "ip_clearance": false
+  },
+  "live_execution": {
+    "workflow_run_id": 37706377500,
+    "head_sha": "51574864079c5df8b7f7db17f515ef3b6d9f9efd",
+    "trigger": "push",
+    "workflow": "A-Momentum One-Shot Exploration Probe",
+    "workflow_conclusion": "success",
+    "repository_guard_run_id": 37706377413,
+    "repository_guard_conclusion": "success",
+    "artifact_id": 11519159700,
+    "artifact_name": "a-momentum-a2-live-probe-20261008",
+    "artifact_zip_sha256": "ae6b2e84376d033ecc6bcf6e347ff883a3fbbd312448f246d8b55535a2f4c592",
+    "anchor_query": "im with stupid shirt",
+    "anchor_proxy_id": "GT_US_WEB_NOW_7_D::im_with_stupid_shirt",
+    "geo": "US",
+    "timeframe": "now 7-d",
+    "due_entities": 1,
+    "provider_attempt_count": 2,
+    "success_count": 0,
+    "sensor_gap_count": 1,
+    "valid_observation_points": 0,
+    "rate_limit_gap_count": 0,
+    "both_attempts_error_stage": "VALIDATE_NATIVE_SERIES",
+    "both_attempts_error_code": "EMPTY_NATIVE_SERIES",
+    "sensor_provider_failure_is_zero_demand": false,
+    "credentials_used": false
+  },
+  "interpretation": {
+    "source_rising_query_previously_observed": true,
+    "native_time_series_observed": false,
+    "why_rising_is_not_native_series_proof": "RELATED_RISING_QUERY_IS_A_DIFFERENT_MEASUREMENT_MODE",
+    "empty_native_series_subcause": "UNRESOLVED_NULL_EMPTY_OR_MISSING_QUERY_COLUMN",
+    "relative_market_demand_absent": false,
+    "market_winner_proven": false,
+    "customer_segment_proven": false,
+    "daily7_usable_commercial_intelligence": false,
+    "keep_probation_authorized": false,
+    "retire_for_commercial_failure_authorized": false,
+    "classification": "MEASUREMENT_UNAVAILABLE_WITH_CURRENT_NATIVE_QUERY_AND_TIMEFRAME",
+    "next_automatic_retry_authorized": false
+  },
+  "north_star_review": {
+    "verified_engine_progress": "EXISTING_SINGLE_QUERY_SHADOW_RUNNER_CONSUMED_EXACT_FROZEN_SOURCE_QUERY_WITH_BOUNDED_SENSOR_ATTEMPTS",
+    "missing": "ONE_VALID_NEW_CANDIDATE_NATIVE_SERIES_AND_EVIDENCE_DRIVEN_LONGITUDINAL_DECISION",
+    "avoid": "NO_A3_A4_PROBES_SOLELY_TO_HIT_A_MEASURABLE_QUERY",
+    "next_intellectual_frontier": "CHECK_WHETHER_GROWTH_OR_COMMERCIAL_DISCOVERY_CAN_BE_USEFUL_WITHOUT_FORCING_EACH_SPARSE_QUERY_INTO_24H_NATIVE_TRENDS_HISTORY; DONT_ADD_SENSOR_OR_REDESIGN_WITHOUT_BUYER_VALUE_EVIDENCE"
+  },
+  "boundary": {
+    "m1_reopened": false,
+    "m2_reopened": false,
+    "watchlist_changed": false,
+    "runtime_latest_changed": false,
+    "new_sensor_added": false,
+    "new_workflow_added": false,
+    "commercial_authority_added": false,
+    "tm_authority_changed": false,
+    "daily7_authority_changed": false,
+    "credentials_committed": false
+  }
+}
