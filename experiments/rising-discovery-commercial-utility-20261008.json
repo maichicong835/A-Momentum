@@ -1,0 +1,148 @@
+{
+  "schema": "A_MOMENTUM_RISING_TO_DAILY7_RESEARCH_LEAD_PILOT",
+  "schema_version": "1.0",
+  "frozen_review_date": "2026-10-08",
+  "authority": "SHADOW_OFFLINE_DISCOVERY_CONTEXT_ONLY_NOT_PRODUCTION_INTAKE",
+  "executive_result": "TWO_RESEARCH_LEADS_ZERO_COMMERCIALLY_QUALIFIED_INTakes",
+  "question": "Can the observed historical M-wave Rising signals help Daily7 identify a buyer segment and a differentiating sticker-expression research hypothesis even when native longitudinal history is unavailable?",
+  "source_evidence": {
+    "a_momentum_repo": "maichicong835/A-Momentum",
+    "frozen_cross_snapshot_path": "acceptance/s-wave-cross-snapshot-proof-20261001.json",
+    "scheduled_snapshot_run_ids": [
+      36736089652,
+      36776641127
+    ],
+    "snapshot_artifact_ids": [
+      11107530618,
+      11126002010
+    ],
+    "review_input_scope": "ONLY_THE_TWO_PERSISTENT_M_ONLY_MECHANISM_HYPOTHESES_NOT_32_S_ONLY_NON_EXPRESSION_QUERIES",
+    "m_unique_persistent_hypotheses": 2,
+    "s_review_allowed_mechanism_hypotheses": 0,
+    "native_measurement_evidence_for_these_two": "BOTH_LIVE_PROBES_SENSOR_GAP",
+    "a1_closure": "acceptance/a1-diagnostic-retry-closure-20261008.json",
+    "a2_closure": "acceptance/a2-one-shot-measurement-closure-20261008.json",
+    "historical_rising_is_fresh_current_signal": false,
+    "measured_temporal_velocity": false,
+    "measured_commercial_sell_through": false
+  },
+  "consumer_boundary": {
+    "daily7_repo": "maichicong835/Amazon-Daily7Source",
+    "live_boundary_path": "spec/amomentum-boundary.json",
+    "existing_accepted_input_surfaces": [
+      "runtime/latest/index.json",
+      "runtime/latest/receipt.json",
+      "runtime/quality-pool.json"
+    ],
+    "this_file_is_not_an_accepted_production_surface": true,
+    "no_daily7_write": true,
+    "no_auto_bridge_to_f0_f1_f2_f3_f4": true,
+    "no_pool_entry_or_watchlist_mutation": true,
+    "source_selection_and_safety_still_daily7_and_a_ver": true,
+    "allowed_usage": "READ_ONLY_MARKET_RESEARCH_CONTEXT_WITH_UNVERIFIED_COMMERCE_HYPOTHESES"
+  },
+  "lead_count": 2,
+  "research_leads": [
+    {
+      "lead_id": "M_ONLY_CAUSE_AFFILIATION_RESEARCH",
+      "opportunity_core": "breast cancer awareness",
+      "mechanism_candidate_id": "mh-c03d2fd787468fb3",
+      "mechanism_family": "CAUSE_AFFILIATION_AND_AWARENESS_SIGNALING",
+      "source_lane": "M_ONLY",
+      "persisted_across_two_market_discovery_snapshots": true,
+      "early_signal_category": "HISTORICAL_MERCH_PROXY_RISING_DISCOVERY_NOT_LONGITUDINAL",
+      "current_temporal_state": "TEMPORAL_UNPROVEN_SENSOR_GAP",
+      "query_measurement_attempt": "breast cancer awareness sticker",
+      "query_measurement_result": "A1_TWO_PULLS_EMPTY_NATIVE_SERIES",
+      "us_buyer_hypothesis": "people showing solidarity with breast cancer awareness, survivors, supporters, event participants",
+      "jtbd_hypothesis": "signal solidarity and cause affiliation via visible objects and gifts",
+      "conversion_bearing_expression_mechanism": "highly recognizable cause-symbol signaling; buyer needs identity, respectful aesthetic and public-display suitability",
+      "storefront_spot_checks": [
+        {
+          "url": "https://www.etsy.com/listing/1090764361/breast-cancer-awareness-decal-breast",
+          "format": "VINYL_AWARENESS_DECAL",
+          "observed": "A CURRENT LISTING EXISTS",
+          "strength": "SELLER_SUPPLY_ONLY"
+        },
+        {
+          "url": "https://www.etsy.com/listing/1727175534/breast-cancer-awareness-sticker-breast",
+          "format": "VINYL_STICKER_OR_MAGNET",
+          "observed": "A CURRENT LISTING EXISTS",
+          "strength": "SELLER_SUPPLY_ONLY"
+        }
+      ],
+      "evidence_limit": "Existence of listings establishes product-form precedent, not strong sales, growth, unsaturation or novelty",
+      "saturation_or_freshness_concern": "awareness ribbon is an established, recognizable format; no evidence this observed wave identifies a newly differentiated sticker proposition",
+      "commercial_gate": "NOT_PASSED",
+      "safety_gate": "NOT_CHECKED_A_VER_AND_DAILY7_INDEPENDENT",
+      "copying_source_specific_artwork_or_phrase_allowed": false,
+      "discovery_decision": "RESEARCH_HYPOTHESIS_ONLY",
+      "smallest_useful_daily7_research_test": "Check one differentiated U.S. sticker buyer use-case and its competing listings, price/review moat, recent demand and provenance; stop if novelty or commercial floor fails."
+    },
+    {
+      "lead_id": "M_ONLY_RELATIONAL_HUMOR_RESEARCH",
+      "opportunity_core": "im with stupid",
+      "mechanism_candidate_id": "mh-65376232cd2d4e5e",
+      "mechanism_family": "RELATIONAL_OR_IDENTITY_PHRASE_EXPRESSION",
+      "source_lane": "M_ONLY",
+      "persisted_across_two_market_discovery_snapshots": true,
+      "early_signal_category": "HISTORICAL_SHIRT_RISING_QUERY_NOT_STICKER_GROWTH",
+      "frozen_source_query": "im with stupid shirt",
+      "frozen_source_query_seed": "shirt",
+      "rising_percent_in_first_snapshot": 5550,
+      "rising_percent_in_second_snapshot": 5200,
+      "percent_change_differences_are_not_valid_velocity_comparison": true,
+      "current_temporal_state": "TEMPORAL_UNPROVEN_SENSOR_GAP",
+      "query_measurement_result": "A2_EMPTY_NATIVE_SERIES_AFTER_TWO_ATTEMPTS",
+      "us_buyer_hypothesis": "friends, couples and gift buyers seeking a two-person or directional joking interaction",
+      "jtbd_hypothesis": "express a relationship joke with a legible paired/directional visual at display time",
+      "conversion_bearing_expression_mechanism": "the joke only works when two viewers or people are spatially related; a car bumper sticker changes how that interaction works",
+      "storefront_spot_checks": [
+        {
+          "url": "https://www.etsy.com/listing/1813261339/im-stupid-shirt-best-friends-matching",
+          "format": "MATCHING_RELATIONAL_SHIRTS",
+          "observed": "A CURRENT LISTING EXISTS",
+          "strength": "SELLER_SUPPLY_ONLY"
+        },
+        {
+          "url": "https://www.etsy.com/market/im_with_stupid_arrow",
+          "format": "VINYL_DECAL_AND_ARROW_SHIRTS_SEARCH_CATEGORY",
+          "observed": "STICKER_AND_SHIRT_LISTINGS_VISIBLE",
+          "strength": "SELLER_SUPPLY_ONLY"
+        }
+      ],
+      "evidence_limit": "Both shirt and sticker products exist; no validated rise in sticker intent or incremental unsaturated demand",
+      "saturation_or_freshness_concern": "familiar wording-and-arrow joke is already represented in merchandise, making naive direct copying unlikely to offer differentiation",
+      "commercial_gate": "NOT_PASSED",
+      "safety_gate": "NOT_CHECKED_A_VER_AND_DAILY7_INDEPENDENT",
+      "copying_source_specific_artwork_or_phrase_allowed": false,
+      "discovery_decision": "RESEARCH_HYPOTHESIS_ONLY",
+      "smallest_useful_daily7_research_test": "Test whether a distinctive relational humor mechanism remains compelling for vinyl stickers without repeating the already-common wording/arrow execution; stop unless current buyer and competition evidence justifies further work."
+    }
+  ],
+  "aggregate_assessment": {
+    "reviewed_hypotheses": 2,
+    "leads_with_specific_buyer_and_jtbd_hypotheses": 2,
+    "seller_listing_format_precedents": 2,
+    "verified_sales_growth": 0,
+    "validated_sticker_search_growth": 0,
+    "valid_longitudinal_native_histories": 0,
+    "commercial_floor_passed": 0,
+    "safety_passed": 0,
+    "ready_for_daily7_candidate_admission": 0,
+    "can_help_research_scope": true,
+    "can_rank_winners_or_change_selection": false,
+    "next_experiment_requires_more_sensor_calls": false,
+    "no_quality_pool_mutation": true
+  },
+  "exit_decision": {
+    "state": "PILOT_COMPLETE_RESEARCH_LEADS_ONLY_NOT_ADMITTED",
+    "no_new_fresh_provider_requests": true,
+    "no_auto_a3_probe": true,
+    "no_new_workflow_or_scheduler": true,
+    "no_direct_daily7_handoff_without_its_existing_commercial_gate": true,
+    "stop_same_wording_copying": true,
+    "next_progress_frontier": "GET_ONE_DAILY7_MARKET_QUALITY_OUTCOME_FROM_AN_EXISTING_RESEARCH_LEAD_IF_IT_PASSES_FRESH_BUYER_AND_NOVELTY_RESEARCH; OTHERWISE_STOP_THIS_PILOT",
+    "no_obligation_to_promote_either_lead": true
+  }
+}
