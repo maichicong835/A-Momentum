@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_A1_ONE_SHOT_PROBE_REQUEST",
   "schema_version": "1.0",
-  "trigger_purpose": "USER_AUTHORIZED_ONE_TARGETED_LIVE_MARKET_MEASUREMENT",
+  "trigger_purpose": "USER_AUTHORIZED_ONE_TARGETED_DIAGNOSTIC_RETRY_AFTER_BOUNDED_ERROR_CLASSIFICATION_FIX",
   "mode": "SHADOW_MEASUREMENT_ONLY_NO_PRODUCTION_WRITE",
   "source_acceptance": "acceptance/a1-minimum-adaptive-loop-admission-replay-20261007.json",
   "m1_scheduled_gate": {
@@ -37,5 +37,21 @@
     "ip_safety_authority": false,
     "keep_or_retire_on_one_pull": false,
     "credential_use": false
+  },
+  "controlled_retry": {
+    "retry_sequence": 1,
+    "parent_workflow_run_id": 37704649502,
+    "parent_artifact_id": 11519101957,
+    "parent_result": "SENSOR_GAP_RUNTIMEERROR_UNCLASSIFIED",
+    "diagnostic_patch_commit": "9e61e365bd55b3e17b34f76b17aaaaa5892f15f3",
+    "one_retry_only": true,
+    "no_automatic_third_attempt": true,
+    "freeze_candidate_anchor_and_measurement": true,
+    "max_independent_query_variants": 1,
+    "expected_allowed_result_states": [
+      "PRIMARY_ANCHOR_WITH_NATIVE_SERIES",
+      "SENSOR_GAP_WITH_BOUNDED_STAGE_CODE"
+    ],
+    "follow_up": "REVIEW_ACTUAL_ARTIFACT_AND_STOP"
   }
 }
