@@ -1,14 +1,13 @@
-name: A-Momentum A1 One-Shot Market Probe
+name: A-Momentum One-Shot Exploration Probe
 on:
   push:
     branches: [main]
     paths:
-      - 'experiments/a1-live-probe-request-20261008.json'
-  workflow_dispatch:
+      - 'experiments/a2-live-probe-request-20261008.json'
 permissions:
   contents: read
 concurrency:
-  group: a-momentum-a1-one-shot-20261008
+  group: a-momentum-one-shot-exploration-20261008
   cancel-in-progress: false
 jobs:
   a1-probe:
@@ -24,15 +23,15 @@ jobs:
           python scripts/security_scan.py --repository
           python -m pip install --disable-pip-version-check 'pytrends==4.9.2' 'pandas>=2.2,<3'
           python scripts/google_trends.py --self-test
-      - name: Bind scheduled M1 proof and frozen A1 identity
+      - name: Bind scheduled M1 proof and frozen A2 source-query identity
         run: |
-          mkdir -p /tmp/a1-probe
+          mkdir -p /tmp/a2-probe
           python - <<'PY'
           import json, hashlib
           from datetime import datetime,timezone
           from pathlib import Path
-          req=json.loads(Path('experiments/a1-live-probe-request-20261008.json').read_text())
-          a1=json.loads(Path(req['source_acceptance']).read_text())
+          req=json.loads(Path('experiments/a2-live-probe-request-20261008.json').read_text())
+          cross=json.loads(Path(req['source_acceptance']).read_text())
           index=json.loads(Path('runtime/latest/index.json').read_text())
           receipt_file=Path('runtime/latest/receipt.json')
           receipt=json.loads(receipt_file.read_text())
@@ -47,11 +46,18 @@ jobs:
           assert receipt['measurement_identity_summary']['state']=='M1_MEASUREMENT_IDENTITY_ACTIVE'
           assert len(receipt['entities'])==receipt['measurement_identity_summary']['entity_count']==15
           assert all(x['measurement_truth_state'] in {'PRIMARY_ANCHOR','FALLBACK_PROXY','ANCHOR_GAP'} for x in receipt['entities'])
-          c=req['candidate']; frozen=a1['exploration_measurement_design']
-          assert c['opportunity_core']==a1['candidate']['opportunity_core']=='breast cancer awareness'
-          assert c['mechanism_candidate_id']==a1['candidate']['mechanism_hypothesis_id']
-          assert c['anchor_query']==frozen['anchor_query']
-          assert c['anchor_proxy_id']==frozen['anchor_proxy_id']
+          c=req['candidate']
+          matches=[m for m in cross['mechanism_hypothesis_persistence']['exact_same_hypotheses'] if m['opportunity_core']==c['opportunity_core']]
+          assert len(matches)==1
+          assert matches[0]['source_lane']=='M_ONLY'
+          assert matches[0]['mechanism_candidate_id']==c['mechanism_candidate_id']
+          assert matches[0]['mechanism_family']==c['mechanism_family']
+          from scripts.google_trends import stable_query_proxy_id
+          assert c['anchor_query']=='im with stupid shirt'
+          assert c['anchor_proxy_id']==stable_query_proxy_id(c['anchor_query'],req['measurement']['geo'],req['measurement']['timeframe'])
+          assert req['evidence_from_frozen_snapshots']['source_query_match_count']==2
+          assert req['evidence_from_frozen_snapshots']['native_history_prevalidated'] is False
+          assert req['evidence_from_frozen_snapshots']['query_is_not_a_sticker_native_query'] is True
           assert req['measurement']['max_queries']==req['measurement']['max_query_variants']==1
           assert req['authorization_limit']['production_runtime_latest_mutation'] is False
           assert req['authorization_limit']['commercial_eligibility_authority'] is False
@@ -61,8 +67,8 @@ jobs:
             'as_of':datetime.now(timezone.utc).isoformat(),
             'watch_count':1,'due_count':1,'not_due_count':0,
             'due':[{
-              'watch_id':'a1-single-market-probe',
-              'mechanism_key':'a1_cause_affiliation_and_awareness_signaling',
+              'watch_id':'a2-single-market-probe',
+              'mechanism_key':'a2_relational_identity_phrase_expression',
               'cadence_class':'EXPLORATION_ONE_SHOT',
               'cadence_hours':4,
               'elapsed_hours':None,
@@ -77,13 +83,13 @@ jobs:
             }],
             'not_due':[]
           }
-          Path('/tmp/a1-probe/due-plan.json').write_text(json.dumps(due,indent=2)+'\n')
-          print('A1_M1_SCHEDULED_PROOF_BOUND',m1['proven_run_id'])
-          print('A1_SINGLE_CANDIDATE_ANCHOR_BOUND',c['anchor_proxy_id'])
+          Path('/tmp/a2-probe/due-plan.json').write_text(json.dumps(due,indent=2)+'\n')
+          print('A2_M1_SCHEDULED_PROOF_BOUND',m1['proven_run_id'])
+          print('A2_FROZEN_SOURCE_QUERY_BOUND',c['anchor_proxy_id'])
           PY
       - name: One targeted live Google Trends native-window pull
         run: |
-          python scripts/google_trends.py --due-plan /tmp/a1-probe/due-plan.json --out /tmp/a1-probe/observation-set.json --status-out /tmp/a1-probe/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 1 --max-query-variants 1 --retries-per-query 2 --sleep-seconds 3
+          python scripts/google_trends.py --due-plan /tmp/a2-probe/due-plan.json --out /tmp/a2-probe/observation-set.json --status-out /tmp/a2-probe/sensor-status.json --timeframe 'now 7-d' --geo US --max-queries 1 --max-query-variants 1 --retries-per-query 2 --sleep-seconds 3
       - name: Classify measured evidence without implying commercial eligibility
         run: |
           python - <<'PY'
@@ -91,8 +97,8 @@ jobs:
           from datetime import datetime,timezone
           from pathlib import Path
           from scripts.build_receipt import analyze_series
-          p=Path('/tmp/a1-probe')
-          req=json.loads(Path('experiments/a1-live-probe-request-20261008.json').read_text())
+          p=Path('/tmp/a2-probe')
+          req=json.loads(Path('experiments/a2-live-probe-request-20261008.json').read_text())
           observations=json.loads((p/'observation-set.json').read_text())
           sensor=json.loads((p/'sensor-status.json').read_text())
           measured=observations.get('observations',[])
@@ -104,7 +110,7 @@ jobs:
           result='SENSOR_GAP'; points=[]; shape=None; observed_at=None
           if success:
               o=measured[0]; mi=o['measurement_identity']; c=req['candidate']
-              assert o['entity_key']=='a1_cause_affiliation_and_awareness_signaling'
+              assert o['entity_key']=='a2_relational_identity_phrase_expression'
               assert o['surface']=='GOOGLE_TRENDS' and o['native_series'] is True
               assert o['proxy']==c['anchor_proxy_id']==mi['anchor_proxy_id']==mi['query_proxy_id']
               assert mi['anchor_query']==mi['query_used']==c['anchor_query']
@@ -116,11 +122,12 @@ jobs:
           else:
               assert sensor['success_count']==0
           out={
-           'schema':'A_MOMENTUM_A1_LIVE_PROBE_RESULT','schema_version':'1.0',
-           'mode':'SHADOW_ONLY_ONE_SHOT','generated_at':datetime.now(timezone.utc).isoformat(),
+           'schema':'A_MOMENTUM_A2_LIVE_PROBE_RESULT','schema_version':'1.0',
+           'mode':'SHADOW_ONLY_ONE_SHOT','expression_intent_source':'MERCH_PROXY_SHIRT_RISING_NOT_STICKER_DEMAND','generated_at':datetime.now(timezone.utc).isoformat(),
            'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),
            'workflow_head_sha':os.environ['GITHUB_SHA'],
            'm1_scheduled_proof_run_id':req['m1_scheduled_gate']['proven_run_id'],
+           'frozen_source_query_evidence':req['evidence_from_frozen_snapshots'],
            'opportunity_core':req['candidate']['opportunity_core'],
            'mechanism_candidate_id':req['candidate']['mechanism_candidate_id'],
            'anchor_query':req['candidate']['anchor_query'],
@@ -143,14 +150,14 @@ jobs:
           }
           (p/'probe-result.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
           assert out['production_watchlist_mutation'] is False and out['production_runtime_latest_mutation'] is False
-          print('A1_REAL_MARKET_PROBE_RESULT',result)
-          print('A1_LIVE_MEASURED_POINTS',len(points))
-          print('A1_KEEPOBATION_OR_RETIRE_NOT_INFERRED_FROM_ONE_PULL')
+          print('A2_REAL_MARKET_PROBE_RESULT',result)
+          print('A2_LIVE_MEASURED_POINTS',len(points))
+          print('A2_KEEP_OR_RETIRE_NOT_INFERRED_FROM_ONE_PULL')
           PY
       - name: Upload one-shot machine evidence
         uses: actions/upload-artifact@v4
         with:
-          name: a-momentum-a1-live-probe-20261008
-          path: /tmp/a1-probe/*.json
+          name: a-momentum-a2-live-probe-20261008
+          path: /tmp/a2-probe/*.json
           if-no-files-found: error
           retention-days: 30
