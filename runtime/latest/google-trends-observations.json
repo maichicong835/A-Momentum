@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
   "engine_version": "0.2.0",
-  "as_of": "2026-10-09T15:19:23.166198+00:00",
+  "as_of": "2026-10-09T20:55:54.981857+00:00",
   "source": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME_24H_MEAN",
   "observations": [
     {
@@ -182,40 +182,40 @@
       }
     },
     {
-      "observation_id": "google-trends-24h-watch-13-13",
-      "observed_at": "2026-10-09T05:00:00+00:00",
+      "observation_id": "google-trends-24h-watch-13-11",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "crochet_interruption_insider_humor",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::crochet_sticker",
       "points": [
         {
-          "t": "2026-10-03T05:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T05:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-05T05:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T05:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-07T05:00:00+00:00",
+          "t": "2026-10-07T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T05:00:00+00:00",
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 4.166667
-        },
-        {
-          "t": "2026-10-09T05:00:00+00:00",
-          "value": 0.0
         }
       ],
       "native_series": true,
@@ -227,8 +227,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-02T06:00:00+00:00",
-          "window_end": "2026-10-09T05:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -242,38 +242,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-03-03",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "dog_parent_dramatic_personality",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::funny_dog_sticker",
       "points": [
         {
-          "t": "2026-10-03T14:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T14:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-05T14:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T14:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-07T14:00:00+00:00",
+          "t": "2026-10-07T19:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-08T14:00:00+00:00",
+          "t": "2026-10-08T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T14:00:00+00:00",
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -282,58 +282,58 @@
       "measurement_identity": {
         "anchor_query": "dog parent sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-        "query_used": "dog parent sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-        "signal_basis": "PRIMARY_ANCHOR",
+        "query_used": "funny dog sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::funny_dog_sticker",
+        "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T15:00:00+00:00",
-          "window_end": "2026-10-09T14:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=dog parent sticker",
-        "query_used": "dog parent sticker",
-        "query_ordinal": 1,
-        "measurement_basis": "PRIMARY_ANCHOR"
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=funny dog sticker",
+        "query_used": "funny dog sticker",
+        "query_ordinal": 2,
+        "measurement_basis": "FALLBACK_PROXY"
       }
     },
     {
-      "observation_id": "google-trends-24h-watch-14-14",
-      "observed_at": "2026-10-09T05:00:00+00:00",
+      "observation_id": "google-trends-24h-watch-14-12",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "emotional_support_yarn_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::yarn_sticker",
       "points": [
         {
-          "t": "2026-10-03T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-04T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-05T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-06T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-07T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T05:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 4.166667
+        },
+        {
+          "t": "2026-10-04T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-05T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-06T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -345,8 +345,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-02T06:00:00+00:00",
-          "window_end": "2026-10-09T05:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -360,39 +360,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-07-07",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "engineer_coffee_problem_solving",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::coffee_engineer_sticker",
       "points": [
         {
-          "t": "2026-10-03T14:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T14:00:00+00:00",
-          "value": 2.958333
-        },
-        {
-          "t": "2026-10-05T14:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-07T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T14:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 4.166667
+        },
+        {
+          "t": "2026-10-06T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -404,8 +404,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::coffee_engineer_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T15:00:00+00:00",
-          "window_end": "2026-10-09T14:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -419,38 +419,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-02-02",
-      "observed_at": "2026-10-09T05:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "engineering_stress_wordplay",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::engineer_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::engineering_humor_sticker",
       "points": [
         {
-          "t": "2026-10-03T05:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T05:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-05T05:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T05:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-07T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T05:00:00+00:00",
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -459,58 +459,58 @@
       "measurement_identity": {
         "anchor_query": "engineer sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-        "query_used": "engineer sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-        "signal_basis": "PRIMARY_ANCHOR",
+        "query_used": "engineering humor sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::engineering_humor_sticker",
+        "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T06:00:00+00:00",
-          "window_end": "2026-10-09T05:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=engineer sticker",
-        "query_used": "engineer sticker",
-        "query_ordinal": 1,
-        "measurement_basis": "PRIMARY_ANCHOR"
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=engineering humor sticker",
+        "query_used": "engineering humor sticker",
+        "query_ordinal": 2,
+        "measurement_basis": "FALLBACK_PROXY"
       }
     },
     {
       "observation_id": "google-trends-24h-watch-08-08",
-      "observed_at": "2026-10-09T05:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "lawyer_billable_hour_humor",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::lawyer_sticker",
       "points": [
         {
-          "t": "2026-10-03T05:00:00+00:00",
-          "value": 0.791667
-        },
-        {
-          "t": "2026-10-04T05:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-05T05:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-05T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-06T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 4.166667
-        },
-        {
-          "t": "2026-10-06T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-07T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T05:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T05:00:00+00:00",
-          "value": 0.0
         }
       ],
       "native_series": true,
@@ -522,8 +522,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-02T06:00:00+00:00",
-          "window_end": "2026-10-09T05:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -537,39 +537,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-09-09",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "librarian_expertise_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::library_sticker",
       "points": [
         {
-          "t": "2026-10-03T14:00:00+00:00",
-          "value": 2.166667
+          "t": "2026-10-03T19:00:00+00:00",
+          "value": 0.0
         },
         {
-          "t": "2026-10-04T14:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-05T14:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T14:00:00+00:00",
-          "value": 2.375
+          "t": "2026-10-06T19:00:00+00:00",
+          "value": 0.541667
         },
         {
-          "t": "2026-10-07T14:00:00+00:00",
-          "value": 0.0
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.666667
         },
         {
-          "t": "2026-10-08T14:00:00+00:00",
-          "value": 2.291667
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 2.833333
         },
         {
-          "t": "2026-10-09T14:00:00+00:00",
-          "value": 0.0
+          "t": "2026-10-09T19:00:00+00:00",
+          "value": 0.541667
         }
       ],
       "native_series": true,
@@ -581,8 +581,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::library_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T15:00:00+00:00",
-          "window_end": "2026-10-09T14:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -596,39 +596,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-06-06",
-      "observed_at": "2026-10-09T05:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "physical_therapy_anatomy_pun",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::anatomy_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::psoas_sticker",
       "points": [
         {
-          "t": "2026-10-03T05:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T05:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-05T05:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T05:00:00+00:00",
-          "value": 7.625
-        },
-        {
-          "t": "2026-10-07T05:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T05:00:00+00:00",
+          "t": "2026-10-07T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T05:00:00+00:00",
-          "value": 3.875
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -636,57 +636,57 @@
       "measurement_identity": {
         "anchor_query": "physical therapist sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
-        "query_used": "anatomy sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::anatomy_sticker",
+        "query_used": "psoas sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::psoas_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T06:00:00+00:00",
-          "window_end": "2026-10-09T05:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=anatomy sticker",
-        "query_used": "anatomy sticker",
-        "query_ordinal": 2,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=psoas sticker",
+        "query_used": "psoas sticker",
+        "query_ordinal": 3,
         "measurement_basis": "FALLBACK_PROXY"
       }
     },
     {
       "observation_id": "google-trends-24h-watch-04-04",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "pickleball_dink_insider_pun",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::dink_sticker",
       "points": [
         {
-          "t": "2026-10-03T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-04T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-05T14:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-06T14:00:00+00:00",
+          "t": "2026-10-04T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-07T14:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T14:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T14:00:00+00:00",
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -699,8 +699,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::dink_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T15:00:00+00:00",
-          "window_end": "2026-10-09T14:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
@@ -773,38 +773,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-10-10",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "spreadsheet_reflex_professional_identity",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::finance_sticker",
       "points": [
         {
-          "t": "2026-10-03T14:00:00+00:00",
+          "t": "2026-10-03T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-04T14:00:00+00:00",
-          "value": 3.833333
+          "t": "2026-10-04T19:00:00+00:00",
+          "value": 4.458333
         },
         {
-          "t": "2026-10-05T14:00:00+00:00",
+          "t": "2026-10-05T19:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-07T14:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T14:00:00+00:00",
+          "t": "2026-10-06T19:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-09T14:00:00+00:00",
+          "t": "2026-10-07T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T19:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T19:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -813,21 +813,21 @@
       "measurement_identity": {
         "anchor_query": "spreadsheet sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
-        "query_used": "spreadsheet sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
-        "signal_basis": "PRIMARY_ANCHOR",
+        "query_used": "finance sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::finance_sticker",
+        "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-02T15:00:00+00:00",
-          "window_end": "2026-10-09T14:00:00+00:00"
+          "window_start": "2026-10-02T20:00:00+00:00",
+          "window_end": "2026-10-09T19:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=spreadsheet sticker",
-        "query_used": "spreadsheet sticker",
-        "query_ordinal": 1,
-        "measurement_basis": "PRIMARY_ANCHOR"
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=finance sticker",
+        "query_used": "finance sticker",
+        "query_ordinal": 2,
+        "measurement_basis": "FALLBACK_PROXY"
       }
     },
     {
@@ -894,11 +894,11 @@
     {
       "watch_id": "watch-01",
       "entity_key": "accountant_spreadsheet_frustration",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
       "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "accountant sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
@@ -912,40 +912,37 @@
     {
       "watch_id": "watch-02",
       "entity_key": "engineering_stress_wordplay",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "engineering humor sticker",
+      "query_ordinal": 2,
+      "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "engineer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-      "queries_attempted": [
-        "engineer sticker",
-        "engineering humor sticker"
-      ],
-      "provider_attempts": 4
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::engineering_humor_sticker",
+      "provider_attempts": 3
     },
     {
       "watch_id": "watch-03",
       "entity_key": "dog_parent_dramatic_personality",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
-      "query_used": "dog parent sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "funny dog sticker",
+      "query_ordinal": 2,
+      "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "dog parent sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-      "provider_attempts": 1
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::funny_dog_sticker",
+      "provider_attempts": 3
     },
     {
       "watch_id": "watch-04",
       "entity_key": "pickleball_dink_insider_pun",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "query_used": "dink sticker",
       "query_ordinal": 2,
       "measurement_basis": "FALLBACK_PROXY",
@@ -957,72 +954,69 @@
     {
       "watch_id": "watch-05",
       "entity_key": "bookish_emotional_damage_five_star",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
-      "query_used": "bookish sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "bookish sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
-      "provider_attempts": 1
-    },
-    {
-      "watch_id": "watch-06",
-      "entity_key": "physical_therapy_anatomy_pun",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "physical therapist sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
       "queries_attempted": [
-        "physical therapist sticker",
-        "anatomy sticker",
-        "psoas sticker"
+        "bookish sticker",
+        "book lover sticker",
+        "reader sticker"
       ],
       "provider_attempts": 6
     },
     {
+      "watch_id": "watch-06",
+      "entity_key": "physical_therapy_anatomy_pun",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "psoas sticker",
+      "query_ordinal": 3,
+      "measurement_basis": "FALLBACK_PROXY",
+      "anchor_query": "physical therapist sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::psoas_sticker",
+      "provider_attempts": 5
+    },
+    {
       "watch_id": "watch-07",
       "entity_key": "engineer_coffee_problem_solving",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "query_used": "coffee engineer sticker",
       "query_ordinal": 2,
       "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "engineer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
       "query_proxy_id": "GT_US_WEB_NOW_7_D::coffee_engineer_sticker",
-      "provider_attempts": 4
+      "provider_attempts": 3
     },
     {
       "watch_id": "watch-08",
       "entity_key": "lawyer_billable_hour_humor",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError",
-      "error_stage": "VALIDATE_NATIVE_SERIES",
-      "error_code": "EMPTY_NATIVE_SERIES",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "lawyer sticker",
+      "query_ordinal": 1,
+      "measurement_basis": "PRIMARY_ANCHOR",
       "anchor_query": "lawyer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
-      "queries_attempted": [
-        "lawyer sticker",
-        "legal humor sticker"
-      ],
-      "provider_attempts": 4
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
+      "provider_attempts": 2
     },
     {
       "watch_id": "watch-09",
       "entity_key": "librarian_expertise_identity",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
+      "observed_at": "2026-10-09T19:00:00+00:00",
       "query_used": "library sticker",
       "query_ordinal": 2,
       "measurement_basis": "FALLBACK_PROXY",
@@ -1034,88 +1028,53 @@
     {
       "watch_id": "watch-10",
       "entity_key": "spreadsheet_reflex_professional_identity",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
-      "query_used": "spreadsheet sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "finance sticker",
+      "query_ordinal": 2,
+      "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "spreadsheet sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
-      "provider_attempts": 1
-    },
-    {
-      "watch_id": "watch-11",
-      "entity_key": "teacher_voice_authority_identity",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
-      "query_used": "teacher sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
-      "anchor_query": "teacher sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
-      "provider_attempts": 1
-    },
-    {
-      "watch_id": "watch-12",
-      "entity_key": "programmer_interruption_boundary",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-09T14:00:00+00:00",
-      "query_used": "programmer sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
-      "anchor_query": "programmer sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
-      "provider_attempts": 2
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::finance_sticker",
+      "provider_attempts": 3
     },
     {
       "watch_id": "watch-13",
       "entity_key": "crochet_interruption_insider_humor",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "RuntimeError",
-      "error_stage": "VALIDATE_NATIVE_SERIES",
-      "error_code": "EMPTY_NATIVE_SERIES",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "crochet sticker",
+      "query_ordinal": 1,
+      "measurement_basis": "PRIMARY_ANCHOR",
       "anchor_query": "crochet sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
-      "queries_attempted": [
-        "crochet sticker",
-        "crochet humor sticker"
-      ],
-      "provider_attempts": 4
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
+      "provider_attempts": 2
     },
     {
       "watch_id": "watch-14",
       "entity_key": "emotional_support_yarn_identity",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "BUILD_QUERY_PAYLOAD",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-09T19:00:00+00:00",
+      "query_used": "yarn sticker",
+      "query_ordinal": 1,
+      "measurement_basis": "PRIMARY_ANCHOR",
       "anchor_query": "yarn sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
-      "queries_attempted": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
-      ],
-      "provider_attempts": 6
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
+      "provider_attempts": 1
     },
     {
       "watch_id": "watch-15",
       "entity_key": "accounting_caffeine_work_identity",
-      "attempted_at": "2026-10-09T15:19:23.166198+00:00",
+      "attempted_at": "2026-10-09T20:55:54.981857+00:00",
       "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "BUILD_QUERY_PAYLOAD",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
       "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "accountant sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
@@ -1127,16 +1086,37 @@
       "provider_attempts": 6
     }
   ],
-  "not_due": [],
+  "not_due": [
+    {
+      "watch_id": "watch-11",
+      "entity_key": "teacher_voice_authority_identity",
+      "last_observed_at": "2026-10-09T14:00:00+00:00",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "teacher sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker"
+      }
+    },
+    {
+      "watch_id": "watch-12",
+      "entity_key": "programmer_interruption_boundary",
+      "last_observed_at": "2026-10-09T14:00:00+00:00",
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "programmer sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker"
+      }
+    }
+  ],
   "sensor_gaps": [
     {
       "watch_id": "watch-01",
       "mechanism_key": "accountant_spreadsheet_frustration",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
       "attempt_diagnostics": [
         {
           "query_ordinal": 1,
@@ -1155,30 +1135,30 @@
         {
           "query_ordinal": 2,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 2,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 3,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 3,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         }
       ],
       "measurement_basis": "ANCHOR_GAP",
@@ -1192,164 +1172,8 @@
       "provider_attempts": 6
     },
     {
-      "watch_id": "watch-02",
-      "mechanism_key": "engineering_stress_wordplay",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "attempt_diagnostics": [
-        {
-          "query_ordinal": 1,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 1,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "engineer sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-      "queries_attempted": [
-        "engineer sticker",
-        "engineering humor sticker"
-      ],
-      "provider_attempts": 4
-    },
-    {
-      "watch_id": "watch-06",
-      "mechanism_key": "physical_therapy_anatomy_pun",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "attempt_diagnostics": [
-        {
-          "query_ordinal": 1,
-          "attempt": 1,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 1,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "physical therapist sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
-      "queries_attempted": [
-        "physical therapist sticker",
-        "anatomy sticker",
-        "psoas sticker"
-      ],
-      "provider_attempts": 6
-    },
-    {
-      "watch_id": "watch-08",
-      "mechanism_key": "lawyer_billable_hour_humor",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError",
-      "error_stage": "VALIDATE_NATIVE_SERIES",
-      "error_code": "EMPTY_NATIVE_SERIES",
-      "attempt_diagnostics": [
-        {
-          "query_ordinal": 1,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 1,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "lawyer sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
-      "queries_attempted": [
-        "lawyer sticker",
-        "legal humor sticker"
-      ],
-      "provider_attempts": 4
-    },
-    {
-      "watch_id": "watch-13",
-      "mechanism_key": "crochet_interruption_insider_humor",
+      "watch_id": "watch-05",
+      "mechanism_key": "bookish_emotional_damage_five_star",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError",
@@ -1383,76 +1207,29 @@
           "error_class": "RuntimeError",
           "error_stage": "VALIDATE_NATIVE_SERIES",
           "error_code": "EMPTY_NATIVE_SERIES"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "crochet sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
-      "queries_attempted": [
-        "crochet sticker",
-        "crochet humor sticker"
-      ],
-      "provider_attempts": 4
-    },
-    {
-      "watch_id": "watch-14",
-      "mechanism_key": "emotional_support_yarn_identity",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "BUILD_QUERY_PAYLOAD",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "attempt_diagnostics": [
+        },
         {
-          "query_ordinal": 1,
+          "query_ordinal": 3,
           "attempt": 1,
           "error_class": "RuntimeError",
           "error_stage": "VALIDATE_NATIVE_SERIES",
           "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
-          "query_ordinal": 1,
+          "query_ordinal": 3,
           "attempt": 2,
           "error_class": "RuntimeError",
           "error_stage": "VALIDATE_NATIVE_SERIES",
           "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
         }
       ],
       "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "yarn sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
+      "anchor_query": "bookish sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
       "queries_attempted": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
+        "bookish sticker",
+        "book lover sticker",
+        "reader sticker"
       ],
       "provider_attempts": 6
     },
@@ -1461,51 +1238,51 @@
       "mechanism_key": "accounting_caffeine_work_identity",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "BUILD_QUERY_PAYLOAD",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
       "attempt_diagnostics": [
         {
           "query_ordinal": 1,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 1,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 2,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 2,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 3,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 3,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "BUILD_QUERY_PAYLOAD",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         }
       ],
       "measurement_basis": "ANCHOR_GAP",
@@ -1522,12 +1299,12 @@
   "continuity": {
     "policy": "LAST_GOOD_PER_MECHANISM_WITH_ATTEMPT_TRUTH",
     "history_success_count_before": 15,
-    "current_success_count": 8,
-    "current_gap_count": 7,
-    "provider_attempt_count": 52,
-    "query_fallback_success_count": 3,
-    "preserved_not_due_count": 0,
-    "preserved_gap_count": 7,
+    "current_success_count": 10,
+    "current_gap_count": 3,
+    "provider_attempt_count": 46,
+    "query_fallback_success_count": 7,
+    "preserved_not_due_count": 2,
+    "preserved_gap_count": 3,
     "merged_last_good_count": 15,
     "sensor_gap_advances_freshness": false,
     "not_due_advances_freshness": false,
