@@ -1,8 +1,6 @@
 name: A-Momentum Wave Shadow
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '11 4 8-10 10 *'
   push:
     branches: [main]
     paths:
@@ -58,103 +56,6 @@ jobs:
       - name: Push validation does not call external market providers
         if: github.event_name == 'push'
         run: echo A_MOMENTUM_WAVE_SHADOW_PUSH_VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS
-      - name: Limit scheduled M discovery to Oct 8-10 2026 only
-        id: mcanary
-        run: |
-          utc_date="$(date -u +%F)"
-          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && [[ "$utc_date" > "2026-10-07" ]] && [[ "$utc_date" < "2026-10-11" ]]; then
-            echo 'run=true' >> "$GITHUB_OUTPUT"
-            echo "A_MOMENTUM_M_CANARY_WINDOW_ACTIVE $utc_date"
-          else
-            echo 'run=false' >> "$GITHUB_OUTPUT"
-            echo "A_MOMENTUM_M_CANARY_WINDOW_CLOSED $utc_date"
-          fi
-      - name: Capture one bounded M-only Rising snapshot
-        if: github.event_name == 'schedule' && steps.mcanary.outputs.run == 'true'
-        run: |
-          python scripts/merch_proxy.py --geo US --timeframe 'now 7-d' --seeds 'shirt|shirts|t shirt' --limit 25 --build-retries 1 --between-seed-seconds 2 --rate-limit-cooldown-seconds 8 --out /tmp/a-momentum-m-only-raw.json
-      - name: Classify M-only snapshot using existing offline transforms
-        if: github.event_name == 'schedule' && steps.mcanary.outputs.run == 'true'
-        run: |
-          python - <<'PY'
-          import json,sys,os
-          from pathlib import Path
-          sys.path.insert(0,'scripts')
-          import wave_coupler,structural_triage,mechanism_decomposer
-          raw=json.loads(Path('/tmp/a-momentum-m-only-raw.json').read_text())
-          frozen=json.loads(Path('acceptance/s-wave-cross-snapshot-proof-20261001.json').read_text())
-          old={x['opportunity_core'] for x in frozen['mechanism_hypothesis_persistence']['exact_same_hypotheses']}
-          # No R or S was requested: this is NOT negative market evidence.
-          doc=wave_coupler.build({'candidates':[],'capture_state':'NOT_REQUESTED_M_ONLY'},raw)
-          wave_coupler.validate_output(doc)
-          structural_triage.apply(doc)
-          structural_triage.validate(doc)
-          mechanism_decomposer.apply(doc)
-          mechanism_decomposer.validate(doc)
-          intake={x['opportunity_id']:x for x in doc['opportunity_intake']}
-          leads=[]
-          for x in doc['mechanism_decomposition_decisions']:
-              if x['decomposition_state']!='SHADOW_MECHANISM_HYPOTHESIS':
-                  continue
-              item=intake[x['opportunity_id']]
-              leads.append({
-                'opportunity_core':item['merch_core'],
-                'mechanism_candidate_id':x['mechanism_hypothesis']['mechanism_candidate_id'],
-                'mechanism_family':x['mechanism_hypothesis']['mechanism_family'],
-                'query_variants':item['query_variants'],
-                'seed_evidence':item['seed_evidence'],
-                'new_vs_two_frozen_persistent_hypotheses':item['merch_core'] not in old,
-                'sticker_demand_proven':False,
-                'buyer_jtbd_proven':False,
-                'commercial_pass':False,
-                'safety_pass':False
-              })
-          out={
-            'schema':'A_MOMENTUM_BOUNDED_M_ONLY_DISCOVERY',
-            'schema_version':'1.0',
-            'run_id':int(os.environ['GITHUB_RUN_ID']),
-            'head_sha':os.environ['GITHUB_SHA'],
-            'mode':'SHADOW_ONLY_NO_PRODUCTION_AUTHORITY',
-            'provider_status':raw['provider_status'],
-            'transport_health_state':raw['transport_health_state'],
-            'raw_M_source_evidence':raw,
-            'R_state':'NOT_REQUESTED',
-            'S_state':'NOT_REQUESTED',
-            'M_unique_cores':doc['unique_merch_core_count'],
-            'structural_summary':doc['structural_triage']['summary'],
-            'mechanism_hypothesis_count':len(leads),
-            'mechanism_hypotheses':leads,
-            'new_vs_two_frozen_hypotheses_count':sum(x['new_vs_two_frozen_persistent_hypotheses'] for x in leads),
-            'commercial_qualified_count':0,
-            'fresh_commerce_evidence_proven':False,
-            'production_watchlist_mutation':False,
-            'runtime_latest_mutation':False,
-            'daily7_authority':False,
-            'trademark_or_IP_authority':False,
-            'credentials_used':False,
-            'source_query_not_anchor':True,
-            'cross_pull_velocity_claim':False,
-            'canary_end_date_utc':'2026-10-10'
-          }
-          assert raw['credentials_used'] is False and raw['provider_failure_is_zero_demand'] is False
-          assert len(leads)==doc['mechanism_decomposition']['hypothesis_count']
-          assert all(not x['commercial_pass'] and not x['safety_pass'] for x in leads)
-          assert out['R_state']==out['S_state']=='NOT_REQUESTED'
-          assert not out['production_watchlist_mutation'] and not out['runtime_latest_mutation']
-          Path('/tmp/a-momentum-m-only-canary.json').write_text(json.dumps(out,indent=2)+'\n')
-          print('A_MOMENTUM_M_CANARY_PROVIDER_STATUS',out['provider_status'])
-          print('A_MOMENTUM_M_CANARY_MECHANISM_HYPOTHESES',len(leads))
-          print('A_MOMENTUM_M_CANARY_NEW_VS_OLD',out['new_vs_two_frozen_hypotheses_count'])
-          print('A_MOMENTUM_M_CANARY_COMMERCIAL_PASS_NOT_CLAIMED')
-          PY
-      - name: Upload M-only evidence (no production publication)
-        if: github.event_name == 'schedule' && steps.mcanary.outputs.run == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: a-momentum-bounded-m-discovery
-          path: /tmp/a-momentum-m-only-canary.json
-          if-no-files-found: error
-          retention-days: 14
       - name: Capture Google Trends raw market waves
         if: github.event_name == 'workflow_dispatch'
         run: python scripts/wave_capture.py --geo US --limit 50 --out /tmp/a-momentum-raw-wave-shadow.json

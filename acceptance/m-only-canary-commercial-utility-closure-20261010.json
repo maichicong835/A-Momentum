@@ -1,0 +1,135 @@
+{
+  "schema": "A_MOMENTUM_BOUNDED_M_ONLY_CANARY_UTILITY_CLOSURE",
+  "version": "1.0",
+  "closed_on": "2026-10-10",
+  "result": "NO_NEW_COMMERCIALLY_VALIDATED_DISCOVERY",
+  "objective": "Test incremental buyer-relevant sticker-expression discovery useful to Daily7",
+  "scheduled_runs": [
+    {
+      "date": "2026-10-08",
+      "run_id": 37769132746,
+      "artifact_id": 11545943490,
+      "provider": "SENSOR_GAP",
+      "rate_limited": true,
+      "related_queries": 0,
+      "mechanism_hypotheses": 0
+    },
+    {
+      "date": "2026-10-09",
+      "run_id": 37922698962,
+      "artifact_id": 11613050051,
+      "provider": "SENSOR_GAP",
+      "rate_limited": true,
+      "related_queries": 0,
+      "mechanism_hypotheses": 0
+    },
+    {
+      "date": "2026-10-10",
+      "run_id": 38045312346,
+      "artifact_id": 11667717578,
+      "provider": "PARTIAL_WITH_DATA",
+      "rate_limited": true,
+      "related_queries": 11,
+      "structural_triage": "HOLD_SEMANTIC_REVIEW_11_OF_11",
+      "mechanism_hypotheses": 0
+    }
+  ],
+  "last_run_rising_queries": [
+    "mr beast juan shirt",
+    "zach bryan free palestine shirt",
+    "west african shirt nyt",
+    "west african shirt",
+    "parts of a shirt",
+    "nightwing compression shirt",
+    "west african shirt crossword clue",
+    "brewers this is my crew shirts",
+    "kamakura shirts",
+    "rhoback shirts",
+    "obvious shirts"
+  ],
+  "discovery_semantics": {
+    "evidence": "Google Trends related queries Rising for shirt/shirts/t shirt, US, now 7-d",
+    "first_two_days_transport_gaps_are_not_zero_demand": true,
+    "third_day_seeds": {
+      "shirt": 7,
+      "shirts": 4,
+      "t shirt": 0
+    },
+    "named_people_brands_entertainment_sports_or_product_information_present": true,
+    "structurally_unresolved_may_not_be_labeled_commercially_invalid": true,
+    "validated_sticker_buyers": 0,
+    "confirmed_commercial_headroom": 0,
+    "proven_new_expression_hypotheses": 0
+  },
+  "daily7_comparison": {
+    "market": "US",
+    "source_repo": "maichicong835/Amazon-Daily7Source",
+    "source_run": "runs/2026-09-27-1925-visual-canary",
+    "research_evidence_path": "runs/2026-09-27-1925-visual-canary/research-evidence.json",
+    "verified_source_manifest": "runs/2026-09-27-1925-visual-canary/source-artifacts.json",
+    "original_source_binary_objects_verified_independently": 3,
+    "sources": [
+      {
+        "key": "overstimulated-well-read",
+        "buyer": "US book lovers and reader-identity buyers",
+        "jtbd": "Express overwhelmed but well-read identity",
+        "listing_id": "4473070225",
+        "source_id": 10931379611,
+        "jpg_sha256": "316e130f355af07b08f1fa7bebc7cc37d2f0db9535b9556483c39f6a66518c4a",
+        "px": [
+          570,
+          760
+        ]
+      },
+      {
+        "key": "engineering-happiness-h",
+        "buyer": "US engineers and STEM identity-gift buyers",
+        "jtbd": "Express occupational humor",
+        "listing_id": "4352732892",
+        "source_id": 10932556793,
+        "jpg_sha256": "2e5f25c31ca8078615326f78ac2d1f8d0a59118237e8d20db39b51251547524f",
+        "px": [
+          570,
+          570
+        ]
+      },
+      {
+        "key": "pelvic-floor-coffee",
+        "buyer": "US pelvic health physical therapists and PT students",
+        "jtbd": "Show niche professional humor and solidarity",
+        "listing_id": "1410296563",
+        "source_id": 10932500083,
+        "jpg_sha256": "95dc9222966e510efa82bbd8a56c8d0e495da38e7e54694e568671732fedb656",
+        "px": [
+          570,
+          570
+        ]
+      }
+    ],
+    "comparative_result": "Daily7 samples have persisted exact physical-sticker images plus buyer/JTBD hypothesis tied to canonical listings; the 11 shirt queries have no verified native sticker expression/JTBD bindings.",
+    "strict_limits": "Different dates and selection methods, non-equivalent sample sizes; no claim of causality, relative conversion, Amazon seller success, daily demand or statistical source superiority.",
+    "source_specific_creative_copy_authorized": false,
+    "fresh_2026_oct_amazon_demand_validated": false
+  },
+  "diagnosis": {
+    "acquisition": "Rate limit 429 in all three runs; 11 related-query rows available only on the third run",
+    "intent": "Broad shirts query family strongly mixed with brand, person, sports, media and factual garment lookups",
+    "triage": "Conservative structural classifier cannot resolve 11 ambiguous expressions; HOLD is not evidence of negative demand",
+    "evidence_gap": "No one new item with proven buyer segment, sticker portability and Amazon US commercial headroom",
+    "next_decision": "Do not reenable existing broad shirt-related-query schedule. Compare any future independently supplied buyer-relevant expression lead to existing Daily7 commercial floor before authorizing new discovery acquisition."
+  },
+  "governance": {
+    "canary_closed": true,
+    "cron_removed": true,
+    "manual_rms_dispatch_retained": true,
+    "push_validation_offline": true,
+    "no_new_provider_calls": true,
+    "no_new_automation": true,
+    "no_new_watchlist_anchors": true,
+    "production_latest_unchanged": true,
+    "daily7_repo_unchanged": true,
+    "a_ver_repo_unchanged": true,
+    "no_commercial_qualification_or_safety_authority": true,
+    "credentials_used": false
+  }
+}

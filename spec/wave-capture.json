@@ -276,13 +276,13 @@
       "daily7_selection_authority": false
     },
     "trigger_roles": {
-      "schedule": "BOUNDED_M_ONLY_SHADOW_CANARY_OCT_2026",
+      "schedule": "PAUSED_AFTER_M_ONLY_CANARY_20261010",
       "workflow_dispatch": "OPERATOR_LIVE_SHADOW_PROVIDER_CAPTURE",
       "push": "VALIDATION_ONLY_NO_EXTERNAL_PROVIDER_CALLS"
     },
     "request_budget_policy": {
       "live_provider_calls_on_push": false,
-      "live_provider_calls_on_schedule": true,
+      "live_provider_calls_on_schedule": false,
       "live_provider_calls_on_workflow_dispatch": true,
       "reason": "PRESERVE_PROVIDER_REQUEST_BUDGET_AND_REDUCE_SELF_INDUCED_THROTTLING"
     },
@@ -307,7 +307,17 @@
       "new_provider_or_secret": false,
       "cross_pull_velocity_authority": false,
       "canary_is_not_commercial_pass": true,
-      "auto_extend": false
+      "auto_extend": false,
+      "status": "CLOSED_NO_SCHEDULE",
+      "closure_path": "acceptance/m-only-canary-commercial-utility-closure-20261010.json",
+      "run_ids": [
+        37769132746,
+        37922698962,
+        38045312346
+      ],
+      "total_rising_queries": 11,
+      "mechanism_hypotheses": 0,
+      "commercial_passes": 0
     }
   },
   "multi_radar_shadow": {
