@@ -1,18 +1,18 @@
 {
   "schema": "A_MOMENTUM_DUE_PLAN",
   "engine_version": "0.2.0",
-  "as_of": "2026-10-10T14:28:51.971469+00:00",
+  "as_of": "2026-10-10T20:04:49.428408+00:00",
   "watch_count": 15,
-  "due_count": 15,
-  "not_due_count": 0,
+  "due_count": 14,
+  "not_due_count": 1,
   "due": [
     {
       "watch_id": "watch-01",
       "mechanism_key": "accountant_spreadsheet_frustration",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "accountant sticker",
         "spreadsheet sticker",
@@ -36,8 +36,8 @@
       "mechanism_key": "engineering_stress_wordplay",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "engineer sticker",
         "engineering humor sticker"
@@ -60,8 +60,8 @@
       "mechanism_key": "dog_parent_dramatic_personality",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-09T19:00:00+00:00",
-      "elapsed_hours": 19.481103185833334,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "dog parent sticker",
         "funny dog sticker"
@@ -85,7 +85,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "elapsed_hours": 16.08039678,
       "query_family": [
         "pickleball sticker",
         "dink sticker"
@@ -108,8 +108,8 @@
       "mechanism_key": "bookish_emotional_damage_five_star",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "bookish sticker",
         "book lover sticker",
@@ -134,7 +134,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "elapsed_hours": 16.08039678,
       "query_family": [
         "physical therapist sticker",
         "anatomy sticker",
@@ -159,7 +159,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-09T19:00:00+00:00",
-      "elapsed_hours": 19.481103185833334,
+      "elapsed_hours": 25.08039678,
       "query_family": [
         "engineer sticker",
         "coffee engineer sticker"
@@ -182,8 +182,8 @@
       "mechanism_key": "lawyer_billable_hour_humor",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "lawyer sticker",
         "legal humor sticker"
@@ -206,8 +206,8 @@
       "mechanism_key": "librarian_expertise_identity",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "librarian sticker",
         "library sticker"
@@ -230,8 +230,8 @@
       "mechanism_key": "spreadsheet_reflex_professional_identity",
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
       "query_family": [
         "spreadsheet sticker",
         "finance sticker"
@@ -250,36 +250,12 @@
       }
     },
     {
-      "watch_id": "watch-11",
-      "mechanism_key": "teacher_voice_authority_identity",
-      "cadence_class": "WARM",
-      "cadence_hours": 8.0,
-      "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
-      "query_family": [
-        "teacher sticker",
-        "teacher voice sticker"
-      ],
-      "preferred_surfaces": [
-        "GOOGLE_TRENDS",
-        "AMAZON",
-        "ETSY",
-        "PINTEREST_TRENDS",
-        "TIKTOK_TRENDS"
-      ],
-      "measurement_identity": {
-        "surface": "GOOGLE_TRENDS",
-        "anchor_query": "teacher sticker",
-        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker"
-      }
-    },
-    {
       "watch_id": "watch-12",
       "mechanism_key": "programmer_interruption_boundary",
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "elapsed_hours": 16.08039678,
       "query_family": [
         "programmer sticker",
         "developer sticker",
@@ -304,7 +280,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-09T19:00:00+00:00",
-      "elapsed_hours": 19.481103185833334,
+      "elapsed_hours": 25.08039678,
       "query_family": [
         "crochet sticker",
         "crochet humor sticker"
@@ -328,7 +304,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "elapsed_hours": 16.08039678,
       "query_family": [
         "yarn sticker",
         "crochet sticker",
@@ -353,7 +329,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-10T04:00:00+00:00",
-      "elapsed_hours": 10.481103185833332,
+      "elapsed_hours": 16.08039678,
       "query_family": [
         "accountant sticker",
         "CPA sticker",
@@ -373,7 +349,32 @@
       }
     }
   ],
-  "not_due": [],
+  "not_due": [
+    {
+      "watch_id": "watch-11",
+      "mechanism_key": "teacher_voice_authority_identity",
+      "cadence_class": "WARM",
+      "cadence_hours": 8.0,
+      "last_observed_at": "2026-10-10T13:00:00+00:00",
+      "elapsed_hours": 7.08039678,
+      "query_family": [
+        "teacher sticker",
+        "teacher voice sticker"
+      ],
+      "preferred_surfaces": [
+        "GOOGLE_TRENDS",
+        "AMAZON",
+        "ETSY",
+        "PINTEREST_TRENDS",
+        "TIKTOK_TRENDS"
+      ],
+      "measurement_identity": {
+        "surface": "GOOGLE_TRENDS",
+        "anchor_query": "teacher sticker",
+        "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker"
+      }
+    }
+  ],
   "shared_anchor_groups": [
     {
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
