@@ -1,40 +1,44 @@
 {
   "schema": "A_MOMENTUM_OBSERVATION_SET",
   "engine_version": "0.2.0",
-  "as_of": "2026-10-12T06:01:19.006003+00:00",
+  "as_of": "2026-10-12T17:57:21.913418+00:00",
   "source": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME_24H_MEAN",
   "observations": [
     {
       "observation_id": "google-trends-24h-watch-01-01",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "accountant_spreadsheet_frustration",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::bookkeeper_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-07T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-10T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 4.166667
-        },
-        {
-          "t": "2026-10-08T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-10T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-11T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-12T04:00:00+00:00",
-          "value": 0.0
         }
       ],
       "native_series": true,
@@ -42,20 +46,20 @@
       "measurement_identity": {
         "anchor_query": "accountant sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
-        "query_used": "bookkeeper sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::bookkeeper_sticker",
+        "query_used": "spreadsheet sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=bookkeeper sticker",
-        "query_used": "bookkeeper sticker",
-        "query_ordinal": 3,
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=spreadsheet sticker",
+        "query_used": "spreadsheet sticker",
+        "query_ordinal": 2,
         "measurement_basis": "FALLBACK_PROXY"
       }
     },
@@ -120,34 +124,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-05-05",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "bookish_emotional_damage_five_star",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::bookish_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T04:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-09T04:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-10T04:00:00+00:00",
+          "t": "2026-10-11T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-11T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-12T04:00:00+00:00",
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -160,8 +168,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -175,39 +183,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-13-13",
-      "observed_at": "2026-10-11T13:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "crochet_interruption_insider_humor",
       "surface": "GOOGLE_TRENDS",
-      "proxy": "GT_US_WEB_NOW_7_D::crochet_sticker",
+      "proxy": "GT_US_WEB_NOW_7_D::crochet_humor_sticker",
       "points": [
         {
-          "t": "2026-10-05T13:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
+          "value": 4.166667
+        },
+        {
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T13:00:00+00:00",
-          "value": 0.541667
-        },
-        {
-          "t": "2026-10-07T13:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T13:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T13:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-10T13:00:00+00:00",
+          "t": "2026-10-11T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-11T13:00:00+00:00",
-          "value": 5.041667
+          "t": "2026-10-12T16:00:00+00:00",
+          "value": 0.0
         }
       ],
       "native_series": true,
@@ -215,21 +223,21 @@
       "measurement_identity": {
         "anchor_query": "crochet sticker",
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
-        "query_used": "crochet sticker",
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
-        "signal_basis": "PRIMARY_ANCHOR",
+        "query_used": "crochet humor sticker",
+        "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_humor_sticker",
+        "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-04T14:00:00+00:00",
-          "window_end": "2026-10-11T13:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
         "source_ref": "GOOGLE_TRENDS_NATIVE_HISTORY_PUBLIC_RUNTIME",
         "machine_observed": true,
-        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=crochet sticker",
-        "query_used": "crochet sticker",
-        "query_ordinal": 1,
-        "measurement_basis": "PRIMARY_ANCHOR"
+        "note": "geo=US; timeframe=now 7-d; completed non-overlapping 24h means; query=crochet humor sticker",
+        "query_used": "crochet humor sticker",
+        "query_ordinal": 2,
+        "measurement_basis": "FALLBACK_PROXY"
       }
     },
     {
@@ -289,39 +297,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-14-14",
-      "observed_at": "2026-10-11T13:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "emotional_support_yarn_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::crochet_sticker",
       "points": [
         {
-          "t": "2026-10-05T13:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T13:00:00+00:00",
-          "value": 0.541667
-        },
-        {
-          "t": "2026-10-07T13:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T13:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T13:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-10T13:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-11T13:00:00+00:00",
-          "value": 5.041667
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
+          "value": 4.166667
         }
       ],
       "native_series": true,
@@ -333,8 +341,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-04T14:00:00+00:00",
-          "window_end": "2026-10-11T13:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -513,35 +521,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-09-09",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "librarian_expertise_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::library_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-10T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-11T04:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-12T04:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
+        },
+        {
+          "t": "2026-10-09T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-10T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 3.416667
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
+          "value": 3.166667
         }
       ],
       "native_series": true,
@@ -553,8 +565,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::library_sticker",
         "signal_basis": "FALLBACK_PROXY",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -568,34 +580,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-06-06",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "physical_therapy_anatomy_pun",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
+          "value": 1.208333
+        },
+        {
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T04:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T04:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-10T04:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-11T04:00:00+00:00",
+          "t": "2026-10-11T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-12T04:00:00+00:00",
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -608,8 +624,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -623,38 +639,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-04-04",
-      "observed_at": "2026-10-11T19:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "pickleball_dink_insider_pun",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::pickleball_sticker",
       "points": [
         {
-          "t": "2026-10-05T19:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T19:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-07T19:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T19:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-09T19:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-10T19:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-11T19:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-10T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -667,8 +683,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-04T20:00:00+00:00",
-          "window_end": "2026-10-11T19:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -682,38 +698,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-12-12",
-      "observed_at": "2026-10-11T13:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "programmer_interruption_boundary",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::programmer_sticker",
       "points": [
         {
-          "t": "2026-10-05T13:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-06T13:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-07T13:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T13:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-09T13:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-10T13:00:00+00:00",
-          "value": 0.0
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 4.166667
         },
         {
-          "t": "2026-10-11T13:00:00+00:00",
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -726,8 +742,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-04T14:00:00+00:00",
-          "window_end": "2026-10-11T13:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -741,35 +757,39 @@
     },
     {
       "observation_id": "google-trends-24h-watch-10-10",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "spreadsheet_reflex_professional_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-08T04:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-08T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-09T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-10T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 4.166667
-        },
-        {
-          "t": "2026-10-09T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-10T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-11T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-12T04:00:00+00:00",
-          "value": 0.0
         }
       ],
       "native_series": true,
@@ -781,8 +801,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -796,34 +816,38 @@
     },
     {
       "observation_id": "google-trends-24h-watch-11-11",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "entity_type": "MECHANISM",
       "entity_key": "teacher_voice_authority_identity",
       "surface": "GOOGLE_TRENDS",
       "proxy": "GT_US_WEB_NOW_7_D::teacher_sticker",
       "points": [
         {
-          "t": "2026-10-07T04:00:00+00:00",
-          "value": 0.0
-        },
-        {
-          "t": "2026-10-08T04:00:00+00:00",
+          "t": "2026-10-06T16:00:00+00:00",
           "value": 4.166667
         },
         {
-          "t": "2026-10-09T04:00:00+00:00",
+          "t": "2026-10-07T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-10T04:00:00+00:00",
+          "t": "2026-10-08T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-11T04:00:00+00:00",
+          "t": "2026-10-09T16:00:00+00:00",
           "value": 0.0
         },
         {
-          "t": "2026-10-12T04:00:00+00:00",
+          "t": "2026-10-10T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-11T16:00:00+00:00",
+          "value": 0.0
+        },
+        {
+          "t": "2026-10-12T16:00:00+00:00",
           "value": 0.0
         }
       ],
@@ -836,8 +860,8 @@
         "query_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
         "signal_basis": "PRIMARY_ANCHOR",
         "native_window": {
-          "window_start": "2026-10-06T05:00:00+00:00",
-          "window_end": "2026-10-12T04:00:00+00:00"
+          "window_start": "2026-10-05T17:00:00+00:00",
+          "window_end": "2026-10-12T16:00:00+00:00"
         }
       },
       "provenance": {
@@ -854,68 +878,71 @@
     {
       "watch_id": "watch-01",
       "entity_key": "accountant_spreadsheet_frustration",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
-      "query_used": "bookkeeper sticker",
-      "query_ordinal": 3,
+      "observed_at": "2026-10-12T16:00:00+00:00",
+      "query_used": "spreadsheet sticker",
+      "query_ordinal": 2,
       "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "accountant sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::bookkeeper_sticker",
-      "provider_attempts": 6
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
+      "provider_attempts": 4
     },
     {
       "watch_id": "watch-02",
       "entity_key": "engineering_stress_wordplay",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
-      "query_used": "engineering humor sticker",
-      "query_ordinal": 2,
-      "measurement_basis": "FALLBACK_PROXY",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "TooManyRequestsError",
+      "error_stage": "FETCH_NATIVE_SERIES",
+      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
+      "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "engineer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::engineering_humor_sticker",
-      "provider_attempts": 3
+      "queries_attempted": [
+        "engineer sticker",
+        "engineering humor sticker"
+      ],
+      "provider_attempts": 4
     },
     {
       "watch_id": "watch-03",
       "entity_key": "dog_parent_dramatic_personality",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
-      "query_used": "dog parent sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
-      "anchor_query": "dog parent sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-      "provider_attempts": 2
-    },
-    {
-      "watch_id": "watch-04",
-      "entity_key": "pickleball_dink_insider_pun",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError",
       "error_stage": "VALIDATE_NATIVE_SERIES",
       "error_code": "EMPTY_NATIVE_SERIES",
       "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "pickleball sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
+      "anchor_query": "dog parent sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
       "queries_attempted": [
-        "pickleball sticker",
-        "dink sticker"
+        "dog parent sticker",
+        "funny dog sticker"
       ],
       "provider_attempts": 4
     },
     {
+      "watch_id": "watch-04",
+      "entity_key": "pickleball_dink_insider_pun",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-12T16:00:00+00:00",
+      "query_used": "pickleball sticker",
+      "query_ordinal": 1,
+      "measurement_basis": "PRIMARY_ANCHOR",
+      "anchor_query": "pickleball sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
+      "provider_attempts": 1
+    },
+    {
       "watch_id": "watch-05",
       "entity_key": "bookish_emotional_damage_five_star",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "query_used": "bookish sticker",
       "query_ordinal": 1,
       "measurement_basis": "PRIMARY_ANCHOR",
@@ -927,9 +954,9 @@
     {
       "watch_id": "watch-06",
       "entity_key": "physical_therapy_anatomy_pun",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "query_used": "physical therapist sticker",
       "query_ordinal": 1,
       "measurement_basis": "PRIMARY_ANCHOR",
@@ -941,37 +968,43 @@
     {
       "watch_id": "watch-07",
       "entity_key": "engineer_coffee_problem_solving",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
-      "query_used": "engineer sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "engineer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
-      "provider_attempts": 1
+      "queries_attempted": [
+        "engineer sticker",
+        "coffee engineer sticker"
+      ],
+      "provider_attempts": 4
     },
     {
       "watch_id": "watch-08",
       "entity_key": "lawyer_billable_hour_humor",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
-      "query_used": "legal humor sticker",
-      "query_ordinal": 2,
-      "measurement_basis": "FALLBACK_PROXY",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SENSOR_GAP",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "measurement_basis": "ANCHOR_GAP",
       "anchor_query": "lawyer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::legal_humor_sticker",
-      "provider_attempts": 3
+      "queries_attempted": [
+        "lawyer sticker",
+        "legal humor sticker"
+      ],
+      "provider_attempts": 4
     },
     {
       "watch_id": "watch-09",
       "entity_key": "librarian_expertise_identity",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "query_used": "library sticker",
       "query_ordinal": 2,
       "measurement_basis": "FALLBACK_PROXY",
@@ -983,9 +1016,9 @@
     {
       "watch_id": "watch-10",
       "entity_key": "spreadsheet_reflex_professional_identity",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "query_used": "spreadsheet sticker",
       "query_ordinal": 1,
       "measurement_basis": "PRIMARY_ANCHOR",
@@ -997,9 +1030,9 @@
     {
       "watch_id": "watch-11",
       "entity_key": "teacher_voice_authority_identity",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SUCCESS",
-      "observed_at": "2026-10-12T04:00:00+00:00",
+      "observed_at": "2026-10-12T16:00:00+00:00",
       "query_used": "teacher sticker",
       "query_ordinal": 1,
       "measurement_basis": "PRIMARY_ANCHOR",
@@ -1011,123 +1044,69 @@
     {
       "watch_id": "watch-12",
       "entity_key": "programmer_interruption_boundary",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-12T16:00:00+00:00",
+      "query_used": "programmer sticker",
+      "query_ordinal": 1,
+      "measurement_basis": "PRIMARY_ANCHOR",
       "anchor_query": "programmer sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
-      "queries_attempted": [
-        "programmer sticker",
-        "developer sticker",
-        "coding sticker"
-      ],
-      "provider_attempts": 6
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
+      "provider_attempts": 1
     },
     {
       "watch_id": "watch-13",
       "entity_key": "crochet_interruption_insider_humor",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SENSOR_GAP",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "measurement_basis": "ANCHOR_GAP",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-12T16:00:00+00:00",
+      "query_used": "crochet humor sticker",
+      "query_ordinal": 2,
+      "measurement_basis": "FALLBACK_PROXY",
       "anchor_query": "crochet sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
-      "queries_attempted": [
-        "crochet sticker",
-        "crochet humor sticker"
-      ],
-      "provider_attempts": 4
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_humor_sticker",
+      "provider_attempts": 3
     },
     {
       "watch_id": "watch-14",
       "entity_key": "emotional_support_yarn_identity",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
+      "result": "SUCCESS",
+      "observed_at": "2026-10-12T16:00:00+00:00",
+      "query_used": "crochet sticker",
+      "query_ordinal": 2,
+      "measurement_basis": "FALLBACK_PROXY",
+      "anchor_query": "yarn sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
+      "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
+      "provider_attempts": 4
+    },
+    {
+      "watch_id": "watch-15",
+      "entity_key": "accounting_caffeine_work_identity",
+      "attempted_at": "2026-10-12T17:57:21.913418+00:00",
       "result": "SENSOR_GAP",
       "error_class": "RuntimeError",
       "error_stage": "VALIDATE_NATIVE_SERIES",
       "error_code": "EMPTY_NATIVE_SERIES",
       "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "yarn sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
-      "queries_attempted": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
-      ],
-      "provider_attempts": 6
-    },
-    {
-      "watch_id": "watch-15",
-      "entity_key": "accounting_caffeine_work_identity",
-      "attempted_at": "2026-10-12T06:01:19.006003+00:00",
-      "result": "SUCCESS",
-      "observed_at": "2026-10-12T05:00:00+00:00",
-      "query_used": "accountant sticker",
-      "query_ordinal": 1,
-      "measurement_basis": "PRIMARY_ANCHOR",
       "anchor_query": "accountant sticker",
       "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
-      "query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
-      "provider_attempts": 1
+      "queries_attempted": [
+        "accountant sticker",
+        "CPA sticker",
+        "bookkeeper sticker"
+      ],
+      "provider_attempts": 6
     }
   ],
   "not_due": [],
   "sensor_gaps": [
     {
-      "watch_id": "watch-04",
-      "mechanism_key": "pickleball_dink_insider_pun",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "RuntimeError",
-      "error_stage": "VALIDATE_NATIVE_SERIES",
-      "error_code": "EMPTY_NATIVE_SERIES",
-      "attempt_diagnostics": [
-        {
-          "query_ordinal": 1,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 1,
-          "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "pickleball sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
-      "queries_attempted": [
-        "pickleball sticker",
-        "dink sticker"
-      ],
-      "provider_attempts": 4
-    },
-    {
-      "watch_id": "watch-12",
-      "mechanism_key": "programmer_interruption_boundary",
+      "watch_id": "watch-02",
+      "mechanism_key": "engineering_stress_wordplay",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "TooManyRequestsError",
@@ -1144,68 +1123,6 @@
         {
           "query_ordinal": 1,
           "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 2,
-          "attempt": 2,
-          "error_class": "RuntimeError",
-          "error_stage": "VALIDATE_NATIVE_SERIES",
-          "error_code": "EMPTY_NATIVE_SERIES"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 3,
-          "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        }
-      ],
-      "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "programmer sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
-      "queries_attempted": [
-        "programmer sticker",
-        "developer sticker",
-        "coding sticker"
-      ],
-      "provider_attempts": 6
-    },
-    {
-      "watch_id": "watch-13",
-      "mechanism_key": "crochet_interruption_insider_humor",
-      "surface": "GOOGLE_TRENDS",
-      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
-      "error_class": "TooManyRequestsError",
-      "error_stage": "FETCH_NATIVE_SERIES",
-      "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION",
-      "attempt_diagnostics": [
-        {
-          "query_ordinal": 1,
-          "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
-        },
-        {
-          "query_ordinal": 1,
-          "attempt": 2,
           "error_class": "TooManyRequestsError",
           "error_stage": "FETCH_NATIVE_SERIES",
           "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
@@ -1226,17 +1143,17 @@
         }
       ],
       "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "crochet sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
+      "anchor_query": "engineer sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
       "queries_attempted": [
-        "crochet sticker",
-        "crochet humor sticker"
+        "engineer sticker",
+        "engineering humor sticker"
       ],
       "provider_attempts": 4
     },
     {
-      "watch_id": "watch-14",
-      "mechanism_key": "emotional_support_yarn_identity",
+      "watch_id": "watch-03",
+      "mechanism_key": "dog_parent_dramatic_personality",
       "surface": "GOOGLE_TRENDS",
       "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
       "error_class": "RuntimeError",
@@ -1246,23 +1163,164 @@
         {
           "query_ordinal": 1,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 1,
           "attempt": 2,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 2,
           "attempt": 1,
-          "error_class": "TooManyRequestsError",
-          "error_stage": "FETCH_NATIVE_SERIES",
-          "error_code": "UNCLASSIFIED_PROVIDER_OR_LIBRARY_EXCEPTION"
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        }
+      ],
+      "measurement_basis": "ANCHOR_GAP",
+      "anchor_query": "dog parent sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
+      "queries_attempted": [
+        "dog parent sticker",
+        "funny dog sticker"
+      ],
+      "provider_attempts": 4
+    },
+    {
+      "watch_id": "watch-07",
+      "mechanism_key": "engineer_coffee_problem_solving",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "attempt_diagnostics": [
+        {
+          "query_ordinal": 1,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 1,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        }
+      ],
+      "measurement_basis": "ANCHOR_GAP",
+      "anchor_query": "engineer sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
+      "queries_attempted": [
+        "engineer sticker",
+        "coffee engineer sticker"
+      ],
+      "provider_attempts": 4
+    },
+    {
+      "watch_id": "watch-08",
+      "mechanism_key": "lawyer_billable_hour_humor",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "attempt_diagnostics": [
+        {
+          "query_ordinal": 1,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 1,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        }
+      ],
+      "measurement_basis": "ANCHOR_GAP",
+      "anchor_query": "lawyer sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
+      "queries_attempted": [
+        "lawyer sticker",
+        "legal humor sticker"
+      ],
+      "provider_attempts": 4
+    },
+    {
+      "watch_id": "watch-15",
+      "mechanism_key": "accounting_caffeine_work_identity",
+      "surface": "GOOGLE_TRENDS",
+      "state": "SENSOR_GAP_PROVIDER_OR_SHAPE_FAILURE_NOT_ZERO_DEMAND",
+      "error_class": "RuntimeError",
+      "error_stage": "VALIDATE_NATIVE_SERIES",
+      "error_code": "EMPTY_NATIVE_SERIES",
+      "attempt_diagnostics": [
+        {
+          "query_ordinal": 1,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 1,
+          "attempt": 2,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
+        },
+        {
+          "query_ordinal": 2,
+          "attempt": 1,
+          "error_class": "RuntimeError",
+          "error_stage": "VALIDATE_NATIVE_SERIES",
+          "error_code": "EMPTY_NATIVE_SERIES"
         },
         {
           "query_ordinal": 2,
@@ -1287,12 +1345,12 @@
         }
       ],
       "measurement_basis": "ANCHOR_GAP",
-      "anchor_query": "yarn sticker",
-      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
+      "anchor_query": "accountant sticker",
+      "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
       "queries_attempted": [
-        "yarn sticker",
-        "crochet sticker",
-        "knitting sticker"
+        "accountant sticker",
+        "CPA sticker",
+        "bookkeeper sticker"
       ],
       "provider_attempts": 6
     }
@@ -1300,12 +1358,12 @@
   "continuity": {
     "policy": "LAST_GOOD_PER_MECHANISM_WITH_ATTEMPT_TRUTH",
     "history_success_count_before": 15,
-    "current_success_count": 11,
-    "current_gap_count": 4,
-    "provider_attempt_count": 43,
+    "current_success_count": 10,
+    "current_gap_count": 5,
+    "provider_attempt_count": 42,
     "query_fallback_success_count": 4,
     "preserved_not_due_count": 0,
-    "preserved_gap_count": 4,
+    "preserved_gap_count": 5,
     "merged_last_good_count": 15,
     "sensor_gap_advances_freshness": false,
     "not_due_advances_freshness": false,
