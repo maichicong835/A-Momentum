@@ -1,7 +1,7 @@
 {
   "schema": "A_MOMENTUM_DUE_PLAN",
   "engine_version": "0.2.0",
-  "as_of": "2026-10-21T13:49:57.099117+00:00",
+  "as_of": "2026-10-21T20:10:54.490778+00:00",
   "watch_count": 15,
   "due_count": 15,
   "not_due_count": 0,
@@ -12,7 +12,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "accountant sticker",
         "spreadsheet sticker",
@@ -37,7 +37,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-20T18:00:00+00:00",
-      "elapsed_hours": 19.832527532500002,
+      "elapsed_hours": 26.18180299388889,
       "query_family": [
         "engineer sticker",
         "engineering humor sticker"
@@ -61,7 +61,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-20T03:00:00+00:00",
-      "elapsed_hours": 34.8325275325,
+      "elapsed_hours": 41.181802993888894,
       "query_family": [
         "dog parent sticker",
         "funny dog sticker"
@@ -85,7 +85,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "pickleball sticker",
         "dink sticker"
@@ -109,7 +109,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "bookish sticker",
         "book lover sticker",
@@ -134,7 +134,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "physical therapist sticker",
         "anatomy sticker",
@@ -159,7 +159,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-20T22:00:00+00:00",
-      "elapsed_hours": 15.832527532499999,
+      "elapsed_hours": 22.18180299388889,
       "query_family": [
         "engineer sticker",
         "coffee engineer sticker"
@@ -183,7 +183,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "lawyer sticker",
         "legal humor sticker"
@@ -207,7 +207,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "librarian sticker",
         "library sticker"
@@ -231,7 +231,7 @@
       "cadence_class": "HOT",
       "cadence_hours": 4.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "spreadsheet sticker",
         "finance sticker"
@@ -255,7 +255,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "teacher sticker",
         "teacher voice sticker"
@@ -279,7 +279,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-20T18:00:00+00:00",
-      "elapsed_hours": 19.832527532500002,
+      "elapsed_hours": 26.18180299388889,
       "query_family": [
         "programmer sticker",
         "developer sticker",
@@ -304,7 +304,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-20T18:00:00+00:00",
-      "elapsed_hours": 19.832527532500002,
+      "elapsed_hours": 26.18180299388889,
       "query_family": [
         "crochet sticker",
         "crochet humor sticker"
@@ -328,7 +328,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "yarn sticker",
         "crochet sticker",
@@ -353,7 +353,7 @@
       "cadence_class": "WARM",
       "cadence_hours": 8.0,
       "last_observed_at": "2026-10-21T03:00:00+00:00",
-      "elapsed_hours": 10.832527532499999,
+      "elapsed_hours": 17.181802993888887,
       "query_family": [
         "accountant sticker",
         "CPA sticker",
