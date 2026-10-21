@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-21T03:00:00+00:00",
-  "engine_commit_sha": "6c943efd9f1cf043481e5c966fc5e627100758e3",
+  "engine_commit_sha": "6a8dc70493beeef4ccc139f170057ce79be34047",
   "engine_version": "0.2.0",
   "entities": [
     {
@@ -11,9 +11,9 @@
       "entity_key": "accountant_spreadsheet_frustration",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": false,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
@@ -24,7 +24,7 @@
         ],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -99,8 +99,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -108,9 +108,9 @@
       "entity_key": "accounting_caffeine_work_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": false,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
@@ -121,7 +121,7 @@
         ],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -179,8 +179,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -190,9 +190,9 @@
       "entity_key": "bookish_emotional_damage_five_star",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
@@ -201,7 +201,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::book_lover_sticker"
       },
-      "measurement_truth_state": "FALLBACK_PROXY",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -276,8 +276,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -285,8 +285,8 @@
       "entity_key": "crochet_interruption_insider_humor",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-20T18:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
@@ -350,7 +350,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 10.894652808888889,
+      "temporal_evidence_age_hours_at_generation": 19.90017548222222,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -361,8 +361,8 @@
       "entity_key": "dog_parent_dramatic_personality",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-20T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
@@ -447,7 +447,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 25.89465280888889,
+      "temporal_evidence_age_hours_at_generation": 34.900175482222224,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -456,9 +456,9 @@
       "entity_key": "emotional_support_yarn_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
@@ -467,7 +467,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -525,8 +525,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -536,8 +536,8 @@
       "entity_key": "engineer_coffee_problem_solving",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-20T22:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": false,
@@ -624,8 +624,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 6.894652808888889,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 15.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -635,8 +635,8 @@
       "entity_key": "engineering_stress_wordplay",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-20T18:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": false,
@@ -719,7 +719,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 10.894652808888889,
+      "temporal_evidence_age_hours_at_generation": 19.90017548222222,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -730,9 +730,9 @@
       "entity_key": "lawyer_billable_hour_humor",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
@@ -741,7 +741,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -816,8 +816,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -827,9 +827,9 @@
       "entity_key": "librarian_expertise_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::librarian_sticker",
@@ -838,7 +838,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::library_sticker"
       },
-      "measurement_truth_state": "FALLBACK_PROXY",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -913,8 +913,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -924,9 +924,9 @@
       "entity_key": "physical_therapy_anatomy_pun",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
@@ -935,7 +935,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::anatomy_sticker"
       },
-      "measurement_truth_state": "FALLBACK_PROXY",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -1010,8 +1010,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -1021,9 +1021,9 @@
       "entity_key": "pickleball_dink_insider_pun",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
@@ -1032,7 +1032,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -1107,8 +1107,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -1116,8 +1116,8 @@
       "entity_key": "programmer_interruption_boundary",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-20T18:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
@@ -1181,7 +1181,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 10.894652808888889,
+      "temporal_evidence_age_hours_at_generation": 19.90017548222222,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -1192,9 +1192,9 @@
       "entity_key": "spreadsheet_reflex_professional_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
@@ -1203,7 +1203,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -1278,8 +1278,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -1287,9 +1287,9 @@
       "entity_key": "teacher_voice_authority_identity",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-21T03:00:00+00:00",
-      "latest_attempt_at": "2026-10-21T04:51:20.096833+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-21T13:49:57.099117+00:00",
+      "latest_attempt_error_class": "TooManyRequestsError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
@@ -1298,7 +1298,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::teacher_voice_sticker"
       },
-      "measurement_truth_state": "FALLBACK_PROXY",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -1356,8 +1356,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.8946528088888888,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.900175482222224,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     }
   ],
   "fallback_pool_status": {
@@ -1365,13 +1365,13 @@
     "minimum_pool_target": 14,
     "status": "PASS"
   },
-  "generated_at": "2026-10-21T04:53:40.750112+00:00",
+  "generated_at": "2026-10-21T13:54:00.631736+00:00",
   "measurement_identity_summary": {
-    "anchor_gap_count": 5,
+    "anchor_gap_count": 15,
     "entity_count": 15,
-    "fallback_proxy_count": 4,
+    "fallback_proxy_count": 0,
     "fallback_proxy_redefines_anchor_identity": false,
-    "primary_anchor_count": 6,
+    "primary_anchor_count": 0,
     "shared_anchor_group_count": 2,
     "shared_anchor_groups": [
       {
@@ -1392,15 +1392,7 @@
       }
     ],
     "shared_proxy_evidence_is_independent": false,
-    "shared_signal_proxy_groups": [
-      {
-        "mechanism_keys": [
-          "accountant_spreadsheet_frustration",
-          "accounting_caffeine_work_identity"
-        ],
-        "query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker"
-      }
-    ],
+    "shared_signal_proxy_groups": [],
     "state": "M1_MEASUREMENT_IDENTITY_ACTIVE"
   },
   "observation_count": 25,
@@ -1408,18 +1400,18 @@
   "result": "PASS_BENCHMARK",
   "schema": "A_MOMENTUM_RECEIPT",
   "temporal_evidence_summary": {
-    "current_cycle_gap_count": 5,
+    "current_cycle_gap_count": 15,
     "current_cycle_not_due_count": 0,
-    "current_cycle_success_count": 10,
+    "current_cycle_success_count": 0,
     "entity_count": 15,
-    "fresh_entity_count": 11,
-    "fresh_entity_ratio": 0.733333,
+    "fresh_entity_count": 0,
+    "fresh_entity_ratio": 0.0,
     "freshness_basis": "LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT",
     "freshness_threshold_hours": 8.0,
     "latest_successful_observed_at": "2026-10-21T03:00:00+00:00",
     "not_due_advances_freshness": false,
     "sensor_gap_advances_freshness": false,
-    "stale_entity_count": 4,
+    "stale_entity_count": 15,
     "unobserved_entity_count": 0
   }
 }
