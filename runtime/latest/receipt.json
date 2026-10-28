@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-27T19:00:00+00:00",
-  "engine_commit_sha": "e776724ed6797e70bb363af45ea3d055ff927b48",
+  "as_of": "2026-10-28T04:00:00+00:00",
+  "engine_commit_sha": "80527087b7a2c11521e3401998d634b9c4665239",
   "engine_version": "0.2.0",
   "entities": [
     {
@@ -10,8 +10,8 @@
       ],
       "entity_key": "accountant_spreadsheet_frustration",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -51,8 +51,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
             "anchor_query": "accountant sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
             "query_used": "accountant sticker",
@@ -61,31 +61,31 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 4.166667
             },
             {
-              "t": "2026-10-26T19:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
@@ -99,7 +99,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -107,10 +107,10 @@
       "candidate_keys": [],
       "entity_key": "accounting_caffeine_work_identity",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": null,
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "NOT_DUE",
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": false,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
@@ -131,8 +131,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
             "anchor_query": "accountant sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::accountant_sticker",
             "query_used": "accountant sticker",
@@ -141,31 +141,31 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
+              "value": 4.166667
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T13:00:00+00:00",
-              "value": 5.5
-            },
-            {
-              "t": "2026-10-24T13:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-25T13:00:00+00:00",
+              "t": "2026-10-26T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T13:00:00+00:00",
+              "t": "2026-10-27T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-27T13:00:00+00:00",
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
@@ -179,7 +179,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -189,8 +189,8 @@
       ],
       "entity_key": "bookish_emotional_damage_five_star",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -199,9 +199,9 @@
         "anchor_query": "bookish sticker",
         "fallback_success_redefines_anchor_identity": false,
         "shared_anchor_with": [],
-        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker"
+        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::reader_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "FALLBACK_PROXY",
       "series": [
         {
           "acceleration": null,
@@ -228,68 +228,66 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
             "anchor_query": "bookish sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
-            "query_proxy_id": "GT_US_WEB_NOW_7_D::bookish_sticker",
-            "query_used": "bookish sticker",
-            "signal_basis": "PRIMARY_ANCHOR"
+            "query_proxy_id": "GT_US_WEB_NOW_7_D::reader_sticker",
+            "query_used": "reader sticker",
+            "signal_basis": "FALLBACK_PROXY"
           },
-          "normalized_velocity": null,
+          "normalized_velocity": -0.041666666666666664,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-26T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 4.166667
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.791667
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
-          "proxy": "GT_US_WEB_NOW_7_D::bookish_sticker",
-          "series_state": "POSITIVE_VELOCITY",
+          "proxy": "GT_US_WEB_NOW_7_D::reader_sticker",
+          "series_state": "DECELERATING",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.173611125
+          "velocity": -0.032986125
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
       "candidate_keys": [],
       "entity_key": "crochet_interruption_insider_humor",
-      "independent_accelerating_surfaces": [
-        "GOOGLE_TRENDS"
-      ],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": null,
+      "independent_accelerating_surfaces": [],
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "NOT_DUE",
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
@@ -301,62 +299,62 @@
       "measurement_truth_state": "FALLBACK_PROXY",
       "series": [
         {
-          "acceleration": 0.030666367243773973,
+          "acceleration": null,
           "entity_key": "crochet_interruption_insider_humor",
           "entity_type": "MECHANISM",
           "measurement_identity": {
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::crochet_sticker",
             "anchor_query": "crochet sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::crochet_humor_sticker",
             "query_used": "crochet humor sticker",
             "signal_basis": "FALLBACK_PROXY"
           },
-          "normalized_velocity": 0.02243591045365052,
+          "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T13:00:00+00:00",
-              "value": 3.375
-            },
-            {
-              "t": "2026-10-26T13:00:00+00:00",
-              "value": 2.708333
-            },
-            {
-              "t": "2026-10-27T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 4.166667
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
           "proxy": "GT_US_WEB_NOW_7_D::crochet_humor_sticker",
-          "series_state": "POSITIVE_ACCELERATION",
+          "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.060763916666666674
+          "velocity": 0.0
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -366,19 +364,19 @@
       ],
       "entity_key": "dog_parent_dramatic_personality",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
-      "latest_attempt_error_class": "RuntimeError",
-      "latest_attempt_state": "SENSOR_GAP",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
+      "latest_attempt_error_class": null,
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
         "anchor_query": "dog parent sticker",
         "fallback_success_redefines_anchor_identity": false,
         "shared_anchor_with": [],
-        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker"
+        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::funny_dog_sticker"
       },
-      "measurement_truth_state": "ANCHOR_GAP",
+      "measurement_truth_state": "FALLBACK_PROXY",
       "series": [
         {
           "acceleration": null,
@@ -405,55 +403,55 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
             "anchor_query": "dog parent sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
-            "query_proxy_id": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-            "query_used": "dog parent sticker",
-            "signal_basis": "PRIMARY_ANCHOR"
+            "query_proxy_id": "GT_US_WEB_NOW_7_D::funny_dog_sticker",
+            "query_used": "funny dog sticker",
+            "signal_basis": "FALLBACK_PROXY"
           },
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T13:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 4.166667
-            },
-            {
-              "t": "2026-10-24T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-26T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T13:00:00+00:00",
-              "value": 0.0
             }
           ],
-          "proxy": "GT_US_WEB_NOW_7_D::dog_parent_sticker",
-          "series_state": "MOMENTUM_UNPROVEN",
+          "proxy": "GT_US_WEB_NOW_7_D::funny_dog_sticker",
+          "series_state": "POSITIVE_VELOCITY",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.0
+          "velocity": 0.173611125
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "MOMENTUM_UNPROVEN",
+      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -461,8 +459,8 @@
       "candidate_keys": [],
       "entity_key": "emotional_support_yarn_identity",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -483,8 +481,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
             "anchor_query": "yarn sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::yarn_sticker",
             "query_used": "yarn sticker",
@@ -493,31 +491,31 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 4.166667
             },
             {
-              "t": "2026-10-23T19:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-24T19:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-25T19:00:00+00:00",
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.625
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
@@ -531,7 +529,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -542,9 +540,9 @@
       "entity_key": "engineer_coffee_problem_solving",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
-      "latest_attempt_error_class": null,
-      "latest_attempt_state": "SUCCESS",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
+      "latest_attempt_error_class": "RuntimeError",
+      "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
         "anchor_evidence_independent": false,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker",
@@ -555,7 +553,7 @@
         ],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::engineer_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "ANCHOR_GAP",
       "series": [
         {
           "acceleration": null,
@@ -630,8 +628,8 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
-      "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
+      "temporal_evidence_age_hours_at_generation": 10.787893027500001,
+      "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
       "breakout_proxy_high": false,
@@ -641,7 +639,7 @@
       "entity_key": "engineering_stress_wordplay",
       "independent_accelerating_surfaces": [],
       "last_successful_observed_at": "2026-10-27T04:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": "RuntimeError",
       "latest_attempt_state": "SENSOR_GAP",
       "measurement_identity": {
@@ -729,7 +727,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 16.748661285833332,
+      "temporal_evidence_age_hours_at_generation": 25.787893027499997,
       "temporal_evidence_freshness_at_generation": "STALE_OVER_THRESHOLD"
     },
     {
@@ -739,8 +737,8 @@
       ],
       "entity_key": "lawyer_billable_hour_humor",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -778,8 +776,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
             "anchor_query": "lawyer sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::lawyer_sticker",
             "query_used": "lawyer sticker",
@@ -788,45 +786,45 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-26T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 4.166667
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
           "proxy": "GT_US_WEB_NOW_7_D::lawyer_sticker",
-          "series_state": "POSITIVE_VELOCITY",
+          "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.173611125
+          "velocity": 0.0
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -836,8 +834,8 @@
       ],
       "entity_key": "librarian_expertise_identity",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -846,9 +844,9 @@
         "anchor_query": "librarian sticker",
         "fallback_success_redefines_anchor_identity": false,
         "shared_anchor_with": [],
-        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::library_sticker"
+        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::librarian_sticker"
       },
-      "measurement_truth_state": "FALLBACK_PROXY",
+      "measurement_truth_state": "PRIMARY_ANCHOR",
       "series": [
         {
           "acceleration": null,
@@ -875,55 +873,55 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::librarian_sticker",
             "anchor_query": "librarian sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
-            "query_proxy_id": "GT_US_WEB_NOW_7_D::library_sticker",
-            "query_used": "library sticker",
-            "signal_basis": "FALLBACK_PROXY"
+            "query_proxy_id": "GT_US_WEB_NOW_7_D::librarian_sticker",
+            "query_used": "librarian sticker",
+            "signal_basis": "PRIMARY_ANCHOR"
           },
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T19:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 11.541667
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T19:00:00+00:00",
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 4.166667
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-27T19:00:00+00:00",
-              "value": 3.5
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
-          "proxy": "GT_US_WEB_NOW_7_D::library_sticker",
-          "series_state": "POSITIVE_VELOCITY",
+          "proxy": "GT_US_WEB_NOW_7_D::librarian_sticker",
+          "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.14583333333333334
+          "velocity": 0.0
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -933,19 +931,19 @@
       ],
       "entity_key": "physical_therapy_anatomy_pun",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
-      "latest_attempt_error_class": "RuntimeError",
-      "latest_attempt_state": "SENSOR_GAP",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
+      "latest_attempt_error_class": null,
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
         "anchor_query": "physical therapist sticker",
         "fallback_success_redefines_anchor_identity": false,
         "shared_anchor_with": [],
-        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker"
+        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::psoas_sticker"
       },
-      "measurement_truth_state": "ANCHOR_GAP",
+      "measurement_truth_state": "FALLBACK_PROXY",
       "series": [
         {
           "acceleration": null,
@@ -972,55 +970,55 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
             "anchor_query": "physical therapist sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
-            "query_proxy_id": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
-            "query_used": "physical therapist sticker",
-            "signal_basis": "PRIMARY_ANCHOR"
+            "query_proxy_id": "GT_US_WEB_NOW_7_D::psoas_sticker",
+            "query_used": "psoas sticker",
+            "signal_basis": "FALLBACK_PROXY"
           },
           "normalized_velocity": -0.041666666666666664,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T13:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-24T13:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-25T13:00:00+00:00",
+              "t": "2026-10-26T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T13:00:00+00:00",
-              "value": 7.916667
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 7.625
             },
             {
-              "t": "2026-10-27T13:00:00+00:00",
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
-          "proxy": "GT_US_WEB_NOW_7_D::physical_therapist_sticker",
+          "proxy": "GT_US_WEB_NOW_7_D::psoas_sticker",
           "series_state": "DECELERATING",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": -0.32986112500000003
+          "velocity": -0.3177083333333333
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -1030,10 +1028,10 @@
       ],
       "entity_key": "pickleball_dink_insider_pun",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
-      "latest_attempt_error_class": "RuntimeError",
-      "latest_attempt_state": "SENSOR_GAP",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
+      "latest_attempt_error_class": null,
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
@@ -1042,7 +1040,7 @@
         "shared_anchor_with": [],
         "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker"
       },
-      "measurement_truth_state": "ANCHOR_GAP",
+      "measurement_truth_state": "PRIMARY_ANCHOR",
       "series": [
         {
           "acceleration": null,
@@ -1069,55 +1067,55 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
             "anchor_query": "pickleball sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::pickleball_sticker",
             "query_used": "pickleball sticker",
             "signal_basis": "PRIMARY_ANCHOR"
           },
-          "normalized_velocity": null,
+          "normalized_velocity": -0.041666666666666664,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T13:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-24T13:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-25T13:00:00+00:00",
+              "t": "2026-10-26T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T13:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T13:00:00+00:00",
+              "t": "2026-10-27T04:00:00+00:00",
               "value": 4.166667
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
           "proxy": "GT_US_WEB_NOW_7_D::pickleball_sticker",
-          "series_state": "POSITIVE_VELOCITY",
+          "series_state": "DECELERATING",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.173611125
+          "velocity": -0.173611125
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "DECELERATING",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -1125,8 +1123,8 @@
       "candidate_keys": [],
       "entity_key": "programmer_interruption_boundary",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -1135,9 +1133,9 @@
         "anchor_query": "programmer sticker",
         "fallback_success_redefines_anchor_identity": false,
         "shared_anchor_with": [],
-        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker"
+        "signal_query_proxy_id": "GT_US_WEB_NOW_7_D::developer_sticker"
       },
-      "measurement_truth_state": "PRIMARY_ANCHOR",
+      "measurement_truth_state": "FALLBACK_PROXY",
       "series": [
         {
           "acceleration": null,
@@ -1147,45 +1145,45 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
             "anchor_query": "programmer sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
-            "query_proxy_id": "GT_US_WEB_NOW_7_D::programmer_sticker",
-            "query_used": "programmer sticker",
-            "signal_basis": "PRIMARY_ANCHOR"
+            "query_proxy_id": "GT_US_WEB_NOW_7_D::developer_sticker",
+            "query_used": "developer sticker",
+            "signal_basis": "FALLBACK_PROXY"
           },
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-22T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 4.166667
             },
             {
-              "t": "2026-10-26T19:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
+              "value": 0.416667
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
-          "proxy": "GT_US_WEB_NOW_7_D::programmer_sticker",
+          "proxy": "GT_US_WEB_NOW_7_D::developer_sticker",
           "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
@@ -1195,7 +1193,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -1205,8 +1203,8 @@
       ],
       "entity_key": "spreadsheet_reflex_professional_identity",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T19:00:00+00:00",
-      "latest_attempt_at": "2026-10-27T20:43:10.924547+00:00",
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
       "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
@@ -1244,8 +1242,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
             "anchor_query": "spreadsheet sticker",
             "native_window": {
-              "window_end": "2026-10-27T19:00:00+00:00",
-              "window_start": "2026-10-20T20:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
             "query_used": "spreadsheet sticker",
@@ -1254,45 +1252,45 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-22T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-23T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-24T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-25T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-26T19:00:00+00:00",
-              "value": 0.0
-            },
-            {
-              "t": "2026-10-27T19:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 4.166667
+            },
+            {
+              "t": "2026-10-23T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-24T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-27T04:00:00+00:00",
+              "value": 0.0
+            },
+            {
+              "t": "2026-10-28T04:00:00+00:00",
+              "value": 0.0
             }
           ],
           "proxy": "GT_US_WEB_NOW_7_D::spreadsheet_sticker",
-          "series_state": "POSITIVE_VELOCITY",
+          "series_state": "MOMENTUM_UNPROVEN",
           "surface": "GOOGLE_TRENDS",
           "timepoints": 7,
-          "velocity": 0.173611125
+          "velocity": 0.0
         }
       ],
       "signal_state_is_last_known_not_freshness_claim": true,
-      "state": "VELOCITY_POSITIVE_ACCELERATION_UNPROVEN",
+      "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 1.7486612858333335,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     },
     {
@@ -1300,10 +1298,10 @@
       "candidate_keys": [],
       "entity_key": "teacher_voice_authority_identity",
       "independent_accelerating_surfaces": [],
-      "last_successful_observed_at": "2026-10-27T13:00:00+00:00",
-      "latest_attempt_at": null,
+      "last_successful_observed_at": "2026-10-28T04:00:00+00:00",
+      "latest_attempt_at": "2026-10-28T05:45:19.419594+00:00",
       "latest_attempt_error_class": null,
-      "latest_attempt_state": "NOT_DUE",
+      "latest_attempt_state": "SUCCESS",
       "measurement_identity": {
         "anchor_evidence_independent": true,
         "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
@@ -1322,8 +1320,8 @@
             "anchor_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
             "anchor_query": "teacher sticker",
             "native_window": {
-              "window_end": "2026-10-27T13:00:00+00:00",
-              "window_start": "2026-10-20T14:00:00+00:00"
+              "window_end": "2026-10-28T04:00:00+00:00",
+              "window_start": "2026-10-21T05:00:00+00:00"
             },
             "query_proxy_id": "GT_US_WEB_NOW_7_D::teacher_sticker",
             "query_used": "teacher sticker",
@@ -1332,31 +1330,31 @@
           "normalized_velocity": null,
           "points": [
             {
-              "t": "2026-10-21T13:00:00+00:00",
+              "t": "2026-10-22T04:00:00+00:00",
               "value": 4.166667
             },
             {
-              "t": "2026-10-22T13:00:00+00:00",
+              "t": "2026-10-23T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-23T13:00:00+00:00",
-              "value": 0.75
-            },
-            {
-              "t": "2026-10-24T13:00:00+00:00",
+              "t": "2026-10-24T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-25T13:00:00+00:00",
+              "t": "2026-10-25T04:00:00+00:00",
+              "value": 3.916667
+            },
+            {
+              "t": "2026-10-26T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-26T13:00:00+00:00",
+              "t": "2026-10-27T04:00:00+00:00",
               "value": 0.0
             },
             {
-              "t": "2026-10-27T13:00:00+00:00",
+              "t": "2026-10-28T04:00:00+00:00",
               "value": 0.0
             }
           ],
@@ -1370,7 +1368,7 @@
       "signal_state_is_last_known_not_freshness_claim": true,
       "state": "MOMENTUM_UNPROVEN",
       "strong_commerce_acceleration": false,
-      "temporal_evidence_age_hours_at_generation": 7.748661285833333,
+      "temporal_evidence_age_hours_at_generation": 1.7878930275,
       "temporal_evidence_freshness_at_generation": "FRESH_WITHIN_THRESHOLD"
     }
   ],
@@ -1379,13 +1377,13 @@
     "minimum_pool_target": 14,
     "status": "PASS"
   },
-  "generated_at": "2026-10-27T20:44:55.180629+00:00",
+  "generated_at": "2026-10-28T05:47:16.414899+00:00",
   "measurement_identity_summary": {
-    "anchor_gap_count": 4,
+    "anchor_gap_count": 2,
     "entity_count": 15,
-    "fallback_proxy_count": 2,
+    "fallback_proxy_count": 5,
     "fallback_proxy_redefines_anchor_identity": false,
-    "primary_anchor_count": 9,
+    "primary_anchor_count": 8,
     "shared_anchor_group_count": 2,
     "shared_anchor_groups": [
       {
@@ -1422,18 +1420,18 @@
   "result": "PASS_BENCHMARK",
   "schema": "A_MOMENTUM_RECEIPT",
   "temporal_evidence_summary": {
-    "current_cycle_gap_count": 4,
-    "current_cycle_not_due_count": 3,
-    "current_cycle_success_count": 8,
+    "current_cycle_gap_count": 2,
+    "current_cycle_not_due_count": 0,
+    "current_cycle_success_count": 13,
     "entity_count": 15,
-    "fresh_entity_count": 14,
-    "fresh_entity_ratio": 0.933333,
+    "fresh_entity_count": 13,
+    "fresh_entity_ratio": 0.866667,
     "freshness_basis": "LAST_SUCCESSFUL_OBSERVED_AT_NOT_RECEIPT_GENERATED_AT",
     "freshness_threshold_hours": 8.0,
-    "latest_successful_observed_at": "2026-10-27T19:00:00+00:00",
+    "latest_successful_observed_at": "2026-10-28T04:00:00+00:00",
     "not_due_advances_freshness": false,
     "sensor_gap_advances_freshness": false,
-    "stale_entity_count": 1,
+    "stale_entity_count": 2,
     "unobserved_entity_count": 0
   }
 }
