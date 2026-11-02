@@ -1,14 +1,14 @@
 {
   "schema": "A_MOMENTUM_PUBLIC_RUNTIME_INDEX",
   "engine_version": "0.2.0",
-  "provider_engine_commit_sha": "d697fd2d44384eee1b42dbca1e00be333f47e3f6",
-  "workflow_run_id": 41347219735,
+  "provider_engine_commit_sha": "dbd0f3f49ee8bb5abebdd70e775911147491db2d",
+  "workflow_run_id": 41398054030,
   "receipt_path": "runtime/latest/receipt.json",
-  "receipt_sha256": "520a90d44332eabbd8e61858cdae1f0d9a6c642969f3f2de0ef56ed7fc23c96c",
+  "receipt_sha256": "cff4977ba31ebd859d78153abd51fb2913c0c48f1912e53670409d906f29cdca",
   "sensor_result": "PASS_WITH_DATA",
-  "sensor_success_count": 10,
-  "sensor_gap_count": 1,
-  "fresh_entity_count": 15,
-  "fresh_entity_ratio": 1.0,
+  "sensor_success_count": 6,
+  "sensor_gap_count": 9,
+  "fresh_entity_count": 6,
+  "fresh_entity_ratio": 0.4,
   "credentials_used": false
 }
